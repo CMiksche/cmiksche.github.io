@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>M5E&#39;s Blog</title>
-  <meta name="description" content="Christoph Miksche&#39;s blog about personal and development topics.">
+  <title>APU2C4 - LED blinks 5 times ...</title>
+  <meta name="description" content="I bought a APU2C4 Board (from the swiss company “PC Engines GmbH”) and multiple components because i want to build a custom pfSense router.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="canonical" href="http://localhost:4000/apu2c4/blink/led/2017/11/16/apu2c4-blinks-5-times.html">
   <link rel="alternate" type="application/rss+xml" title="M5E&#39;s Blog" href="/feed.xml">
   
   
@@ -58,36 +58,42 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="home">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <h1 class="page-heading">Posts</h1>
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">APU2C4 - LED blinks 5 times ...</h1>
+    <p class="post-meta"><time datetime="2017-11-16T16:03:23+01:00" itemprop="datePublished">Nov 16, 2017</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I bought a APU2C4 Board (from the swiss company “PC Engines GmbH”) and multiple components because i want to build a custom pfSense router.</p>
+
+<p>I’ve ordered the device several weeks ago and haven’t used it until now. That’s because i made a few mistakes (which i want to write now):</p>
+
+<h2 id="first">First</h2>
+
+<ul>
+  <li>Mistake: I used a power supply with 12V and 2A from china.</li>
+  <li>Visible by: The LED on the back of the device blinks 5 times - then no more again.</li>
+  <li>Solution: Use a 12V and 3A power supply.</li>
+</ul>
+
+<h2 id="second">Second:</h2>
+
+<ul>
+  <li>Mistake: I used a serial cable with Prolific PL2303 Chip and another serial cable with a Gender Changer.</li>
+  <li>Visible by: I couldn’t connect to the device.</li>
+  <li>Solution: Don’t use PL2303 Chips and Gender Changer! The following Chips are supported: FTDI / FT232RL and Silicon Labs CP2104</li>
+</ul>
+
+<p>By the way: The support of pc-engines is really fast - great customer experience …</p>
+
+<p>My new serial cable with FT232RL chip hasn’t arrived yet. I will write more about that device when i encounter new errors …</p>
+
+  </div>
+
   
-  
-
-
-  <ul class="post-list">
-    
-      <li>
-        <span class="post-meta">Nov 16, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/apu2c4/blink/led/2017/11/16/apu2c4-blinks-5-times.html">APU2C4 - LED blinks 5 times ...</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Feb 14, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/jekyll/first/post/2017/02/14/first-try-of-jekyll.html">First try of Jekyll</a>
-        </h2>
-      </li>
-    
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
-
-</div>
+</article>
 
       </div>
     </main>
