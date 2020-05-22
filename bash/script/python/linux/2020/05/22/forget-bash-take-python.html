@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>M5E&#39;s Blog</title>
-  <meta name="description" content="Christoph Miksche&#39;s blog about personal and development topics.">
+  <title>Forget Bash, take Python!</title>
+  <meta name="description" content="I wrote bash scripts for several years now. You can find old bash scripts of mine on GitHub but most of them aren’t maintained anymore - and i have a reason ...">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://blog.m5e.de/">
+  <link rel="canonical" href="http://blog.m5e.de/bash/script/python/linux/2020/05/22/forget-bash-take-python.html">
   <link rel="alternate" type="application/rss+xml" title="M5E&#39;s Blog" href="/feed.xml">
   
   
@@ -64,74 +64,62 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="home">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <h1 class="page-heading">Posts</h1>
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Forget Bash, take Python!</h1>
+    <p class="post-meta">
+      <time datetime="2020-05-22T00:00:00+02:00" itemprop="datePublished">
+        
+        May 22, 2020
+      </time>
+      </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I wrote bash scripts for several years now. You can find old bash scripts of mine on GitHub but most of them aren’t maintained anymore - and i have a reason for that.</p>
+
+<p>But before i give you my reasons for not using many bash scripts anymore, lets look at the benefits of bash:</p>
+
+<ul>
+  <li>It super easy and you basically already can it if you write Linux / BSD commands</li>
+  <li>There are frameworks out now which give you advanced features like testing</li>
+  <li>It works out of the box on nearly every Linux / BSD system</li>
+</ul>
+
+<p>Okay - sounds good - so whats my problem?</p>
+
+<p>Bash is limited. E.g. it doesn’t work out of the box in Windows and i switched my default shell in Linux to fish. But let’s break down a few points why Bash isn’t optimal for me:</p>
+
+<ul>
+  <li>You tend to write platform specific code - e.g. i switched from Debian to Arch Linux and had to replace the <code class="highlighter-rouge">apt-get</code> commands with <code class="highlighter-rouge">pacman</code></li>
+  <li>I use fish as default shell. You can use Bash-Scripts with fish, but it’s more complicated …</li>
+  <li>Linux isn’t my only operating system - i run Windows and macOS machines as well.</li>
+  <li>I love features of higher level programming languages like Python.</li>
+</ul>
+
+<p>And how does Python solve this problem?</p>
+
+<ul>
+  <li>It runs out of the box on many Linux systems</li>
+  <li>It’s cross platform - the same code can run under Linux, Windows, macOS, … but you also can check the current system and write platform specific code for that</li>
+  <li>It is also super easy and makes fun</li>
+  <li>Testing and more advanced features are build in - no need to install packages</li>
+  <li>Like bash it is already used for automating tasks in many systems (so you can find tons of help online)</li>
+  <li>You can simply access the operating system</li>
+  <li>Distribution is also very simple - just create a package and pip can install it from the PyPI, private registry or a Git-Repo</li>
+</ul>
+
+<p>Languages like Go would also be interesting for automating tasks in your Linux system but Go has things like pointers and types. Python is more similar to Bash - very simple without advanced topics like types or pointers.</p>
+
+<p>I created many python scripts for things which solved bash scripts before. And my python scripts all have unit tests and detect the current running operating system. Whereas my bash scripts only worked on Debian systems do my python scripts work on all my used operating systems. So it has saved me a lot of work.</p>
+
+<p>But i also continue to use little bash scripts for simple tasks like “open this on startup” - i think its important to be aware, that higher level languages like python have a big benefit if you want to switch your system but use the same scripts.</p>
+
+  </div>
+
   
-  
-
-
-  <ul class="post-list">
-    
-      <li>
-        
-        <span class="post-meta">May 22, 2020</span>
-
-        <h2>
-          <a class="post-link" href="/bash/script/python/linux/2020/05/22/forget-bash-take-python.html">Forget Bash, take Python!</a>
-        </h2>
-      </li>
-    
-      <li>
-        
-        <span class="post-meta">Nov 26, 2018</span>
-
-        <h2>
-          <a class="post-link" href="/gitea/update/upgrade/bash/script/2018/11/26/gitea-auto-update-script.html">Gitea Auto Update Script</a>
-        </h2>
-      </li>
-    
-      <li>
-        
-        <span class="post-meta">Nov 19, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/freebsd/nvidia-driver/installation/2017/11/19/freebsd-nvidia-driver-installation.html">FreeBSD: nvidia-driver installation</a>
-        </h2>
-      </li>
-    
-      <li>
-        
-        <span class="post-meta">Nov 19, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/freebsd/windows10/dual-boot/2017/11/19/freebsd-windows10-dual-boot.html">FreeBSD and Windows 10 Dual-Boot</a>
-        </h2>
-      </li>
-    
-      <li>
-        
-        <span class="post-meta">Nov 16, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/apu2c4/blink/led/2017/11/16/apu2c4-blinks-5-times.html">APU2C4 - LED blinks 5 times ...</a>
-        </h2>
-      </li>
-    
-      <li>
-        
-        <span class="post-meta">Feb 14, 2017</span>
-
-        <h2>
-          <a class="post-link" href="/jekyll/first/post/2017/02/14/first-try-of-jekyll.html">First try of Jekyll</a>
-        </h2>
-      </li>
-    
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
-
-</div>
+</article>
 
       </div>
     </main>
