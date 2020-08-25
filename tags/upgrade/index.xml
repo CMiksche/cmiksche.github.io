@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>upgrade on M5E&#39;s Blog</title>
+    <link>https://blog.m5e.de/tags/upgrade/</link>
+    <description>Recent content in upgrade on M5E&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 26 Nov 2018 21:24:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.m5e.de/tags/upgrade/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Gitea Auto Update Script</title>
+      <link>https://blog.m5e.de/gitea/update/upgrade/bash/script/2018/11/26/gitea-auto-update-script.html</link>
+      <pubDate>Mon, 26 Nov 2018 21:24:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/gitea/update/upgrade/bash/script/2018/11/26/gitea-auto-update-script.html</guid>
+      <description>I&amp;rsquo;m a gitea user for a long time now. Gitea is a nice application to build your own light and fast version of git hosting services like GitHub or GitLab.
+Gitea has one problem thought. It doesn&amp;rsquo;t update automatically. A issue for that is open nearly 2 years: https://github.com/go-gitea/gitea/issues/518#issuecomment-441742904
+If there is one thing that i really hate, it is that a security sensible web application doesn&amp;rsquo;t update automatically. Because of that i have begun to write a update script for gitea before 4 months.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://blog.m5e.de/tags/blog/</loc>
+    <lastmod>2020-08-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.m5e.de/tags/hugo/</loc>
+    <lastmod>2020-08-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.m5e.de/tags/jekyll/</loc>
+    <lastmod>2020-08-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.m5e.de/</loc>
+    <lastmod>2020-08-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.m5e.de/post/</loc>
+    <lastmod>2020-08-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.m5e.de/post/switching-to-hugo/</loc>
+    <lastmod>2020-08-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.m5e.de/tags/</loc>
+    <lastmod>2020-08-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.m5e.de/tags/bash/</loc>
+    <lastmod>2020-05-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.m5e.de/bash/script/python/linux/2020/05/22/forget-bash-take-python.html</loc>
+    <lastmod>2020-05-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.m5e.de/tags/linux/</loc>
+    <lastmod>2020-05-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.m5e.de/tags/python/</loc>
+    <lastmod>2020-05-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.m5e.de/tags/script/</loc>
+    <lastmod>2020-05-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.m5e.de/tags/gitea/</loc>
+    <lastmod>2018-11-26T21:24:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.m5e.de/gitea/update/upgrade/bash/script/2018/11/26/gitea-auto-update-script.html</loc>
+    <lastmod>2018-11-26T21:24:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.m5e.de/tags/update/</loc>
+    <lastmod>2018-11-26T21:24:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.m5e.de/tags/upgrade/</loc>
+    <lastmod>2018-11-26T21:24:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.m5e.de/tags/freebsd/</loc>
+    <lastmod>2017-11-19T15:59:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.m5e.de/freebsd/nvidia-driver/installation/2017/11/19/freebsd-nvidia-driver-installation.html</loc>
+    <lastmod>2017-11-19T15:59:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.m5e.de/tags/installation/</loc>
+    <lastmod>2017-11-19T15:59:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.m5e.de/tags/nvidia-driver/</loc>
+    <lastmod>2017-11-19T15:59:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.m5e.de/tags/dual-boot/</loc>
+    <lastmod>2017-11-19T15:45:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.m5e.de/freebsd/windows10/dual-boot/2017/11/19/freebsd-windows10-dual-boot.html</loc>
+    <lastmod>2017-11-19T15:45:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.m5e.de/tags/windows10/</loc>
+    <lastmod>2017-11-19T15:45:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.m5e.de/tags/apu2c4/</loc>
+    <lastmod>2017-11-16T16:03:23+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.m5e.de/apu2c4/blink/led/2017/11/16/apu2c4-blinks-5-times.html</loc>
+    <lastmod>2017-11-16T16:03:23+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.m5e.de/tags/blink/</loc>
+    <lastmod>2017-11-16T16:03:23+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.m5e.de/tags/led/</loc>
+    <lastmod>2017-11-16T16:03:23+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.m5e.de/tags/first/</loc>
+    <lastmod>2017-02-14T20:03:23+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.m5e.de/jekyll/first/post/2017/02/14/first-try-of-jekyll.html</loc>
+    <lastmod>2017-02-14T20:03:23+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.m5e.de/tags/post/</loc>
+    <lastmod>2017-02-14T20:03:23+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.m5e.de/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://blog.m5e.de/contact/</loc>
+  </url>
+  
+</urlset>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>apu2c4 on M5E&#39;s Blog</title>
+    <link>https://blog.m5e.de/tags/apu2c4/</link>
+    <description>Recent content in apu2c4 on M5E&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 16 Nov 2017 16:03:23 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.m5e.de/tags/apu2c4/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>APU2C4 - LED blinks 5 times ...</title>
+      <link>https://blog.m5e.de/apu2c4/blink/led/2017/11/16/apu2c4-blinks-5-times.html</link>
+      <pubDate>Thu, 16 Nov 2017 16:03:23 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/apu2c4/blink/led/2017/11/16/apu2c4-blinks-5-times.html</guid>
+      <description>I bought a APU2C4 Board (from the swiss company &amp;ldquo;PC Engines GmbH&amp;rdquo;) and multiple components because i want to build a custom pfSense router.
+I&amp;rsquo;ve ordered the device several weeks ago and haven&amp;rsquo;t used it until now. That&amp;rsquo;s because i made a few mistakes (which i want to write now):
+First  Mistake: I used a power supply with 12V and 2A from china. Visible by: The LED on the back of the device blinks 5 times - then no more again.</description>
+    </item>
+    
+  </channel>
+</rss>
