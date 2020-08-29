@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>python on M5E&#39;s Blog</title>
-    <link>https://blog.m5e.de/tags/python/</link>
-    <description>Recent content in python on M5E&#39;s Blog</description>
+    <title>crystal on M5E&#39;s Blog</title>
+    <link>https://blog.m5e.de/tags/crystal/</link>
+    <description>Recent content in crystal on M5E&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 29 Aug 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://blog.m5e.de/tags/python/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.m5e.de/tags/crystal/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,17 +19,6 @@
       <guid>https://blog.m5e.de/post/benchmarking-go-crystal-python-and-js/</guid>
       <description>Benford&amp;rsquo;s Law After watching a Netflix documentary about Benford&amp;rsquo;s Law, i got really interested in it because it can help detect fraud in e.g. balance sheets. So i searched my favorite programming languages and detected that there is no npm Package for checking Benford&amp;rsquo;s Law.
 Sooo &amp;hellip; Long story short: I created nearly identical libraries for doing a Benford&amp;rsquo;s Law check in JavaScript, Go and Crystal. My inspiration was from a Python library - so the algorithm of these libraries is nearly identical.</description>
-    </item>
-    
-    <item>
-      <title>Forget Bash, take Python!</title>
-      <link>https://blog.m5e.de/bash/script/python/linux/2020/05/22/forget-bash-take-python.html</link>
-      <pubDate>Fri, 22 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.m5e.de/bash/script/python/linux/2020/05/22/forget-bash-take-python.html</guid>
-      <description>I wrote bash scripts for several years now. You can find old bash scripts of mine on GitHub but most of them aren&amp;rsquo;t maintained anymore - and i have a reason for that.
-But before i give you my reasons for not using many bash scripts anymore, lets look at the benefits of bash:
- It super easy and you basically already can it if you write Linux / BSD commands There are frameworks out now which give you advanced features like testing It works out of the box on nearly every Linux / BSD system  Okay - sounds good - so whats my problem?</description>
     </item>
     
   </channel>

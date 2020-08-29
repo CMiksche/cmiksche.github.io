@@ -6,10 +6,64 @@
     <description>Recent content in Tags on M5E&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 25 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 29 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.m5e.de/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>benchmark</title>
+      <link>https://blog.m5e.de/tags/benchmark/</link>
+      <pubDate>Sat, 29 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/tags/benchmark/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>crystal</title>
+      <link>https://blog.m5e.de/tags/crystal/</link>
+      <pubDate>Sat, 29 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/tags/crystal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>go</title>
+      <link>https://blog.m5e.de/tags/go/</link>
+      <pubDate>Sat, 29 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>javascript</title>
+      <link>https://blog.m5e.de/tags/javascript/</link>
+      <pubDate>Sat, 29 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>performance</title>
+      <link>https://blog.m5e.de/tags/performance/</link>
+      <pubDate>Sat, 29 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/tags/performance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://blog.m5e.de/tags/python/</link>
+      <pubDate>Sat, 29 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/tags/python/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>blog</title>
@@ -53,15 +107,6 @@
       <pubDate>Fri, 22 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>python</title>
-      <link>https://blog.m5e.de/tags/python/</link>
-      <pubDate>Fri, 22 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.m5e.de/tags/python/</guid>
       <description></description>
     </item>
     

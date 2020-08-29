@@ -6,10 +6,20 @@
     <description>Recent content in Posts on M5E&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 25 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 29 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.m5e.de/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Benchmarking Go, Crystal, Python and JavaScript</title>
+      <link>https://blog.m5e.de/post/benchmarking-go-crystal-python-and-js/</link>
+      <pubDate>Sat, 29 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/post/benchmarking-go-crystal-python-and-js/</guid>
+      <description>Benford&amp;rsquo;s Law After watching a Netflix documentary about Benford&amp;rsquo;s Law, i got really interested in it because it can help detect fraud in e.g. balance sheets. So i searched my favorite programming languages and detected that there is no npm Package for checking Benford&amp;rsquo;s Law.
+Sooo &amp;hellip; Long story short: I created nearly identical libraries for doing a Benford&amp;rsquo;s Law check in JavaScript, Go and Crystal. My inspiration was from a Python library - so the algorithm of these libraries is nearly identical.</description>
+    </item>
     
     <item>
       <title>Switching to Hugo</title>

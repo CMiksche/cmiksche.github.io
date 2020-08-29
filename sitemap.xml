@@ -3,6 +3,56 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.m5e.de/tags/benchmark/</loc>
+    <lastmod>2020-08-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.m5e.de/post/benchmarking-go-crystal-python-and-js/</loc>
+    <lastmod>2020-08-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.m5e.de/tags/crystal/</loc>
+    <lastmod>2020-08-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.m5e.de/tags/go/</loc>
+    <lastmod>2020-08-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.m5e.de/tags/javascript/</loc>
+    <lastmod>2020-08-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.m5e.de/</loc>
+    <lastmod>2020-08-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.m5e.de/tags/performance/</loc>
+    <lastmod>2020-08-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.m5e.de/post/</loc>
+    <lastmod>2020-08-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.m5e.de/tags/python/</loc>
+    <lastmod>2020-08-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.m5e.de/tags/</loc>
+    <lastmod>2020-08-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.m5e.de/tags/blog/</loc>
     <lastmod>2020-08-25T00:00:00+00:00</lastmod>
   </url>
@@ -18,22 +68,7 @@
   </url>
   
   <url>
-    <loc>https://blog.m5e.de/</loc>
-    <lastmod>2020-08-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.m5e.de/post/</loc>
-    <lastmod>2020-08-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.m5e.de/post/switching-to-hugo/</loc>
-    <lastmod>2020-08-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.m5e.de/tags/</loc>
     <lastmod>2020-08-25T00:00:00+00:00</lastmod>
   </url>
   
@@ -49,11 +84,6 @@
   
   <url>
     <loc>https://blog.m5e.de/tags/linux/</loc>
-    <lastmod>2020-05-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.m5e.de/tags/python/</loc>
     <lastmod>2020-05-22T00:00:00+00:00</lastmod>
   </url>
   
