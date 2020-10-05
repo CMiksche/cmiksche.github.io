@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>android on M5E&#39;s Blog</title>
+    <link>https://blog.m5e.de/tags/android/</link>
+    <description>Recent content in android on M5E&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 05 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fighting the Tinder&#43;&#43; Malware</title>
+      <link>https://blog.m5e.de/post/fighting-tinderplusplus-malware/</link>
+      <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/post/fighting-tinderplusplus-malware/</guid>
+      <description>People who search for love are more vulnerable than happy couples. Especially people wo lost their Tinder Account because Tinder has banned them.
+There is a malware out there which targets exactly this kind of people. If you search for &amp;ldquo;unban tinder&amp;rdquo; on Google and or YouTube you find many videos and sites which recommend the &amp;ldquo;Tinder++&amp;rdquo; App.
+Tinder++ aims to bring you free Tinder Gold and unban your Account. People on sites and videos which recommend the App talk that the Tinder ban is only per Device and they found a way to get around this ban.</description>
+    </item>
+    
+  </channel>
+</rss>

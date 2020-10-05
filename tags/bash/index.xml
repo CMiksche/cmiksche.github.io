@@ -6,11 +6,7 @@
     <description>Recent content in bash on M5E&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 22 May 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://blog.m5e.de/tags/bash/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 22 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/tags/bash/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Forget Bash, take Python!</title>
       <link>https://blog.m5e.de/bash/script/python/linux/2020/05/22/forget-bash-take-python.html</link>
