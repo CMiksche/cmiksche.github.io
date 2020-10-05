@@ -13,8 +13,8 @@
       <pubDate>Fri, 22 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/bash/script/python/linux/2020/05/22/forget-bash-take-python.html</guid>
-      <description>I wrote bash scripts for several years now. You can find old bash scripts of mine on GitHub but most of them aren&amp;rsquo;t maintained anymore - and i have a reason for that.
-But before i give you my reasons for not using many bash scripts anymore, lets look at the benefits of bash:
+      <description>I wrote bash scripts for several years now. You can find old bash scripts of mine on GitHub but most of them aren&amp;rsquo;t maintained anymore - and I have a reason for that.
+But before I give you my reasons for not using many bash scripts anymore, lets look at the benefits of bash:
  It super easy and you basically already can it if you write Linux / BSD commands There are frameworks out now which give you advanced features like testing It works out of the box on nearly every Linux / BSD system  Okay - sounds good - so whats my problem?</description>
     </item>
     

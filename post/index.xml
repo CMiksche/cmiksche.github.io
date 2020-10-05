@@ -24,8 +24,8 @@ Tinder++ aims to bring you free Tinder Gold and unban your Account. People on si
       <pubDate>Sat, 29 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/benchmarking-go-crystal-python-and-js/</guid>
-      <description>Benford&amp;rsquo;s Law After watching a Netflix documentary about Benford&amp;rsquo;s Law, i got really interested in it because it can help detect fraud in e.g. balance sheets. So i searched my favorite programming languages and detected that there is no npm Package for checking Benford&amp;rsquo;s Law.
-Sooo &amp;hellip; Long story short: I created nearly identical libraries for doing a Benford&amp;rsquo;s Law check in JavaScript, Go and Crystal. My inspiration was from a Python library - so the algorithm of these libraries is nearly identical.</description>
+      <description>Benford&amp;rsquo;s Law After watching a Netflix documentary about Benford&amp;rsquo;s Law (&amp;ldquo;connected&amp;rdquo; Season 1 Episode 4 &amp;ldquo;Digits&amp;rdquo;), I got really interested in it because it can help detect fraud in e.g. balance sheets. So I searched my favorite programming languages and detected that there is no npm Package for checking Benford&amp;rsquo;s Law.
+Sooo &amp;hellip; Long story short: I created nearly identical libraries for doing a Benford&amp;rsquo;s Law check in JavaScript, Go and Crystal.</description>
     </item>
     
     <item>
@@ -34,9 +34,9 @@ Sooo &amp;hellip; Long story short: I created nearly identical libraries for doi
       <pubDate>Tue, 25 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/switching-to-hugo/</guid>
-      <description>Moving to Hugo I started this blog as my first blog using a static website generator. Back then i used what everyone else was using: Jekyll.
+      <description>Moving to Hugo I started this blog as my first blog using a static website generator. Back then I used what everyone else was using: Jekyll.
 But Jekyll has it problems. I don&amp;rsquo;t use Ruby for anything else and the management of the dependencies / ruby versions / etc of my static blog was too much for me.
-I blog way more often in german on my other WordPress sites and one of the main reasons is that it is easier and Jekyll wasn&amp;rsquo;t as easy as i expected.</description>
+I blog way more often in german on my other WordPress sites and one of the main reasons is that it is easier and Jekyll wasn&amp;rsquo;t as easy as I expected.</description>
     </item>
     
     <item>
@@ -45,8 +45,8 @@ I blog way more often in german on my other WordPress sites and one of the main 
       <pubDate>Fri, 22 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/bash/script/python/linux/2020/05/22/forget-bash-take-python.html</guid>
-      <description>I wrote bash scripts for several years now. You can find old bash scripts of mine on GitHub but most of them aren&amp;rsquo;t maintained anymore - and i have a reason for that.
-But before i give you my reasons for not using many bash scripts anymore, lets look at the benefits of bash:
+      <description>I wrote bash scripts for several years now. You can find old bash scripts of mine on GitHub but most of them aren&amp;rsquo;t maintained anymore - and I have a reason for that.
+But before I give you my reasons for not using many bash scripts anymore, lets look at the benefits of bash:
  It super easy and you basically already can it if you write Linux / BSD commands There are frameworks out now which give you advanced features like testing It works out of the box on nearly every Linux / BSD system  Okay - sounds good - so whats my problem?</description>
     </item>
     
@@ -58,7 +58,7 @@ But before i give you my reasons for not using many bash scripts anymore, lets l
       <guid>https://blog.m5e.de/gitea/update/upgrade/bash/script/2018/11/26/gitea-auto-update-script.html</guid>
       <description>I&amp;rsquo;m a gitea user for a long time now. Gitea is a nice application to build your own light and fast version of git hosting services like GitHub or GitLab.
 Gitea has one problem thought. It doesn&amp;rsquo;t update automatically. A issue for that is open nearly 2 years: https://github.com/go-gitea/gitea/issues/518#issuecomment-441742904
-If there is one thing that i really hate, it is that a security sensible web application doesn&amp;rsquo;t update automatically. Because of that i have begun to write a update script for gitea before 4 months.</description>
+If there is one thing that I really hate, it is that a security sensible web application doesn&amp;rsquo;t update automatically. Because of that I have begun to write a update script for gitea before 4 months.</description>
     </item>
     
     <item>
@@ -67,8 +67,8 @@ If there is one thing that i really hate, it is that a security sensible web app
       <pubDate>Sun, 19 Nov 2017 15:59:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/freebsd/nvidia-driver/installation/2017/11/19/freebsd-nvidia-driver-installation.html</guid>
-      <description>After installing FreeBSD to my workstation, i wanted a desktop environment. I&amp;rsquo;ve installed gnome3 after reading the official documentation https://www.freebsd.org/doc/handbook/x11-wm.html.
-But nothing has worked. So, i installed the nvidia-driver for my two GPUs. The first documentation i&amp;rsquo;ve found is from &amp;ldquo;7.3-RELEASE&amp;rdquo;: https://docs.freebsd.org/doc/7.3-RELEASE/usr/share/doc/en/articles/compiz-fusion/nvidia-setup.html. (I use 11.1-RELEASE)
+      <description>After installing FreeBSD to my workstation, I wanted a desktop environment. I&amp;rsquo;ve installed gnome3 after reading the official documentation https://www.freebsd.org/doc/handbook/x11-wm.html.
+But nothing has worked. So, I installed the nvidia-driver for my two GPUs. The first documentation I&amp;rsquo;ve found is from &amp;ldquo;7.3-RELEASE&amp;rdquo;: https://docs.freebsd.org/doc/7.3-RELEASE/usr/share/doc/en/articles/compiz-fusion/nvidia-setup.html. (I use 11.1-RELEASE)
 Don&amp;rsquo;t use that documentation to make your settings in /boot/loader.conf! There stands:
 nvidia_load=&amp;quot;YES&amp;quot; And that&amp;rsquo;s simply not right for the newest driver!
 You should enter the following line:</description>
@@ -80,7 +80,7 @@ You should enter the following line:</description>
       <pubDate>Sun, 19 Nov 2017 15:45:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/freebsd/windows10/dual-boot/2017/11/19/freebsd-windows10-dual-boot.html</guid>
-      <description>Yesterday i have installed FreeBSD alongside to a existing Windows 10 instance on my Workstation. Today, i want to show you how to do it.
+      <description>Yesterday I have installed FreeBSD alongside to a existing Windows 10 instance on my Workstation. Today, I want to show you how to do it.
 Prerequisites My setup is a SSD with Windows 10 already installed and more than 100 GB free space.
 Procedure Install FreeBSD normally (but pay attention to use the free space for freebsd during the partitioning).
 After the install, you can switch to the shell to take final settings.</description>
@@ -92,8 +92,8 @@ After the install, you can switch to the shell to take final settings.</descript
       <pubDate>Thu, 16 Nov 2017 16:03:23 +0000</pubDate>
       
       <guid>https://blog.m5e.de/apu2c4/blink/led/2017/11/16/apu2c4-blinks-5-times.html</guid>
-      <description>I bought a APU2C4 Board (from the swiss company &amp;ldquo;PC Engines GmbH&amp;rdquo;) and multiple components because i want to build a custom pfSense router.
-I&amp;rsquo;ve ordered the device several weeks ago and haven&amp;rsquo;t used it until now. That&amp;rsquo;s because i made a few mistakes (which i want to write now):
+      <description>I bought a APU2C4 Board (from the swiss company &amp;ldquo;PC Engines GmbH&amp;rdquo;) and multiple components because I want to build a custom pfSense router.
+I&amp;rsquo;ve ordered the device several weeks ago and haven&amp;rsquo;t used it until now. That&amp;rsquo;s because I made a few mistakes (which i want to write now):
 First  Mistake: I used a power supply with 12V and 2A from china. Visible by: The LED on the back of the device blinks 5 times - then no more again.</description>
     </item>
     
@@ -104,7 +104,7 @@ First  Mistake: I used a power supply with 12V and 2A from china. Visible by: Th
       
       <guid>https://blog.m5e.de/jekyll/first/post/2017/02/14/first-try-of-jekyll.html</guid>
       <description>I&amp;rsquo;ve already using different blog systems like WordPress and Ghost, but this is my try to start a blog in english about personal and development topics with Jekyll.
-Maybe is the domain not my best choice (.de is the domain for germany), but as i haven&amp;rsquo;t any project on it, i will use it.
+Maybe is the domain not my best choice (.de is the domain for germany), but as I haven&amp;rsquo;t any project on it, I will use it.
 I will be using GitHub as hosting service. That will have a few great side effects: you can download my whole blog via git clone, in the same way you could mirror my blog and if you want to notified when a new change happens, you could subscribe my Blog via the &amp;ldquo;Watch&amp;rdquo; Function of GitHub.</description>
     </item>
     

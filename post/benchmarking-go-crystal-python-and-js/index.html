@@ -6,8 +6,8 @@
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Benford&amp;rsquo;s Law After watching a Netflix documentary about Benford&amp;rsquo;s Law, i got really interested in it because it can help detect fraud in e.g. balance sheets. So i searched my favorite programming languages and detected that there is no npm Package for checking Benford&amp;rsquo;s Law.
-Sooo &amp;hellip; Long story short: I created nearly identical libraries for doing a Benford&amp;rsquo;s Law check in JavaScript, Go and Crystal. My inspiration was from a Python library - so the algorithm of these libraries is nearly identical." />
+<meta name="description" content="Benford&amp;rsquo;s Law After watching a Netflix documentary about Benford&amp;rsquo;s Law (&amp;ldquo;connected&amp;rdquo; Season 1 Episode 4 &amp;ldquo;Digits&amp;rdquo;), I got really interested in it because it can help detect fraud in e.g. balance sheets. So I searched my favorite programming languages and detected that there is no npm Package for checking Benford&amp;rsquo;s Law.
+Sooo &amp;hellip; Long story short: I created nearly identical libraries for doing a Benford&amp;rsquo;s Law check in JavaScript, Go and Crystal." />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <link rel="canonical" href="https://blog.m5e.de/post/benchmarking-go-crystal-python-and-js/" />
@@ -40,8 +40,8 @@ Sooo &amp;hellip; Long story short: I created nearly identical libraries for doi
 <meta property="og:locale" content="en" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Benchmarking Go, Crystal, Python and JavaScript">
-<meta property="og:description" content="Benford&amp;rsquo;s Law After watching a Netflix documentary about Benford&amp;rsquo;s Law, i got really interested in it because it can help detect fraud in e.g. balance sheets. So i searched my favorite programming languages and detected that there is no npm Package for checking Benford&amp;rsquo;s Law.
-Sooo &amp;hellip; Long story short: I created nearly identical libraries for doing a Benford&amp;rsquo;s Law check in JavaScript, Go and Crystal. My inspiration was from a Python library - so the algorithm of these libraries is nearly identical." />
+<meta property="og:description" content="Benford&amp;rsquo;s Law After watching a Netflix documentary about Benford&amp;rsquo;s Law (&amp;ldquo;connected&amp;rdquo; Season 1 Episode 4 &amp;ldquo;Digits&amp;rdquo;), I got really interested in it because it can help detect fraud in e.g. balance sheets. So I searched my favorite programming languages and detected that there is no npm Package for checking Benford&amp;rsquo;s Law.
+Sooo &amp;hellip; Long story short: I created nearly identical libraries for doing a Benford&amp;rsquo;s Law check in JavaScript, Go and Crystal." />
 <meta property="og:url" content="https://blog.m5e.de/post/benchmarking-go-crystal-python-and-js/" />
 <meta property="og:site_name" content="M5E&#39;s Blog" />
 
@@ -167,9 +167,9 @@ Sooo &amp;hellip; Long story short: I created nearly identical libraries for doi
 
   <div class="post-content"><div>
         <h2 id="benfords-law">Benford&rsquo;s Law<a href="#benfords-law" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
-<p>After watching a Netflix documentary about Benford&rsquo;s Law, i got really interested in it because it can help detect fraud in e.g. balance sheets. So i searched my favorite programming languages and detected that there is no npm Package for checking Benford&rsquo;s Law.</p>
-<p>Sooo &hellip; Long story short: I created nearly identical libraries for doing a Benford&rsquo;s Law check in JavaScript, Go and Crystal. My inspiration was from a Python library - so the algorithm of these libraries is nearly identical. There are some catches like i used many different math libraries for calculating chi-square and some of these libraries offer addition information, others not &hellip;</p>
-<p>But i think this gives us a good example of a algorithm which is implemented in different programming languages and can be benchmarked. That&rsquo;s what i wanna do in this post: Comparing the Benford&rsquo;s Law check in different Languages.</p>
+<p>After watching a Netflix documentary about Benford&rsquo;s Law (&ldquo;connected&rdquo; Season 1 Episode 4 &ldquo;Digits&rdquo;), I got really interested in it because it can help detect fraud in e.g. balance sheets. So I searched my favorite programming languages and detected that there is no npm Package for checking Benford&rsquo;s Law.</p>
+<p>Sooo &hellip; Long story short: I created nearly identical libraries for doing a Benford&rsquo;s Law check in JavaScript, Go and Crystal. My inspiration was from a Python library - so the algorithm of these libraries is nearly identical. There are some catches like I used many different math libraries for calculating chi-square and some of these libraries offer addition information, others not &hellip;</p>
+<p>But I think this gives us a good example of a algorithm which is implemented in different programming languages and can be benchmarked. That&rsquo;s what I wanna do in this post: Comparing the Benford&rsquo;s Law check in different Languages.</p>
 <h2 id="testing-the-performance">Testing the Performance<a href="#testing-the-performance" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <p>Repo with Source Code: <a href="https://github.com/CMiksche/benford-benchmark">https://github.com/CMiksche/benford-benchmark</a></p>
 <table>
@@ -203,7 +203,7 @@ Sooo &amp;hellip; Long story short: I created nearly identical libraries for doi
 </tr>
 </tbody>
 </table>
-<p>I didn&rsquo;t expected that big difference. Go is clearly the winner here and that with big distance to the other implementations. One reason why Python took so long may be that the used library shows additional information but i don&rsquo;t think Python could compete with the other implementations if the library wouldn&rsquo;t show more.</p>
+<p>I didn&rsquo;t expected that big difference. Go is clearly the winner here and that with big distance to the other implementations. One reason why Python took so long may be that the used library shows additional information but I don&rsquo;t think Python could compete with the other implementations if the library wouldn&rsquo;t show more.</p>
 <p>It is also noteworthy that Go is very very fast compiling. Crystal isn&rsquo;t even in the area of the Go compile time.</p>
 
       </div></div>

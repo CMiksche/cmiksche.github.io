@@ -13,8 +13,8 @@
       <pubDate>Sat, 29 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/benchmarking-go-crystal-python-and-js/</guid>
-      <description>Benford&amp;rsquo;s Law After watching a Netflix documentary about Benford&amp;rsquo;s Law, i got really interested in it because it can help detect fraud in e.g. balance sheets. So i searched my favorite programming languages and detected that there is no npm Package for checking Benford&amp;rsquo;s Law.
-Sooo &amp;hellip; Long story short: I created nearly identical libraries for doing a Benford&amp;rsquo;s Law check in JavaScript, Go and Crystal. My inspiration was from a Python library - so the algorithm of these libraries is nearly identical.</description>
+      <description>Benford&amp;rsquo;s Law After watching a Netflix documentary about Benford&amp;rsquo;s Law (&amp;ldquo;connected&amp;rdquo; Season 1 Episode 4 &amp;ldquo;Digits&amp;rdquo;), I got really interested in it because it can help detect fraud in e.g. balance sheets. So I searched my favorite programming languages and detected that there is no npm Package for checking Benford&amp;rsquo;s Law.
+Sooo &amp;hellip; Long story short: I created nearly identical libraries for doing a Benford&amp;rsquo;s Law check in JavaScript, Go and Crystal.</description>
     </item>
     
     <item>
@@ -23,8 +23,8 @@ Sooo &amp;hellip; Long story short: I created nearly identical libraries for doi
       <pubDate>Fri, 22 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/bash/script/python/linux/2020/05/22/forget-bash-take-python.html</guid>
-      <description>I wrote bash scripts for several years now. You can find old bash scripts of mine on GitHub but most of them aren&amp;rsquo;t maintained anymore - and i have a reason for that.
-But before i give you my reasons for not using many bash scripts anymore, lets look at the benefits of bash:
+      <description>I wrote bash scripts for several years now. You can find old bash scripts of mine on GitHub but most of them aren&amp;rsquo;t maintained anymore - and I have a reason for that.
+But before I give you my reasons for not using many bash scripts anymore, lets look at the benefits of bash:
  It super easy and you basically already can it if you write Linux / BSD commands There are frameworks out now which give you advanced features like testing It works out of the box on nearly every Linux / BSD system  Okay - sounds good - so whats my problem?</description>
     </item>
     

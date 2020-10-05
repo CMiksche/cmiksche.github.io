@@ -13,7 +13,7 @@
       <pubDate>Sun, 19 Nov 2017 15:45:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/freebsd/windows10/dual-boot/2017/11/19/freebsd-windows10-dual-boot.html</guid>
-      <description>Yesterday i have installed FreeBSD alongside to a existing Windows 10 instance on my Workstation. Today, i want to show you how to do it.
+      <description>Yesterday I have installed FreeBSD alongside to a existing Windows 10 instance on my Workstation. Today, I want to show you how to do it.
 Prerequisites My setup is a SSD with Windows 10 already installed and more than 100 GB free space.
 Procedure Install FreeBSD normally (but pay attention to use the free space for freebsd during the partitioning).
 After the install, you can switch to the shell to take final settings.</description>

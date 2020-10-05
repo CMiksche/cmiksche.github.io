@@ -13,8 +13,8 @@
       <pubDate>Sat, 29 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/benchmarking-go-crystal-python-and-js/</guid>
-      <description>Benford&amp;rsquo;s Law After watching a Netflix documentary about Benford&amp;rsquo;s Law, i got really interested in it because it can help detect fraud in e.g. balance sheets. So i searched my favorite programming languages and detected that there is no npm Package for checking Benford&amp;rsquo;s Law.
-Sooo &amp;hellip; Long story short: I created nearly identical libraries for doing a Benford&amp;rsquo;s Law check in JavaScript, Go and Crystal. My inspiration was from a Python library - so the algorithm of these libraries is nearly identical.</description>
+      <description>Benford&amp;rsquo;s Law After watching a Netflix documentary about Benford&amp;rsquo;s Law (&amp;ldquo;connected&amp;rdquo; Season 1 Episode 4 &amp;ldquo;Digits&amp;rdquo;), I got really interested in it because it can help detect fraud in e.g. balance sheets. So I searched my favorite programming languages and detected that there is no npm Package for checking Benford&amp;rsquo;s Law.
+Sooo &amp;hellip; Long story short: I created nearly identical libraries for doing a Benford&amp;rsquo;s Law check in JavaScript, Go and Crystal.</description>
     </item>
     
   </channel>
