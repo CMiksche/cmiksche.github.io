@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>possibilities on M5E&#39;s Blog</title>
+    <link>https://blog.m5e.de/tags/possibilities/</link>
+    <description>Recent content in possibilities on M5E&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 24 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/tags/possibilities/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Comparison of Email Hosting Possibilities</title>
+      <link>https://blog.m5e.de/post/comparison-of-email-hosting-possibilities/</link>
+      <pubDate>Tue, 24 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/post/comparison-of-email-hosting-possibilities/</guid>
+      <description>I&amp;rsquo;ve hosted my own Mailserver in various configurations since more than 6 years now. Since then I&amp;rsquo;ve taken multiple breaks from hosting it myself and explored other solutions for hosting emails with your own domain names.
+Because my own Mailserver has lately problems (downtimes) I wanna explore other possibilities of hosting my email addresses.
+So let&amp;rsquo;s take a look&amp;hellip;
+Self-hosting (VPS, Tools like Mailcow, Mailu, etc) You simply setup a Mailserver with software like Mailcow, Mailu or Mail-in-a-Box on a virtual Server and manage it yourself.</description>
+    </item>
+    
+  </channel>
+</rss>
