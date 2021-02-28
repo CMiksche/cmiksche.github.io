@@ -15,7 +15,36 @@
       <guid>https://blog.m5e.de/bash/script/python/linux/2020/05/22/forget-bash-take-python.html</guid>
       <description>I wrote bash scripts for several years now. You can find old bash scripts of mine on GitHub but most of them aren&amp;rsquo;t maintained anymore - and I have a reason for that.
 But before I give you my reasons for not using many bash scripts anymore, lets look at the benefits of bash:
- It super easy and you basically already can it if you write Linux / BSD commands There are frameworks out now which give you advanced features like testing It works out of the box on nearly every Linux / BSD system  Okay - sounds good - so whats my problem?</description>
+ It super easy and you basically already can it if you write Linux / BSD commands There are frameworks out now which give you advanced features like testing It works out of the box on nearly every Linux / BSD system  Okay - sounds good - so what&amp;rsquo;s my problem?</description>
+      <content>&lt;p&gt;I wrote bash scripts for several years now. You can find old bash scripts of mine on GitHub but most of them aren&amp;rsquo;t maintained anymore - and I have a reason for that.&lt;/p&gt;
+&lt;p&gt;But before I give you my reasons for not using many bash scripts anymore, lets look at the benefits of bash:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It super easy and you basically already can it if you write Linux / BSD commands&lt;/li&gt;
+&lt;li&gt;There are frameworks out now which give you advanced features like testing&lt;/li&gt;
+&lt;li&gt;It works out of the box on nearly every Linux / BSD system&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Okay - sounds good - so what&amp;rsquo;s my problem?&lt;/p&gt;
+&lt;p&gt;Bash is limited. E.g. it doesn&amp;rsquo;t work out of the box in Windows and I switched my default shell in Linux to fish. But let&amp;rsquo;s break down a few points why Bash isn&amp;rsquo;t optimal for me:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You tend to write platform specific code - e.g. I switched from Debian to Arch Linux and had to replace the &lt;code&gt;apt-get&lt;/code&gt; commands with &lt;code&gt;pacman&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;I use fish as default shell. You can use Bash-Scripts with fish, but it&amp;rsquo;s more complicated &amp;hellip;&lt;/li&gt;
+&lt;li&gt;Linux isn&amp;rsquo;t my only operating system - I run Windows and macOS machines as well.&lt;/li&gt;
+&lt;li&gt;I love features of higher level programming languages like Python.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And how does Python solve this problem?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It runs out of the box on many Linux systems&lt;/li&gt;
+&lt;li&gt;It&amp;rsquo;s cross-platform - the same code can run under Linux, Windows, macOS, &amp;hellip; but you also can check the current system and write platform specific code for that&lt;/li&gt;
+&lt;li&gt;It is also super easy and makes fun&lt;/li&gt;
+&lt;li&gt;Testing and more advanced features are build in - no need to install packages&lt;/li&gt;
+&lt;li&gt;Like bash, it is already used for automating tasks in many systems (so you can find tons of help online)&lt;/li&gt;
+&lt;li&gt;You can simply access the operating system&lt;/li&gt;
+&lt;li&gt;Distribution is also very simple - just create a package and pip can install it from the PyPI, private registry or a Git-Repo&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Languages like Go would also be interesting for automating tasks in your Linux system but Go has things like pointers and types. Python is more similar to Bash - very simple without advanced topics like types or pointers.&lt;/p&gt;
+&lt;p&gt;I created many python scripts for things which solved bash scripts before. And my python scripts all have unit tests and detect the current running operating system. Whereas my bash scripts only worked on Debian systems do my python scripts work on all my used operating systems. So it has saved me a lot of work.&lt;/p&gt;
+&lt;p&gt;But I also continue to use little bash scripts for simple tasks like &amp;ldquo;open this on startup&amp;rdquo; - I think it&amp;rsquo;s important to be aware, that higher level languages like python have a big benefit if you want to switch your system but use the same scripts.&lt;/p&gt;
+</content>
     </item>
     
   </channel>

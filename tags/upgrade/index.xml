@@ -13,9 +13,49 @@
       <pubDate>Mon, 26 Nov 2018 21:24:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/gitea/update/upgrade/bash/script/2018/11/26/gitea-auto-update-script.html</guid>
-      <description>I&amp;rsquo;m a gitea user for a long time now. Gitea is a nice application to build your own light and fast version of git hosting services like GitHub or GitLab.
+      <description>I&amp;rsquo;m a Gitea user for a long time now. Gitea is a nice application to build your own light and fast version of git hosting services like GitHub or GitLab.
 Gitea has one problem thought. It doesn&amp;rsquo;t update automatically. A issue for that is open nearly 2 years: https://github.com/go-gitea/gitea/issues/518#issuecomment-441742904
-If there is one thing that I really hate, it is that a security sensible web application doesn&amp;rsquo;t update automatically. Because of that I have begun to write a update script for gitea before 4 months.</description>
+If there is one thing that I really hate, it is that a security sensible web application doesn&amp;rsquo;t update automatically. Because of that I have begun to write a update script for Gitea before 4 months.</description>
+      <content>&lt;p&gt;I&amp;rsquo;m a Gitea user for a long time now. Gitea is a nice application to build your own light and fast version of git hosting services like GitHub or GitLab.&lt;/p&gt;
+&lt;p&gt;Gitea has one problem thought. It doesn&amp;rsquo;t update automatically. A issue for that is open nearly 2 years: &lt;a href=&#34;https://github.com/go-gitea/gitea/issues/518#issuecomment-441742904&#34;&gt;https://github.com/go-gitea/gitea/issues/518#issuecomment-441742904&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If there is one thing that I really hate, it is that a security sensible web application doesn&amp;rsquo;t update automatically. Because of that I have begun to write a update script for Gitea before 4 months.&lt;/p&gt;
+&lt;p&gt;That script has updated my Gitea instance multiple times now and as I can see, that many users have the same problem (a german blog post from me is my most visited article from outside germany), I want to show you my solution.&lt;/p&gt;
+&lt;h3 id=&#34;warning&#34;&gt;Warning&lt;/h3&gt;
+&lt;p&gt;As I mentioned - I am no fan of manual upgrades - because of that I write many auto update scripts for my own systems. This scripts often haven&amp;rsquo;t been tested on other systems and may contain ugly code. 
+I am open for the creation of issues or pull requests which optimise my code. You should definitely check the code out and make sure to review it before using it.&lt;/p&gt;
+&lt;p&gt;Some creators - e.g. the person behind Kanboard - have a strong option against auto updates. There are good reasons for that too - you may not want to crash your application because of a faulty upgrade. I recommend auto updates only if you create auto backups, too.&lt;/p&gt;
+&lt;h3 id=&#34;the-script&#34;&gt;The Script&lt;/h3&gt;
+&lt;p&gt;I have published the actual version to GitHub: &lt;a href=&#34;https://github.com/CMiksche/gitea-auto-update&#34;&gt;https://github.com/CMiksche/gitea-auto-update&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The script was made for a Debian and Arch Linux Systems - I haven&amp;rsquo;t tested it on other systems, but you will definitely encounter errors if you want to use it on Windows, MacOS or a Linux System without systemd (I make bash calls to restart the Gitea service).
+You may need to modify the script to work on your system.&lt;/p&gt;
+&lt;p&gt;If the Gitea upgrade changes the template files the automatic update may will destroy your custom design because it is a really simple script and doesn&amp;rsquo;t check that.&lt;/p&gt;
+&lt;h3 id=&#34;how-to-use-it&#34;&gt;How to use it&lt;/h3&gt;
+&lt;p&gt;The usage of my script is easy (please read the paragraphs over this first - it won&amp;rsquo;t work without modifying it if you have no gitea service or no systemd):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Install my script on the system:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pip install gitea-auto-update&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create a settings.ini file:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;[Gitea]
+site=https://your-gitea-instance.com/api/v1/version
+apiUrl=https://api.github.com/repos/go-gitea/gitea/releases/latest
+system=linux-amd64
+file=/usr/local/bin/gitea
+tmpDir=/tmp/
+buildFromSource=
+sourceDir=
+logFile=update.log
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;Change the variables in the settings.ini file&lt;/li&gt;
+&lt;li&gt;Enter the command &lt;code&gt;gite-auto-update --settings=/path/to/settings.ini&lt;/code&gt; in your command line to test the first upgrade&lt;/li&gt;
+&lt;li&gt;If you want to schedule your updates, edit your &lt;code&gt;/etc/crontab&lt;/code&gt; file and add a call to the script&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;That&amp;rsquo;s it. Please write a issue if my script doesn&amp;rsquo;t works. I am caring if people want to use my script ;-)&lt;/p&gt;
+</content>
     </item>
     
   </channel>

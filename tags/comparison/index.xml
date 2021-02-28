@@ -17,6 +17,56 @@
 Because my own Mailserver has lately problems (downtimes) I wanna explore other possibilities of hosting my email addresses.
 So let&amp;rsquo;s take a look&amp;hellip;
 Self-hosting (VPS, Tools like Mailcow, Mailu, etc) You simply setup a Mailserver with software like Mailcow, Mailu or Mail-in-a-Box on a virtual Server and manage it yourself.</description>
+      <content>&lt;p&gt;I&amp;rsquo;ve hosted my own Mailserver in various configurations since more than 6 years now. Since then I&amp;rsquo;ve taken multiple breaks from hosting it myself and explored other solutions for hosting emails with your own domain names.&lt;/p&gt;
+&lt;p&gt;Because my own Mailserver has lately problems (downtimes) I wanna explore other possibilities of hosting my email addresses.&lt;/p&gt;
+&lt;p&gt;So let&amp;rsquo;s take a look&amp;hellip;&lt;/p&gt;
+&lt;h2 id=&#34;self-hosting-vps-tools-like-mailcow-mailu-etc&#34;&gt;Self-hosting (VPS, Tools like Mailcow, Mailu, etc)&lt;/h2&gt;
+&lt;p&gt;You simply setup a Mailserver with software like Mailcow, Mailu or Mail-in-a-Box on a virtual Server and manage it yourself.&lt;/p&gt;
+&lt;p&gt;Pros:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You have the control&lt;/li&gt;
+&lt;li&gt;Unlimited domains&lt;/li&gt;
+&lt;li&gt;Unlimited mailboxes&lt;/li&gt;
+&lt;li&gt;Cheaper than most alternatives if you don&amp;rsquo;t look at the time you need for setup and maintenance&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Cons:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Most cheap VPS don&amp;rsquo;t offer a lot of space and if you subtract the OS and installed software, then your space for mail is very limited&lt;/li&gt;
+&lt;li&gt;You need to invest a lot of time&lt;/li&gt;
+&lt;li&gt;You need a good spec VPS because Mailserver software and SPAM protection are performance intensive&lt;/li&gt;
+&lt;li&gt;Small VPS are often targeted by criminals and protection isn&amp;rsquo;t very easy&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This is what I&amp;rsquo;ve done the most of the time.&lt;/p&gt;
+&lt;p&gt;In the past this was very straightforward if you know how to setup and secure a mailserver but I&amp;rsquo;ve lately problems with things like DDoS and Brute Force Attacks.&lt;/p&gt;
+&lt;p&gt;A &lt;a href=&#34;https://news.ycombinator.com/item?id=24154524&#34;&gt;question&lt;/a&gt; from me on Hacker News was even so heavily voted that it was for a short time on the front page of HN - so this seems to be a problem for other people too.&lt;/p&gt;
+&lt;h2 id=&#34;pawnmail&#34;&gt;Pawnmail&lt;/h2&gt;
+&lt;p&gt;This service doesn&amp;rsquo;t exist anymore but I wanna mention it because it was one of the few free providers where you can get mailboxes for your own domains.&lt;/p&gt;
+&lt;p&gt;AFAIK that service doesn&amp;rsquo;t exist anymore because it was targeted by spammers and had problems with attacks.&lt;/p&gt;
+&lt;h2 id=&#34;zoho-mail&#34;&gt;Zoho Mail&lt;/h2&gt;
+&lt;p&gt;The free plan supports one domain with up to five users and has a 5GB/User and 25MB attachment limit.&lt;/p&gt;
+&lt;p&gt;Unusable for me because IMAP/ POP/ Active Sync are not included in the free plan.&lt;/p&gt;
+&lt;p&gt;Indian company, the CEO seems to support Hindu nationalism.&lt;/p&gt;
+&lt;h2 id=&#34;yandex-mail&#34;&gt;Yandex Mail&lt;/h2&gt;
+&lt;p&gt;The biggest player in my comparison. Offers 10 GB of storage, up to 1000 users and support for custom domains for free.&lt;/p&gt;
+&lt;p&gt;It seems like the only problem is that you have to trust a Russian company.&lt;/p&gt;
+&lt;h2 id=&#34;mxroute&#34;&gt;MXroute&lt;/h2&gt;
+&lt;p&gt;Has various plans for custom Domain Email Hosting. All plans include support for unlimited Domains and unlimited Email Accounts.&lt;/p&gt;
+&lt;p&gt;Especially the Black Friday deals seem to be pretty good every year.&lt;/p&gt;
+&lt;p&gt;US company, interestingly the Founder has worked for Christian Institutions - so both - the CEOs of Zoho and MXroute seem to be religious persons.&lt;/p&gt;
+&lt;h2 id=&#34;mailcheapco&#34;&gt;Mailcheap.co&lt;/h2&gt;
+&lt;p&gt;Cheap Hosting Provider for custom Domain Email, comparable to MXroute but it has more bad reviews than MXroute.&lt;/p&gt;
+&lt;h2 id=&#34;migadu&#34;&gt;Migadu&lt;/h2&gt;
+&lt;p&gt;On the HN Post to this Article &lt;a href=&#34;https://news.ycombinator.com/item?id=25201493&#34;&gt;someone mentioned&lt;/a&gt; Migadu.&lt;/p&gt;
+&lt;p&gt;Migadu is the only provider on this comparison from Switzerland and the pricing is more expensive compared to the US providers&amp;hellip;&lt;/p&gt;
+&lt;p&gt;So you pay more but your data is probably also more secure.&lt;/p&gt;
+&lt;h2 id=&#34;postaleio&#34;&gt;postale.io&lt;/h2&gt;
+&lt;p&gt;French provider, offers a free plan which includes one domain, 2 mailboxes, 3 aliases and 1 GB per mailbox.&lt;/p&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Unfortunately it seems like the cheapest hosting possibilities are either trusting a Russian company which government maybe spies on you, trusting a US company which is also obliged to let the government spy on you or to go to an Indian company which is run by a Hindu nationalism supporter&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Hosting your own server isn&amp;rsquo;t the cheapest option but you are more in control.&lt;/p&gt;
+&lt;p&gt;I know there are privacy focused providers like ProtonMail or Fastmail out there but the cost of those services are way higher than the providers I mentioned at the time of this writing. (Especially if you want more than one mailbox. Most popular services are on a pay per-user basis, but MXroute, Mailcheap, Yandex and your own VPS are more on a pay per-storage / resources plan)&lt;/p&gt;
+&lt;p&gt;So I think I will split my domains to various services - in that way no government has all of my information and I am more immune to downtimes.&lt;/p&gt;
+</content>
     </item>
     
   </channel>

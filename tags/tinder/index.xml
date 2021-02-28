@@ -16,6 +16,43 @@
       <description>Yesterday Bumble had it&amp;rsquo;s initial public offering (IPO). The starting price was 43 USD, a valuation of more than 8 billion and it shot up to 76 USD, a valuation of over 13 billion.
 Despite this high valuation, the company lastly made a net loss and only a few hundred million ($376.6 million) in revenue.
 The Risk The current market for Tech, EV and Cannabis stocks is in a hype bubble.</description>
+      <content>&lt;p&gt;Yesterday Bumble had it&amp;rsquo;s initial public offering (IPO). The starting price was 43 USD, a valuation of more than 8 billion and it shot up to 76 USD, a valuation of over 13 billion.&lt;/p&gt;
+&lt;p&gt;Despite this high valuation, the company lastly made a net loss and only a few hundred million ($376.6 million) in revenue.&lt;/p&gt;
+&lt;h2 id=&#34;the-risk&#34;&gt;The Risk&lt;/h2&gt;
+&lt;p&gt;The current market for Tech, EV and Cannabis stocks is in a hype bubble. I made profit with some overvalued stocks and currently sell these and rebalance my portfolio with more value stocks.&lt;/p&gt;
+&lt;p&gt;But this is not the only risk. I&amp;rsquo;ve used Dating Apps since multiple months (I also made a &lt;a href=&#34;https://blog.m5e.de/post/fighting-tinderplusplus-malware/&#34;&gt;post&lt;/a&gt; about a problem with Tinder) and I think the market will evolve:&lt;/p&gt;
+&lt;h2 id=&#34;enter-the-world-of-facebook&#34;&gt;Enter the World of Facebook&lt;/h2&gt;
+&lt;p&gt;Facebook launched its own Dating service: Facebook Dating&lt;/p&gt;
+&lt;p&gt;I think this will dominate the market in a few years - why?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Nearly all popular Dating Apps use Facebook Data / Login for registration and validation of the user
+&lt;ul&gt;
+&lt;li&gt;Facebook already has data like Profile Photos, Workplace, Interests,&amp;hellip; which are important in the wold of online dating&lt;/li&gt;
+&lt;li&gt;Facebook already has methods to validate profiles&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Facebook already has a bigger user base than all of the dating competition
+&lt;ul&gt;
+&lt;li&gt;To me it seems like the user base of Facebook Dating is already bigger than the user base of Bumble in my local area&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;I&amp;rsquo;ve encountered no limits in swipes or other things
+&lt;ul&gt;
+&lt;li&gt;All features which are premium on the competition Apps are free on Facebook&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;I&amp;rsquo;ve encountered no Ads in Facebook Dating&lt;/li&gt;
+&lt;li&gt;I guess this depends on the individual, but I&amp;rsquo;ve got more matches in a few days on Facebook Dating than in multiple months on Bumble&lt;/li&gt;
+&lt;li&gt;Facebook promotes social connections - you see who is Friends with other Facebook Friends of you on Facebook
+&lt;ul&gt;
+&lt;li&gt;This adds validation - you trust the other side more that it is not a fake profile&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Why should users register with Facebook on Third-Party-Apps if Facebook already provides a superior Dating experience?&lt;/p&gt;
+&lt;p&gt;Currently many people don&amp;rsquo;t know about Facebook Dating, but Facebook is a Advertising Platform with a giant user base - so it should be very easy to gain more and more people until the competition dies out.&lt;/p&gt;
+&lt;p&gt;It looks like the Investors in Bumble aren&amp;rsquo;t aware that this big competitor is out there and the IPO money was needed for Bumble to have a chance fighting them.&lt;/p&gt;
+</content>
     </item>
     
     <item>
@@ -24,9 +61,48 @@ The Risk The current market for Tech, EV and Cannabis stocks is in a hype bubble
       <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/fighting-tinderplusplus-malware/</guid>
-      <description>People who search for love are more vulnerable than happy couples. Especially people wo lost their Tinder Account because Tinder has banned them.
+      <description>People who search for love are more vulnerable than happy couples. Especially people who lost their Tinder Account because Tinder has banned them.
 There is a malware out there which targets exactly this kind of people. If you search for &amp;ldquo;unban tinder&amp;rdquo; on Google and or YouTube you find many videos and sites which recommend the &amp;ldquo;Tinder++&amp;rdquo; App.
 Tinder++ aims to bring you free Tinder Gold and unban your Account. People on sites and videos which recommend the App talk that the Tinder ban is only per Device and they found a way to get around this ban.</description>
+      <content>&lt;p&gt;People who search for love are more vulnerable than happy couples. Especially people who lost their Tinder Account because Tinder has banned them.&lt;/p&gt;
+&lt;p&gt;There is a malware out there which targets exactly this kind of people. If you search for &amp;ldquo;unban tinder&amp;rdquo; on Google and or YouTube you find many videos and sites which recommend the &amp;ldquo;Tinder++&amp;rdquo; App.&lt;/p&gt;
+&lt;p&gt;Tinder++ aims to bring you free Tinder Gold and unban your Account. People on sites and videos which recommend the App talk that the Tinder ban is only per Device and they found a way to get around this ban.&lt;/p&gt;
+&lt;p&gt;But Tinder++ is no App you can get from the Google Play Store or even F-Droid. No! You have to download the App from suspicious sites &amp;hellip;&lt;/p&gt;
+&lt;p&gt;So I found this Scheme and I wanted to Stop it.&lt;/p&gt;
+&lt;p&gt;I am the kind of people which look at the Header of Spam-Mails and report the sender or linked URLs to the Domain registrar, Hoster, DNS-Provider and Blocklists. Because we live in a civilized world and well known Provider don&amp;rsquo;t wanna host Spammers or other Assholes.&lt;/p&gt;
+&lt;h2 id=&#34;but-how-did-i-fight-them&#34;&gt;But how did I fight them?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;I downloaded the file and uploaded it to &lt;a href=&#34;https://www.virustotal.com/gui/file/808a2ac6b6fbf6d0d8cb8b0ab1996faf538b380485955e09ca78a74516790f17/summary&#34;&gt;VirusTotal&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;This showed that the file is clearly harmful&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;I reported the YouTube Videos and made a comment with the VirusTotal Link and a warning about the App&lt;/li&gt;
+&lt;li&gt;I checked the Whois Data which gave me the information that the site uses Namecheap as Domain Provider and Cloudflare as DNS-Provider&lt;/li&gt;
+&lt;li&gt;I reported the Domain to Namecheap and Cloudflare
+&lt;ul&gt;
+&lt;li&gt;Namecheap replied after checking the site that they can do nothing and I need to contact Cloudflare (which I already did)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;I created a Hosts-File with the domains and added my Blocklist to my pfBlockerNG instance (so you can&amp;rsquo;t access the malware in my network anymore)&lt;/li&gt;
+&lt;li&gt;I contacted Tinder and informed them too&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;notes&#34;&gt;Notes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The sites seems to only show you the APK-File if you visit it via a Android Smartphone, so they seem to check the User-Agent, Resolution or something else&lt;/li&gt;
+&lt;li&gt;I think you would be surprised how many provider really look into SPAM / Malware sites and try to do something. I have written emails about cases like this or simple SPAM cases over Days and the provider I contacted often contacted additional involved provider.
+&lt;ul&gt;
+&lt;li&gt;If you get a SPAM or phishing mail you should report them because the spammers often use a legal provider in their chain and that provider often is a victim himself (because he is used for illegal activity which puts him in a bad light)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;The site seems to do various other scam surveys too: &lt;a href=&#34;https://silzee.com/jailbreak/apphacks/&#34;&gt;https://silzee.com/jailbreak/apphacks/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;current-status&#34;&gt;Current status&lt;/h2&gt;
+&lt;p&gt;At the time of this writing the site which distributes the malware is still out there. I haven&amp;rsquo;t received any notification about the current status from either YouTube or Cloudflare. (And I honestly don&amp;rsquo;t think I get a reply from YouTube - I mean even Woz needed to sue YouTube because they didn&amp;rsquo;t reply to him &amp;hellip;)&lt;/p&gt;
+&lt;p&gt;But please don&amp;rsquo;t get this wrong! Many provider do something if they can prove that there is something illegal going on.&lt;/p&gt;
+&lt;h3 id=&#34;update&#34;&gt;Update&lt;/h3&gt;
+&lt;p&gt;The Head of Trust &amp;amp; Safety at Cloudflare (Justin) reacted to my Tweet but hasn&amp;rsquo;t found &amp;ldquo;definitive proof it&amp;rsquo;s malicious&amp;rdquo;. I hope he looks a little bit closer because I see a site full of scam.&lt;/p&gt;
+</content>
     </item>
     
   </channel>

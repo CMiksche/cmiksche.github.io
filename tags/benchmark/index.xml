@@ -15,6 +15,46 @@
       <guid>https://blog.m5e.de/post/benchmarking-go-crystal-python-and-js/</guid>
       <description>Benford&amp;rsquo;s Law After watching a Netflix documentary about Benford&amp;rsquo;s Law (&amp;ldquo;connected&amp;rdquo; Season 1 Episode 4 &amp;ldquo;Digits&amp;rdquo;), I got really interested in it because it can help detect fraud in e.g. balance sheets. So I searched my favorite programming languages and detected that there is no npm Package for checking Benford&amp;rsquo;s Law.
 Sooo &amp;hellip; Long story short: I created nearly identical libraries for doing a Benford&amp;rsquo;s Law check in JavaScript, Go and Crystal.</description>
+      <content>&lt;h2 id=&#34;benfords-law&#34;&gt;Benford&amp;rsquo;s Law&lt;/h2&gt;
+&lt;p&gt;After watching a Netflix documentary about Benford&amp;rsquo;s Law (&amp;ldquo;connected&amp;rdquo; Season 1 Episode 4 &amp;ldquo;Digits&amp;rdquo;), I got really interested in it because it can help detect fraud in e.g. balance sheets. So I searched my favorite programming languages and detected that there is no npm Package for checking Benford&amp;rsquo;s Law.&lt;/p&gt;
+&lt;p&gt;Sooo &amp;hellip; Long story short: I created nearly identical libraries for doing a Benford&amp;rsquo;s Law check in JavaScript, Go and Crystal. My inspiration was from a Python library - so the algorithm of these libraries is nearly identical. There are some catches like I used many different math libraries for calculating chi-square and some of these libraries offer addition information, others not &amp;hellip;&lt;/p&gt;
+&lt;p&gt;But I think this gives us a good example of a algorithm which is implemented in different programming languages and can be benchmarked. That&amp;rsquo;s what I wanna do in this post: Comparing the Benford&amp;rsquo;s Law check in different Languages.&lt;/p&gt;
+&lt;h2 id=&#34;testing-the-performance&#34;&gt;Testing the Performance&lt;/h2&gt;
+&lt;p&gt;Repo with Source Code: &lt;a href=&#34;https://github.com/CMiksche/benford-benchmark&#34;&gt;https://github.com/CMiksche/benford-benchmark&lt;/a&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Language &amp;amp; Version&lt;/th&gt;
+&lt;th&gt;GitHub Repo of Library&lt;/th&gt;
+&lt;th&gt;Performance&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Python 3.8.5&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/target/huntlib&#34;&gt;huntlib&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;1,86 secs&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Crystal 0.35.1&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/CMiksche/benfordslaw.cr&#34;&gt;benfordslaw.cr&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;14,20 millis&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Go 1.15&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/CMiksche/benford&#34;&gt;benford&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;7,03 millis&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;JS (node) v14.8.0&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/CMiksche/benfordslaw&#34;&gt;benfordslaw&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;164,71 millis&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;I didn&amp;rsquo;t expected that big difference. Go is clearly the winner here and that with big distance to the other implementations. One reason why Python took so long may be that the used library shows additional information but I don&amp;rsquo;t think Python could compete with the other implementations if the library wouldn&amp;rsquo;t show more.&lt;/p&gt;
+&lt;p&gt;It is also noteworthy that Go is very very fast compiling. Crystal isn&amp;rsquo;t even in the area of the Go compile time.&lt;/p&gt;
+</content>
     </item>
     
   </channel>

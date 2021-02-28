@@ -18,6 +18,17 @@ But nothing has worked. So, I installed the nvidia-driver for my two GPUs. The f
 Don&amp;rsquo;t use that documentation to make your settings in /boot/loader.conf! There stands:
 nvidia_load=&amp;quot;YES&amp;quot; And that&amp;rsquo;s simply not right for the newest driver!
 You should enter the following line:</description>
+      <content>&lt;p&gt;After installing FreeBSD to my workstation, I wanted a desktop environment. I&amp;rsquo;ve installed gnome3 after reading the official documentation &lt;a href=&#34;https://www.freebsd.org/doc/handbook/x11-wm.html&#34;&gt;https://www.freebsd.org/doc/handbook/x11-wm.html&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;But nothing has worked. So, I installed the nvidia-driver for my two GPUs. The first documentation I&amp;rsquo;ve found is from &amp;ldquo;7.3-RELEASE&amp;rdquo;: &lt;a href=&#34;https://docs.freebsd.org/doc/7.3-RELEASE/usr/share/doc/en/articles/compiz-fusion/nvidia-setup.html&#34;&gt;https://docs.freebsd.org/doc/7.3-RELEASE/usr/share/doc/en/articles/compiz-fusion/nvidia-setup.html&lt;/a&gt;. (I use 11.1-RELEASE)&lt;/p&gt;
+&lt;p&gt;Don&amp;rsquo;t use that documentation to make your settings in &lt;code&gt;/boot/loader.conf&lt;/code&gt;! There stands:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;nvidia_load=&amp;quot;YES&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And that&amp;rsquo;s simply not right for the newest driver!&lt;/p&gt;
+&lt;p&gt;You should enter the following line:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;nvidia-modeset_load=&amp;quot;YES&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;After that and using nvidia-xconfig to create the Xorg-Config file, my system works now.&lt;/p&gt;
+</content>
     </item>
     
     <item>
@@ -28,8 +39,18 @@ You should enter the following line:</description>
       <guid>https://blog.m5e.de/freebsd/windows10/dual-boot/2017/11/19/freebsd-windows10-dual-boot.html</guid>
       <description>Yesterday I have installed FreeBSD alongside to a existing Windows 10 instance on my Workstation. Today, I want to show you how to do it.
 Prerequisites My setup is a SSD with Windows 10 already installed and more than 100 GB free space.
-Procedure Install FreeBSD normally (but pay attention to use the free space for freebsd during the partitioning).
+Procedure Install FreeBSD normally (but pay attention to use the free space for FreeBSD during the partitioning).
 After the install, you can switch to the shell to take final settings.</description>
+      <content>&lt;p&gt;Yesterday I have installed FreeBSD alongside to a existing Windows 10 instance on my Workstation. Today, I want to show you how to do it.&lt;/p&gt;
+&lt;h3 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h3&gt;
+&lt;p&gt;My setup is a SSD with Windows 10 already installed and more than 100 GB free space.&lt;/p&gt;
+&lt;h3 id=&#34;procedure&#34;&gt;Procedure&lt;/h3&gt;
+&lt;p&gt;Install FreeBSD normally (but pay attention to use the free space for FreeBSD during the partitioning).&lt;/p&gt;
+&lt;p&gt;After the install, you can switch to the shell to take final settings. There you can enter the following command:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;boot0cfg -B ada0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That&amp;rsquo;s it. Reboot and everything should work fine ;-)&lt;/p&gt;
+</content>
     </item>
     
   </channel>

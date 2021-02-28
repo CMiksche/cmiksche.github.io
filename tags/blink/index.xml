@@ -14,8 +14,25 @@
       
       <guid>https://blog.m5e.de/apu2c4/blink/led/2017/11/16/apu2c4-blinks-5-times.html</guid>
       <description>I bought a APU2C4 Board (from the swiss company &amp;ldquo;PC Engines GmbH&amp;rdquo;) and multiple components because I want to build a custom pfSense router.
-I&amp;rsquo;ve ordered the device several weeks ago and haven&amp;rsquo;t used it until now. That&amp;rsquo;s because I made a few mistakes (which i want to write now):
+I&amp;rsquo;ve ordered the device several weeks ago and haven&amp;rsquo;t used it until now. That&amp;rsquo;s because I made a few mistakes (which I want to write now):
 First  Mistake: I used a power supply with 12V and 2A from china. Visible by: The LED on the back of the device blinks 5 times - then no more again.</description>
+      <content>&lt;p&gt;I bought a APU2C4 Board (from the swiss company &amp;ldquo;PC Engines GmbH&amp;rdquo;) and multiple components because I want to build a custom pfSense router.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve ordered the device several weeks ago and haven&amp;rsquo;t used it until now. That&amp;rsquo;s because I made a few mistakes (which I want to write now):&lt;/p&gt;
+&lt;h2 id=&#34;first&#34;&gt;First&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Mistake: I used a power supply with 12V and 2A from china.&lt;/li&gt;
+&lt;li&gt;Visible by: The LED on the back of the device blinks 5 times - then no more again.&lt;/li&gt;
+&lt;li&gt;Solution: Use a 12V and 3A power supply.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;second&#34;&gt;Second:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Mistake: I used a serial cable with Prolific PL2303 Chip and another serial cable with a Gender Changer.&lt;/li&gt;
+&lt;li&gt;Visible by: I couldn&amp;rsquo;t connect to the device.&lt;/li&gt;
+&lt;li&gt;Solution: Don&amp;rsquo;t use PL2303 Chips and Gender Changer! The following Chips are supported: FTDI / FT232RL and Silicon Labs CP2104&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;By the way: The support of pc-engines is really fast - great customer experience &amp;hellip;&lt;/p&gt;
+&lt;p&gt;My new serial cable with FT232RL chip hasn&amp;rsquo;t arrived yet. I will write more about that device when i encounter new errors &amp;hellip;&lt;/p&gt;
+</content>
     </item>
     
   </channel>
