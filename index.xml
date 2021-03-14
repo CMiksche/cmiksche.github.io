@@ -6,7 +6,56 @@
     <description>Recent content on M5E&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 24 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 14 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Analyzing the profitability of gTLD registry operators</title>
+      <link>https://blog.m5e.de/post/analyzing-the-profitability-of-gtld-registry-operators/</link>
+      <pubDate>Sun, 14 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/post/analyzing-the-profitability-of-gtld-registry-operators/</guid>
+      <description>I am a very big DNS nerd and have always registered new domains for my projects before I even made the concept of my new ideas. We had tests about the Domain Name System at my professional school and I can&amp;rsquo;t remember I ever not scored the highest&amp;hellip;
+So as someone who currently pays for 33 domains a year of which all are for private projects and none generates money I had an idea for a new gTLD which I wanted to operate.</description>
+      <content>&lt;p&gt;I am a very big DNS nerd and have always registered new domains for my projects before I even made the concept of my new ideas. 
+We had tests about the Domain Name System at my professional school and I can&amp;rsquo;t remember I ever not scored the highest&amp;hellip;&lt;/p&gt;
+&lt;p&gt;So as someone who currently pays for 33 domains a year of which all are for private projects and none generates money I had an idea for a new gTLD which I wanted to operate.&lt;/p&gt;
+&lt;p&gt;New generic top-level domains have a high entry barrier. It&amp;rsquo;s expensive (plan about 200k USD alone for the valuation from the ICANN) and you also have high recurring costs - but is it profitable to operate such a TLD?&lt;/p&gt;
+&lt;p&gt;The first gTLD application round closed in April 2012 and some of the first applicants were already founded years before that. 
+Some of these new operators are public traded companies and others have to report their balance sheet to governments.&lt;/p&gt;
+&lt;p&gt;Soooo &amp;hellip;. There is data available about those new operators and before I decide if I wanna put such much money on a new TLD I (from an investor perspective) want to know how profitable new gTLDs are. 
+(As a side note: I am not so rich to operate a new gTLD alone - I would need some support from other investors too ^^)&lt;/p&gt;
+&lt;p&gt;That&amp;rsquo;s why I am writing this post. I need to validate if an investment in a new gTLD is profitable and if the needed energy pays out. 
+As a modern investor there are tons of other opportunities which pay dividends, interest and more. So if you invest in something specific you should have a good return and reason for that.&lt;/p&gt;
+&lt;h2 id=&#34;registry-operators&#34;&gt;Registry operators&lt;/h2&gt;
+&lt;h3 id=&#34;donuts&#34;&gt;Donuts&lt;/h3&gt;
+&lt;p&gt;Donuts Inc is a private domain name registry with 242 new gTLDs. It is the biggest of the new operators by number of TLD endings. The German Wikipedia page about them was initially written by me on the 15 July of 2017.&lt;/p&gt;
+&lt;p&gt;Unfortunately I haven&amp;rsquo;t found much financial info about their profit, so they can&amp;rsquo;t simply evaluated by me.&lt;/p&gt;
+&lt;h3 id=&#34;minds--machines&#34;&gt;Minds + Machines&lt;/h3&gt;
+&lt;p&gt;They are great for a valuation because Minds + Machines Group Limited is a public traded gTLD operator. They weren&amp;rsquo;t profitable for many years, but they were in 2019.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s look at the numbers for the Total comprehensive income / (loss) for the year:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2013: Loss of 222,029 GBP&lt;/li&gt;
+&lt;li&gt;2014: Loss of 3,832,128 GBP&lt;/li&gt;
+&lt;li&gt;2015: Loss of 677,936 GBP&lt;/li&gt;
+&lt;li&gt;2016: Loss of 2,782,107 GBP&lt;/li&gt;
+&lt;li&gt;2017: Loss of 84,584 GBP&lt;/li&gt;
+&lt;li&gt;2018: Loss of 8,836,970 GBP&lt;/li&gt;
+&lt;li&gt;2019: Income of 932,983 GBP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Minds + Machines also published a June 2020 Interim Report which shows a profit. So I hope the long loss period is over. The share price has decreased in the years because of the bad financials&amp;hellip;&lt;/p&gt;
+&lt;p&gt;I have taken the chance to buy some shares because if they turned to profit, then the company is undervalued based on the current share price in my opinion.&lt;/p&gt;
+&lt;h3 id=&#34;dotberlin&#34;&gt;dotBERLIN&lt;/h3&gt;
+&lt;p&gt;dotBERLIN GmbH &amp;amp; Co. KG is the German private operator of &amp;ldquo;.berlin&amp;rdquo;. The fine thing about German companies is that they have to report the balance sheets and you can get old balance sheets from the &amp;ldquo;Bundesanzeiger&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;The data is not as fresh as from public traded companies, but this analysis is not about fresh data - it&amp;rsquo;s about statistically profitability.&lt;/p&gt;
+&lt;p&gt;A look at the balance sheet doesn&amp;rsquo;t show us an Income statement, but we can see a &amp;ldquo;Shortfall not covered by equity&amp;rdquo; for the years 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009&amp;hellip; - at that point I just went directly to 2006 and there was also this shortfall.&lt;/p&gt;
+&lt;p&gt;So to me, it looks like dotBERLIN wasn&amp;rsquo;t profitable since founding.&lt;/p&gt;
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;p&gt;Is investing in gTLD a good thing for the world? Not really. New gTLD require new servers which need electricity which could be produced environmentally harmful whereas you could invest your money in e.g. new electricity sources like solar or wind parks.&lt;/p&gt;
+&lt;p&gt;Many of these providers operated very long without any profit. However some of them (like Minds + Machines) are profitable now and I am invested in Minds + Machines because they are cheap (in my opinion) on the stock exchange, considering they are now profitable and operate with a lovely business model (subscription based service which is essential if you have an online-business)&lt;/p&gt;
+&lt;p&gt;But you shouldn&amp;rsquo;t take the decision easy if you wanna start a new gTLD registry. As noted - this kind of business seem to take long until it&amp;rsquo;s profitable and other business models like building a new solar park can be better predictable, faster profitable and are better for the world.&lt;/p&gt;
+&lt;p&gt;If you start a new gTLD, you should expect many years without profit and the need for fresh money from investors. So - it&amp;rsquo;s a bad idea for the most of us.&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>The Workhorse Group Story</title>
       <link>https://blog.m5e.de/post/the-workhorse-group-story/</link>
