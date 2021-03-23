@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CMS on M5E&#39;s Blog</title>
+    <link>https://blog.m5e.de/tags/CMS/</link>
+    <description>Recent content in CMS on M5E&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 23 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/tags/CMS/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Problem with Odoo</title>
+      <link>https://blog.m5e.de/post/the-problem-with-odoo/</link>
+      <pubDate>Tue, 23 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/post/the-problem-with-odoo/</guid>
+      <description>The history with Odoo started with TinyERP / OpenERP which was a free ERP System. This was a great idea and pioneered the open source ERP environment.
+But in the last years the name and the vision changed. Now Odoo provides besides the ERP part also a CRM, CMS, Blogs, Forums, E-commerce (Online-Shops), Timesheet, Project Management, Inventory Management, Recruitment, Spreadsheet, Documents, Email Marketing&amp;hellip;
+So in short: Odoo changed from a focus on ERP to an all-in-one solution which seems to cover nearly every application a business needs.</description>
+      <content>&lt;p&gt;The history with Odoo started with TinyERP / OpenERP which was a free ERP System. This was a great idea and pioneered the open source ERP environment.&lt;/p&gt;
+&lt;p&gt;But in the last years the name and the vision changed. Now Odoo provides besides the ERP part also a CRM, CMS, Blogs, Forums, E-commerce (Online-Shops), Timesheet, Project Management, Inventory Management, Recruitment, Spreadsheet, Documents, Email Marketing&amp;hellip;&lt;/p&gt;
+&lt;p&gt;So in short: Odoo changed from a focus on ERP to an all-in-one solution which seems to cover nearly every application a business needs. And the bad part is Odoo got money from investors for this stupid idea.&lt;/p&gt;
+&lt;h2 id=&#34;i-had-the-same-idea&#34;&gt;I had the same idea&lt;/h2&gt;
+&lt;p&gt;Before I call this idea bullshit I wanna note that I developed an application with the exact same Idea in the past. I didn&amp;rsquo;t finish my work, but basically I started with an CMS in PHP and had the idea to extend it to ERP and various other applications.&lt;/p&gt;
+&lt;p&gt;One reason I stopped working on my idea was because I found out that Odoo was ahead of me (when I started my project, Odoo was still called OpenERP, so I wasn&amp;rsquo;t aware that Odoo just had begun to realize my dream)&lt;/p&gt;
+&lt;p&gt;But the other reason I stopped was because I changed my mind. I worked as a software developer with many ERP, CRM and other business applications back then and created custom software which was connected to this type of software systems. So I had experience with this type of programs and common problems.&lt;/p&gt;
+&lt;h2 id=&#34;the-problem-odoo-wants-to-solve&#34;&gt;The problem Odoo wants to solve&lt;/h2&gt;
+&lt;p&gt;So the problem Odoo and I wanted to solve is the same: Offer one solution for different kind of business software - because traditionally e.g. ERP Systems had no APIs - so as a software developer you had to hack your way to connect e.g. the e-commerce shop with the ERP systems.
+This often meant you read or write data directly to the database of the ERP system because the ERP system has no API.&lt;/p&gt;
+&lt;p&gt;And even if the systems offered an API: This still meant that you have to create a custom piece of software to connect the different systems.&lt;/p&gt;
+&lt;p&gt;An all-in-one solution means the data is in the same system - no more costly manual connection making and if you use the UI, then it&amp;rsquo;s also faster to switch to the other business program - e.g. switch from ERP System to Online-Store.&lt;/p&gt;
+&lt;p&gt;On paper this sounds great: only maintenance one program, only train the employees in one system. Many benefits&amp;hellip;&lt;/p&gt;
+&lt;h2 id=&#34;its-not-so-hard-anymore&#34;&gt;It&amp;rsquo;s not so hard anymore&lt;/h2&gt;
+&lt;p&gt;Today more and more ERP Systems and other kind of business applications offer an API. So the connecting part is cleaner.&lt;/p&gt;
+&lt;p&gt;There is software like data mapping tools which make it possible to connect different APIs without any coding experience, additionally to that we live in a world where open source (free) software from all over the world is available and we have software stores which offer plugins and more.&lt;/p&gt;
+&lt;p&gt;So if you have a common type of connection (maybe something like connecting SAP and Magento or WooCommerce), then there is a high chance that out of the shelf software can solve it.&lt;/p&gt;
+&lt;h2 id=&#34;the-reason-this-is-the-wrong-way&#34;&gt;The reason this is the wrong way&lt;/h2&gt;
+&lt;p&gt;The all-in-one solution means that Odoo can&amp;rsquo;t focus on one type of application. They need to split up into different teams for different types of applications.&lt;/p&gt;
+&lt;p&gt;Yes - Odoo has grown and got investor money, so they have many employees and many open source developers BUT they aren&amp;rsquo;t offering only a free ERP System anymore. Even this focus on one part of the business software world was hard and most businesses today don&amp;rsquo;t know Odoo - so they weren&amp;rsquo;t that successful.&lt;/p&gt;
+&lt;p&gt;Players like SAP, Intuit and Infor dominate the ERP market. This was the old competitor landscape. Through the new applications, Odoo now competes additionally to that to Microsoft, Salesforce, Amazon, Magento, Atlassian, MailChimp,&amp;hellip; Basically now the whole business software industry is the competition.&lt;/p&gt;
+&lt;p&gt;Do you really think that Odoo can beat the whole software business industry? I don&amp;rsquo;t think so - especially because I already found and fixed a bug in the German version of the Online-Store Module. It&amp;rsquo;s simply not possible for one company to offer the best product for different parts of business software.&lt;/p&gt;
+&lt;p&gt;There is a reason that Salesforce is so big in CRM and SAP so big in ERP - there is also a reason why you use a dedicated Online-Store software which is made by another company than your ERP System. Different companies are good in their own specialties.&lt;/p&gt;
+&lt;p&gt;With this broad range of software, Odoo loses focus and that means losing quality. The bigger the range of products, the more worse is the quality and the more impossible it will be for Odoo to offer the best software in each category.&lt;/p&gt;
+&lt;p&gt;This is true in the whole business world - it&amp;rsquo;s the reason we have different companies, but somehow Odoo has still found its way to exist.&lt;/p&gt;
+&lt;h2 id=&#34;my-new-approach&#34;&gt;My new approach&lt;/h2&gt;
+&lt;p&gt;As said, I had the same idea. But currently I have only ideas for some types of business software. I don&amp;rsquo;t wanna create an All-In-One solution because I know it would take forever to even offer a bad experience in all types of business software and big companies already excel in some parts of it.&lt;/p&gt;
+&lt;p&gt;Many IT companies around the world simply exist because they are needed to connect this different kinds of business applications and most of them create custom solutions every time.
+I think it would make more sense to offer out of the shelf solutions for connecting these systems and some companies already make this.&lt;/p&gt;
+&lt;p&gt;An Open Source ERP System still would be my choice for a business, but I would prefer something like Tryton - Tryton has a focus on the ERP part and a modular software architecture with a great API.
+So this would be perfect for connecting other applications to it. (As a sidenote: Tryton was forked out of an Odoo predecessor)&lt;/p&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>
