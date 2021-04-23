@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Delete on M5E&#39;s Blog</title>
+    <link>https://blog.m5e.de/tags/Delete/</link>
+    <description>Recent content in Delete on M5E&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 23 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/tags/Delete/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Delete and Resync a Crypto-Wallet on your server</title>
+      <link>https://blog.m5e.de/post/delete-and-resync-a-crypto-wallet-on-your-server/</link>
+      <pubDate>Fri, 23 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/post/delete-and-resync-a-crypto-wallet-on-your-server/</guid>
+      <description>I stake a Cryptocurrency based of Peercoin on a Server since years. Multiple months ago this stopped because of the following error:
+Coind: kernel.cpp:372: unsigned int GetStakeModifierChecksum(const CBlockIndex*): Assertion `pindex-&amp;gt;pprev || pindex-&amp;gt;GetBlockHash() == (!fTestNet ? hashGenesisBlock : hashGenesisBlockTestNet)&#39; failed.  This Error often comes when your Blockchain is corrupted. The cause of my problem was an unexpected downtime.
+To fix this:
+ Stop the Daemon Backup the Folder of the Coin Delete everything except wallet.</description>
+      <content>&lt;p&gt;I stake a Cryptocurrency based of Peercoin on a Server since years. Multiple months ago this stopped because of the following error:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Coind: kernel.cpp:372: unsigned int GetStakeModifierChecksum(const CBlockIndex*): Assertion `pindex-&amp;gt;pprev || pindex-&amp;gt;GetBlockHash() == (!fTestNet ? hashGenesisBlock : hashGenesisBlockTestNet)&#39; failed.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This Error often comes when your Blockchain is corrupted. The cause of my problem was an unexpected downtime.&lt;/p&gt;
+&lt;p&gt;To fix this:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Stop the Daemon&lt;/li&gt;
+&lt;li&gt;Backup the Folder of the Coin&lt;/li&gt;
+&lt;li&gt;Delete everything except wallet.dat, peers.dat and *.conf&lt;/li&gt;
+&lt;li&gt;Start the Daemon again (&lt;code&gt;/path/to/coin/src/Coind -daemon -datadir=/path/to/coin/folder/&lt;/code&gt;)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I also published a German blog post about &lt;a href=&#34;https://blog.wronnay.net/altcoins-vom-source-code-kompilieren/&#34;&gt;compiling AltCoins&lt;/a&gt;.&lt;/p&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>
