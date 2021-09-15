@@ -6,7 +6,42 @@
     <description>Recent content in Posts on M5E&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 25 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How I write my Journal</title>
+      <link>https://blog.m5e.de/post/how-i-write-my-journal/</link>
+      <pubDate>Wed, 15 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/post/how-i-write-my-journal/</guid>
+      <description>Recently I came across a blog post which described some Tips how to write a Journal on Hacker News.
+This interested me because I also write a Journal since multiple years (since the 20th March of 2018 to be precise and if we don&amp;rsquo;t count my Journals I had as a child) and it already helped me in multiple occasions.
+The author of the article asked himself multiple questions every day and because I think that is too much pressure I want to describe how I do it.</description>
+      <content>&lt;p&gt;Recently I came &lt;a href=&#34;https://news.ycombinator.com/item?id=28530120&#34;&gt;across&lt;/a&gt; a blog post which described some Tips how to write a Journal on Hacker News.&lt;/p&gt;
+&lt;p&gt;This interested me because I also write a Journal since multiple years (since the 20th March of 2018 to be precise and if we don&amp;rsquo;t count my Journals I had as a child) and it already helped me in multiple occasions.&lt;/p&gt;
+&lt;p&gt;The author of the article asked himself multiple questions every day and because I think that is too much pressure I want to describe how I do it.&lt;/p&gt;
+&lt;h2 id=&#34;why-it-can-be-helpful&#34;&gt;Why it can be helpful&lt;/h2&gt;
+&lt;p&gt;Some possible use cases:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Search when you bought an Item and find out if it still has warranty&lt;/li&gt;
+&lt;li&gt;Find out which stock you bought at which price&lt;/li&gt;
+&lt;li&gt;When was the trip with your girlfriend again?&lt;/li&gt;
+&lt;li&gt;How did your business grew so successful?&lt;/li&gt;
+&lt;li&gt;What did you do back on &amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To summarize: If you keep track of your daily life you can look up everything even if you don&amp;rsquo;t remember something anymore.&lt;/p&gt;
+&lt;h2 id=&#34;how-i-write-it&#34;&gt;How I write it&lt;/h2&gt;
+&lt;p&gt;I wanted something simple which will last till I die.&lt;/p&gt;
+&lt;p&gt;As a software developer, I use tools like Git for versioning files and Markdown for writing documents (this blog post itself is also written as a Markdown document). Additionally to that, I already had a wiki which was realized as a bunch of Markdown documents and folders in a Git repository hosted on a Raspberry Pi.&lt;/p&gt;
+&lt;p&gt;So I used my existing wiki, added a new folder &amp;ldquo;Journal&amp;rdquo; and inside that a folder for the year. That directory contained files named after each month - &amp;ldquo;03.md&amp;rdquo; for example - which had a title for every day and bullet points for every thought.&lt;/p&gt;
+&lt;p&gt;This simple system exists till this day with a small change that I moved it from my Raspberry Pi to my self-hosted Gitea instance.&lt;/p&gt;
+&lt;h2 id=&#34;why-personal-finance-is-connected-with-that&#34;&gt;Why personal finance is connected with that&lt;/h2&gt;
+&lt;p&gt;Since this year I use &lt;a href=&#34;https://github.com/beancount/beancount/&#34;&gt;beancount&lt;/a&gt; to track all my finances in a very similar approach: Files have a special syntax with lines for every transaction and that files get tracked in a Git repository.&lt;/p&gt;
+&lt;p&gt;Thanks to the parsable syntax you can create reports of your finances (like income and expenses) thus have a better overview of where your money flows.&lt;/p&gt;
+&lt;p&gt;Because I trade with stocks since 2014 my journal was heavily used for tracking stock transactions which helped me a lot but obviously such a bookkeeping computer language is a way better solution for that.&lt;/p&gt;
+&lt;p&gt;Imagine you bought a stock but because your Depot was moved to another broker, you don&amp;rsquo;t see the value anymore at which you bought. Now you would have to search old documents of that transaction to find out at which price you can sell to make a profit. In some similar cases this personal tracking of my finances helped me a lot and I would recommend every stock trader writing down the transactions with a system like beancount.&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>The Difference between Wirecard and Steinhoff</title>
       <link>https://blog.m5e.de/post/the-difference-between-wirecard-and-steinhoff/</link>
@@ -514,7 +549,7 @@ I blog way more often in german on my other WordPress sites and one of the main 
 &lt;p&gt;So there are many articles about switching from Hugo to Jekyll out there. Basically the &lt;code&gt;hugo import jekyll jekyll_root_path target_path&lt;/code&gt; command from Hugo converts your posts and then you need to manually edit the config, install a theme and copy your custom pages to &amp;lsquo;content&amp;rsquo;.&lt;/p&gt;
 &lt;p&gt;But one thing was missing what no other article I found mentioned: What if you want to have the same URL Scheme like Jekyll had in your older posts (so links to them still work) but use the default Hugo URL Scheme for new posts?&lt;/p&gt;
 &lt;p&gt;That is possible! You can define custom URLs for each post. My first blog post looks like that:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;---
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;---
 date: &amp;#34;2017-02-14T20:03:23Z&amp;#34;
 title: First try of Jekyll
 tags: [jekyll, first, post]
