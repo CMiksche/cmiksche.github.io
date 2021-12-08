@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>currencies on M5E&#39;s Blog</title>
+    <link>https://blog.m5e.de/tags/currencies/</link>
+    <description>Recent content in currencies on M5E&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 08 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/tags/currencies/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Problem with Finance APIs</title>
+      <link>https://blog.m5e.de/post/the-problem-with-finance-apis/</link>
+      <pubDate>Wed, 08 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/post/the-problem-with-finance-apis/</guid>
+      <description>Since 2014 I invest and trade with stocks. Since then, I always wanted to create programs which make my life as an Investor easier and since then my journey with always reliving finance API problems started.
+Unfortunately I didn&amp;rsquo;t find my first PHP scripts which tried to get stock data - so I don&amp;rsquo;t remember which API stopped back then, but the rest of my journey was well documented with the help of Git.</description>
+      <content>&lt;p&gt;Since 2014 I invest and trade with stocks. Since then, I always wanted to create programs which make my life as an Investor easier and since then my journey with always reliving finance API problems started.&lt;/p&gt;
+&lt;p&gt;Unfortunately I didn&amp;rsquo;t find my first PHP scripts which tried to get stock data - so I don&amp;rsquo;t remember which API stopped back then, but the rest of my journey was well documented with the help of Git.&lt;/p&gt;
+&lt;h3 id=&#34;yahoo-stock-data-api&#34;&gt;Yahoo Stock Data API&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Read Symbols from Database&lt;/span&gt;
+symbols &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; datab&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;getSymbols()
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# Get Price Data for each Symbol from yahoo&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; sym &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; symbols:
+
+    url &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://finance.yahoo.com/d/quotes.csv?s=&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;sym&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;amp;f=sabd&amp;#34;&lt;/span&gt;
+
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;with&lt;/span&gt; closing(requests&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;get(url, stream&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;)) &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; r:
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Guess what: The API is not available anymore.&lt;/p&gt;
+&lt;h3 id=&#34;yahoo-currency-data-api&#34;&gt;Yahoo Currency Data API&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;with&lt;/span&gt; urllib&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;request&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;urlopen(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://finance.yahoo.com/webservice/v1/symbols/allcurrencies/quote?format=json&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; url:
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Current Currency rates on a stable API? Not with Yahoo!&lt;/p&gt;
+&lt;h3 id=&#34;coinmarketcap-free-crypto-api&#34;&gt;CoinMarketCap Free Crypto API&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Get Market Data&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;with&lt;/span&gt; urllib&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;request&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;urlopen(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://api.coinmarketcap.com/v1/ticker/?convert=EUR&amp;amp;limit=0&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; url:
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Free Crypto prices? No! The guys behind CoinMarketCap found out that offering a free and open service is stupid and now ask for money!&lt;/p&gt;
+&lt;h2 id=&#34;finsymbols-python-lib&#34;&gt;Finsymbols Python lib&lt;/h2&gt;
+&lt;p&gt;Mainly get obtained via web scraping. I didn&amp;rsquo;t check all the functions, but it seems that many are outdated now.&lt;/p&gt;
+&lt;h2 id=&#34;iex-exchange&#34;&gt;IEX Exchange&lt;/h2&gt;
+&lt;p&gt;Back in the day I was crazy about this. A whole exchange which advertised it was made for developers with a free API.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;iexurl &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://api.iextrading.com/1.0/stock/&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;sym&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/quote&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;with&lt;/span&gt; urllib&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;request&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;urlopen(iexurl) &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; url:
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ha! Markets move too fast to provide the same URL for a longer period! You now have to use a new one, and it is not even free anymore.&lt;/p&gt;
+&lt;h2 id=&#34;exchangeratesapiio&#34;&gt;exchangeratesapi.io&lt;/h2&gt;
+&lt;p&gt;Was a free and open source service with API for current exchange rates from the ECB.&lt;/p&gt;
+&lt;p&gt;The guy behind it sold it to a company which is owned by a big American Corporation. Of course, they now ask for money, even while there are many APIs which offer the same for free.&lt;/p&gt;
+&lt;h2 id=&#34;learnings&#34;&gt;Learnings&lt;/h2&gt;
+&lt;p&gt;These are not even all APIs that changed - I used other ones before that. I use finance APIs since 2014, and I never encountered one which didn&amp;rsquo;t change after a few years or months.&lt;/p&gt;
+&lt;p&gt;So to rely on any finance API alone sounds stupid to me now because even the biggest players in this area changed their API dramatically multiple times.&lt;/p&gt;
+&lt;h2 id=&#34;the-solution&#34;&gt;The Solution&lt;/h2&gt;
+&lt;p&gt;I think the only solution for that problem is to create a wrapper around multiple APIs, check which APIs are online and give the fastest responses and deliver the information from these APIs.&lt;/p&gt;
+&lt;p&gt;Because there are many APIs which deliver the data from the European Central Bank and have a similar / compatible API to what exchangeratesapi.io had back in the day, I created two wrappers for currencies:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/CMiksche/exchangerates-wrapper&#34;&gt;exchangerates-wrapper&lt;/a&gt; outputs a URL to an API which is online, and you can also define which currencies need to be supported from the API. It&amp;rsquo;s written in TypeScript and usable for projects in the Node ecosystem.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://gitlab.com/cmiksche/go-currency-wrapper&#34;&gt;go-currency-wrapper&lt;/a&gt; is the same, but for projects which use the Go programming language.&lt;/p&gt;
+&lt;h3 id=&#34;what-about-stocks-and-crypto&#34;&gt;What about stocks and crypto?&lt;/h3&gt;
+&lt;p&gt;While I plan similar projects for stocks and cryptocurrencies, I am currently not sure if or when I will release it to the public. However, other projects also have similar ideas: &lt;a href=&#34;https://github.com/piquette/finance-go/issues/14&#34;&gt;https://github.com/piquette/finance-go/issues/14&lt;/a&gt;&lt;/p&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>

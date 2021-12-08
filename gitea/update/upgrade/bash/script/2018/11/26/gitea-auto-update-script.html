@@ -84,9 +84,7 @@ If there is one thing that I really hate, it is that a security sensible web app
 </a>
 
     </div>
-    
-      <div class="menu-trigger">menu</div>
-    
+    <div class="menu-trigger">menu</div>
   </div>
   
     <nav class="menu">
@@ -181,7 +179,7 @@ If there is one thing that I really hate, it is that a security sensible web app
 <p>If there is one thing that I really hate, it is that a security sensible web application doesn&rsquo;t update automatically. Because of that I have begun to write a update script for Gitea before 4 months.</p>
 <p>That script has updated my Gitea instance multiple times now and as I can see, that many users have the same problem (a german blog post from me is my most visited article from outside germany), I want to show you my solution.</p>
 <h3 id="warning">Warning<a href="#warning" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
-<p>As I mentioned - I am no fan of manual upgrades - because of that I write many auto update scripts for my own systems. This scripts often haven&rsquo;t been tested on other systems and may contain ugly code.
+<p>As I mentioned - I am no fan of manual upgrades - because of that I write many auto update scripts for my own systems. This scripts often haven&rsquo;t been tested on other systems and may contain ugly code. 
 I am open for the creation of issues or pull requests which optimise my code. You should definitely check the code out and make sure to review it before using it.</p>
 <p>Some creators - e.g. the person behind Kanboard - have a strong option against auto updates. There are good reasons for that too - you may not want to crash your application because of a faulty upgrade. I recommend auto updates only if you create auto backups, too.</p>
 <h3 id="the-script">The Script<a href="#the-script" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
@@ -200,7 +198,7 @@ You may need to modify the script to work on your system.</p>
 <p>Create a settings.ini file:</p>
 </li>
 </ul>
-<pre><code>[Gitea]
+<pre tabindex="0"><code>[Gitea]
 site=https://your-gitea-instance.com/api/v1/version
 apiUrl=https://api.github.com/repos/go-gitea/gitea/releases/latest
 system=linux-amd64
