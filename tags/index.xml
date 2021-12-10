@@ -6,7 +6,67 @@
     <description>Recent content in Tags on M5E&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blog</title>
+      <link>https://blog.m5e.de/tags/Blog/</link>
+      <pubDate>Fri, 10 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/tags/Blog/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>cli</title>
+      <link>https://blog.m5e.de/tags/cli/</link>
+      <pubDate>Fri, 10 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/tags/cli/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Create</title>
+      <link>https://blog.m5e.de/tags/Create/</link>
+      <pubDate>Fri, 10 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/tags/Create/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>golang</title>
+      <link>https://blog.m5e.de/tags/golang/</link>
+      <pubDate>Fri, 10 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/tags/golang/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://blog.m5e.de/tags/Hugo/</link>
+      <pubDate>Fri, 10 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/tags/Hugo/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>posts</title>
+      <link>https://blog.m5e.de/tags/posts/</link>
+      <pubDate>Fri, 10 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/tags/posts/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
     <item>
       <title>APIs</title>
       <link>https://blog.m5e.de/tags/APIs/</link>
@@ -613,26 +673,6 @@
       <pubDate>Sat, 29 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/tags/python/</guid>
-      <description></description>
-      <content></content>
-    </item>
-    
-    <item>
-      <title>blog</title>
-      <link>https://blog.m5e.de/tags/blog/</link>
-      <pubDate>Tue, 25 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.m5e.de/tags/blog/</guid>
-      <description></description>
-      <content></content>
-    </item>
-    
-    <item>
-      <title>hugo</title>
-      <link>https://blog.m5e.de/tags/hugo/</link>
-      <pubDate>Tue, 25 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.m5e.de/tags/hugo/</guid>
       <description></description>
       <content></content>
     </item>

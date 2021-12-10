@@ -2,6 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.m5e.de/tags/Blog/</loc>
+    <lastmod>2021-12-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/tags/cli/</loc>
+    <lastmod>2021-12-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/tags/Create/</loc>
+    <lastmod>2021-12-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/post/create-fast-new-posts-for-your-hugo-blog/</loc>
+    <lastmod>2021-12-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/tags/golang/</loc>
+    <lastmod>2021-12-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/tags/Hugo/</loc>
+    <lastmod>2021-12-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/</loc>
+    <lastmod>2021-12-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/post/</loc>
+    <lastmod>2021-12-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/tags/posts/</loc>
+    <lastmod>2021-12-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/tags/</loc>
+    <lastmod>2021-12-10T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://blog.m5e.de/tags/APIs/</loc>
     <lastmod>2021-12-08T00:00:00+00:00</lastmod>
   </url><url>
@@ -11,12 +41,6 @@
     <loc>https://blog.m5e.de/tags/finance/</loc>
     <lastmod>2021-12-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.m5e.de/</loc>
-    <lastmod>2021-12-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.m5e.de/post/</loc>
-    <lastmod>2021-12-08T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://blog.m5e.de/tags/Problem/</loc>
     <lastmod>2021-12-08T00:00:00+00:00</lastmod>
   </url><url>
@@ -24,9 +48,6 @@
     <lastmod>2021-12-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.m5e.de/tags/stock/</loc>
-    <lastmod>2021-12-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.m5e.de/tags/</loc>
     <lastmod>2021-12-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.m5e.de/post/the-problem-with-finance-apis/</loc>
@@ -235,12 +256,6 @@
   </url><url>
     <loc>https://blog.m5e.de/tags/python/</loc>
     <lastmod>2020-08-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.m5e.de/tags/blog/</loc>
-    <lastmod>2020-08-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.m5e.de/tags/hugo/</loc>
-    <lastmod>2020-08-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.m5e.de/tags/jekyll/</loc>
     <lastmod>2020-08-25T00:00:00+00:00</lastmod>

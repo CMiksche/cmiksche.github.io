@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta name="generator" content="Hugo 0.89.4" />
+	<meta name="generator" content="Hugo 0.90.0" />
   
     <title>M5E&#39;s Blog</title>
   
@@ -81,7 +81,9 @@
 </a>
 
     </div>
-    <div class="menu-trigger">menu</div>
+    
+      <div class="menu-trigger">menu</div>
+    
   </div>
   
     <nav class="menu">
@@ -152,6 +154,54 @@
     
       <div class="post on-list">
         <h1 class="post-title">
+          <a href="https://blog.m5e.de/post/create-fast-new-posts-for-your-hugo-blog/">Create fast new posts for your Hugo Blog</a>
+        </h1>
+        <div class="post-meta">
+          <span class="post-date">
+            2021-12-10
+          </span>
+          
+        </div>
+
+        
+          <span class="post-tags">
+            
+            #<a href="https://blog.m5e.de/tags/Create/">Create</a>&nbsp;
+            
+            #<a href="https://blog.m5e.de/tags/posts/">posts</a>&nbsp;
+            
+            #<a href="https://blog.m5e.de/tags/Hugo/">Hugo</a>&nbsp;
+            
+            #<a href="https://blog.m5e.de/tags/Blog/">Blog</a>&nbsp;
+            
+            #<a href="https://blog.m5e.de/tags/golang/">golang</a>&nbsp;
+            
+            #<a href="https://blog.m5e.de/tags/cli/">cli</a>&nbsp;
+            
+          </span>
+        
+
+        
+
+        <div class="post-content">
+          
+          
+          Static site generators like Hugo, Jekyll or Nuxt are awesome. They provide way faster delivery of your contents to your customers than any PHP solution like WordPress.
+Unfortunately you have to create the Markdown files for your content yourself, but because every single post has a filename, title, date and often tags as well as a status for draft, I created a simple tool which takes care of doing exactly that.
+          
+          
+        </div>
+
+        
+        <div>
+          <a class="read-more button"
+            href="/post/create-fast-new-posts-for-your-hugo-blog/">Read more →</a>
+        </div>
+        
+      </div>
+    
+      <div class="post on-list">
+        <h1 class="post-title">
           <a href="https://blog.m5e.de/post/the-problem-with-finance-apis/">The Problem with Finance APIs</a>
         </h1>
         <div class="post-meta">
@@ -185,7 +235,7 @@
           
           
           Since 2014 I invest and trade with stocks. Since then, I always wanted to create programs which make my life as an Investor easier and since then my journey with always reliving finance API problems started.
-Unfortunately I didn’t find my first PHP scripts which tried to get stock data - so I don’t remember which API stopped back then, but the rest of my journey was well documented with the help of Git.
+Unfortunately I didn&rsquo;t find my first PHP scripts which tried to get stock data - so I don&rsquo;t remember which API stopped back then, but the rest of my journey was well documented with the help of Git.
           
           
         </div>
@@ -271,7 +321,7 @@ There are fears that Evergrande China will cause another financial crisis like i
           
           
           Recently I came across a blog post which described some Tips how to write a Journal on Hacker News.
-This interested me because I also write a Journal since multiple years (since the 20th March of 2018 to be precise and if we don’t count my Journals I had as a child) and it already helped me in multiple occasions.
+This interested me because I also write a Journal since multiple years (since the 20th March of 2018 to be precise and if we don&rsquo;t count my Journals I had as a child) and it already helped me in multiple occasions.
 The author of the article asked himself multiple questions every day and because I think that is too much pressure I want to describe how I do it.
           
           
@@ -318,7 +368,7 @@ The author of the article asked himself multiple questions every day and because
           
           
           Wirecard and Steinhoff are both companies of German origin which had accounting scandals. In this post I want to describe why these two accounting scandals are completely different and why I choose to take a long position in Steinhoff after the scandal, although I did make a profit with a short position in Wirecard.
-I am writing this article because I want to describe that shorting a stock with an accounting scandal / fraud isn’t always the best option.
+I am writing this article because I want to describe that shorting a stock with an accounting scandal / fraud isn&rsquo;t always the best option.
           
           
         </div>
@@ -327,58 +377,6 @@ I am writing this article because I want to describe that shorting a stock with 
         <div>
           <a class="read-more button"
             href="/post/the-difference-between-wirecard-and-steinhoff/">Read more →</a>
-        </div>
-        
-      </div>
-    
-      <div class="post on-list">
-        <h1 class="post-title">
-          <a href="https://blog.m5e.de/post/delete-and-resync-a-crypto-wallet-on-your-server/">Delete and Resync a Crypto-Wallet on your server</a>
-        </h1>
-        <div class="post-meta">
-          <span class="post-date">
-            2021-04-23
-          </span>
-          
-        </div>
-
-        
-          <span class="post-tags">
-            
-            #<a href="https://blog.m5e.de/tags/Crypto/">Crypto</a>&nbsp;
-            
-            #<a href="https://blog.m5e.de/tags/Cryptocurrency/">Cryptocurrency</a>&nbsp;
-            
-            #<a href="https://blog.m5e.de/tags/Delete/">Delete</a>&nbsp;
-            
-            #<a href="https://blog.m5e.de/tags/Resync/">Resync</a>&nbsp;
-            
-            #<a href="https://blog.m5e.de/tags/Crypto-Wallet/">Crypto-Wallet</a>&nbsp;
-            
-            #<a href="https://blog.m5e.de/tags/server/">server</a>&nbsp;
-            
-            #<a href="https://blog.m5e.de/tags/Peercoin/">Peercoin</a>&nbsp;
-            
-          </span>
-        
-
-        
-
-        <div class="post-content">
-          
-          
-          I stake a Cryptocurrency based of Peercoin on a Server since years. Multiple months ago this stopped because of the following error:
-Coind: kernel.cpp:372: unsigned int GetStakeModifierChecksum(const CBlockIndex*): Assertion `pindex-&gt;pprev || pindex-&gt;GetBlockHash() == (!fTestNet ? hashGenesisBlock : hashGenesisBlockTestNet)' failed.  This Error often comes when your Blockchain is corrupted. The cause of my problem was an unexpected downtime.
-To fix this:
-Stop the Daemon Backup the Folder of the Coin Delete everything except wallet.
-          
-          
-        </div>
-
-        
-        <div>
-          <a class="read-more button"
-            href="/post/delete-and-resync-a-crypto-wallet-on-your-server/">Read more →</a>
         </div>
         
       </div>
