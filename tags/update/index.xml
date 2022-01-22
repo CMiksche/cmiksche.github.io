@@ -21,7 +21,7 @@ If there is one thing that I really hate, it is that a security sensible web app
 &lt;p&gt;If there is one thing that I really hate, it is that a security sensible web application doesn&amp;rsquo;t update automatically. Because of that I have begun to write a update script for Gitea before 4 months.&lt;/p&gt;
 &lt;p&gt;That script has updated my Gitea instance multiple times now and as I can see, that many users have the same problem (a german blog post from me is my most visited article from outside germany), I want to show you my solution.&lt;/p&gt;
 &lt;h3 id=&#34;warning&#34;&gt;Warning&lt;/h3&gt;
-&lt;p&gt;As I mentioned - I am no fan of manual upgrades - because of that I write many auto update scripts for my own systems. This scripts often haven&amp;rsquo;t been tested on other systems and may contain ugly code.
+&lt;p&gt;As I mentioned - I am no fan of manual upgrades - because of that I write many auto update scripts for my own systems. This scripts often haven&amp;rsquo;t been tested on other systems and may contain ugly code. 
 I am open for the creation of issues or pull requests which optimise my code. You should definitely check the code out and make sure to review it before using it.&lt;/p&gt;
 &lt;p&gt;Some creators - e.g. the person behind Kanboard - have a strong option against auto updates. There are good reasons for that too - you may not want to crash your application because of a faulty upgrade. I recommend auto updates only if you create auto backups, too.&lt;/p&gt;
 &lt;h3 id=&#34;the-script&#34;&gt;The Script&lt;/h3&gt;
