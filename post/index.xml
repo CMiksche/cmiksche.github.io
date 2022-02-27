@@ -6,7 +6,42 @@
     <description>Recent content in Posts on M5E&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 22 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 27 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Alternatives to SWIFT</title>
+      <link>https://blog.m5e.de/post/alternatives-to-swift/</link>
+      <pubDate>Sun, 27 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/post/alternatives-to-swift/</guid>
+      <description>In all the recent news to the War between Russia and Ukraine, I always ask myself about the economic consequences.
+Recently the EU and US declared a ban of SWIFT currently focused on the state owned banks (which are also the biggest banks in Russia).
+What&amp;rsquo;s SWIFT exactly? Before getting into possible alternatives to SWIFT, let&amp;rsquo;s dive into what the Society for Worldwide Interbank Financial Telecommunication is.
+It is an Organization with HQ in Belgium which defines Standards and Services for the transaction of financial information.</description>
+      <content>&lt;p&gt;In all the recent news to the War between Russia and Ukraine, I always ask myself about the economic consequences.&lt;/p&gt;
+&lt;p&gt;Recently the EU and US declared a &lt;a href=&#34;https://indianexpress.com/article/explained/explained-russia-ukraine-invasion-swift-ban-sanctions-7792865/&#34;&gt;ban of SWIFT&lt;/a&gt; currently focused on the state owned banks (which are also the biggest banks in Russia).&lt;/p&gt;
+&lt;h2 id=&#34;whats-swift-exactly&#34;&gt;What&amp;rsquo;s SWIFT exactly?&lt;/h2&gt;
+&lt;p&gt;Before getting into possible alternatives to SWIFT, let&amp;rsquo;s dive into what the Society for Worldwide Interbank Financial Telecommunication is.&lt;/p&gt;
+&lt;p&gt;It is an Organization with HQ in Belgium which defines Standards and Services for the transaction of financial information. For that it has its own Network, the SWIFTNet. Data is transferred as XML-Files (I personally would prefer JSON, but old ppl like XML) and the Software is based on Java (again, I would prefer something like Go or Rust, but however old people love Java).&lt;/p&gt;
+&lt;p&gt;In the past, the &lt;a href=&#34;https://en.wikipedia.org/wiki/SWIFT#U.S._government_involvement&#34;&gt;CIA listened&lt;/a&gt; to many SWIFT transactions and there was even a &lt;a href=&#34;https://en.wikipedia.org/wiki/2015%E2%80%932016_SWIFT_banking_hack&#34;&gt;series of hacks&lt;/a&gt; by the hacker group APT 38.&lt;/p&gt;
+&lt;p&gt;Most financial transactions in this world use SWIFT when the goal is to transfer money into another country. So transactions inside a country like Russia are untouched by a SWIFT ban.&lt;/p&gt;
+&lt;h2 id=&#34;alternatives&#34;&gt;Alternatives&lt;/h2&gt;
+&lt;h3 id=&#34;international-banks&#34;&gt;International Banks&lt;/h3&gt;
+&lt;p&gt;Many very big banks have branches in multiple countries. That means they don&amp;rsquo;t need SWIFT because they are sending money internally from e.g. the Citibank office in Russia to the Citibank office in the US over their own infrastructure.&lt;/p&gt;
+&lt;h3 id=&#34;spfs&#34;&gt;SPFS&lt;/h3&gt;
+&lt;p&gt;Russian equivalent of the SWIFT, called System for Transfer of Financial Messages. Basically was developed because the west already threatened Russia with the SWIFT ban a few years ago.&lt;/p&gt;
+&lt;p&gt;Is getting more and more active, especially over the last few years. Even some international banks like German Deutsche Bank are said to support it.&lt;/p&gt;
+&lt;h3 id=&#34;cips&#34;&gt;CIPS&lt;/h3&gt;
+&lt;p&gt;Same idea, but the Cross-Border Interbank Payment System is from China. Seem to be mostly important for RMB transactions.&lt;/p&gt;
+&lt;h3 id=&#34;sfms&#34;&gt;SFMS&lt;/h3&gt;
+&lt;p&gt;India also developed a standard called the Structured Financial Messaging System.&lt;/p&gt;
+&lt;h3 id=&#34;stablecoins--cryptocurrencies&#34;&gt;Stablecoins / Cryptocurrencies&lt;/h3&gt;
+&lt;p&gt;While SWIFT, SPFS, CIPS and SFMS are standards controlled by countries, Stablecoins are asset-backed Cryptocurrencies which are backed by e.g. fiat money like the USD. The big advantage here is that you can&amp;rsquo;t ban or sanction a decentralized system.&lt;/p&gt;
+&lt;p&gt;So while it is hard for Russian Citizens or Companies to buy USD, they could simply buy a Stablecoin which has the same value and can be sent to everywhere around the world. However the Russian Government is also critical about Cryptocurrencies, so this is something which will become more popular by citizens who buy Stablecoins in private, unknown by the Government.&lt;/p&gt;
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;p&gt;If the Russian population is creative, then there are tons of ways to sent money around the world and maybe this sanction will result into a promotion of alternative payment systems.&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>The Russian-Ukrainian War and the Stock Market</title>
       <link>https://blog.m5e.de/post/the-russian-ukrainian-conflict-and-the-stock-market/</link>
