@@ -82,7 +82,9 @@ Unfortunately I didn&amp;rsquo;t find my first PHP scripts which tried to get st
 </a>
 
     </div>
-    <div class="menu-trigger">menu</div>
+    
+      <div class="menu-trigger">menu</div>
+    
   </div>
   
     <nav class="menu">
@@ -177,30 +179,30 @@ Unfortunately I didn&amp;rsquo;t find my first PHP scripts which tried to get st
         <p>Since 2014 I invest and trade with stocks. Since then, I always wanted to create programs which make my life as an Investor easier and since then my journey with always reliving finance API problems started.</p>
 <p>Unfortunately I didn&rsquo;t find my first PHP scripts which tried to get stock data - so I don&rsquo;t remember which API stopped back then, but the rest of my journey was well documented with the help of Git.</p>
 <h3 id="yahoo-stock-data-api">Yahoo Stock Data API<a href="#yahoo-stock-data-api" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Read Symbols from Database</span>
-symbols <span style="color:#f92672">=</span> datab<span style="color:#f92672">.</span>getSymbols()
-
-<span style="color:#75715e"># Get Price Data for each Symbol from yahoo</span>
-<span style="color:#66d9ef">for</span> sym <span style="color:#f92672">in</span> symbols:
-
-    url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;http://finance.yahoo.com/d/quotes.csv?s=&#34;</span><span style="color:#f92672">+</span>sym<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;&amp;f=sabd&#34;</span>
-
-    <span style="color:#66d9ef">with</span> closing(requests<span style="color:#f92672">.</span>get(url, stream<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)) <span style="color:#66d9ef">as</span> r:
-</code></pre></div><p>Guess what: The API is not available anymore.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Read Symbols from Database</span>
+</span></span><span style="display:flex;"><span>symbols <span style="color:#f92672">=</span> datab<span style="color:#f92672">.</span>getSymbols()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get Price Data for each Symbol from yahoo</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> sym <span style="color:#f92672">in</span> symbols:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;http://finance.yahoo.com/d/quotes.csv?s=&#34;</span><span style="color:#f92672">+</span>sym<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;&amp;f=sabd&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> closing(requests<span style="color:#f92672">.</span>get(url, stream<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)) <span style="color:#66d9ef">as</span> r:
+</span></span></code></pre></div><p>Guess what: The API is not available anymore.</p>
 <h3 id="yahoo-currency-data-api">Yahoo Currency Data API<a href="#yahoo-currency-data-api" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">with</span> urllib<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>urlopen(<span style="color:#e6db74">&#34;http://finance.yahoo.com/webservice/v1/symbols/allcurrencies/quote?format=json&#34;</span>) <span style="color:#66d9ef">as</span> url:
-</code></pre></div><p>Current Currency rates on a stable API? Not with Yahoo!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">with</span> urllib<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>urlopen(<span style="color:#e6db74">&#34;http://finance.yahoo.com/webservice/v1/symbols/allcurrencies/quote?format=json&#34;</span>) <span style="color:#66d9ef">as</span> url:
+</span></span></code></pre></div><p>Current Currency rates on a stable API? Not with Yahoo!</p>
 <h3 id="coinmarketcap-free-crypto-api">CoinMarketCap Free Crypto API<a href="#coinmarketcap-free-crypto-api" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Get Market Data</span>
-<span style="color:#66d9ef">with</span> urllib<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>urlopen(<span style="color:#e6db74">&#34;https://api.coinmarketcap.com/v1/ticker/?convert=EUR&amp;limit=0&#34;</span>) <span style="color:#66d9ef">as</span> url:
-</code></pre></div><p>Free Crypto prices? No! The guys behind CoinMarketCap found out that offering a free and open service is stupid and now ask for money!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Get Market Data</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> urllib<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>urlopen(<span style="color:#e6db74">&#34;https://api.coinmarketcap.com/v1/ticker/?convert=EUR&amp;limit=0&#34;</span>) <span style="color:#66d9ef">as</span> url:
+</span></span></code></pre></div><p>Free Crypto prices? No! The guys behind CoinMarketCap found out that offering a free and open service is stupid and now ask for money!</p>
 <h2 id="finsymbols-python-lib">Finsymbols Python lib<a href="#finsymbols-python-lib" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <p>Mainly get obtained via web scraping. I didn&rsquo;t check all the functions, but it seems that many are outdated now.</p>
 <h2 id="iex-exchange">IEX Exchange<a href="#iex-exchange" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <p>Back in the day I was crazy about this. A whole exchange which advertised it was made for developers with a free API.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">iexurl <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://api.iextrading.com/1.0/stock/&#34;</span><span style="color:#f92672">+</span>sym<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;/quote&#34;</span>
-<span style="color:#66d9ef">with</span> urllib<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>urlopen(iexurl) <span style="color:#66d9ef">as</span> url:
-</code></pre></div><p>Ha! Markets move too fast to provide the same URL for a longer period! You now have to use a new one, and it is not even free anymore.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>iexurl <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://api.iextrading.com/1.0/stock/&#34;</span><span style="color:#f92672">+</span>sym<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;/quote&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> urllib<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>urlopen(iexurl) <span style="color:#66d9ef">as</span> url:
+</span></span></code></pre></div><p>Ha! Markets move too fast to provide the same URL for a longer period! You now have to use a new one, and it is not even free anymore.</p>
 <h2 id="exchangeratesapiio">exchangeratesapi.io<a href="#exchangeratesapiio" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <p>Was a free and open source service with API for current exchange rates from the ECB.</p>
 <p>The guy behind it sold it to a company which is owned by a big American Corporation. Of course, they now ask for money, even while there are many APIs which offer the same for free.</p>

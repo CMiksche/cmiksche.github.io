@@ -6,7 +6,37 @@
     <description>Recent content in Posts on M5E&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 27 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Influence of Sanctions on Economies</title>
+      <link>https://blog.m5e.de/post/influence-of-sanctions-on-economies/</link>
+      <pubDate>Fri, 04 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/post/influence-of-sanctions-on-economies/</guid>
+      <description>The current events in Ukraine led to many economic sanctions against Russia. Despite this war is the result of leaders, not their citizens, the West decided to define many very hard sanctions which resulted into making it impossible to trade with Russian Stocks right now. (After the close of the Moscow Exchange, ADRs listed in the US and GDRs listed on the London Stock Exchange also can&amp;rsquo;t be bought anymore)</description>
+      <content>&lt;p&gt;The current &lt;a href=&#34;https://blog.m5e.de/post/the-russian-ukrainian-conflict-and-the-stock-market/&#34;&gt;events in Ukraine&lt;/a&gt; led to many economic sanctions against Russia. Despite this war is the result of leaders, not their citizens, the West decided to define many very hard sanctions which resulted into making it impossible to trade with Russian Stocks right now. (After the close of the Moscow Exchange, ADRs listed in the US and GDRs listed on the London Stock Exchange also can&amp;rsquo;t be bought anymore)&lt;/p&gt;
+&lt;p&gt;Because many Russian stocks can only be sold right now, the prices for these fell more and more. Speculators who bought some stocks in the beginning of this Week could get these shares very cheap on the few Exchanges and Brokers which still traded them, but now these Speculators also can&amp;rsquo;t trade Russian stocks anymore.&lt;/p&gt;
+&lt;p&gt;So in this blog post I want to answer the question if these dramatic price deductions are in any relation to the various results of sanctions in recent human history.&lt;/p&gt;
+&lt;h2 id=&#34;sanctions-against-japan&#34;&gt;Sanctions against Japan&lt;/h2&gt;
+&lt;p&gt;In the second world war was the &lt;a href=&#34;https://en.wikipedia.org/wiki/ABCD_line&#34;&gt;ABCD line&lt;/a&gt; in which America, Britain, China, and the Dutch stopped selling iron ore, steel and oil to Japan.&lt;/p&gt;
+&lt;p&gt;However, Japan found a way of producing 80% of the Oil which was imported by themselves.&lt;/p&gt;
+&lt;h2 id=&#34;sanctions-against-iran&#34;&gt;Sanctions against Iran&lt;/h2&gt;
+&lt;p&gt;Iran is the only country which I know of that has faced similar sanctions like Russia currently. A &lt;a href=&#34;https://blog.m5e.de/post/alternatives-to-swift/&#34;&gt;SWIFT-Ban&lt;/a&gt; is nothing new to them.&lt;/p&gt;
+&lt;p&gt;Kinda similar like Japan, Iran started to produce a lot more of which was imported previously by themselves. This seem to be a good strategy. The Iranian Economy actually grew despite the Sanctions.&lt;/p&gt;
+&lt;p&gt;One important thing to note here is that western investors don&amp;rsquo;t have a easy way to invest in Iranian stocks. So if Russia would face a similar evolvement, then the Russian economy could grow in a few years above the previous levels, but maybe western shareholders will see nothing of this because the Sanctions make it impossible to invest.&lt;/p&gt;
+&lt;h2 id=&#34;statistics&#34;&gt;Statistics&lt;/h2&gt;
+&lt;p&gt;There is a good article out there from which I quoted:&lt;/p&gt;
+
+  &lt;blockquote class=&#34;twitter-tweet&#34; data-dnt=&#34;true&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&amp;quot;Despite their widespread use on the international stage, economic sanctions are largely ineffective in achieving their objectives [...] between 1915 and 2006, comprehensive sanctions were successful, at best, just 30 percent of the time.&amp;quot; &lt;a href=&#34;https://t.co/O5sUbT6VY3&#34;&gt;https://t.co/O5sUbT6VY3&lt;/a&gt;&lt;/p&gt;&amp;mdash; Christoph Miksche (@CMiksche) &lt;a href=&#34;https://twitter.com/CMiksche/status/1499665643246919680?ref_src=twsrc%5Etfw&#34;&gt;March 4, 2022&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;p&gt;Statistically and by looking at previous examples we can find out that Capitalism and Economy is stronger than political Sanctions. Most countries can grow economically even when the biggest powers in this world don&amp;rsquo;t like it.&lt;/p&gt;
+&lt;p&gt;However, for foreign Investors, Sanctions can make it very hard and destroy their investment. E.g. in Russia only a few percent of the population use Credit cards, so the impact on companies like Visa and Mastercard is probably bigger then the worries of most Russians.&lt;/p&gt;
+&lt;p&gt;So if you look from a foreign Investors perspective, then the question is not if Russia will grow again (thats very likely), it is if your country or the Exchanges you use allow you to invest in Russia - that&amp;rsquo;s the bigger Issue for you.&lt;/p&gt;
+&lt;p&gt;I want to note that I am not trying to defend Russia or any other country mentioned here - in all examples there was a good reason to sanction the mentioned countries but from a rational perspective a sanction will most likely improve the local economy so that it is not so vulnerable from outside influences.&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>Alternatives to SWIFT</title>
       <link>https://blog.m5e.de/post/alternatives-to-swift/</link>
@@ -122,30 +152,30 @@ Unfortunately I didn&amp;rsquo;t find my first PHP scripts which tried to get st
       <content>&lt;p&gt;Since 2014 I invest and trade with stocks. Since then, I always wanted to create programs which make my life as an Investor easier and since then my journey with always reliving finance API problems started.&lt;/p&gt;
 &lt;p&gt;Unfortunately I didn&amp;rsquo;t find my first PHP scripts which tried to get stock data - so I don&amp;rsquo;t remember which API stopped back then, but the rest of my journey was well documented with the help of Git.&lt;/p&gt;
 &lt;h3 id=&#34;yahoo-stock-data-api&#34;&gt;Yahoo Stock Data API&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Read Symbols from Database&lt;/span&gt;
-symbols &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; datab&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;getSymbols()
-
-&lt;span style=&#34;color:#75715e&#34;&gt;# Get Price Data for each Symbol from yahoo&lt;/span&gt;
-&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; sym &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; symbols:
-
-    url &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://finance.yahoo.com/d/quotes.csv?s=&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;sym&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;amp;f=sabd&amp;#34;&lt;/span&gt;
-
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;with&lt;/span&gt; closing(requests&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;get(url, stream&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;)) &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; r:
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Guess what: The API is not available anymore.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Read Symbols from Database&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;symbols &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; datab&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;getSymbols()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Get Price Data for each Symbol from yahoo&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; sym &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; symbols:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    url &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://finance.yahoo.com/d/quotes.csv?s=&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;sym&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;amp;f=sabd&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;with&lt;/span&gt; closing(requests&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;get(url, stream&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;)) &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; r:
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Guess what: The API is not available anymore.&lt;/p&gt;
 &lt;h3 id=&#34;yahoo-currency-data-api&#34;&gt;Yahoo Currency Data API&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;with&lt;/span&gt; urllib&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;request&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;urlopen(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://finance.yahoo.com/webservice/v1/symbols/allcurrencies/quote?format=json&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; url:
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Current Currency rates on a stable API? Not with Yahoo!&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;with&lt;/span&gt; urllib&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;request&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;urlopen(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://finance.yahoo.com/webservice/v1/symbols/allcurrencies/quote?format=json&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; url:
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Current Currency rates on a stable API? Not with Yahoo!&lt;/p&gt;
 &lt;h3 id=&#34;coinmarketcap-free-crypto-api&#34;&gt;CoinMarketCap Free Crypto API&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Get Market Data&lt;/span&gt;
-&lt;span style=&#34;color:#66d9ef&#34;&gt;with&lt;/span&gt; urllib&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;request&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;urlopen(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://api.coinmarketcap.com/v1/ticker/?convert=EUR&amp;amp;limit=0&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; url:
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Free Crypto prices? No! The guys behind CoinMarketCap found out that offering a free and open service is stupid and now ask for money!&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Get Market Data&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;with&lt;/span&gt; urllib&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;request&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;urlopen(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://api.coinmarketcap.com/v1/ticker/?convert=EUR&amp;amp;limit=0&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; url:
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Free Crypto prices? No! The guys behind CoinMarketCap found out that offering a free and open service is stupid and now ask for money!&lt;/p&gt;
 &lt;h2 id=&#34;finsymbols-python-lib&#34;&gt;Finsymbols Python lib&lt;/h2&gt;
 &lt;p&gt;Mainly get obtained via web scraping. I didn&amp;rsquo;t check all the functions, but it seems that many are outdated now.&lt;/p&gt;
 &lt;h2 id=&#34;iex-exchange&#34;&gt;IEX Exchange&lt;/h2&gt;
 &lt;p&gt;Back in the day I was crazy about this. A whole exchange which advertised it was made for developers with a free API.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;iexurl &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://api.iextrading.com/1.0/stock/&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;sym&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/quote&amp;#34;&lt;/span&gt;
-&lt;span style=&#34;color:#66d9ef&#34;&gt;with&lt;/span&gt; urllib&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;request&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;urlopen(iexurl) &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; url:
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ha! Markets move too fast to provide the same URL for a longer period! You now have to use a new one, and it is not even free anymore.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;iexurl &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://api.iextrading.com/1.0/stock/&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;sym&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/quote&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;with&lt;/span&gt; urllib&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;request&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;urlopen(iexurl) &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; url:
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ha! Markets move too fast to provide the same URL for a longer period! You now have to use a new one, and it is not even free anymore.&lt;/p&gt;
 &lt;h2 id=&#34;exchangeratesapiio&#34;&gt;exchangeratesapi.io&lt;/h2&gt;
 &lt;p&gt;Was a free and open source service with API for current exchange rates from the ECB.&lt;/p&gt;
 &lt;p&gt;The guy behind it sold it to a company which is owned by a big American Corporation. Of course, they now ask for money, even while there are many APIs which offer the same for free.&lt;/p&gt;
@@ -353,15 +383,15 @@ So this would be perfect for connecting other applications to it. (As a sidenote
       <guid>https://blog.m5e.de/post/analyzing-the-profitability-of-gtld-registry-operators/</guid>
       <description>I am a very big DNS nerd and have always registered new domains for my projects before I even made the concept of my new ideas. We had tests about the Domain Name System at my professional school and I can&amp;rsquo;t remember I ever not scored the highest&amp;hellip;
 So as someone who currently pays for 33 domains a year of which all are for private projects and none generates money I had an idea for a new gTLD which I wanted to operate.</description>
-      <content>&lt;p&gt;I am a very big DNS nerd and have always registered new domains for my projects before I even made the concept of my new ideas. 
+      <content>&lt;p&gt;I am a very big DNS nerd and have always registered new domains for my projects before I even made the concept of my new ideas.
 We had tests about the Domain Name System at my professional school and I can&amp;rsquo;t remember I ever not scored the highest&amp;hellip;&lt;/p&gt;
 &lt;p&gt;So as someone who currently pays for 33 domains a year of which all are for private projects and none generates money I had an idea for a new gTLD which I wanted to operate.&lt;/p&gt;
 &lt;p&gt;New generic top-level domains have a high entry barrier. It&amp;rsquo;s expensive (plan about 200k USD alone for the valuation from the ICANN) and you also have high recurring costs - but is it profitable to operate such a TLD?&lt;/p&gt;
-&lt;p&gt;The first gTLD application round closed in April 2012 and some of the first applicants were already founded years before that. 
+&lt;p&gt;The first gTLD application round closed in April 2012 and some of the first applicants were already founded years before that.
 Some of these new operators are public traded companies and others have to report their balance sheet to governments.&lt;/p&gt;
-&lt;p&gt;Soooo &amp;hellip;. There is data available about those new operators and before I decide if I wanna put such much money on a new TLD I (from an investor perspective) want to know how profitable new gTLDs are. 
+&lt;p&gt;Soooo &amp;hellip;. There is data available about those new operators and before I decide if I wanna put such much money on a new TLD I (from an investor perspective) want to know how profitable new gTLDs are.
 (As a side note: I am not so rich to operate a new gTLD alone - I would need some support from other investors too ^^)&lt;/p&gt;
-&lt;p&gt;That&amp;rsquo;s why I am writing this post. I need to validate if an investment in a new gTLD is profitable and if the needed energy pays out. 
+&lt;p&gt;That&amp;rsquo;s why I am writing this post. I need to validate if an investment in a new gTLD is profitable and if the needed energy pays out.
 As a modern investor there are tons of other opportunities which pay dividends, interest and more. So if you invest in something specific you should have a good return and reason for that.&lt;/p&gt;
 &lt;h2 id=&#34;registry-operators&#34;&gt;Registry operators&lt;/h2&gt;
 &lt;h3 id=&#34;donuts&#34;&gt;Donuts&lt;/h3&gt;
@@ -743,13 +773,13 @@ I blog way more often in german on my other WordPress sites and one of the main 
 &lt;p&gt;So there are many articles about switching from Hugo to Jekyll out there. Basically the &lt;code&gt;hugo import jekyll jekyll_root_path target_path&lt;/code&gt; command from Hugo converts your posts and then you need to manually edit the config, install a theme and copy your custom pages to &amp;lsquo;content&amp;rsquo;.&lt;/p&gt;
 &lt;p&gt;But one thing was missing what no other article I found mentioned: What if you want to have the same URL Scheme like Jekyll had in your older posts (so links to them still work) but use the default Hugo URL Scheme for new posts?&lt;/p&gt;
 &lt;p&gt;That is possible! You can define custom URLs for each post. My first blog post looks like that:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;---
-date: &amp;#34;2017-02-14T20:03:23Z&amp;#34;
-title: First try of Jekyll
-tags: [jekyll, first, post]
-url: &amp;#34;jekyll/first/post/2017/02/14/first-try-of-jekyll.html&amp;#34;
----
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;So if you look at the URL of that old post it has the old style from Jekyll but this post about switching to Hugo has the new URL Scheme.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;date: &amp;#34;2017-02-14T20:03:23Z&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;title: First try of Jekyll
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tags: [jekyll, first, post]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;url: &amp;#34;jekyll/first/post/2017/02/14/first-try-of-jekyll.html&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;---
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;So if you look at the URL of that old post it has the old style from Jekyll but this post about switching to Hugo has the new URL Scheme.&lt;/p&gt;
 </content>
     </item>
     
@@ -807,7 +837,7 @@ If there is one thing that I really hate, it is that a security sensible web app
 &lt;p&gt;If there is one thing that I really hate, it is that a security sensible web application doesn&amp;rsquo;t update automatically. Because of that I have begun to write a update script for Gitea before 4 months.&lt;/p&gt;
 &lt;p&gt;That script has updated my Gitea instance multiple times now and as I can see, that many users have the same problem (a german blog post from me is my most visited article from outside germany), I want to show you my solution.&lt;/p&gt;
 &lt;h3 id=&#34;warning&#34;&gt;Warning&lt;/h3&gt;
-&lt;p&gt;As I mentioned - I am no fan of manual upgrades - because of that I write many auto update scripts for my own systems. This scripts often haven&amp;rsquo;t been tested on other systems and may contain ugly code. 
+&lt;p&gt;As I mentioned - I am no fan of manual upgrades - because of that I write many auto update scripts for my own systems. This scripts often haven&amp;rsquo;t been tested on other systems and may contain ugly code.
 I am open for the creation of issues or pull requests which optimise my code. You should definitely check the code out and make sure to review it before using it.&lt;/p&gt;
 &lt;p&gt;Some creators - e.g. the person behind Kanboard - have a strong option against auto updates. There are good reasons for that too - you may not want to crash your application because of a faulty upgrade. I recommend auto updates only if you create auto backups, too.&lt;/p&gt;
 &lt;h3 id=&#34;the-script&#34;&gt;The Script&lt;/h3&gt;
@@ -853,7 +883,7 @@ logFile=update.log
       <description>After installing FreeBSD to my workstation, I wanted a desktop environment. I&amp;rsquo;ve installed gnome3 after reading the official documentation https://www.freebsd.org/doc/handbook/x11-wm.html.
 But nothing has worked. So, I installed the nvidia-driver for my two GPUs. The first documentation I&amp;rsquo;ve found is from &amp;ldquo;7.3-RELEASE&amp;rdquo;: https://docs.freebsd.org/doc/7.3-RELEASE/usr/share/doc/en/articles/compiz-fusion/nvidia-setup.html. (I use 11.1-RELEASE)
 Don&amp;rsquo;t use that documentation to make your settings in /boot/loader.conf! There stands:
-nvidia_load=&amp;quot;YES&amp;quot; And that&amp;rsquo;s simply not right for the newest driver!
+nvidia_load=&amp;quot;YES&amp;quot;  And that&amp;rsquo;s simply not right for the newest driver!
 You should enter the following line:</description>
       <content>&lt;p&gt;After installing FreeBSD to my workstation, I wanted a desktop environment. I&amp;rsquo;ve installed gnome3 after reading the official documentation &lt;a href=&#34;https://www.freebsd.org/doc/handbook/x11-wm.html&#34;&gt;https://www.freebsd.org/doc/handbook/x11-wm.html&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;But nothing has worked. So, I installed the nvidia-driver for my two GPUs. The first documentation I&amp;rsquo;ve found is from &amp;ldquo;7.3-RELEASE&amp;rdquo;: &lt;a href=&#34;https://docs.freebsd.org/doc/7.3-RELEASE/usr/share/doc/en/articles/compiz-fusion/nvidia-setup.html&#34;&gt;https://docs.freebsd.org/doc/7.3-RELEASE/usr/share/doc/en/articles/compiz-fusion/nvidia-setup.html&lt;/a&gt;. (I use 11.1-RELEASE)&lt;/p&gt;
