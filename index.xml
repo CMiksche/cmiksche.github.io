@@ -6,7 +6,47 @@
     <description>Recent content on M5E&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 04 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SolarWinds Stock Analysis</title>
+      <link>https://blog.m5e.de/post/solarwinds-stock-analysis/</link>
+      <pubDate>Sat, 12 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/post/solarwinds-stock-analysis/</guid>
+      <description>When the SolarWinds supply chain attack happened in 2020, I didn&amp;rsquo;t really get deep into what SolarWinds does because I had to focus on day-to-day business. But now, in 2022, I found out what SolarWinds does because I was searching for monitoring solutions myself.
+In this article I want to cover the current valuation, a description of what SolarWinds does and my thoughts about the future.
+Valuation As of March 12, the company trades at 11.</description>
+      <content>&lt;p&gt;When the SolarWinds supply chain attack happened in 2020, I didn&amp;rsquo;t really get deep into what SolarWinds does because I had to focus on day-to-day business. But now, in 2022, I found out what SolarWinds does because I was searching for monitoring solutions myself.&lt;/p&gt;
+&lt;p&gt;In this article I want to cover the current valuation, a description of what SolarWinds does and my thoughts about the future.&lt;/p&gt;
+&lt;h2 id=&#34;valuation&#34;&gt;Valuation&lt;/h2&gt;
+&lt;p&gt;As of March 12, the company trades at 11.21 USD per share. That&amp;rsquo;s below book value. The company has an equity ratio of nearly 48% and the revenue for 2021 fell nearly 30% from 2020 and is now at 2017 levels.&lt;/p&gt;
+&lt;p&gt;The companies stock fell nearly 70% in the last few years. So seeing that the book value is higher and the revenue didn&amp;rsquo;t fall as much as the stock price, this seems like an overreaction connected with the hack. But to understand the hack better, let&amp;rsquo;s see what SolarWinds does on a day-to-day basis.&lt;/p&gt;
+&lt;h2 id=&#34;solarwinds-business&#34;&gt;SolarWinds Business&lt;/h2&gt;
+&lt;p&gt;At it&amp;rsquo;s core, SolarWinds offers IT monitoring solutions. IT professionals may know competitors like PRTG from Paessler AG or Nagios.&lt;/p&gt;
+&lt;p&gt;These solutions make it easier to control IT infrastructure like Servers, Routers, Switches and more. The goal is to detect a possible problem before an outage happens. So an engineer may get a push notification if e.g. the storage level on a server gets low.&lt;/p&gt;
+&lt;p&gt;One very big difference to its competitors is that SolarWinds offers a wide range of monitoring solutions. While most competitors focus on special areas - like collecting and analyzing log files or monitoring servers and routers, SolarWinds offers solutions for nearly every area.
+SolarWinds archived that by buying smaller companies like e.g. Loggly.&lt;/p&gt;
+&lt;p&gt;A typical customer company has many sensors which collect data and send it to the monitoring dashboard. Because a lot of information can be monitored, these Sensors are in very high numbers (often a company has more sensors than employees)
+Think about an international corporation - sensors may be grouped into the different sites around the world and may monitor every single IT device.&lt;/p&gt;
+&lt;p&gt;If a company wants to switch to another solution from SolarWinds, not only the dashboards, but also every single sensor will most likely need work to be replaced by the new solution. Also, because most competitors only cover some of SolarWinds areas, the switching company will need to make new contracts with multiple new companies.
+All-in-all, switching from SolarWinds is hard and expensive.&lt;/p&gt;
+&lt;p&gt;Free, Open Source Solutions exist (I for myself want to use only free software for monitoring my upcoming SaaS company) but again - you have to setup and connect multiple Software Solutions - there is no single one which can easily replace all of SolarWinds features.
+For this setup of the Open Source solutions, a lot of time and manpower is required - so it wouldn&amp;rsquo;t surprise me if running SolarWinds is cheaper for big companies than paying all the employees who work on integrating the Open Source Systems.&lt;/p&gt;
+&lt;h2 id=&#34;the-hack&#34;&gt;The Hack&lt;/h2&gt;
+&lt;p&gt;Because SolarWinds monitors so many systems of its customers, this hack has gained so much media attention. To prevent outages, you really have to know a lot of details of your infrastructure, and the attackers could get deep inside this information about SolarWinds customers.&lt;/p&gt;
+&lt;p&gt;But the hack was a supply chain attack originated from the build system which SolarWinds uses. This is very interesting to me because I am aware, that many of the world&amp;rsquo;s biggest tech companies have had similar vulnerabilities in the past.&lt;/p&gt;
+&lt;p&gt;A recent example could be &lt;a href=&#34;https://thehackerblog.com/zero-days-without-incident-compromising-angular-via-expired-npm-publisher-email-domains-7kZplW4x/&#34;&gt;this case&lt;/a&gt;, where a hacker could push malicious code into the Angular framework from Google.&lt;/p&gt;
+&lt;p&gt;So it&amp;rsquo;s not like this couldn&amp;rsquo;t happen to some of the most well known companies. SolarWinds was probably chosen for the attack because it&amp;rsquo;s monitoring solutions are deeply integrated into the US Government and the biggest American Companies.&lt;/p&gt;
+&lt;p&gt;Unfortunately for SolarWinds, the hack was a PR disaster. The CEO blamed an intern about an easy password, and that&amp;rsquo;s a no-go from a marketing perspective.
+(Because first of all, an intern shouldn&amp;rsquo;t get so much responsibility and second of all, there should be processes to prevent easy to guess passwords)
+But to be honest, I don&amp;rsquo;t think that most companies are better than that. This could have happened at nearly every company.&lt;/p&gt;
+&lt;h2 id=&#34;future&#34;&gt;Future&lt;/h2&gt;
+&lt;p&gt;SolarWinds customers are deeply integrated into a system which is not easy to replace. So it&amp;rsquo;s hard to know how many of these companies spend the money for switching to a different solution because of this hack.&lt;/p&gt;
+&lt;p&gt;Also, such a hack could happen again at a competitor. SolarWinds has a forward P/E of 12.79, the competitor Datadog has a forward P/E of 322.58. That&amp;rsquo;s ridiculous in my eyes, because the same could happen to Datadog and then the revenue could also fall instead of growing high numbers every year.&lt;/p&gt;
+&lt;p&gt;Maybe customers will forget the hack in a few years, but maybe the Image to too damaged and SolarWinds has to rename it&amp;rsquo;s business, spin off all the assets or find another solution.&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>Influence of Sanctions on Economies</title>
       <link>https://blog.m5e.de/post/influence-of-sanctions-on-economies/</link>
@@ -383,15 +423,15 @@ So this would be perfect for connecting other applications to it. (As a sidenote
       <guid>https://blog.m5e.de/post/analyzing-the-profitability-of-gtld-registry-operators/</guid>
       <description>I am a very big DNS nerd and have always registered new domains for my projects before I even made the concept of my new ideas. We had tests about the Domain Name System at my professional school and I can&amp;rsquo;t remember I ever not scored the highest&amp;hellip;
 So as someone who currently pays for 33 domains a year of which all are for private projects and none generates money I had an idea for a new gTLD which I wanted to operate.</description>
-      <content>&lt;p&gt;I am a very big DNS nerd and have always registered new domains for my projects before I even made the concept of my new ideas.
+      <content>&lt;p&gt;I am a very big DNS nerd and have always registered new domains for my projects before I even made the concept of my new ideas. 
 We had tests about the Domain Name System at my professional school and I can&amp;rsquo;t remember I ever not scored the highest&amp;hellip;&lt;/p&gt;
 &lt;p&gt;So as someone who currently pays for 33 domains a year of which all are for private projects and none generates money I had an idea for a new gTLD which I wanted to operate.&lt;/p&gt;
 &lt;p&gt;New generic top-level domains have a high entry barrier. It&amp;rsquo;s expensive (plan about 200k USD alone for the valuation from the ICANN) and you also have high recurring costs - but is it profitable to operate such a TLD?&lt;/p&gt;
-&lt;p&gt;The first gTLD application round closed in April 2012 and some of the first applicants were already founded years before that.
+&lt;p&gt;The first gTLD application round closed in April 2012 and some of the first applicants were already founded years before that. 
 Some of these new operators are public traded companies and others have to report their balance sheet to governments.&lt;/p&gt;
-&lt;p&gt;Soooo &amp;hellip;. There is data available about those new operators and before I decide if I wanna put such much money on a new TLD I (from an investor perspective) want to know how profitable new gTLDs are.
+&lt;p&gt;Soooo &amp;hellip;. There is data available about those new operators and before I decide if I wanna put such much money on a new TLD I (from an investor perspective) want to know how profitable new gTLDs are. 
 (As a side note: I am not so rich to operate a new gTLD alone - I would need some support from other investors too ^^)&lt;/p&gt;
-&lt;p&gt;That&amp;rsquo;s why I am writing this post. I need to validate if an investment in a new gTLD is profitable and if the needed energy pays out.
+&lt;p&gt;That&amp;rsquo;s why I am writing this post. I need to validate if an investment in a new gTLD is profitable and if the needed energy pays out. 
 As a modern investor there are tons of other opportunities which pay dividends, interest and more. So if you invest in something specific you should have a good return and reason for that.&lt;/p&gt;
 &lt;h2 id=&#34;registry-operators&#34;&gt;Registry operators&lt;/h2&gt;
 &lt;h3 id=&#34;donuts&#34;&gt;Donuts&lt;/h3&gt;
@@ -837,7 +877,7 @@ If there is one thing that I really hate, it is that a security sensible web app
 &lt;p&gt;If there is one thing that I really hate, it is that a security sensible web application doesn&amp;rsquo;t update automatically. Because of that I have begun to write a update script for Gitea before 4 months.&lt;/p&gt;
 &lt;p&gt;That script has updated my Gitea instance multiple times now and as I can see, that many users have the same problem (a german blog post from me is my most visited article from outside germany), I want to show you my solution.&lt;/p&gt;
 &lt;h3 id=&#34;warning&#34;&gt;Warning&lt;/h3&gt;
-&lt;p&gt;As I mentioned - I am no fan of manual upgrades - because of that I write many auto update scripts for my own systems. This scripts often haven&amp;rsquo;t been tested on other systems and may contain ugly code.
+&lt;p&gt;As I mentioned - I am no fan of manual upgrades - because of that I write many auto update scripts for my own systems. This scripts often haven&amp;rsquo;t been tested on other systems and may contain ugly code. 
 I am open for the creation of issues or pull requests which optimise my code. You should definitely check the code out and make sure to review it before using it.&lt;/p&gt;
 &lt;p&gt;Some creators - e.g. the person behind Kanboard - have a strong option against auto updates. There are good reasons for that too - you may not want to crash your application because of a faulty upgrade. I recommend auto updates only if you create auto backups, too.&lt;/p&gt;
 &lt;h3 id=&#34;the-script&#34;&gt;The Script&lt;/h3&gt;
@@ -883,7 +923,7 @@ logFile=update.log
       <description>After installing FreeBSD to my workstation, I wanted a desktop environment. I&amp;rsquo;ve installed gnome3 after reading the official documentation https://www.freebsd.org/doc/handbook/x11-wm.html.
 But nothing has worked. So, I installed the nvidia-driver for my two GPUs. The first documentation I&amp;rsquo;ve found is from &amp;ldquo;7.3-RELEASE&amp;rdquo;: https://docs.freebsd.org/doc/7.3-RELEASE/usr/share/doc/en/articles/compiz-fusion/nvidia-setup.html. (I use 11.1-RELEASE)
 Don&amp;rsquo;t use that documentation to make your settings in /boot/loader.conf! There stands:
-nvidia_load=&amp;quot;YES&amp;quot;  And that&amp;rsquo;s simply not right for the newest driver!
+nvidia_load=&amp;quot;YES&amp;quot; And that&amp;rsquo;s simply not right for the newest driver!
 You should enter the following line:</description>
       <content>&lt;p&gt;After installing FreeBSD to my workstation, I wanted a desktop environment. I&amp;rsquo;ve installed gnome3 after reading the official documentation &lt;a href=&#34;https://www.freebsd.org/doc/handbook/x11-wm.html&#34;&gt;https://www.freebsd.org/doc/handbook/x11-wm.html&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;But nothing has worked. So, I installed the nvidia-driver for my two GPUs. The first documentation I&amp;rsquo;ve found is from &amp;ldquo;7.3-RELEASE&amp;rdquo;: &lt;a href=&#34;https://docs.freebsd.org/doc/7.3-RELEASE/usr/share/doc/en/articles/compiz-fusion/nvidia-setup.html&#34;&gt;https://docs.freebsd.org/doc/7.3-RELEASE/usr/share/doc/en/articles/compiz-fusion/nvidia-setup.html&lt;/a&gt;. (I use 11.1-RELEASE)&lt;/p&gt;
