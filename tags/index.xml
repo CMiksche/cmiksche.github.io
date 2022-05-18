@@ -338,46 +338,6 @@
     </item>
     
     <item>
-      <title>APIs</title>
-      <link>https://blog.m5e.de/tags/APIs/</link>
-      <pubDate>Wed, 08 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.m5e.de/tags/APIs/</guid>
-      <description></description>
-      <content></content>
-    </item>
-    
-    <item>
-      <title>currencies</title>
-      <link>https://blog.m5e.de/tags/currencies/</link>
-      <pubDate>Wed, 08 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.m5e.de/tags/currencies/</guid>
-      <description></description>
-      <content></content>
-    </item>
-    
-    <item>
-      <title>finance</title>
-      <link>https://blog.m5e.de/tags/finance/</link>
-      <pubDate>Wed, 08 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.m5e.de/tags/finance/</guid>
-      <description></description>
-      <content></content>
-    </item>
-    
-    <item>
-      <title>Problem</title>
-      <link>https://blog.m5e.de/tags/Problem/</link>
-      <pubDate>Wed, 08 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.m5e.de/tags/Problem/</guid>
-      <description></description>
-      <content></content>
-    </item>
-    
-    <item>
       <title>Evergrande</title>
       <link>https://blog.m5e.de/tags/Evergrande/</link>
       <pubDate>Tue, 21 Sep 2021 00:00:00 +0000</pubDate>
@@ -553,6 +513,16 @@
       <pubDate>Tue, 23 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/tags/Odoo/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Problem</title>
+      <link>https://blog.m5e.de/tags/Problem/</link>
+      <pubDate>Tue, 23 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/tags/Problem/</guid>
       <description></description>
       <content></content>
     </item>
@@ -858,66 +828,6 @@
     </item>
     
     <item>
-      <title>benchmark</title>
-      <link>https://blog.m5e.de/tags/benchmark/</link>
-      <pubDate>Sat, 29 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.m5e.de/tags/benchmark/</guid>
-      <description></description>
-      <content></content>
-    </item>
-    
-    <item>
-      <title>crystal</title>
-      <link>https://blog.m5e.de/tags/crystal/</link>
-      <pubDate>Sat, 29 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.m5e.de/tags/crystal/</guid>
-      <description></description>
-      <content></content>
-    </item>
-    
-    <item>
-      <title>go</title>
-      <link>https://blog.m5e.de/tags/go/</link>
-      <pubDate>Sat, 29 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.m5e.de/tags/go/</guid>
-      <description></description>
-      <content></content>
-    </item>
-    
-    <item>
-      <title>javascript</title>
-      <link>https://blog.m5e.de/tags/javascript/</link>
-      <pubDate>Sat, 29 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.m5e.de/tags/javascript/</guid>
-      <description></description>
-      <content></content>
-    </item>
-    
-    <item>
-      <title>performance</title>
-      <link>https://blog.m5e.de/tags/performance/</link>
-      <pubDate>Sat, 29 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.m5e.de/tags/performance/</guid>
-      <description></description>
-      <content></content>
-    </item>
-    
-    <item>
-      <title>python</title>
-      <link>https://blog.m5e.de/tags/python/</link>
-      <pubDate>Sat, 29 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.m5e.de/tags/python/</guid>
-      <description></description>
-      <content></content>
-    </item>
-    
-    <item>
       <title>jekyll</title>
       <link>https://blog.m5e.de/tags/jekyll/</link>
       <pubDate>Tue, 25 Aug 2020 00:00:00 +0000</pubDate>
@@ -943,6 +853,16 @@
       <pubDate>Fri, 22 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/tags/linux/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://blog.m5e.de/tags/python/</link>
+      <pubDate>Fri, 22 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/tags/python/</guid>
       <description></description>
       <content></content>
     </item>
