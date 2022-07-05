@@ -14,9 +14,9 @@
       
       <guid>https://blog.m5e.de/post/delete-and-resync-a-crypto-wallet-on-your-server/</guid>
       <description>I stake a Cryptocurrency based of Peercoin on a Server since years. Multiple months ago this stopped because of the following error:
-Coind: kernel.cpp:372: unsigned int GetStakeModifierChecksum(const CBlockIndex*): Assertion `pindex-&amp;gt;pprev || pindex-&amp;gt;GetBlockHash() == (!fTestNet ? hashGenesisBlock : hashGenesisBlockTestNet)&#39; failed.  This Error often comes when your Blockchain is corrupted. The cause of my problem was an unexpected downtime.
+Coind: kernel.cpp:372: unsigned int GetStakeModifierChecksum(const CBlockIndex*): Assertion `pindex-&amp;gt;pprev || pindex-&amp;gt;GetBlockHash() == (!fTestNet ? hashGenesisBlock : hashGenesisBlockTestNet)&#39; failed. This Error often comes when your Blockchain is corrupted. The cause of my problem was an unexpected downtime.
 To fix this:
- Stop the Daemon Backup the Folder of the Coin Delete everything except wallet.</description>
+Stop the Daemon Backup the Folder of the Coin Delete everything except wallet.</description>
       <content>&lt;p&gt;I stake a Cryptocurrency based of Peercoin on a Server since years. Multiple months ago this stopped because of the following error:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;Coind: kernel.cpp:372: unsigned int GetStakeModifierChecksum(const CBlockIndex*): Assertion `pindex-&amp;gt;pprev || pindex-&amp;gt;GetBlockHash() == (!fTestNet ? hashGenesisBlock : hashGenesisBlockTestNet)&#39; failed.
 &lt;/code&gt;&lt;/pre&gt;
