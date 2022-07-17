@@ -2,6 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.m5e.de/tags/Facebook/</loc>
+    <lastmod>2022-07-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/tags/Instagram/</loc>
+    <lastmod>2022-07-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/</loc>
+    <lastmod>2022-07-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/tags/Meta/</loc>
+    <lastmod>2022-07-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/post/</loc>
+    <lastmod>2022-07-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/tags/Scapegoat/</loc>
+    <lastmod>2022-07-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/tags/</loc>
+    <lastmod>2022-07-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/post/the-scapegoat-called-meta/</loc>
+    <lastmod>2022-07-17T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://blog.m5e.de/tags/DNS/</loc>
     <lastmod>2022-07-05T00:00:00+00:00</lastmod>
   </url><url>
@@ -20,19 +44,10 @@
     <loc>https://blog.m5e.de/post/investing-in-domains/</loc>
     <lastmod>2022-07-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.m5e.de/</loc>
-    <lastmod>2022-07-05T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://blog.m5e.de/tags/Names/</loc>
     <lastmod>2022-07-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.m5e.de/post/</loc>
-    <lastmod>2022-07-05T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://blog.m5e.de/tags/registry/</loc>
-    <lastmod>2022-07-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.m5e.de/tags/</loc>
     <lastmod>2022-07-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.m5e.de/tags/Cost/</loc>
@@ -255,9 +270,6 @@
     <lastmod>2021-02-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.m5e.de/tags/dating/</loc>
-    <lastmod>2021-02-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.m5e.de/tags/facebook/</loc>
     <lastmod>2021-02-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.m5e.de/tags/ipo/</loc>
