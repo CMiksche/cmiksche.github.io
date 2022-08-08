@@ -554,15 +554,15 @@ So this would be perfect for connecting other applications to it. (As a sidenote
       <guid>https://blog.m5e.de/post/analyzing-the-profitability-of-gtld-registry-operators/</guid>
       <description>I am a very big DNS nerd and have always registered new domains for my projects before I even made the concept of my new ideas. We had tests about the Domain Name System at my professional school and I can&amp;rsquo;t remember I ever not scored the highest&amp;hellip;
 So as someone who currently pays for 33 domains a year of which all are for private projects and none generates money I had an idea for a new gTLD which I wanted to operate.</description>
-      <content>&lt;p&gt;I am a very big DNS nerd and have always registered new domains for my projects before I even made the concept of my new ideas.
+      <content>&lt;p&gt;I am a very big DNS nerd and have always registered new domains for my projects before I even made the concept of my new ideas. 
 We had tests about the Domain Name System at my professional school and I can&amp;rsquo;t remember I ever not scored the highest&amp;hellip;&lt;/p&gt;
 &lt;p&gt;So as someone who currently pays for 33 domains a year of which all are for private projects and none generates money I had an idea for a new gTLD which I wanted to operate.&lt;/p&gt;
 &lt;p&gt;New generic top-level domains have a high entry barrier. It&amp;rsquo;s expensive (plan about 200k USD alone for the valuation from the ICANN) and you also have high recurring costs - but is it profitable to operate such a TLD?&lt;/p&gt;
-&lt;p&gt;The first gTLD application round closed in April 2012 and some of the first applicants were already founded years before that.
+&lt;p&gt;The first gTLD application round closed in April 2012 and some of the first applicants were already founded years before that. 
 Some of these new operators are public traded companies and others have to report their balance sheet to governments.&lt;/p&gt;
-&lt;p&gt;Soooo &amp;hellip;. There is data available about those new operators and before I decide if I wanna put such much money on a new TLD I (from an investor perspective) want to know how profitable new gTLDs are.
+&lt;p&gt;Soooo &amp;hellip;. There is data available about those new operators and before I decide if I wanna put such much money on a new TLD I (from an investor perspective) want to know how profitable new gTLDs are. 
 (As a side note: I am not so rich to operate a new gTLD alone - I would need some support from other investors too ^^)&lt;/p&gt;
-&lt;p&gt;That&amp;rsquo;s why I am writing this post. I need to validate if an investment in a new gTLD is profitable and if the needed energy pays out.
+&lt;p&gt;That&amp;rsquo;s why I am writing this post. I need to validate if an investment in a new gTLD is profitable and if the needed energy pays out. 
 As a modern investor there are tons of other opportunities which pay dividends, interest and more. So if you invest in something specific you should have a good return and reason for that.&lt;/p&gt;
 &lt;h2 id=&#34;registry-operators&#34;&gt;Registry operators&lt;/h2&gt;
 &lt;h3 id=&#34;donuts&#34;&gt;Donuts&lt;/h3&gt;
@@ -970,7 +970,7 @@ If there is one thing that I really hate, it is that a security sensible web app
 &lt;p&gt;If there is one thing that I really hate, it is that a security sensible web application doesn&amp;rsquo;t update automatically. Because of that I have begun to write a update script for Gitea before 4 months.&lt;/p&gt;
 &lt;p&gt;That script has updated my Gitea instance multiple times now and as I can see, that many users have the same problem (a german blog post from me is my most visited article from outside germany), I want to show you my solution.&lt;/p&gt;
 &lt;h3 id=&#34;warning&#34;&gt;Warning&lt;/h3&gt;
-&lt;p&gt;As I mentioned - I am no fan of manual upgrades - because of that I write many auto update scripts for my own systems. This scripts often haven&amp;rsquo;t been tested on other systems and may contain ugly code.
+&lt;p&gt;As I mentioned - I am no fan of manual upgrades - because of that I write many auto update scripts for my own systems. This scripts often haven&amp;rsquo;t been tested on other systems and may contain ugly code. 
 I am open for the creation of issues or pull requests which optimise my code. You should definitely check the code out and make sure to review it before using it.&lt;/p&gt;
 &lt;p&gt;Some creators - e.g. the person behind Kanboard - have a strong option against auto updates. There are good reasons for that too - you may not want to crash your application because of a faulty upgrade. I recommend auto updates only if you create auto backups, too.&lt;/p&gt;
 &lt;h3 id=&#34;the-script&#34;&gt;The Script&lt;/h3&gt;
@@ -1016,7 +1016,7 @@ logFile=update.log
       <description>After installing FreeBSD to my workstation, I wanted a desktop environment. I&amp;rsquo;ve installed gnome3 after reading the official documentation https://www.freebsd.org/doc/handbook/x11-wm.html.
 But nothing has worked. So, I installed the nvidia-driver for my two GPUs. The first documentation I&amp;rsquo;ve found is from &amp;ldquo;7.3-RELEASE&amp;rdquo;: https://docs.freebsd.org/doc/7.3-RELEASE/usr/share/doc/en/articles/compiz-fusion/nvidia-setup.html. (I use 11.1-RELEASE)
 Don&amp;rsquo;t use that documentation to make your settings in /boot/loader.conf! There stands:
-nvidia_load=&amp;quot;YES&amp;quot; And that&amp;rsquo;s simply not right for the newest driver!
+nvidia_load=&amp;quot;YES&amp;quot;And that&amp;rsquo;s simply not right for the newest driver!
 You should enter the following line:</description>
       <content>&lt;p&gt;After installing FreeBSD to my workstation, I wanted a desktop environment. I&amp;rsquo;ve installed gnome3 after reading the official documentation &lt;a href=&#34;https://www.freebsd.org/doc/handbook/x11-wm.html&#34;&gt;https://www.freebsd.org/doc/handbook/x11-wm.html&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;But nothing has worked. So, I installed the nvidia-driver for my two GPUs. The first documentation I&amp;rsquo;ve found is from &amp;ldquo;7.3-RELEASE&amp;rdquo;: &lt;a href=&#34;https://docs.freebsd.org/doc/7.3-RELEASE/usr/share/doc/en/articles/compiz-fusion/nvidia-setup.html&#34;&gt;https://docs.freebsd.org/doc/7.3-RELEASE/usr/share/doc/en/articles/compiz-fusion/nvidia-setup.html&lt;/a&gt;. (I use 11.1-RELEASE)&lt;/p&gt;
@@ -1108,7 +1108,7 @@ Legal Disclosure Information in accordance with section 5 TMG
 Christoph Miksche
 Forststraße 2
 97500 Ebelsbach
-Contact Telephone: 0176 82532907
+Contact Telephone: 0156 78156007
 E-Mail: christoph[at]miksche[dot]org
 Disclaimer Accountability for content The contents of our pages have been created with the utmost care. However, we cannot guarantee the contents&amp;rsquo; accuracy, completeness or topicality. According to statutory provisions, we are furthermore responsible for our own content on these web pages.</description>
       <content>&lt;p&gt;This is Christoph Daniel Miksche&amp;rsquo;s blog in english. He also offers a german blog at &lt;a href=&#34;http://christoph.miksche.org&#34;&gt;http://christoph.miksche.org&lt;/a&gt;.&lt;/p&gt;
@@ -1118,7 +1118,7 @@ Disclaimer Accountability for content The contents of our pages have been create
 &lt;p&gt;Forststraße 2&lt;/p&gt;
 &lt;p&gt;97500 Ebelsbach&lt;/p&gt;
 &lt;h1 id=&#34;contact&#34;&gt;Contact&lt;/h1&gt;
-&lt;p&gt;Telephone: 0176 82532907&lt;/p&gt;
+&lt;p&gt;Telephone: 0156 78156007&lt;/p&gt;
 &lt;p&gt;E-Mail: christoph[at]miksche[dot]org&lt;/p&gt;
 &lt;h1 id=&#34;disclaimer&#34;&gt;Disclaimer&lt;/h1&gt;
 &lt;h2 id=&#34;accountability-for-content&#34;&gt;Accountability for content&lt;/h2&gt;
