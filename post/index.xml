@@ -6,7 +6,53 @@
     <description>Recent content in Posts on M5E&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VR and digital Assistants are the Future</title>
+      <link>https://blog.m5e.de/post/vr-and-digital-assistants/</link>
+      <pubDate>Tue, 23 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/post/vr-and-digital-assistants/</guid>
+      <description>I want to make a prediction. I think in around 10 - 15 years, most of the people in the western World will own or think about owning a Virtual Reality Headset. I also think that digital Assistants like Google Assistant or Alexa will be more important in that context than currently.
+For context: I own a VR Headset and use digital Assistants since multiple years. I also worked in a team developing a digital Assistant and seeing practical use-cases for AR in the past.</description>
+      <content>&lt;p&gt;I want to make a prediction. I think in around 10 - 15 years, most of the people in the western World will own or think about owning a Virtual Reality Headset. I also think that digital Assistants like Google Assistant or Alexa will be more important in that context than currently.&lt;/p&gt;
+&lt;p&gt;For context: I own a VR Headset and use digital Assistants since multiple years. I also worked in a team developing a digital Assistant and seeing practical use-cases for AR in the past.&lt;/p&gt;
+&lt;h2 id=&#34;practical-use-cases&#34;&gt;Practical Use-Cases&lt;/h2&gt;
+&lt;p&gt;I write this text on a workstation with 4 displays. This amount of displays is useful for my kind of software development at &lt;a href=&#34;https://chapati.systems/&#34;&gt;Chapati Systems GmbH&lt;/a&gt;. One monitor is used for my IDE, another for rendering the preview of my software, the third one for emails / chats and the last one for a Terminal interface and e.g. checking out Logfiles.&lt;/p&gt;
+&lt;p&gt;This kind of setup is not uncommon in software development or trading. Many people can work more efficiently with multiple monitors.&lt;/p&gt;
+&lt;p&gt;But such a setup has many flaws. Beginning with portability. I travel a lot since the last year. E.g. my girlfriend lives in another city and business fares, political party meetups or other events are not in my small rural village.&lt;/p&gt;
+&lt;p&gt;So it would be really cool, having multiple monitors by my side independently of where I am currently. That&amp;rsquo;s hard with physical monitors. In the past, I could only use my 13-inch display from my MacBook.&lt;/p&gt;
+&lt;p&gt;Now thanks to Software like &lt;a href=&#34;https://immersed.com/&#34;&gt;Immersed&lt;/a&gt; some people already use multiple virtual monitors which they can take with them wherever they are. There are Stories like &lt;a href=&#34;https://www.wired.com/story/hours-working-vr-tips/&#34;&gt;this&lt;/a&gt; or &lt;a href=&#34;https://medium.com/immersedteam/working-from-orbit-39bf95a6d385&#34;&gt;this&lt;/a&gt; where Users tell their experience of working inside a virtual world.&lt;/p&gt;
+&lt;p&gt;This kind of Setup has many advantages. Because you have 360 degree view inside of a VR Headset, you can basically place as many virtual monitors as physical possible. Independently of your current location. Much cheaper than physical displays.&lt;/p&gt;
+&lt;p&gt;But why doesn&amp;rsquo;t everybody use them already?&lt;/p&gt;
+&lt;h2 id=&#34;current-issues&#34;&gt;Current Issues&lt;/h2&gt;
+&lt;p&gt;While current Generation Headsets have a quite good resolution on paper, the reality is that it is still not sharp enough.&lt;/p&gt;
+&lt;p&gt;You have to divide the resolution by two because you have two eyes, also it&amp;rsquo;s not comparable to traditional displays because instead of a fixed inch resolution, you have a 360 degree view.&lt;/p&gt;
+&lt;p&gt;This means with a Meta Quest 2, you can see every single Pixel! Also, the refresh rate is way more important in a VR Headset. Low refresh rates can lead to VR sickness.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Virtual_reality_sickness&#34;&gt;Virtual reality sickness&lt;/a&gt; also happened to me when I tried to move around SkyrimVR with the traditional Game-Style movement. Since I switched to teleportation as movement, it&amp;rsquo;s way better.
+When everything is moving around you without your legs moving, that&amp;rsquo;s sometimes too much for your brain.&lt;/p&gt;
+&lt;p&gt;So the sharpness is a big Issue because obviously you don&amp;rsquo;t want to look at a blurry display all day. Besides this, it is very important that your face is positioned in the best way inside of your headset. A small change in the centering of your face can lead to a significant change in the sharpness of the image.&lt;/p&gt;
+&lt;p&gt;Without a good fitting Head Strap, current headsets are too blurry, and you won&amp;rsquo;t use them.&lt;/p&gt;
+&lt;p&gt;These were issues related to the sharpness. But there is another Issue. Most current headsets need an external PC with a good CPU and GPU for more intensive tasks like e.g. playing SkyrimVR.&lt;/p&gt;
+&lt;h2 id=&#34;outlook&#34;&gt;Outlook&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://simulavr.com/&#34;&gt;SimulaVR&lt;/a&gt; offers a Headset which has way more computing power than e.g. a Meta Quest 2 and therefore is the first headset I know of where you don&amp;rsquo;t need an external device for playing compute-intensive Games.&lt;/p&gt;
+&lt;p&gt;SimulaVR is very interesting, because they also &lt;a href=&#34;https://github.com/SimulaVR/Simula&#34;&gt;open-sourced&lt;/a&gt; their Linux VR Desktop which allows using multiple screens inside of your VR headset. This project seems to provide sharper text than other solutions. There are also some open-source efforts of other people like &lt;a href=&#34;https://gitlab.freedesktop.org/xrdesktop/xrdesktop&#34;&gt;xrdesktop&lt;/a&gt; and &lt;a href=&#34;https://github.com/letoram/safespaces&#34;&gt;safespaces&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I mention SimulaVR because this Startup already offers what I think is the future: Powerful standalone VR Headsets.&lt;/p&gt;
+&lt;p&gt;Apple is said to develop a VR or AR headset since multiple years. Apple just changed the way the world thinks about ARM processors. Think what these powerful and energy-saving CPUs could do inside a VR headset. Current Generation devices run out of battery power in just a few hours and have Issues with computing-power. A powerful Apple CPU could solve these Issues.&lt;/p&gt;
+&lt;p&gt;Facebook just renamed itself to Meta, which means, telling the world that they want to focus on AR and VR environments. I think these two companies could lead the VR world in a few years.&lt;/p&gt;
+&lt;h2 id=&#34;the-role-of-virtual-assistants&#34;&gt;The Role of virtual Assistants&lt;/h2&gt;
+&lt;p&gt;When you are in a 360 degree virtual World, controlling things becomes very important. You don&amp;rsquo;t want to use your Quest controllers for writing text, so some Software allows you to map your physical keyboard and use it while you are e.g. writing code.&lt;/p&gt;
+&lt;p&gt;But using Controllers or Keyboards is not natural. Meta itself offers a way of detecting your hands, but it still has some Issues.&lt;/p&gt;
+&lt;p&gt;Another way of controlling things would be voice. Because VR means you don&amp;rsquo;t see your surroundings all the time like with AR, I think that voice will be very important. It&amp;rsquo;s easier to tell your Google Home what should be done compared to navigate with your controllers to the right settings.&lt;/p&gt;
+&lt;p&gt;Think of being in a virtual World, everything looks different in that world, you feel like being e.g. on another planet. So navigating by telling some virtual Butler feels similar to telling a Butler in the real world what should be done.&lt;/p&gt;
+&lt;p&gt;Navigation by Voice is just comfortable and easier than the Alternatives in many cases. Especially in VR.&lt;/p&gt;
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;p&gt;VR has currently many Issues but offers many benefits and has likely a bright future in a few years when most Issues are solved. It currently sounds utopian and strange to people not familiar to the matter, but I think that VR together with voice will provide a more natural way of controlling your PC compared to keyboard, mice and touch.&lt;/p&gt;
+&lt;p&gt;There are tons of possibilities for companies in that space. 360-degree videos are currently a niche space, but what if that space growths fast over the next years? Using Software in 360 degrees requires rethinking, similar to the way Smartphones changed Software Development.&lt;/p&gt;
+&lt;p&gt;App Stores on VR Headsets are not so filled right now. I think there are chances in that area right now, similar to the early iPhone days. Especially because most people and developers are focusing on the gaming space, while all other kinds of Software will also be used on VR Headsets.&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>Why Communism doesn&#39;t work</title>
       <link>https://blog.m5e.de/post/why-communism-doesnt-work/</link>
