@@ -2,6 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.m5e.de/</loc>
+    <lastmod>2022-09-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/tags/Management/</loc>
+    <lastmod>2022-09-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/tags/Media/</loc>
+    <lastmod>2022-09-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/tags/Open/</loc>
+    <lastmod>2022-09-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/post/open-source-social-media-management-tools/</loc>
+    <lastmod>2022-09-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/post/</loc>
+    <lastmod>2022-09-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/tags/Social/</loc>
+    <lastmod>2022-09-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/tags/Source/</loc>
+    <lastmod>2022-09-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/tags/</loc>
+    <lastmod>2022-09-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/tags/Tools/</loc>
+    <lastmod>2022-09-03T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://blog.m5e.de/tags/Analysis/</loc>
     <lastmod>2022-08-27T00:00:00+00:00</lastmod>
   </url><url>
@@ -9,12 +39,6 @@
     <lastmod>2022-08-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.m5e.de/tags/Investments/</loc>
-    <lastmod>2022-08-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.m5e.de/</loc>
-    <lastmod>2022-08-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.m5e.de/post/</loc>
     <lastmod>2022-08-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.m5e.de/tags/profitable/</loc>
@@ -33,9 +57,6 @@
     <lastmod>2022-08-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.m5e.de/tags/stock/</loc>
-    <lastmod>2022-08-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.m5e.de/tags/</loc>
     <lastmod>2022-08-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.m5e.de/tags/Apple/</loc>
@@ -204,12 +225,6 @@
     <lastmod>2022-01-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.m5e.de/tags/Lie/</loc>
-    <lastmod>2022-01-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.m5e.de/tags/Media/</loc>
-    <lastmod>2022-01-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.m5e.de/tags/Social/</loc>
     <lastmod>2022-01-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.m5e.de/post/the-social-bot-lie/</loc>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Social on M5E&#39;s Blog</title>
-    <link>https://blog.m5e.de/tags/Social/</link>
-    <description>Recent content in Social on M5E&#39;s Blog</description>
+    <title>Open on M5E&#39;s Blog</title>
+    <link>https://blog.m5e.de/tags/Open/</link>
+    <description>Recent content in Open on M5E&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 03 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/tags/Social/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/tags/Open/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Open Source Social Media Management Tools</title>
       <link>https://blog.m5e.de/post/open-source-social-media-management-tools/</link>
@@ -36,35 +36,6 @@ I found several open source social media management tools, of which some of them
 &lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;p&gt;There are some open source tools out there. In combination with free plans from different social media automation companies, you can basically build your social media marketing tool stack for free.&lt;/p&gt;
 &lt;p&gt;feed2tweet, feed2toot and pod-feeder are all written in python. So it should be possible to create one python package for automating the publishing process to Twitter, Mastodon and Diaspora.&lt;/p&gt;
-</content>
-    </item>
-    
-    <item>
-      <title>The Social Bot Lie</title>
-      <link>https://blog.m5e.de/post/the-social-bot-lie/</link>
-      <pubDate>Sat, 22 Jan 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.m5e.de/post/the-social-bot-lie/</guid>
-      <description>Recently this talk was given on the rC3 2021 Chaos Communication Congress:
-In summary, Florian Gallwitz explained that there are no &amp;ldquo;Social Bots&amp;rdquo; which are often covered in newspapers and magazines.
-Newspapers and Journalists create stories about AIs which post about political discussions but in reality these &amp;ldquo;Social Bots&amp;rdquo; are just accounts from human beings which write a lot of social media posts, classified as bots.
-The real existing &amp;ldquo;bots&amp;rdquo; are dumb systems which e.</description>
-      <content>&lt;p&gt;Recently this talk was given on the rC3 2021 Chaos Communication Congress:&lt;/p&gt;
-
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube-nocookie.com/embed/Qwiss4qWuTs&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;p&gt;In summary, Florian Gallwitz explained that there are no &amp;ldquo;Social Bots&amp;rdquo; which are often covered in newspapers and magazines.&lt;/p&gt;
-&lt;p&gt;Newspapers and Journalists create stories about AIs which post about political discussions but in reality these &amp;ldquo;Social Bots&amp;rdquo; are just accounts from human beings which write a lot of social media posts, classified as bots.&lt;/p&gt;
-&lt;p&gt;The real existing &amp;ldquo;bots&amp;rdquo; are dumb systems which e.g. post blog posts on Twitter (I use systems like that for publishing my content across different social media channels) and you feel if you write with a human being or not, because chatbots aren&amp;rsquo;t that evolved yet.&lt;/p&gt;
-&lt;p&gt;There seem to exist ppl who post propaganda, but these are people, not bots!&lt;/p&gt;
-&lt;p&gt;This makes complete sense - if you think about it:&lt;/p&gt;
-&lt;p&gt;If an AI would be that much evolved, wouldn&amp;rsquo;t be the inventor of this the richest human being on earth? The biggest companies like Google, Microsoft and Apple are trying to automate as much as possible for years and invent tools like GitHub Copilot so that writing Code can be partially done by AIs.&lt;/p&gt;
-&lt;p&gt;For creating an AI which seems to react like a human in different situations, you would need a ton of training, very much computing power and lots of people who train the AI every day. It would cost a ton of money, more than you could imagine.&lt;/p&gt;
-&lt;p&gt;Why would you use that for political propaganda in one country if you could basically rule the world? Companies would pay you tons of money because such a system could replace so many people, thus make the company more efficient and more money.&lt;/p&gt;
-&lt;p&gt;It&amp;rsquo;s important to note that newspapers use automated systems for writing news about the stock market or the weather since years, however between writing a simple text and replying to users is a big difference.&lt;/p&gt;
-&lt;p&gt;Many people unfortunately just read headlines and don&amp;rsquo;t think about it - this is just one of many great talks given on the rC3 2021, there was also a great talk about fairy tales which the west tells itself about Asia (like the Chinese social credit system): &lt;a href=&#34;https://media.ccc.de/v/rc3-2021-xhain-354-painting-tech-dystopi&#34;&gt;https://media.ccc.de/v/rc3-2021-xhain-354-painting-tech-dystopi&lt;/a&gt;&lt;/p&gt;
 </content>
     </item>
     

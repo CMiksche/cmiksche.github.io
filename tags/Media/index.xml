@@ -6,7 +6,39 @@
     <description>Recent content in Media on M5E&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 22 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/tags/Media/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/tags/Media/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Open Source Social Media Management Tools</title>
+      <link>https://blog.m5e.de/post/open-source-social-media-management-tools/</link>
+      <pubDate>Sat, 03 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/post/open-source-social-media-management-tools/</guid>
+      <description>As a Startup founder, marketing is one of the biggest topics you have to take care of. There are tons of marketing automation tools, and most of them aren&amp;rsquo;t cheap. I found several open source social media management tools, of which some of them are getting used by me for multiple years now.
+Socioboard Socioboard is your full-blown social media management tool. It is open source and offers all the features you know from paid tools like Buffer, Hootsuite and others.</description>
+      <content>&lt;p&gt;As a Startup founder, marketing is one of the biggest topics you have to take care of. There are tons of marketing automation tools, and most of them aren&amp;rsquo;t cheap.
+I found several open source social media management tools, of which some of them are getting used by me for multiple years now.&lt;/p&gt;
+&lt;h3 id=&#34;socioboard&#34;&gt;Socioboard&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/socioboard/Socioboard-5.0&#34;&gt;Socioboard&lt;/a&gt; is your full-blown social media management tool. It is open source and offers all the features you know from paid tools like Buffer, Hootsuite and others.&lt;/p&gt;
+&lt;p&gt;Schedule posting, use Content-Libraries, manage multiple accounts, use analytics for checking out your target audience,&amp;hellip;&lt;/p&gt;
+&lt;p&gt;I haven&amp;rsquo;t tested it yet, and the installation progress is complicated. Besides that, one of the Developers &lt;a href=&#34;https://github.com/socioboard/Socioboard-5.0/issues/399&#34;&gt;says it is unusable&lt;/a&gt; and created an &lt;a href=&#34;https://github.com/vaughngx4/OpenSMM&#34;&gt;alternative&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;feed2tweet&#34;&gt;feed2tweet&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://gitlab.com/chaica/feed2tweet&#34;&gt;feed2tweet&lt;/a&gt; is a small open source python package which allows you to post content from your RSS feed automatically to Twitter.&lt;/p&gt;
+&lt;p&gt;I use it since multiple years, but I had to fix some issues which aren&amp;rsquo;t merged at the time of writing. So you should better checkout the PR section and maybe install my fork instead.&lt;/p&gt;
+&lt;h3 id=&#34;feed2toot&#34;&gt;feed2toot&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://gitlab.com/chaica/feed2toot&#34;&gt;feed2toot&lt;/a&gt; is from the same author like feed2tweet. It offers posting RSS feed content to Mastodon instead of Twitter.&lt;/p&gt;
+&lt;p&gt;Here the developer merged my PRs and everything should work.&lt;/p&gt;
+&lt;h3 id=&#34;pod-feeder&#34;&gt;pod-feeder&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://gitlab.com/brianodonnell/pod_feeder_v2&#34;&gt;pod-feeder&lt;/a&gt; is also an open source tool which makes automatically posting RSS feed content to Diaspora easy.&lt;/p&gt;
+&lt;p&gt;I am not sure how many people actively use Diaspora, so maybe that&amp;rsquo;s not so important to you.&lt;/p&gt;
+&lt;h3 id=&#34;zapier-ifttt-dlvrit&#34;&gt;Zapier, IFTTT, dlvr.it&lt;/h3&gt;
+&lt;p&gt;Not open source, but I use the free plan from Zapier for automatically publishing the blog posts from this blog to Medium.&lt;/p&gt;
+&lt;p&gt;dlvr.it and IFTTT also offer free plans and can be used for publishing content from an RSS feed to a social media network.&lt;/p&gt;
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;p&gt;There are some open source tools out there. In combination with free plans from different social media automation companies, you can basically build your social media marketing tool stack for free.&lt;/p&gt;
+&lt;p&gt;feed2tweet, feed2toot and pod-feeder are all written in python. So it should be possible to create one python package for automating the publishing process to Twitter, Mastodon and Diaspora.&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>The Social Bot Lie</title>
       <link>https://blog.m5e.de/post/the-social-bot-lie/</link>
