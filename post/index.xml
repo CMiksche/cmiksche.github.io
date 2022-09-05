@@ -6,7 +6,60 @@
     <description>Recent content in Posts on M5E&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 03 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 05 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Open Source Authentication Solutions</title>
+      <link>https://blog.m5e.de/post/open-source-authentication-solutions/</link>
+      <pubDate>Mon, 05 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/post/open-source-authentication-solutions/</guid>
+      <description>Imagine you run a company and provide multiple web applications for your customers. In the beginning, you probably created a user table and the authentication methods yourself, but from the second application onwards, you will think about using already made open source solutions.
+That&amp;rsquo;s the situation I am in right now. I run multiple web applications, which each have their own auth mechanisms and user tables. This means, a user from App1 can&amp;rsquo;t use App2 unless he creates a new account.</description>
+      <content>&lt;p&gt;Imagine you run a company and provide multiple web applications for your customers. In the beginning, you probably created a user table and the authentication methods yourself, but from the second application onwards, you will think about using already made open source solutions.&lt;/p&gt;
+&lt;p&gt;That&amp;rsquo;s the situation I am in right now. I run multiple web applications, which each have their own auth mechanisms and user tables. This means, a user from App1 can&amp;rsquo;t use App2 unless he creates a new account.&lt;/p&gt;
+&lt;h2 id=&#34;oauth&#34;&gt;OAuth&lt;/h2&gt;
+&lt;p&gt;Before I proceed, let&amp;rsquo;s have a short look how OAuth works:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;OAuth Clients: That&amp;rsquo;s your typical web application which offers a login via 3rd parties like Google and Facebook&lt;/li&gt;
+&lt;li&gt;OAuth Servers / Providers: That is an identity provider like e.g. Google or Facebook&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you add OAuth to your app, most of the time you just add a OAuth client. That means, customers can log in with existing accounts from other services like Google or Facebook. But they can&amp;rsquo;t use their account at your app for logging into other apps.&lt;/p&gt;
+&lt;p&gt;When you provide a OAuth server, customers can log in into your applications and also login into 3rd party applications via the API of your identity server.&lt;/p&gt;
+&lt;h3 id=&#34;what-oauth-means-in-my-case&#34;&gt;What OAuth means in my case&lt;/h3&gt;
+&lt;p&gt;If I would just add OAuth client functionality to my apps, then users could use e.g. their Google Account for all my apps, but my apps wouldn&amp;rsquo;t be connected with each other. Every single app would be displayed as 3rd party on the Google website, and every single app would need to authenticate with Google.&lt;/p&gt;
+&lt;p&gt;Because I want to provide one login for all Apps (single sign-on - SSO), just adding a OAuth client like most apps do, wouldn&amp;rsquo;t solve this problem.&lt;/p&gt;
+&lt;p&gt;I need a OAuth server which provides one single identity and one single login to all my apps. This means, all my apps become OAuth clients of my own OAuth server and my OAuth server itself is e.g. a OAuth client for other OAuth servers like Google.
+That way, a user could log in into my OAuth server with his existing Google Account and then continue to use all my apps.&lt;/p&gt;
+&lt;p&gt;So far the theory, now let&amp;rsquo;s look at the realization.&lt;/p&gt;
+&lt;h2 id=&#34;backend-as-a-service-baas&#34;&gt;Backend-as-a-Service (BaaS)&lt;/h2&gt;
+&lt;p&gt;In the modern world, solutions like Supabase, PocketBase, Firebase, Appwrite or Parse Server are getting used more and more. One of the reasons is because they handle authentication for you.&lt;/p&gt;
+&lt;p&gt;There is just one big catch: Nearly all the BaaS solutions are just OAuth Clients! Every single application which you create on them will get their own user table and additionally, you often can&amp;rsquo;t connect custom OAuth Servers but only the popular ones like Google, Facebook, Twitter, GitHub,&amp;hellip;&lt;/p&gt;
+&lt;p&gt;So my problem wouldn&amp;rsquo;t be solved, because I would still have different user tables and separate login processes. So every single app would be displayed on the Google website as a different OAuth client.&lt;/p&gt;
+&lt;h2 id=&#34;openid-connect--oauth2-servers&#34;&gt;OpenID Connect / OAuth2 Servers&lt;/h2&gt;
+&lt;p&gt;Maybe you have already heard of applications like Keycloak, Ory Hydra, ZITADEL and SuperTokens. These are all auth providers which basically allow you to become some Identity provider like Google yourself.&lt;/p&gt;
+&lt;p&gt;It could be, that you already run a OAuth2 server without knowing it. E.g. Gitea has such a functionality built-in. I configured my Gitea instance to act as a OAuth server for e.g. my continuous integration and project management applications. I recently also found out, that my ERP Systems would also support auth via OAuth2, so I could set up all the apps inside my company to work just with the Gitea user auth.&lt;/p&gt;
+&lt;p&gt;If you set up an identity server like ZITADEL, then you have to integrate it into all your apps which may be time-consuming in the beginning, but it is absolutely rewarding:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You will never have to create a user table again&lt;/li&gt;
+&lt;li&gt;Login isn&amp;rsquo;t different for every app, but handled by one service only&lt;/li&gt;
+&lt;li&gt;If users are logged into your main provider, then all your client applications don&amp;rsquo;t need the user to enter username and password again&lt;/li&gt;
+&lt;li&gt;Modern auth servers support passwordless auth like FaceID, TouchID or Windows Hello&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A bit more information about such services:&lt;/p&gt;
+&lt;h3 id=&#34;keycloak&#34;&gt;Keycloak&lt;/h3&gt;
+&lt;p&gt;One of the oldest and most famous auth servers. Complicated and written in Java.&lt;/p&gt;
+&lt;h3 id=&#34;ory-hydra&#34;&gt;Ory Hydra&lt;/h3&gt;
+&lt;p&gt;Modern, written in Go but still complicated in my opinion (Ory provides multiple packages for their auth solutions and it is hard to figure out which of them you need and how to configure them)&lt;/p&gt;
+&lt;h3 id=&#34;zitadel&#34;&gt;ZITADEL&lt;/h3&gt;
+&lt;p&gt;Modern, written in GoLang and in my opinion the one which is easiest to understand.&lt;/p&gt;
+&lt;h3 id=&#34;supertokens&#34;&gt;SuperTokens&lt;/h3&gt;
+&lt;p&gt;Another open source auth server written in Java.&lt;/p&gt;
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;p&gt;When I began exploring open source authentication solutions, I was thinking maybe some BaaS platform would help me. After figuring out what I wanted, it was clear that Backend-as-a-Service providers aren&amp;rsquo;t a solution for me and I had to look at a completely different kind of software category.&lt;/p&gt;
+&lt;p&gt;I don&amp;rsquo;t know which kind of OAuth2 Server I will stick with over the long time, but I am sure that I will use them.&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>Open Source Social Media Management Tools</title>
       <link>https://blog.m5e.de/post/open-source-social-media-management-tools/</link>
