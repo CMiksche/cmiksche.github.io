@@ -100,7 +100,7 @@ Database:
 &lt;p&gt;Now visit &lt;code&gt;https://domain.name/ui/console&lt;/code&gt; and you can log in.&lt;/p&gt;
 &lt;p&gt;If your custom username and password don&amp;rsquo;t work, then try out the default account:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;username: &lt;code&gt;root@zitadel.localhost&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;username: &lt;code&gt;root@zitadel.localhost&lt;/code&gt; or &lt;code&gt;zitadel-admin&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;password: &lt;code&gt;RootPassword1!&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;After that, you can start it with:&lt;/p&gt;
