@@ -6,7 +6,133 @@
     <description>Recent content in linux on M5E&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 08 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux: Setup ZITADEL with PostgreSQL</title>
+      <link>https://blog.m5e.de/post/linux-setup-zitadel-with-postgresql/</link>
+      <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/post/linux-setup-zitadel-with-postgresql/</guid>
+      <description>In this Guide, I want to cover installing ZITADEL with PostgreSQL on a Linux system. Please be aware that PostgreSQL support is still in Beta at the time of this writing, and you will need a PostgreSQL installation with Version 14 or higher.
+NGINX Proxy Create a new subdomain and point it to your server. Use certbot -d domain.name for creating a new SSL Cert. Create a new file in /etc/nginx/sites-available/domainname</description>
+      <content>&lt;p&gt;In this Guide, I want to cover installing ZITADEL with PostgreSQL on a Linux system. Please be aware that PostgreSQL support is still in Beta at the time of this writing, and you will need a PostgreSQL installation with Version 14 or higher.&lt;/p&gt;
+&lt;h2 id=&#34;nginx-proxy&#34;&gt;NGINX Proxy&lt;/h2&gt;
+&lt;p&gt;Create a new subdomain and point it to your server. Use &lt;code&gt;certbot -d domain.name&lt;/code&gt; for creating a new SSL Cert. Create a new file in &lt;code&gt;/etc/nginx/sites-available/domainname&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;server {
+    server_name domain.com;
+
+    listen 443 ssl;
+
+    ssl_certificate     /etc/letsencrypt/live/domain.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/domain.com/privkey.pem;
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+    location / {
+        grpc_pass grpc://localhost:8080;
+        grpc_set_header Host $host:$server_port;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;postgresql&#34;&gt;PostgreSQL&lt;/h2&gt;
+&lt;p&gt;We need a database for the software. This can be created by the following commands:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo -u postgres psql
+postgres=# create database zitadel;
+postgres=# create user zitadel with encrypted password &#39;mypass&#39;;
+postgres=# grant all privileges on database zitadel to zitadel;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;config-file&#34;&gt;Config File&lt;/h2&gt;
+&lt;p&gt;I often create directories for software in &lt;code&gt;/opt/projectname&lt;/code&gt;. Then a &lt;code&gt;config.yaml&lt;/code&gt; file could look like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ExternalSecure: true
+ExternalDomain: &#39;domain.name&#39;
+ExternalPort: 443
+
+Database:
+    postgres:
+        Host: localhost
+        Port: 5432
+        Database: zitadel
+        MaxOpenConns: 25
+        MaxConnLifetime: 1h
+        MaxConnIdleTime: 5m
+        Options:
+        User:
+            Username: zitadel
+            Password: zitadel
+            SSL:
+                Mode: disable
+                RootCert:
+                Cert:
+                Key:
+        Admin:
+            Username: postgres
+            Password: postgres
+            SSL:
+                Mode: disable
+                RootCert:
+                Cert:
+                Key:
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We should also create an &lt;code&gt;init.yaml&lt;/code&gt; file like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;FirstInstance:
+    Org:
+        Human:
+        # use the loginname root@zitadel.localhost
+        Username: &#39;root&#39;
+        Password: &#39;RootPassword1!&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
+&lt;p&gt;Use the following command to download and install Zitadel:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;LATEST=$(curl -i https://github.com/zitadel/zitadel/releases/latest | grep location: | cut -d &#39;/&#39; -f 8 | tr -d &#39;\r&#39;); wget -qO-  https://github.com/zitadel/zitadel/releases/download/$LATEST/zitadel_Linux_$(uname -m).tar.gz  | tar -xz zitadel &amp;amp;&amp;amp; sudo mv zitadel /usr/local/bin
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;masterkey&#34;&gt;Masterkey&lt;/h2&gt;
+&lt;p&gt;We should generate and save an masterkey:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;echo &amp;quot;$(tr -dc A-Za-z0-9 &amp;lt;/dev/urandom | head -c 32)&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;start&#34;&gt;Start&lt;/h2&gt;
+&lt;p&gt;For the first run:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;zitadel start-from-init \
+    --config /opt/zitadel/config.yaml \
+    --steps /opt/zitadel/init.yaml \
+    --masterkey &amp;quot;${ZITADEL_MASTERKEY}&amp;quot; \
+    --tlsMode external
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now visit &lt;code&gt;https://domain.name/ui/console&lt;/code&gt; and you can log in.&lt;/p&gt;
+&lt;p&gt;If your custom username and password don&amp;rsquo;t work, then try out the default account:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;username: &lt;code&gt;root@zitadel.localhost&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;password: &lt;code&gt;RootPassword1!&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;After that, you can start it with:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;zitadel start \
+    --config /opt/zitadel/config.yaml \
+    --masterkey &amp;quot;${ZITADEL_MASTERKEY}&amp;quot; \
+    --tlsMode external
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I currently encounter an &lt;a href=&#34;https://github.com/zitadel/zitadel/issues/4330&#34;&gt;Issue&lt;/a&gt; with the &lt;code&gt;start&lt;/code&gt; command which could be connected with the beta state of the PostgreSQL support.&lt;/p&gt;
+&lt;h2 id=&#34;systemd-daemon&#34;&gt;Systemd Daemon&lt;/h2&gt;
+&lt;p&gt;I also set up a custom systemd daemon. For that, create a new file in &lt;code&gt;/etc/systemd/system&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[Unit]
+Description=Custom Zitadel
+After=postgresql.service
+
+[Service]
+RestartSec=2s
+Type=simple
+User=zitadel
+WorkingDirectory=/opt/zitadel
+ExecStart=/usr/local/bin/zitadel start-from-init --config /opt/zitadel/config.ya
+ml --masterkey YOUR_MASTERKEY --tlsMode external
+Environment=USER=root HOME=/opt/zitadel
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target&lt;/code&gt;&lt;/pre&gt;
+</content>
+    </item>
+    
     <item>
       <title>The Reason why Linux Gaming is so limited</title>
       <link>https://blog.m5e.de/post/the-reason-why-linux-gaming-is-so-limited/</link>

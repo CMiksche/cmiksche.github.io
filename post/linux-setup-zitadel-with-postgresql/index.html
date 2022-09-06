@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Linux: Setup ZITADEL with PostgreSQL :: M5E&#39;s Blog</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="In this Guide, I want to cover installing ZITADEL with PostgreSQL on a Linux system. Please be aware that PostgreSQL support is still in Beta at the time of this writing, and you will need a PostgreSQL installation with Version 14 or higher.
+NGINX Proxy Create a new subdomain and point it to your server. Use certbot -d domain.name for creating a new SSL Cert. Create a new file in /etc/nginx/sites-available/domainname" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://blog.m5e.de/post/linux-setup-zitadel-with-postgresql/" />
+
+
+
+
+<link rel="stylesheet" href="https://blog.m5e.de/assets/style.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon" href="https://blog.m5e.de/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="https://blog.m5e.de/img/favicon/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="CMiksche" />
+  
+    <meta name="twitter:creator" content="" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Linux: Setup ZITADEL with PostgreSQL">
+<meta property="og:description" content="In this Guide, I want to cover installing ZITADEL with PostgreSQL on a Linux system. Please be aware that PostgreSQL support is still in Beta at the time of this writing, and you will need a PostgreSQL installation with Version 14 or higher.
+NGINX Proxy Create a new subdomain and point it to your server. Use certbot -d domain.name for creating a new SSL Cert. Create a new file in /etc/nginx/sites-available/domainname" />
+<meta property="og:url" content="https://blog.m5e.de/post/linux-setup-zitadel-with-postgresql/" />
+<meta property="og:site_name" content="M5E&#39;s Blog" />
+
+  
+    <meta property="og:image" content="https://blog.m5e.de/img/favicon/orange.png">
+  
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2022-09-06 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="orange">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    M5E&#39;s Blog
+  </div>
+</a>
+
+    </div>
+    <div class="menu-trigger">menu</div>
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/contact">Contact &amp; Imprint</a></li>
+        
+      
+        
+          <li><a href="https://github.com/cmiksche">GitHub</a></li>
+        
+      
+        
+          <li><a href="https://linkedin.com/in/cmiksche/">LinkedIn</a></li>
+        
+      
+        
+          <li><a href="https://twitter.com/cmiksche">Twitter</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/contact">Contact &amp; Imprint</a></li>
+      
+    
+      
+        <li><a href="https://github.com/cmiksche">GitHub</a></li>
+      
+    
+      
+        <li><a href="https://linkedin.com/in/cmiksche/">LinkedIn</a></li>
+      
+    
+      
+        <li><a href="https://twitter.com/cmiksche">Twitter</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://blog.m5e.de/post/linux-setup-zitadel-with-postgresql/">Linux: Setup ZITADEL with PostgreSQL</a></h1>
+  <div class="post-meta">
+    
+      <span class="post-date">
+        2022-09-06 
+      </span>
+    
+    
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="https://blog.m5e.de/tags/Linux/">Linux</a>&nbsp;
+    
+    #<a href="https://blog.m5e.de/tags/Setup/">Setup</a>&nbsp;
+    
+    #<a href="https://blog.m5e.de/tags/ZITADEL/">ZITADEL</a>&nbsp;
+    
+    #<a href="https://blog.m5e.de/tags/PostgreSQL/">PostgreSQL</a>&nbsp;
+    
+  </span>
+  
+
+  
+
+  
+
+  <div class="post-content"><div>
+        <p>In this Guide, I want to cover installing ZITADEL with PostgreSQL on a Linux system. Please be aware that PostgreSQL support is still in Beta at the time of this writing, and you will need a PostgreSQL installation with Version 14 or higher.</p>
+<h2 id="nginx-proxy">NGINX Proxy<a href="#nginx-proxy" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Create a new subdomain and point it to your server. Use <code>certbot -d domain.name</code> for creating a new SSL Cert. Create a new file in <code>/etc/nginx/sites-available/domainname</code></p>
+<pre><code>server {
+    server_name domain.com;
+
+    listen 443 ssl;
+
+    ssl_certificate     /etc/letsencrypt/live/domain.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/domain.com/privkey.pem;
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+    location / {
+        grpc_pass grpc://localhost:8080;
+        grpc_set_header Host $host:$server_port;
+    }
+}
+</code></pre>
+<h2 id="postgresql">PostgreSQL<a href="#postgresql" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>We need a database for the software. This can be created by the following commands:</p>
+<pre><code>sudo -u postgres psql
+postgres=# create database zitadel;
+postgres=# create user zitadel with encrypted password 'mypass';
+postgres=# grant all privileges on database zitadel to zitadel;
+</code></pre>
+<h2 id="config-file">Config File<a href="#config-file" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>I often create directories for software in <code>/opt/projectname</code>. Then a <code>config.yaml</code> file could look like this:</p>
+<pre><code>ExternalSecure: true
+ExternalDomain: 'domain.name'
+ExternalPort: 443
+
+Database:
+    postgres:
+        Host: localhost
+        Port: 5432
+        Database: zitadel
+        MaxOpenConns: 25
+        MaxConnLifetime: 1h
+        MaxConnIdleTime: 5m
+        Options:
+        User:
+            Username: zitadel
+            Password: zitadel
+            SSL:
+                Mode: disable
+                RootCert:
+                Cert:
+                Key:
+        Admin:
+            Username: postgres
+            Password: postgres
+            SSL:
+                Mode: disable
+                RootCert:
+                Cert:
+                Key:
+</code></pre>
+<p>We should also create an <code>init.yaml</code> file like this:</p>
+<pre><code>FirstInstance:
+    Org:
+        Human:
+        # use the loginname root@zitadel.localhost
+        Username: 'root'
+        Password: 'RootPassword1!'
+</code></pre>
+<h2 id="installation">Installation<a href="#installation" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Use the following command to download and install Zitadel:</p>
+<pre><code>LATEST=$(curl -i https://github.com/zitadel/zitadel/releases/latest | grep location: | cut -d '/' -f 8 | tr -d '\r'); wget -qO-  https://github.com/zitadel/zitadel/releases/download/$LATEST/zitadel_Linux_$(uname -m).tar.gz  | tar -xz zitadel &amp;&amp; sudo mv zitadel /usr/local/bin
+</code></pre>
+<h2 id="masterkey">Masterkey<a href="#masterkey" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>We should generate and save an masterkey:</p>
+<pre><code>echo &quot;$(tr -dc A-Za-z0-9 &lt;/dev/urandom | head -c 32)&quot;
+</code></pre>
+<h2 id="start">Start<a href="#start" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>For the first run:</p>
+<pre><code>zitadel start-from-init \
+    --config /opt/zitadel/config.yaml \
+    --steps /opt/zitadel/init.yaml \
+    --masterkey &quot;${ZITADEL_MASTERKEY}&quot; \
+    --tlsMode external
+</code></pre>
+<p>Now visit <code>https://domain.name/ui/console</code> and you can log in.</p>
+<p>If your custom username and password don&rsquo;t work, then try out the default account:</p>
+<ul>
+<li>username: <code>root@zitadel.localhost</code></li>
+<li>password: <code>RootPassword1!</code></li>
+</ul>
+<p>After that, you can start it with:</p>
+<pre><code>zitadel start \
+    --config /opt/zitadel/config.yaml \
+    --masterkey &quot;${ZITADEL_MASTERKEY}&quot; \
+    --tlsMode external
+</code></pre>
+<p>I currently encounter an <a href="https://github.com/zitadel/zitadel/issues/4330">Issue</a> with the <code>start</code> command which could be connected with the beta state of the PostgreSQL support.</p>
+<h2 id="systemd-daemon">Systemd Daemon<a href="#systemd-daemon" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>I also set up a custom systemd daemon. For that, create a new file in <code>/etc/systemd/system</code>:</p>
+<pre><code>[Unit]
+Description=Custom Zitadel
+After=postgresql.service
+
+[Service]
+RestartSec=2s
+Type=simple
+User=zitadel
+WorkingDirectory=/opt/zitadel
+ExecStart=/usr/local/bin/zitadel start-from-init --config /opt/zitadel/config.ya
+ml --masterkey YOUR_MASTERKEY --tlsMode external
+Environment=USER=root HOME=/opt/zitadel
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target</code></pre>
+
+      </div></div>
+
+  
+  
+<div class="pagination">
+    <div class="pagination__title">
+        <span class="pagination__title-h">Read other posts</span>
+        <hr />
+    </div>
+    <div class="pagination__buttons">
+        
+        
+        <span class="button next">
+            <a href="https://blog.m5e.de/post/open-source-authentication-solutions/">
+                <span class="button__text">Open Source Authentication Solutions</span>
+                <span class="button__icon">→</span>
+            </a>
+        </span>
+        
+    </div>
+</div>
+
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2022 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://blog.m5e.de/assets/main.js"></script>
+<script src="https://blog.m5e.de/assets/prism.js"></script>
+
+
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

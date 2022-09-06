@@ -6,7 +6,47 @@
     <description>Recent content in Tags on M5E&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>linux</title>
+      <link>https://blog.m5e.de/tags/linux/</link>
+      <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/tags/linux/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>PostgreSQL</title>
+      <link>https://blog.m5e.de/tags/PostgreSQL/</link>
+      <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/tags/PostgreSQL/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Setup</title>
+      <link>https://blog.m5e.de/tags/Setup/</link>
+      <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/tags/Setup/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>ZITADEL</title>
+      <link>https://blog.m5e.de/tags/ZITADEL/</link>
+      <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/tags/ZITADEL/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
     <item>
       <title>Authentication</title>
       <link>https://blog.m5e.de/tags/Authentication/</link>
@@ -323,16 +363,6 @@
       <pubDate>Mon, 08 Aug 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/tags/Limited/</guid>
-      <description></description>
-      <content></content>
-    </item>
-    
-    <item>
-      <title>linux</title>
-      <link>https://blog.m5e.de/tags/linux/</link>
-      <pubDate>Mon, 08 Aug 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.m5e.de/tags/linux/</guid>
       <description></description>
       <content></content>
     </item>
