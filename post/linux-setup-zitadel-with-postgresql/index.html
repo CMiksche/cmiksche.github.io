@@ -82,7 +82,9 @@ NGINX Proxy Create a new subdomain and point it to your server. Use certbot -d d
 </a>
 
     </div>
-    <div class="menu-trigger">menu</div>
+    
+      <div class="menu-trigger">menu</div>
+    
   </div>
   
     <nav class="menu">
@@ -154,13 +156,21 @@ NGINX Proxy Create a new subdomain and point it to your server. Use certbot -d d
   
   <span class="post-tags">
     
-    #<a href="https://blog.m5e.de/tags/Linux/">Linux</a>&nbsp;
-    
     #<a href="https://blog.m5e.de/tags/Setup/">Setup</a>&nbsp;
     
     #<a href="https://blog.m5e.de/tags/ZITADEL/">ZITADEL</a>&nbsp;
     
     #<a href="https://blog.m5e.de/tags/PostgreSQL/">PostgreSQL</a>&nbsp;
+    
+    #<a href="https://blog.m5e.de/tags/Open/">Open</a>&nbsp;
+    
+    #<a href="https://blog.m5e.de/tags/Source/">Source</a>&nbsp;
+    
+    #<a href="https://blog.m5e.de/tags/Authentication/">Authentication</a>&nbsp;
+    
+    #<a href="https://blog.m5e.de/tags/OAuth/">OAuth</a>&nbsp;
+    
+    #<a href="https://blog.m5e.de/tags/OpenID/">OpenID</a>&nbsp;
     
   </span>
   
@@ -264,7 +274,6 @@ Database:
     --masterkey &quot;${ZITADEL_MASTERKEY}&quot; \
     --tlsMode external
 </code></pre>
-<p>I currently encounter an <a href="https://github.com/zitadel/zitadel/issues/4330">Issue</a> with the <code>start</code> command which could be connected with the beta state of the PostgreSQL support.</p>
 <h2 id="systemd-daemon">Systemd Daemon<a href="#systemd-daemon" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
 <p>I also set up a custom systemd daemon. For that, create a new file in <code>/etc/systemd/system</code>:</p>
 <pre><code>[Unit]
@@ -276,15 +285,22 @@ RestartSec=2s
 Type=simple
 User=zitadel
 WorkingDirectory=/opt/zitadel
-ExecStart=/usr/local/bin/zitadel start-from-init --config /opt/zitadel/config.ya
+ExecStart=/usr/local/bin/zitadel start --config /opt/zitadel/config.ya
 ml --masterkey YOUR_MASTERKEY --tlsMode external
-Environment=USER=root HOME=/opt/zitadel
+Environment=USER=zitadel HOME=/opt/zitadel
 ExecReload=/bin/kill -HUP $MAINPID
 KillMode=process
 Restart=on-failure
 
 [Install]
-WantedBy=multi-user.target</code></pre>
+WantedBy=multi-user.target
+</code></pre>
+<h2 id="summary">Summary<a href="#summary" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>That was it. Surprisingly easy. The ZITADEL team is also really fast responding to problems. I had some issues with the beta software, and all of these issues were fixed after a few days.</p>
+<p>This post was even mentioned by their company account:</p>
+
+  <blockquote class="twitter-tweet" data-dnt="true"><p lang="en" dir="ltr">Thank you <a href="https://twitter.com/CMiksche?ref_src=twsrc%5Etfw">@CMiksche</a> for creating this awesome guide 🙏🏻 We are sure it will help people getting started with ZITADEL using <a href="https://twitter.com/hashtag/postgreSQL?src=hash&amp;ref_src=twsrc%5Etfw">#postgreSQL</a> and <a href="https://twitter.com/hashtag/NGINX?src=hash&amp;ref_src=twsrc%5Etfw">#NGINX</a> <a href="https://t.co/DGGDIuiDFJ">https://t.co/DGGDIuiDFJ</a></p>&mdash; ZITADEL (@zitadel) <a href="https://twitter.com/zitadel/status/1567445067308187651?ref_src=twsrc%5Etfw">September 7, 2022</a></blockquote>
+
 
       </div></div>
 

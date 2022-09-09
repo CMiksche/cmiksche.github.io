@@ -109,7 +109,6 @@ Database:
     --masterkey &amp;quot;${ZITADEL_MASTERKEY}&amp;quot; \
     --tlsMode external
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;I currently encounter an &lt;a href=&#34;https://github.com/zitadel/zitadel/issues/4330&#34;&gt;Issue&lt;/a&gt; with the &lt;code&gt;start&lt;/code&gt; command which could be connected with the beta state of the PostgreSQL support.&lt;/p&gt;
 &lt;h2 id=&#34;systemd-daemon&#34;&gt;Systemd Daemon&lt;/h2&gt;
 &lt;p&gt;I also set up a custom systemd daemon. For that, create a new file in &lt;code&gt;/etc/systemd/system&lt;/code&gt;:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;[Unit]
@@ -121,15 +120,22 @@ RestartSec=2s
 Type=simple
 User=zitadel
 WorkingDirectory=/opt/zitadel
-ExecStart=/usr/local/bin/zitadel start-from-init --config /opt/zitadel/config.ya
+ExecStart=/usr/local/bin/zitadel start --config /opt/zitadel/config.ya
 ml --masterkey YOUR_MASTERKEY --tlsMode external
-Environment=USER=root HOME=/opt/zitadel
+Environment=USER=zitadel HOME=/opt/zitadel
 ExecReload=/bin/kill -HUP $MAINPID
 KillMode=process
 Restart=on-failure
 
 [Install]
-WantedBy=multi-user.target&lt;/code&gt;&lt;/pre&gt;
+WantedBy=multi-user.target
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;p&gt;That was it. Surprisingly easy. The ZITADEL team is also really fast responding to problems. I had some issues with the beta software, and all of these issues were fixed after a few days.&lt;/p&gt;
+&lt;p&gt;This post was even mentioned by their company account:&lt;/p&gt;
+
+  &lt;blockquote class=&#34;twitter-tweet&#34; data-dnt=&#34;true&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Thank you &lt;a href=&#34;https://twitter.com/CMiksche?ref_src=twsrc%5Etfw&#34;&gt;@CMiksche&lt;/a&gt; for creating this awesome guide 🙏🏻 We are sure it will help people getting started with ZITADEL using &lt;a href=&#34;https://twitter.com/hashtag/postgreSQL?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#postgreSQL&lt;/a&gt; and &lt;a href=&#34;https://twitter.com/hashtag/NGINX?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#NGINX&lt;/a&gt; &lt;a href=&#34;https://t.co/DGGDIuiDFJ&#34;&gt;https://t.co/DGGDIuiDFJ&lt;/a&gt;&lt;/p&gt;&amp;mdash; ZITADEL (@zitadel) &lt;a href=&#34;https://twitter.com/zitadel/status/1567445067308187651?ref_src=twsrc%5Etfw&#34;&gt;September 7, 2022&lt;/a&gt;&lt;/blockquote&gt;
+
 </content>
     </item>
     
