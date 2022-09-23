@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Drone CI with Podman :: M5E&#39;s Blog</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="I run Drone CI for a longer period now with Docker. Because I decided to switch for multiple reasons from Docker to Podman, this setup had to be changed a bit.
+In this blog post, I want to cover how to install Podman and how to set up Drone so that it works with Podman.
+Installing Podman Install the podman and podman-docker packages. E.g. on a Debian based System:
+apt install podman podman-docker If you currently use docker-compose, then you should also install podman-compose:" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://blog.m5e.de/post/drone-ci-with-podman/" />
+
+
+
+
+<link rel="stylesheet" href="https://blog.m5e.de/assets/style.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon" href="https://blog.m5e.de/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="https://blog.m5e.de/img/favicon/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="CMiksche" />
+  
+    <meta name="twitter:creator" content="" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Drone CI with Podman">
+<meta property="og:description" content="I run Drone CI for a longer period now with Docker. Because I decided to switch for multiple reasons from Docker to Podman, this setup had to be changed a bit.
+In this blog post, I want to cover how to install Podman and how to set up Drone so that it works with Podman.
+Installing Podman Install the podman and podman-docker packages. E.g. on a Debian based System:
+apt install podman podman-docker If you currently use docker-compose, then you should also install podman-compose:" />
+<meta property="og:url" content="https://blog.m5e.de/post/drone-ci-with-podman/" />
+<meta property="og:site_name" content="M5E&#39;s Blog" />
+
+  
+    <meta property="og:image" content="https://blog.m5e.de/img/favicon/orange.png">
+  
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2022-09-23 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="orange">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    M5E&#39;s Blog
+  </div>
+</a>
+
+    </div>
+    
+      <div class="menu-trigger">menu</div>
+    
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/contact">Contact &amp; Imprint</a></li>
+        
+      
+        
+          <li><a href="https://github.com/cmiksche">GitHub</a></li>
+        
+      
+        
+          <li><a href="https://linkedin.com/in/cmiksche/">LinkedIn</a></li>
+        
+      
+        
+          <li><a href="https://twitter.com/cmiksche">Twitter</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/contact">Contact &amp; Imprint</a></li>
+      
+    
+      
+        <li><a href="https://github.com/cmiksche">GitHub</a></li>
+      
+    
+      
+        <li><a href="https://linkedin.com/in/cmiksche/">LinkedIn</a></li>
+      
+    
+      
+        <li><a href="https://twitter.com/cmiksche">Twitter</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="https://blog.m5e.de/post/drone-ci-with-podman/">Drone CI with Podman</a></h1>
+  <div class="post-meta">
+    
+      <span class="post-date">
+        2022-09-23 
+      </span>
+    
+    
+  </div>
+
+  
+  <span class="post-tags">
+    
+    #<a href="https://blog.m5e.de/tags/Drone/">Drone</a>&nbsp;
+    
+    #<a href="https://blog.m5e.de/tags/CI/">CI</a>&nbsp;
+    
+    #<a href="https://blog.m5e.de/tags/Docker/">Docker</a>&nbsp;
+    
+    #<a href="https://blog.m5e.de/tags/Podman/">Podman</a>&nbsp;
+    
+    #<a href="https://blog.m5e.de/tags/Setup/">Setup</a>&nbsp;
+    
+    #<a href="https://blog.m5e.de/tags/Open/">Open</a>&nbsp;
+    
+    #<a href="https://blog.m5e.de/tags/Source/">Source</a>&nbsp;
+    
+  </span>
+  
+
+  
+
+  
+
+  <div class="post-content"><div>
+        <p>I run Drone CI for a longer period now with Docker. Because I decided to switch for multiple reasons from Docker to Podman, this setup had to be changed a bit.</p>
+<p>In this blog post, I want to cover how to install Podman and how to set up Drone so that it works with Podman.</p>
+<h2 id="installing-podman">Installing Podman<a href="#installing-podman" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Install the <code>podman</code> and <code>podman-docker</code> packages. E.g. on a Debian based System:</p>
+<pre><code>apt install podman podman-docker
+</code></pre>
+<p>If you currently use <code>docker-compose</code>, then you should also install <code>podman-compose</code>:</p>
+<pre><code>pip3 install podman-compose
+</code></pre>
+<p>After installing Podman, it could be that you will not find docker images. For that, you should add the following lines to <code>/etc/containers/registries.conf</code>:</p>
+<pre><code>[registries.search]
+registries = ['quay.io', 'docker.io']
+</code></pre>
+<h2 id="configuring-drone-ci">Configuring Drone CI<a href="#configuring-drone-ci" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>Drone CI uses a mapping of the Docker Socket. This mapping has to be changed so that Drone CI thinks that Podman is our Docker instance.</p>
+<p>First, we need to find out where the current podman socket is:</p>
+<pre><code>systemctl status podman.socket
+</code></pre>
+<p>Here, something like <code>/run/podman/podman.sock</code> should be written.</p>
+<p>In my case, with docker-compose, I had to change volumes:</p>
+<pre><code>volumes:
+    - '/run/podman/podman.sock:/var/run/docker.sock'
+</code></pre>
+<p>If you start Drone from the CLI, a config could look like:</p>
+<pre><code>sudo podman run -d \
+    -e DRONE_RPC_PROTO=&quot;https&quot; \
+    -e DRONE_RPC_HOST=&quot;YOURDOMAIN&quot; \
+    -e DRONE_RPC_SECRET=&quot;YOUR_SECRET&quot; \
+    -e DRONE_RUNNER_CAPACITY=2 \
+    -e DRONE_RUNNER_NAME=&quot;NAME&quot; \
+    --restart always \
+    --name runner \
+    -v /run/podman/podman.sock:/var/run/docker.sock \
+    docker.io/drone/drone-runner-docker
+</code></pre>
+<p>That&rsquo;s it. Obviously you have to enable and start the services, but running Drone with Podman is easier than you think.</p>
+
+      </div></div>
+
+  
+  
+<div class="pagination">
+    <div class="pagination__title">
+        <span class="pagination__title-h">Read other posts</span>
+        <hr />
+    </div>
+    <div class="pagination__buttons">
+        
+        
+        <span class="button next">
+            <a href="https://blog.m5e.de/post/linux-setup-zitadel-with-postgresql/">
+                <span class="button__text">Linux: Setup ZITADEL with PostgreSQL</span>
+                <span class="button__icon">→</span>
+            </a>
+        </span>
+        
+    </div>
+</div>
+
+  
+
+  
+
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2022 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="https://blog.m5e.de/assets/main.js"></script>
+<script src="https://blog.m5e.de/assets/prism.js"></script>
+
+
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

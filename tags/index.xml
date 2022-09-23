@@ -6,7 +6,77 @@
     <description>Recent content in Tags on M5E&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 06 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 23 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CI</title>
+      <link>https://blog.m5e.de/tags/CI/</link>
+      <pubDate>Fri, 23 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/tags/CI/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://blog.m5e.de/tags/Docker/</link>
+      <pubDate>Fri, 23 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/tags/Docker/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Drone</title>
+      <link>https://blog.m5e.de/tags/Drone/</link>
+      <pubDate>Fri, 23 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/tags/Drone/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Open</title>
+      <link>https://blog.m5e.de/tags/Open/</link>
+      <pubDate>Fri, 23 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/tags/Open/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Podman</title>
+      <link>https://blog.m5e.de/tags/Podman/</link>
+      <pubDate>Fri, 23 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/tags/Podman/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Setup</title>
+      <link>https://blog.m5e.de/tags/Setup/</link>
+      <pubDate>Fri, 23 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/tags/Setup/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Source</title>
+      <link>https://blog.m5e.de/tags/Source/</link>
+      <pubDate>Fri, 23 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/tags/Source/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
     <item>
       <title>Authentication</title>
       <link>https://blog.m5e.de/tags/Authentication/</link>
@@ -28,16 +98,6 @@
     </item>
     
     <item>
-      <title>Open</title>
-      <link>https://blog.m5e.de/tags/Open/</link>
-      <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.m5e.de/tags/Open/</guid>
-      <description></description>
-      <content></content>
-    </item>
-    
-    <item>
       <title>OpenID</title>
       <link>https://blog.m5e.de/tags/OpenID/</link>
       <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
@@ -53,26 +113,6 @@
       <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/tags/PostgreSQL/</guid>
-      <description></description>
-      <content></content>
-    </item>
-    
-    <item>
-      <title>Setup</title>
-      <link>https://blog.m5e.de/tags/Setup/</link>
-      <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.m5e.de/tags/Setup/</guid>
-      <description></description>
-      <content></content>
-    </item>
-    
-    <item>
-      <title>Source</title>
-      <link>https://blog.m5e.de/tags/Source/</link>
-      <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.m5e.de/tags/Source/</guid>
       <description></description>
       <content></content>
     </item>

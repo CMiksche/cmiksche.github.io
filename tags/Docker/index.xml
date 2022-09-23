@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on M5E&#39;s Blog</title>
+    <link>https://blog.m5e.de/tags/Docker/</link>
+    <description>Recent content in Docker on M5E&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 23 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/tags/Docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Drone CI with Podman</title>
+      <link>https://blog.m5e.de/post/drone-ci-with-podman/</link>
+      <pubDate>Fri, 23 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/post/drone-ci-with-podman/</guid>
+      <description>I run Drone CI for a longer period now with Docker. Because I decided to switch for multiple reasons from Docker to Podman, this setup had to be changed a bit.
+In this blog post, I want to cover how to install Podman and how to set up Drone so that it works with Podman.
+Installing Podman Install the podman and podman-docker packages. E.g. on a Debian based System:
+apt install podman podman-docker If you currently use docker-compose, then you should also install podman-compose:</description>
+      <content>&lt;p&gt;I run Drone CI for a longer period now with Docker. Because I decided to switch for multiple reasons from Docker to Podman, this setup had to be changed a bit.&lt;/p&gt;
+&lt;p&gt;In this blog post, I want to cover how to install Podman and how to set up Drone so that it works with Podman.&lt;/p&gt;
+&lt;h2 id=&#34;installing-podman&#34;&gt;Installing Podman&lt;/h2&gt;
+&lt;p&gt;Install the &lt;code&gt;podman&lt;/code&gt; and &lt;code&gt;podman-docker&lt;/code&gt; packages. E.g. on a Debian based System:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;apt install podman podman-docker
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If you currently use &lt;code&gt;docker-compose&lt;/code&gt;, then you should also install &lt;code&gt;podman-compose&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pip3 install podman-compose
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;After installing Podman, it could be that you will not find docker images. For that, you should add the following lines to &lt;code&gt;/etc/containers/registries.conf&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[registries.search]
+registries = [&#39;quay.io&#39;, &#39;docker.io&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;configuring-drone-ci&#34;&gt;Configuring Drone CI&lt;/h2&gt;
+&lt;p&gt;Drone CI uses a mapping of the Docker Socket. This mapping has to be changed so that Drone CI thinks that Podman is our Docker instance.&lt;/p&gt;
+&lt;p&gt;First, we need to find out where the current podman socket is:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;systemctl status podman.socket
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here, something like &lt;code&gt;/run/podman/podman.sock&lt;/code&gt; should be written.&lt;/p&gt;
+&lt;p&gt;In my case, with docker-compose, I had to change volumes:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;volumes:
+    - &#39;/run/podman/podman.sock:/var/run/docker.sock&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If you start Drone from the CLI, a config could look like:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo podman run -d \
+    -e DRONE_RPC_PROTO=&amp;quot;https&amp;quot; \
+    -e DRONE_RPC_HOST=&amp;quot;YOURDOMAIN&amp;quot; \
+    -e DRONE_RPC_SECRET=&amp;quot;YOUR_SECRET&amp;quot; \
+    -e DRONE_RUNNER_CAPACITY=2 \
+    -e DRONE_RUNNER_NAME=&amp;quot;NAME&amp;quot; \
+    --restart always \
+    --name runner \
+    -v /run/podman/podman.sock:/var/run/docker.sock \
+    docker.io/drone/drone-runner-docker
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That&amp;rsquo;s it. Obviously you have to enable and start the services, but running Drone with Podman is easier than you think.&lt;/p&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>
