@@ -47,6 +47,14 @@ This often meant you read or write data directly to the database of the ERP syst
 I think it would make more sense to offer out of the shelf solutions for connecting these systems and some companies already make this.&lt;/p&gt;
 &lt;p&gt;An Open Source ERP System still would be my choice for a business, but I would prefer something like Tryton - Tryton has a focus on the ERP part and a modular software architecture with a great API.
 So this would be perfect for connecting other applications to it. (As a sidenote: Tryton was forked out of an Odoo predecessor)&lt;/p&gt;
+&lt;h2 id=&#34;update-2022&#34;&gt;Update 2022&lt;/h2&gt;
+&lt;p&gt;I started a company this year and despite my conclusions in this blog post, I still decided to try out Odoo as an ERP System for my business. I now want to share some Issues I encountered:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Firstly: Without external Software, no automatic tax pre-registration is available here in Germany&lt;/li&gt;
+&lt;li&gt;The generated Tax Reports miss data if you don&amp;rsquo;t manually configure the chart of accounts to tax grid relationship. I created a &lt;a href=&#34;https://github.com/odoo/odoo/issues/102104&#34;&gt;GitHub Issue&lt;/a&gt; for that.&lt;/li&gt;
+&lt;li&gt;I couldn&amp;rsquo;t post the last mentioned issue in the forum because apparently I have no rights even after confirming my email&amp;hellip;&lt;/li&gt;
+&lt;li&gt;I could not submit any support ticket. It only displayed, &amp;ldquo;Don&amp;rsquo;t forget to re-attach your files if you had any.&amp;rdquo; (This could be because I have no paid Subscription? But they didn&amp;rsquo;t show any message like that)&lt;/li&gt;
+&lt;/ul&gt;
 </content>
     </item>
     
