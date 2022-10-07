@@ -1,0 +1,4 @@
+Contact: mailto:security@chapati.systems
+Contact: https://christoph.miksche.org/
+Expires: 2045-12-07T21:29:00.000Z
+Preferred-Languages: de, en

@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://blog.m5e.de/sitemap.xml
