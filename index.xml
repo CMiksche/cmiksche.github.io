@@ -6,7 +6,28 @@
     <description>Recent content on M5E&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 23 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How legit is a NewsWatch TV Feature?</title>
+      <link>https://blog.m5e.de/post/how-legit-is-a-newswatch-tv-feature/</link>
+      <pubDate>Tue, 11 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/post/how-legit-is-a-newswatch-tv-feature/</guid>
+      <description>Many founders get Emails from NewsWatch TV saying that they will promote your company on an American Television &amp;ldquo;Morning Show&amp;rdquo;.
+I also got a similar Mail for Alphalerts.com and want to explain what you, as a Founder, should think about that.
+Firstly, if you get such a Mail, it is likely that you promoted your product on ProductHunt lately. NewsWatch seems to scrape the ProductHunt listings and even the founder of ProductHunt wrote a tweet about it:</description>
+      <content>&lt;p&gt;Many founders get Emails from NewsWatch TV saying that they will promote your company on an American Television &amp;ldquo;Morning Show&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;I also got a similar Mail for &lt;a href=&#34;https://alphalerts.com/&#34;&gt;Alphalerts.com&lt;/a&gt; and want to explain what you, as a Founder, should think about that.&lt;/p&gt;
+&lt;p&gt;Firstly, if you get such a Mail, it is likely that you promoted your product on ProductHunt lately. NewsWatch seems to scrape the ProductHunt listings and even the founder of ProductHunt wrote a tweet about it:&lt;/p&gt;
+
+  &lt;blockquote class=&#34;twitter-tweet&#34; data-dnt=&#34;true&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;FYI: Ignore NewsWatch TV&lt;br&gt;&lt;br&gt;I know several makers and founders that have received an email from them offering a feature on their morning show. They’ll schedule a phone call and then ask for your money.&lt;br&gt;&lt;br&gt;It’s manipulative and unethical.&lt;/p&gt;&amp;mdash; Ryan Hoover (@rrhoover) &lt;a href=&#34;https://twitter.com/rrhoover/status/1167165005864869890?ref_src=twsrc%5Etfw&#34;&gt;August 29, 2019&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;Secondly, if you decide to accept the offer, your product will be shown on TV, but not the way you think about it. You know the annoying Infomercials which often come very late or very early in the morning on niche TV senders?&lt;/p&gt;
+&lt;p&gt;NewsWatch TV operates such annoying Infomercials. And they don&amp;rsquo;t feature your product for free, no no! They want money for it.&lt;/p&gt;
+&lt;p&gt;The companies &lt;a href=&#34;https://archive.ph/RKTzj&#34;&gt;which paid for it&lt;/a&gt; say the count of visitors didn&amp;rsquo;t really grew much. You can find similar reports on &lt;a href=&#34;https://www.indiehackers.com/post/newswatch-wants-to-feature-wicked-templates-on-tv-is-this-legit-3d4d8186b2&#34;&gt;IndieHackers&lt;/a&gt; and other websites.&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>Drone CI with Podman</title>
       <link>https://blog.m5e.de/post/drone-ci-with-podman/</link>
