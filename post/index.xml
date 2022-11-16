@@ -6,7 +6,44 @@
     <description>Recent content in Posts on M5E&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why everyone should know KPIs</title>
+      <link>https://blog.m5e.de/post/why-everyone-should-know-kpis/</link>
+      <pubDate>Wed, 16 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/post/why-everyone-should-know-kpis/</guid>
+      <description>Every Investor has to know KPIs (Key Performance Indicators) to value Investments. But why did I write that everyone should know them in my title?
+Knowing KPIs helps you even if you don&amp;rsquo;t invest any of your money. It helps you e.g. decide which job you should take or which customer you should prefer.
+Deciding between Job Offers - an Example Recently, I decided to start freelancing besides working on my own projects.</description>
+      <content>&lt;p&gt;Every Investor has to know KPIs (Key Performance Indicators) to value Investments. But why did I write that everyone should know them in my title?&lt;/p&gt;
+&lt;p&gt;Knowing KPIs helps you even if you don&amp;rsquo;t invest any of your money. It helps you e.g. decide which job you should take or which customer you should prefer.&lt;/p&gt;
+&lt;h2 id=&#34;deciding-between-job-offers---an-example&#34;&gt;Deciding between Job Offers - an Example&lt;/h2&gt;
+&lt;p&gt;Recently, I decided to start freelancing besides working on my own projects. I contacted some possible customers and some companies contacted me.&lt;/p&gt;
+&lt;p&gt;One Offer sounded interesting, but they seemed to be uncomfortable about the high of my payment.&lt;/p&gt;
+&lt;p&gt;So I looked the financials of the company up. They made losses in all years which they reported.&lt;/p&gt;
+&lt;p&gt;I also reminded myself that I gave a similar company a loan multiple years ago, and I still wait for the back payment.&lt;/p&gt;
+&lt;p&gt;After summarizing these facts in my mind, I declined the offer.&lt;/p&gt;
+&lt;h2 id=&#34;why-bad-kpis-are-bad-for-you&#34;&gt;Why bad KPIs are bad for you&lt;/h2&gt;
+&lt;p&gt;If I had taken the job, it could be that the company would lay me off in a few months or years because they don&amp;rsquo;t have the money to pay me.&lt;/p&gt;
+&lt;p&gt;Even if the financials had been stable enough to pay me, they would unlikely give me a raise because why should the CEO give the employees a raise if his own Investment loses money every year?&lt;/p&gt;
+&lt;p&gt;Not permanently employed freelancers most likely know customers which don&amp;rsquo;t pay. But this is an Issue which could be prevented if the Freelancers would know the current financial situation of their customers.&lt;/p&gt;
+&lt;h2 id=&#34;bull-markets-make-us-blind&#34;&gt;Bull-markets make us blind&lt;/h2&gt;
+&lt;p&gt;In the last years, tech companies could make losses every year and still find investors, who gave them more money to burn.&lt;/p&gt;
+&lt;p&gt;This was partly because debts were cheap. At just 0.1 to 3% interest each year you can pile up debt without it hurting you.&lt;/p&gt;
+&lt;p&gt;The stock and housing markets went crazy because of this and many companies which made zero profit could continue to operate.&lt;/p&gt;
+&lt;h2 id=&#34;times-have-changed&#34;&gt;Times have changed&lt;/h2&gt;
+&lt;p&gt;Currently, interest rates are rising, and debt repayments are getting more and more expensive. Companies have higher costs to refinance themselves.&lt;/p&gt;
+&lt;p&gt;Debts have to be paid and CEOs will fire people if they need to save money for repayments.&lt;/p&gt;
+&lt;p&gt;This is one of the reasons why Elon Musk is firing so many people at Twitter. Twitter loses money every year and it is harder to find Investors which love to see their money burning - so to be successful, Elon has to fire people.&lt;/p&gt;
+&lt;h2 id=&#34;what-you-can-do&#34;&gt;What you can do&lt;/h2&gt;
+&lt;p&gt;In some parts of the world, like Germany or the UK, you can look up the financials of incorporated companies. (See Bundesanzeiger in Germany and the Companies House in the UK)&lt;/p&gt;
+&lt;p&gt;In the US, you can at least look up the financials of public companies in the SEC EDGAR database.&lt;/p&gt;
+&lt;p&gt;You should always prefer a company which actually makes a profit and has a low debt ratio. (Which in turn means, it should have a high equity ratio)&lt;/p&gt;
+&lt;p&gt;A company without any profit shouldn&amp;rsquo;t be your employer or your customer because that kind of company could soon be bankrupt if it doesn&amp;rsquo;t find more Investors.&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>How legit is a NewsWatch TV Feature?</title>
       <link>https://blog.m5e.de/post/how-legit-is-a-newswatch-tv-feature/</link>
@@ -1047,15 +1084,15 @@ So this would be perfect for connecting other applications to it. (As a sidenote
       <guid>https://blog.m5e.de/post/analyzing-the-profitability-of-gtld-registry-operators/</guid>
       <description>I am a very big DNS nerd and have always registered new domains for my projects before I even made the concept of my new ideas. We had tests about the Domain Name System at my professional school and I can&amp;rsquo;t remember I ever not scored the highest&amp;hellip;
 So as someone who currently pays for 33 domains a year of which all are for private projects and none generates money I had an idea for a new gTLD which I wanted to operate.</description>
-      <content>&lt;p&gt;I am a very big DNS nerd and have always registered new domains for my projects before I even made the concept of my new ideas. 
+      <content>&lt;p&gt;I am a very big DNS nerd and have always registered new domains for my projects before I even made the concept of my new ideas.
 We had tests about the Domain Name System at my professional school and I can&amp;rsquo;t remember I ever not scored the highest&amp;hellip;&lt;/p&gt;
 &lt;p&gt;So as someone who currently pays for 33 domains a year of which all are for private projects and none generates money I had an idea for a new gTLD which I wanted to operate.&lt;/p&gt;
 &lt;p&gt;New generic top-level domains have a high entry barrier. It&amp;rsquo;s expensive (plan about 200k USD alone for the valuation from the ICANN) and you also have high recurring costs - but is it profitable to operate such a TLD?&lt;/p&gt;
-&lt;p&gt;The first gTLD application round closed in April 2012 and some of the first applicants were already founded years before that. 
+&lt;p&gt;The first gTLD application round closed in April 2012 and some of the first applicants were already founded years before that.
 Some of these new operators are public traded companies and others have to report their balance sheet to governments.&lt;/p&gt;
-&lt;p&gt;Soooo &amp;hellip;. There is data available about those new operators and before I decide if I wanna put such much money on a new TLD I (from an investor perspective) want to know how profitable new gTLDs are. 
+&lt;p&gt;Soooo &amp;hellip;. There is data available about those new operators and before I decide if I wanna put such much money on a new TLD I (from an investor perspective) want to know how profitable new gTLDs are.
 (As a side note: I am not so rich to operate a new gTLD alone - I would need some support from other investors too ^^)&lt;/p&gt;
-&lt;p&gt;That&amp;rsquo;s why I am writing this post. I need to validate if an investment in a new gTLD is profitable and if the needed energy pays out. 
+&lt;p&gt;That&amp;rsquo;s why I am writing this post. I need to validate if an investment in a new gTLD is profitable and if the needed energy pays out.
 As a modern investor there are tons of other opportunities which pay dividends, interest and more. So if you invest in something specific you should have a good return and reason for that.&lt;/p&gt;
 &lt;h2 id=&#34;registry-operators&#34;&gt;Registry operators&lt;/h2&gt;
 &lt;h3 id=&#34;donuts&#34;&gt;Donuts&lt;/h3&gt;
@@ -1463,7 +1500,7 @@ If there is one thing that I really hate, it is that a security sensible web app
 &lt;p&gt;If there is one thing that I really hate, it is that a security sensible web application doesn&amp;rsquo;t update automatically. Because of that I have begun to write a update script for Gitea before 4 months.&lt;/p&gt;
 &lt;p&gt;That script has updated my Gitea instance multiple times now and as I can see, that many users have the same problem (a german blog post from me is my most visited article from outside germany), I want to show you my solution.&lt;/p&gt;
 &lt;h3 id=&#34;warning&#34;&gt;Warning&lt;/h3&gt;
-&lt;p&gt;As I mentioned - I am no fan of manual upgrades - because of that I write many auto update scripts for my own systems. This scripts often haven&amp;rsquo;t been tested on other systems and may contain ugly code. 
+&lt;p&gt;As I mentioned - I am no fan of manual upgrades - because of that I write many auto update scripts for my own systems. This scripts often haven&amp;rsquo;t been tested on other systems and may contain ugly code.
 I am open for the creation of issues or pull requests which optimise my code. You should definitely check the code out and make sure to review it before using it.&lt;/p&gt;
 &lt;p&gt;Some creators - e.g. the person behind Kanboard - have a strong option against auto updates. There are good reasons for that too - you may not want to crash your application because of a faulty upgrade. I recommend auto updates only if you create auto backups, too.&lt;/p&gt;
 &lt;h3 id=&#34;the-script&#34;&gt;The Script&lt;/h3&gt;
