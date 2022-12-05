@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.m5e.de/tags/Barrels/</loc>
+    <lastmod>2022-12-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/tags/Code/</loc>
+    <lastmod>2022-12-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/</loc>
+    <lastmod>2022-12-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/post/</loc>
+    <lastmod>2022-12-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/post/simplify-your-code-with-typescript-barrels/</loc>
+    <lastmod>2022-12-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/tags/</loc>
+    <lastmod>2022-12-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/tags/TypeScript/</loc>
+    <lastmod>2022-12-05T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://blog.m5e.de/tags/company/</loc>
     <lastmod>2022-11-16T00:00:00+00:00</lastmod>
   </url><url>
@@ -18,15 +39,6 @@
     <lastmod>2022-11-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.m5e.de/tags/KPIs/</loc>
-    <lastmod>2022-11-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.m5e.de/</loc>
-    <lastmod>2022-11-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.m5e.de/post/</loc>
-    <lastmod>2022-11-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.m5e.de/tags/</loc>
     <lastmod>2022-11-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.m5e.de/tags/Why/</loc>

@@ -80,7 +80,9 @@
 </a>
 
     </div>
-    <div class="menu-trigger">menu</div>
+    
+      <div class="menu-trigger">menu</div>
+    
   </div>
   
     <nav class="menu">
@@ -177,7 +179,7 @@
           
           
           I stake a Cryptocurrency based of Peercoin on a Server since years. Multiple months ago this stopped because of the following error:
-Coind: kernel.cpp:372: unsigned int GetStakeModifierChecksum(const CBlockIndex*): Assertion `pindex-&gt;pprev || pindex-&gt;GetBlockHash() == (!fTestNet ? hashGenesisBlock : hashGenesisBlockTestNet)&rsquo; failed. This Error often comes when your Blockchain is corrupted. The cause of my problem was an unexpected downtime.
+Coind: kernel.cpp:372: unsigned int GetStakeModifierChecksum(const CBlockIndex*): Assertion `pindex-&gt;pprev || pindex-&gt;GetBlockHash() == (!fTestNet ? hashGenesisBlock : hashGenesisBlockTestNet)' failed. This Error often comes when your Blockchain is corrupted. The cause of my problem was an unexpected downtime.
 To fix this:
 Stop the Daemon Backup the Folder of the Coin Delete everything except wallet.
           

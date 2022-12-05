@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta name="generator" content="Hugo 0.105.0">
+	<meta name="generator" content="Hugo 0.106.0">
   
     <title>M5E&#39;s Blog</title>
   
@@ -81,7 +81,9 @@
 </a>
 
     </div>
-    <div class="menu-trigger">menu</div>
+    
+      <div class="menu-trigger">menu</div>
+    
   </div>
   
     <nav class="menu">
@@ -152,6 +154,50 @@
     
       <div class="post on-list">
         <h1 class="post-title">
+          <a href="https://blog.m5e.de/post/simplify-your-code-with-typescript-barrels/">Simplify Your Code with TypeScript Barrels</a>
+        </h1>
+        <div class="post-meta">
+          <span class="post-date">
+            2022-12-05
+          </span>
+          
+        </div>
+
+        
+          <span class="post-tags">
+            
+            #<a href="https://blog.m5e.de/tags/Code/">Code</a>&nbsp;
+            
+            #<a href="https://blog.m5e.de/tags/TypeScript/">TypeScript</a>&nbsp;
+            
+            #<a href="https://blog.m5e.de/tags/Barrels/">Barrels</a>&nbsp;
+            
+          </span>
+        
+
+        
+
+        <div class="post-content">
+          
+          
+          A TypeScript Barrel is a way to simplify the importing of multiple exports from a single module.
+Imagine you have a module called myModule that has several exports, such as:
+export const foo = 1; export const bar = 2; export const baz = 3; To import these exports into another module, you would normally have to write something like this:
+import { foo, bar, baz } from &#39;./myModule&#39;; This can get tedious if you have a large number of exports, and it can also make your code less readable.
+          
+          
+        </div>
+
+        
+        <div>
+          <a class="read-more button"
+            href="/post/simplify-your-code-with-typescript-barrels/">Read more →</a>
+        </div>
+        
+      </div>
+    
+      <div class="post on-list">
+        <h1 class="post-title">
           <a href="https://blog.m5e.de/post/why-everyone-should-know-kpis/">Why everyone should know KPIs</a>
         </h1>
         <div class="post-meta">
@@ -187,7 +233,7 @@
           
           
           Every Investor has to know KPIs (Key Performance Indicators) to value Investments. But why did I write that everyone should know them in my title?
-Knowing KPIs helps you even if you don’t invest any of your money. It helps you e.g. decide which job you should take or which customer you should prefer.
+Knowing KPIs helps you even if you don&rsquo;t invest any of your money. It helps you e.g. decide which job you should take or which customer you should prefer.
 Deciding between Job Offers - an Example Recently, I decided to start freelancing besides working on my own projects.
           
           
@@ -231,7 +277,7 @@ Deciding between Job Offers - an Example Recently, I decided to start freelancin
         <div class="post-content">
           
           
-          Many founders get Emails from NewsWatch TV saying that they will promote your company on an American Television “Morning Show”.
+          Many founders get Emails from NewsWatch TV saying that they will promote your company on an American Television &ldquo;Morning Show&rdquo;.
 I also got a similar Mail for Alphalerts.com and want to explain what you, as a Founder, should think about that.
 Firstly, if you get such a Mail, it is likely that you promoted your product on ProductHunt lately. NewsWatch seems to scrape the ProductHunt listings and even the founder of ProductHunt wrote a tweet about it:
           
@@ -285,7 +331,7 @@ Firstly, if you get such a Mail, it is likely that you promoted your product on 
           I run Drone CI for a longer period now with Docker. Because I decided to switch for multiple reasons from Docker to Podman, this setup had to be changed a bit.
 In this blog post, I want to cover how to install Podman and how to set up Drone so that it works with Podman.
 Installing Podman Install the podman and podman-docker packages. E.g. on a Debian based System:
-apt install podman podman-dockerIf you currently use docker-compose, then you should also install podman-compose:
+apt install podman podman-docker If you currently use docker-compose, then you should also install podman-compose:
           
           
         </div>
@@ -346,54 +392,6 @@ NGINX Proxy Create a new subdomain and point it to your server. Use certbot -d d
         <div>
           <a class="read-more button"
             href="/post/linux-setup-zitadel-with-postgresql/">Read more →</a>
-        </div>
-        
-      </div>
-    
-      <div class="post on-list">
-        <h1 class="post-title">
-          <a href="https://blog.m5e.de/post/open-source-authentication-solutions/">Open Source Authentication Solutions</a>
-        </h1>
-        <div class="post-meta">
-          <span class="post-date">
-            2022-09-05
-          </span>
-          
-        </div>
-
-        
-          <span class="post-tags">
-            
-            #<a href="https://blog.m5e.de/tags/Open/">Open</a>&nbsp;
-            
-            #<a href="https://blog.m5e.de/tags/Source/">Source</a>&nbsp;
-            
-            #<a href="https://blog.m5e.de/tags/Authentication/">Authentication</a>&nbsp;
-            
-            #<a href="https://blog.m5e.de/tags/Solutions/">Solutions</a>&nbsp;
-            
-            #<a href="https://blog.m5e.de/tags/OAuth/">OAuth</a>&nbsp;
-            
-            #<a href="https://blog.m5e.de/tags/OpenID/">OpenID</a>&nbsp;
-            
-          </span>
-        
-
-        
-
-        <div class="post-content">
-          
-          
-          Imagine you run a company and provide multiple web applications for your customers. In the beginning, you probably created a user table and the authentication methods yourself, but from the second application onwards, you will think about using already made open source solutions.
-That’s the situation I am in right now. I run multiple web applications, which each have their own auth mechanisms and user tables. This means, a user from App1 can’t use App2 unless he creates a new account.
-          
-          
-        </div>
-
-        
-        <div>
-          <a class="read-more button"
-            href="/post/open-source-authentication-solutions/">Read more →</a>
         </div>
         
       </div>

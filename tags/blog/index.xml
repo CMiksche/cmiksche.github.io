@@ -23,34 +23,5 @@ Unfortunately you have to create the Markdown files for your content yourself, b
 </content>
     </item>
     
-    <item>
-      <title>Switching to Hugo</title>
-      <link>https://blog.m5e.de/post/switching-to-hugo/</link>
-      <pubDate>Tue, 25 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.m5e.de/post/switching-to-hugo/</guid>
-      <description>Moving to Hugo I started this blog as my first blog using a static website generator. Back then I used what everyone else was using: Jekyll.
-But Jekyll has it problems. I don&amp;rsquo;t use Ruby for anything else and the management of the dependencies / ruby versions / etc of my static blog was too much for me.
-I blog way more often in german on my other WordPress sites and one of the main reasons is that it is easier and Jekyll wasn&amp;rsquo;t as easy as I expected.</description>
-      <content>&lt;h2 id=&#34;moving-to-hugo&#34;&gt;Moving to Hugo&lt;/h2&gt;
-&lt;p&gt;I started this blog as my first blog using a static website generator. Back then I used what everyone else was using: Jekyll.&lt;/p&gt;
-&lt;p&gt;But Jekyll has it problems. I don&amp;rsquo;t use Ruby for anything else and the management of the dependencies / ruby versions / etc of my &lt;strong&gt;static&lt;/strong&gt; blog was too much for me.&lt;/p&gt;
-&lt;p&gt;I blog way more often in german on my other WordPress sites and one of the main reasons is that it is easier and Jekyll wasn&amp;rsquo;t as easy as I expected.&lt;/p&gt;
-&lt;p&gt;So I switched to Hugo today. Hugo is written in Go and available as a binary - so no more dependencies! Yay! Its also faster! Yay again!&lt;/p&gt;
-&lt;p&gt;But then I installed a theme which required npm Packages &amp;hellip; So let&amp;rsquo;s see how happy I will be managing this dependencies &amp;hellip;&lt;/p&gt;
-&lt;h2 id=&#34;notes-about-url-rewrite&#34;&gt;Notes about URL rewrite&lt;/h2&gt;
-&lt;p&gt;So there are many articles about switching from Hugo to Jekyll out there. Basically the &lt;code&gt;hugo import jekyll jekyll_root_path target_path&lt;/code&gt; command from Hugo converts your posts and then you need to manually edit the config, install a theme and copy your custom pages to &amp;lsquo;content&amp;rsquo;.&lt;/p&gt;
-&lt;p&gt;But one thing was missing what no other article I found mentioned: What if you want to have the same URL Scheme like Jekyll had in your older posts (so links to them still work) but use the default Hugo URL Scheme for new posts?&lt;/p&gt;
-&lt;p&gt;That is possible! You can define custom URLs for each post. My first blog post looks like that:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;---
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;date: &amp;#34;2017-02-14T20:03:23Z&amp;#34;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;title: First try of Jekyll
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tags: [jekyll, first, post]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;url: &amp;#34;jekyll/first/post/2017/02/14/first-try-of-jekyll.html&amp;#34;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;---
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;So if you look at the URL of that old post it has the old style from Jekyll but this post about switching to Hugo has the new URL Scheme.&lt;/p&gt;
-</content>
-    </item>
-    
   </channel>
 </rss>
