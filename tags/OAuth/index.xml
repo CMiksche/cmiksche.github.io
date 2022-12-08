@@ -34,6 +34,12 @@ NGINX Proxy Create a new subdomain and point it to your server. Use certbot -d d
     }
 }
 &lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;caddy&#34;&gt;Caddy&lt;/h2&gt;
+&lt;p&gt;For caddy, the following Config should be set in the &lt;code&gt;Caddyfile&lt;/code&gt; (e.g. &lt;code&gt;/etc/caddy/Caddyfile&lt;/code&gt;):&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;domain.com {
+    reverse_proxy h2c://localhost:8080
+}
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;postgresql&#34;&gt;PostgreSQL&lt;/h2&gt;
 &lt;p&gt;We need a database for the software. This can be created by the following commands:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;sudo -u postgres psql
@@ -101,7 +107,7 @@ Database:
 &lt;p&gt;If your custom username and password don&amp;rsquo;t work, then try out the default account:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;username: &lt;code&gt;root@zitadel.localhost&lt;/code&gt; or &lt;code&gt;zitadel-admin&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;password: &lt;code&gt;RootPassword1!&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;password: &lt;code&gt;RootPassword1!&lt;/code&gt; or &lt;code&gt;Password1!&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;After that, you can start it with:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;zitadel start \
