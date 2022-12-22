@@ -6,7 +6,57 @@
     <description>Recent content in Tags on M5E&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 08 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Authentication</title>
+      <link>https://blog.m5e.de/tags/Authentication/</link>
+      <pubDate>Thu, 22 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/tags/Authentication/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Connect</title>
+      <link>https://blog.m5e.de/tags/Connect/</link>
+      <pubDate>Thu, 22 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/tags/Connect/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>OAuth</title>
+      <link>https://blog.m5e.de/tags/OAuth/</link>
+      <pubDate>Thu, 22 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/tags/OAuth/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>OpenID</title>
+      <link>https://blog.m5e.de/tags/OpenID/</link>
+      <pubDate>Thu, 22 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/tags/OpenID/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>Providers</title>
+      <link>https://blog.m5e.de/tags/Providers/</link>
+      <pubDate>Thu, 22 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/tags/Providers/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
     <item>
       <title>3M</title>
       <link>https://blog.m5e.de/tags/3M/</link>
@@ -263,36 +313,6 @@
       <pubDate>Fri, 23 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/tags/Source/</guid>
-      <description></description>
-      <content></content>
-    </item>
-    
-    <item>
-      <title>Authentication</title>
-      <link>https://blog.m5e.de/tags/Authentication/</link>
-      <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.m5e.de/tags/Authentication/</guid>
-      <description></description>
-      <content></content>
-    </item>
-    
-    <item>
-      <title>OAuth</title>
-      <link>https://blog.m5e.de/tags/OAuth/</link>
-      <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.m5e.de/tags/OAuth/</guid>
-      <description></description>
-      <content></content>
-    </item>
-    
-    <item>
-      <title>OpenID</title>
-      <link>https://blog.m5e.de/tags/OpenID/</link>
-      <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.m5e.de/tags/OpenID/</guid>
       <description></description>
       <content></content>
     </item>
