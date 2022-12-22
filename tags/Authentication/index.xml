@@ -14,10 +14,10 @@
       
       <guid>https://blog.m5e.de/post/state-of-openid-connect-providers/</guid>
       <description>In the last days I tried to integrate multiple OpenID Connect Providers into my Applications (currently mostly Alphalerts and some dev projects)
-So far I only got Google to work, and even this is currently limited to 100 Users. In this blogpost,t I want to explain why the integration of OpenID Connect Providers is such a struggle by showing multiple examples.
+So far, I only got Google to work, and even this is currently limited to 100 Users. In this blog post, I want to explain why the integration of OpenID Connect Providers is such a struggle by showing multiple examples.
 But before I show the examples, you should know that there are not so many big OpenID Connect Providers compared to the big OAuth2 Providers.</description>
       <content>&lt;p&gt;In the last days I tried to integrate multiple OpenID Connect Providers into my Applications (currently mostly &lt;a href=&#34;https://alphalerts.com&#34;&gt;Alphalerts&lt;/a&gt; and some dev projects)&lt;/p&gt;
-&lt;p&gt;So far I only got Google to work, and even this is currently limited to 100 Users. In this blogpost,t I want to explain why the integration of OpenID Connect Providers is such a struggle by showing multiple examples.&lt;/p&gt;
+&lt;p&gt;So far, I only got Google to work, and even this is currently limited to 100 Users. In this blog post, I want to explain why the integration of OpenID Connect Providers is such a struggle by showing multiple examples.&lt;/p&gt;
 &lt;p&gt;But before I show the examples, you should know that there are not so many big OpenID Connect Providers compared to the big OAuth2 Providers. E.g. GitHub offers OAuth2, but is not a OpenID Connect Provider yet.&lt;/p&gt;
 &lt;p&gt;For reference, I use &lt;a href=&#34;https://blog.m5e.de/post/linux-setup-zitadel-with-postgresql/&#34;&gt;Zitadel&lt;/a&gt; as my own OpenID Connect Instance.&lt;/p&gt;
 &lt;h2 id=&#34;openid-connect&#34;&gt;OpenID Connect&lt;/h2&gt;
