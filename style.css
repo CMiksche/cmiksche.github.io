@@ -1,0 +1,40 @@
+.mastodon-comment {
+    color: #fff;
+    margin: 0.4rem;
+    padding: 0.4rem;
+    opacity: 0.8;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .mastodon-comment .author {
+    display: flex;
+  }
+  
+  .mastodon-comment .author .details {
+    margin: 10px;
+    padding: 10px;
+  }
+  
+  .mastodon-comment .author .date {
+    margin-left: auto;
+    font-size: small;
+  }
+  
+  .mastodon-comment .author a:link, .mastodon-comment .author a:visited, .mastodon-comment .status a:link {
+    text-decoration: none;
+    border-bottom: 0px;
+  }
+  
+  .mastodon-comment .content {
+    padding: 5px;
+  }
+  
+  .mastodon-comment .status {
+    display: block;
+  }
+  
+  .mastodon-comment .status > div {
+    display: inline-block;
+    margin-right: 15px;
+  }
