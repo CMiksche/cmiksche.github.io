@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>3rd on M5E&#39;s Blog</title>
+    <link>https://blog.m5e.de/tags/3rd/</link>
+    <description>Recent content in 3rd on M5E&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 08 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/tags/3rd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introducing network.txt: A Standard for 3rd Party Data Transparency</title>
+      <link>https://blog.m5e.de/post/introducing-network.txt-a-standard-for-3rd-party-data-transparency/</link>
+      <pubDate>Wed, 08 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/post/introducing-network.txt-a-standard-for-3rd-party-data-transparency/</guid>
+      <description>In today&amp;rsquo;s digital age, privacy and data protection have become major concerns for both website visitors and developers. With the introduction of GDPR laws, it&amp;rsquo;s important for websites to provide clear information about the sharing of personal data with 3rd party providers. This is where the proposed standard, network.txt, comes into play.
+What is network.txt? network.txt is a new standard that provides information about the use of 3rd party providers on a website.</description>
+      <content>&lt;p&gt;In today&amp;rsquo;s digital age, privacy and data protection have become major concerns for both website visitors and developers. With the introduction of GDPR laws, it&amp;rsquo;s important for websites to provide clear information about the sharing of personal data with 3rd party providers. This is where the proposed standard, network.txt, comes into play.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-networktxt&#34;&gt;What is network.txt?&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/CMiksche/network.txt&#34;&gt;network.txt&lt;/a&gt; is a new standard that provides information about the use of 3rd party providers on a website. It&amp;rsquo;s a simple text file that is both readable by humans and programs alike. The purpose of network.txt is to offer an easy and standard way for visitors to understand which 3rd party providers are being used on a website and where they can find the privacy policy and terms of the website.&lt;/p&gt;
+&lt;h2 id=&#34;how-does-networktxt-work&#34;&gt;How does network.txt work?&lt;/h2&gt;
+&lt;p&gt;The network.txt file is located in the &lt;code&gt;.well-known&lt;/code&gt; directory and provides a clear list of 3rd party providers used on the website. It also includes a link to the privacy policy and terms of the website. Providers that are necessary for the website to function properly should be listed first, followed by optional providers.&lt;/p&gt;
+&lt;p&gt;Here&amp;rsquo;s an example of what a network.txt file might look like:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# LINKS
+
+Policy: http://www.example.org/Policies/Privacy
+Terms: http://www.example.org/Terms
+
+# THIRD PARTY PROVIDERS
+
+Name: Cloudflare
+URL: https://www.cloudflare.com
+Use: Necessary
+For: DDoS protection
+
+Name: Google Analytics
+URL: https://analytics.google.com
+Use: Optional
+For: Analytics
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;why-is-networktxt-needed&#34;&gt;Why is network.txt needed?&lt;/h2&gt;
+&lt;p&gt;There have been similar initiatives in the past such as P3P and privacy.txt, but network.txt offers a simpler and more accessible solution for both website visitors and developers. It allows visitors to easily understand which 3rd party providers are being used on a website and where they can find the privacy policy and terms, while also helping developers to create new tools for handling GDPR in a more efficient manner.&lt;/p&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;network.txt is a proposed standard that offers a clear and accessible way for websites to provide information about the use of 3rd party providers and personal data sharing. It&amp;rsquo;s a simple solution that benefits both website visitors and developers, and helps to increase transparency and privacy in the digital world.&lt;/p&gt;
+&lt;p&gt;You can find out more about it at the &lt;a href=&#34;https://github.com/CMiksche/network.txt&#34;&gt;GitHub Repo&lt;/a&gt; of the Standard.&lt;/p&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>
