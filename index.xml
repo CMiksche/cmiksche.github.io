@@ -252,6 +252,8 @@ registries = [&#39;quay.io&#39;, &#39;docker.io&#39;]
     docker.io/drone/drone-runner-docker
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;That&amp;rsquo;s it. Obviously you have to enable and start the services, but running Drone with Podman is easier than you think.&lt;/p&gt;
+&lt;h2 id=&#34;want-to-keep-your-drone-and-podman-instance-uptodate&#34;&gt;Want to keep your Drone and Podman Instance uptodate?&lt;/h2&gt;
+&lt;p&gt;Checkout &lt;a href=&#34;https://chapati.systems/autoupdate/&#34;&gt;Autoupdate&lt;/a&gt;. One tool to update various software which has no built-in auto update functionality.&lt;/p&gt;
 </content>
     </item>
     
@@ -390,6 +392,8 @@ WantedBy=multi-user.target
 
   &lt;blockquote class=&#34;twitter-tweet&#34; data-dnt=&#34;true&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Thank you &lt;a href=&#34;https://twitter.com/CMiksche?ref_src=twsrc%5Etfw&#34;&gt;@CMiksche&lt;/a&gt; for creating this awesome guide 🙏🏻 We are sure it will help people getting started with ZITADEL using &lt;a href=&#34;https://twitter.com/hashtag/postgreSQL?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#postgreSQL&lt;/a&gt; and &lt;a href=&#34;https://twitter.com/hashtag/NGINX?src=hash&amp;amp;ref_src=twsrc%5Etfw&#34;&gt;#NGINX&lt;/a&gt; &lt;a href=&#34;https://t.co/DGGDIuiDFJ&#34;&gt;https://t.co/DGGDIuiDFJ&lt;/a&gt;&lt;/p&gt;&amp;mdash; ZITADEL (@zitadel) &lt;a href=&#34;https://twitter.com/zitadel/status/1567445067308187651?ref_src=twsrc%5Etfw&#34;&gt;September 7, 2022&lt;/a&gt;&lt;/blockquote&gt;
 
+&lt;h2 id=&#34;want-to-keep-your-zitadel-uptodate&#34;&gt;Want to keep your Zitadel uptodate?&lt;/h2&gt;
+&lt;p&gt;Checkout &lt;a href=&#34;https://chapati.systems/autoupdate/&#34;&gt;Autoupdate&lt;/a&gt;. One tool to update various software which has no built-in auto update functionality.&lt;/p&gt;
 </content>
     </item>
     
@@ -443,6 +447,8 @@ That way, a user could log in into my OAuth server with his existing Google Acco
 &lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;p&gt;When I began exploring open source authentication solutions, I was thinking maybe some BaaS platform would help me. After figuring out what I wanted, it was clear that Backend-as-a-Service providers aren&amp;rsquo;t a solution for me and I had to look at a completely different kind of software category.&lt;/p&gt;
 &lt;p&gt;I don&amp;rsquo;t know which kind of OAuth2 Server I will stick with over the long time, but I am sure that I will use them.&lt;/p&gt;
+&lt;h2 id=&#34;want-to-keep-your-zitadel-instance-uptodate&#34;&gt;Want to keep your Zitadel Instance uptodate?&lt;/h2&gt;
+&lt;p&gt;Checkout &lt;a href=&#34;https://chapati.systems/autoupdate/&#34;&gt;Autoupdate&lt;/a&gt;. One tool to update various software which has no built-in auto update functionality.&lt;/p&gt;
 </content>
     </item>
     
@@ -1646,6 +1652,11 @@ If there is one thing that I really hate, it is that a security sensible web app
 &lt;p&gt;Gitea has one problem thought. It doesn&amp;rsquo;t update automatically. A issue for that is open nearly 2 years: &lt;a href=&#34;https://github.com/go-gitea/gitea/issues/518#issuecomment-441742904&#34;&gt;https://github.com/go-gitea/gitea/issues/518#issuecomment-441742904&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;If there is one thing that I really hate, it is that a security sensible web application doesn&amp;rsquo;t update automatically. Because of that I have begun to write a update script for Gitea before 4 months.&lt;/p&gt;
 &lt;p&gt;That script has updated my Gitea instance multiple times now and as I can see, that many users have the same problem (a german blog post from me is my most visited article from outside germany), I want to show you my solution.&lt;/p&gt;
+&lt;h3 id=&#34;update&#34;&gt;Update&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If you want to update Gitea and other software (like Drone, Caddy, Podman, Python, Zitadel and Kanboard), you should check out &lt;a href=&#34;https://chapati.systems/autoupdate/&#34;&gt;Autoupdate&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This new tool of mine was built as a single binary with a config file and tested on multiple Linux systems.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h3 id=&#34;warning&#34;&gt;Warning&lt;/h3&gt;
 &lt;p&gt;As I mentioned - I am no fan of manual upgrades - because of that I write many auto update scripts for my own systems. This scripts often haven&amp;rsquo;t been tested on other systems and may contain ugly code.
 I am open for the creation of issues or pull requests which optimise my code. You should definitely check the code out and make sure to review it before using it.&lt;/p&gt;

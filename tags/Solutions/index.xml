@@ -57,6 +57,8 @@ That way, a user could log in into my OAuth server with his existing Google Acco
 &lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;p&gt;When I began exploring open source authentication solutions, I was thinking maybe some BaaS platform would help me. After figuring out what I wanted, it was clear that Backend-as-a-Service providers aren&amp;rsquo;t a solution for me and I had to look at a completely different kind of software category.&lt;/p&gt;
 &lt;p&gt;I don&amp;rsquo;t know which kind of OAuth2 Server I will stick with over the long time, but I am sure that I will use them.&lt;/p&gt;
+&lt;h2 id=&#34;want-to-keep-your-zitadel-instance-uptodate&#34;&gt;Want to keep your Zitadel Instance uptodate?&lt;/h2&gt;
+&lt;p&gt;Checkout &lt;a href=&#34;https://chapati.systems/autoupdate/&#34;&gt;Autoupdate&lt;/a&gt;. One tool to update various software which has no built-in auto update functionality.&lt;/p&gt;
 </content>
     </item>
     

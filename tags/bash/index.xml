@@ -60,6 +60,11 @@ If there is one thing that I really hate, it is that a security sensible web app
 &lt;p&gt;Gitea has one problem thought. It doesn&amp;rsquo;t update automatically. A issue for that is open nearly 2 years: &lt;a href=&#34;https://github.com/go-gitea/gitea/issues/518#issuecomment-441742904&#34;&gt;https://github.com/go-gitea/gitea/issues/518#issuecomment-441742904&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;If there is one thing that I really hate, it is that a security sensible web application doesn&amp;rsquo;t update automatically. Because of that I have begun to write a update script for Gitea before 4 months.&lt;/p&gt;
 &lt;p&gt;That script has updated my Gitea instance multiple times now and as I can see, that many users have the same problem (a german blog post from me is my most visited article from outside germany), I want to show you my solution.&lt;/p&gt;
+&lt;h3 id=&#34;update&#34;&gt;Update&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If you want to update Gitea and other software (like Drone, Caddy, Podman, Python, Zitadel and Kanboard), you should check out &lt;a href=&#34;https://chapati.systems/autoupdate/&#34;&gt;Autoupdate&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This new tool of mine was built as a single binary with a config file and tested on multiple Linux systems.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h3 id=&#34;warning&#34;&gt;Warning&lt;/h3&gt;
 &lt;p&gt;As I mentioned - I am no fan of manual upgrades - because of that I write many auto update scripts for my own systems. This scripts often haven&amp;rsquo;t been tested on other systems and may contain ugly code.
 I am open for the creation of issues or pull requests which optimise my code. You should definitely check the code out and make sure to review it before using it.&lt;/p&gt;
