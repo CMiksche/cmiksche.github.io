@@ -215,7 +215,12 @@ Despite its widespread use, PFOA has been linked to a range of serious health pr
 
   
 
-  
+  <div>
+  <h2>Advertisement</h2>
+  <div id="ana-container"></div>
+</div>
+
+
 <h2>
     
         Comments
@@ -376,8 +381,41 @@ Despite its widespread use, PFOA has been linked to a range of serious health pr
 
 
 
-
-
+<script>
+    const adContainer = document.getElementById('ana-container');
+    const url = 'https://api.anaads.de/s/BVP6CQ==';
+    
+     
+    fetch(url)
+      .then(response => response.json())
+      .then(adData => {
+        
+        const adElement = document.createElement('div');
+        adElement.classList.add('ana'); 
+    
+         
+        const titleElement = document.createElement('span');
+        const titleLink = document.createElement('a');
+        titleLink.href = adData.url;
+        titleLink.textContent = adData.title;
+        titleElement.className = "ana-title"
+        titleElement.appendChild(titleLink);
+        adElement.appendChild(titleElement);
+    
+         
+        const textElement = document.createElement('span');
+        const textLink = document.createElement('a');
+        textLink.href = adData.url;
+        textLink.textContent = adData.text;
+        textElement.className = "ana-text"
+        textElement.appendChild(textLink);
+        adElement.appendChild(textElement);
+    
+         
+        adContainer.appendChild(adElement);
+      })
+      .catch(error => console.error(error));
+</script>
 
   
 </div>

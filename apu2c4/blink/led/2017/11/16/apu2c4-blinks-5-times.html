@@ -220,7 +220,12 @@ First Mistake: I used a power supply with 12V and 2A from china. Visible by: The
 
   
 
-  
+  <div>
+  <h2>Advertisement</h2>
+  <div id="ana-container"></div>
+</div>
+
+
 </div>
 
   </div>
@@ -243,8 +248,41 @@ First Mistake: I used a power supply with 12V and 2A from china. Visible by: The
 
 
 
-
-
+<script>
+    const adContainer = document.getElementById('ana-container');
+    const url = 'https://api.anaads.de/s/BVP6CQ==';
+    
+     
+    fetch(url)
+      .then(response => response.json())
+      .then(adData => {
+        
+        const adElement = document.createElement('div');
+        adElement.classList.add('ana'); 
+    
+         
+        const titleElement = document.createElement('span');
+        const titleLink = document.createElement('a');
+        titleLink.href = adData.url;
+        titleLink.textContent = adData.title;
+        titleElement.className = "ana-title"
+        titleElement.appendChild(titleLink);
+        adElement.appendChild(titleElement);
+    
+         
+        const textElement = document.createElement('span');
+        const textLink = document.createElement('a');
+        textLink.href = adData.url;
+        textLink.textContent = adData.text;
+        textElement.className = "ana-text"
+        textElement.appendChild(textLink);
+        adElement.appendChild(textElement);
+    
+         
+        adContainer.appendChild(adElement);
+      })
+      .catch(error => console.error(error));
+</script>
 
   
 </div>

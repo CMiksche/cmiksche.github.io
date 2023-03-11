@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta name="generator" content="Hugo 0.111.0">
+	<meta name="generator" content="Hugo 0.111.2">
   
     <title>M5E&#39;s Blog</title>
   
@@ -440,8 +440,41 @@ Socioboard Socioboard is your full-blown social media management tool. It is ope
 
 
 
-
-
+<script>
+    const adContainer = document.getElementById('ana-container');
+    const url = 'https://api.anaads.de/s/BVP6CQ==';
+    
+     
+    fetch(url)
+      .then(response => response.json())
+      .then(adData => {
+        
+        const adElement = document.createElement('div');
+        adElement.classList.add('ana'); 
+    
+         
+        const titleElement = document.createElement('span');
+        const titleLink = document.createElement('a');
+        titleLink.href = adData.url;
+        titleLink.textContent = adData.title;
+        titleElement.className = "ana-title"
+        titleElement.appendChild(titleLink);
+        adElement.appendChild(titleElement);
+    
+         
+        const textElement = document.createElement('span');
+        const textLink = document.createElement('a');
+        textLink.href = adData.url;
+        textLink.textContent = adData.text;
+        textElement.className = "ana-text"
+        textElement.appendChild(textLink);
+        adElement.appendChild(textElement);
+    
+         
+        adContainer.appendChild(adElement);
+      })
+      .catch(error => console.error(error));
+</script>
 
   
 </div>
