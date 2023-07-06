@@ -5,7 +5,7 @@
     <link>https://blog.m5e.de/</link>
     <description>Recent content on M5E&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <lastBuildDate>Wed, 08 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.m5e.de/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Introducing network.txt: A Standard for 3rd Party Data Transparency</title>
@@ -1816,6 +1816,51 @@ Disclaimer Accountability for content The contents of our pages have been create
 &lt;h2 id=&#34;copyright&#34;&gt;Copyright&lt;/h2&gt;
 &lt;p&gt;Our web pages and their contents are subject to German copyright law. Unless expressly permitted by law (§ 44a et seq. of the copyright law), every form of utilizing, reproducing or processing works subject to copyright protection on our web pages requires the prior consent of the respective owner of the rights. Individual reproductions of a work are allowed only for private use, so must not serve either directly or indirectly for earnings. Unauthorized utilization of copyrighted works is punishable (§ 106 of the copyright law).&lt;/p&gt;
 &lt;p&gt;Quelle: &lt;a href=&#34;http://www.twigg.de/&#34;&gt;impressum generator - twigg.de&lt;/a&gt;&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Uses</title>
+      <link>https://blog.m5e.de/uses/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.m5e.de/uses/</guid>
+      <description>Software I have iSH on my iPhone which makes it possible to do some small changes on the go. Aside from that, my MacBook has macOS and I mostly code in VS Code but also in some JetBrains IDEs like PyCharm.
+My most used computer languages and frameworks include: Angular, React, Vue.js, TypeScript, HTML, CSS, GoLang, Python, Kotlin, Java and Rust but this should not be an CV. (I also have experience with a lot more technologies and systems)</description>
+      <content>&lt;h1 id=&#34;software&#34;&gt;Software&lt;/h1&gt;
+&lt;p&gt;I have &lt;code&gt;iSH&lt;/code&gt; on my iPhone which makes it possible to do some small changes on the go. Aside from that, my MacBook has &lt;code&gt;macOS&lt;/code&gt; and I mostly code in &lt;code&gt;VS Code&lt;/code&gt; but also in some JetBrains IDEs like &lt;code&gt;PyCharm&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;My most used computer languages and frameworks include: &lt;code&gt;Angular&lt;/code&gt;, &lt;code&gt;React&lt;/code&gt;, &lt;code&gt;Vue.js&lt;/code&gt;, &lt;code&gt;TypeScript&lt;/code&gt;, &lt;code&gt;HTML&lt;/code&gt;, &lt;code&gt;CSS&lt;/code&gt;, &lt;code&gt;GoLang&lt;/code&gt;, &lt;code&gt;Python&lt;/code&gt;, &lt;code&gt;Kotlin&lt;/code&gt;, &lt;code&gt;Java&lt;/code&gt; and &lt;code&gt;Rust&lt;/code&gt; but this should not be an CV. (I also have experience with a lot more technologies and systems)&lt;/p&gt;
+&lt;p&gt;My PC runs on &lt;code&gt;Win 11&lt;/code&gt; and there I also use the same IDEs. I have various single-board computers and older devices, which all run on either some form of &lt;code&gt;Linux&lt;/code&gt; or &lt;code&gt;BSD&lt;/code&gt;. In the past I dual-booted my Desktop PCs and Laptops with Linux or &lt;code&gt;FreeBSD&lt;/code&gt;, but now my main usage of *nix is mostly limited to &lt;code&gt;WSL&lt;/code&gt; on Windows, the macOS command line and multiple VPS.&lt;/p&gt;
+&lt;h1 id=&#34;hardware&#34;&gt;Hardware&lt;/h1&gt;
+&lt;h2 id=&#34;mobile&#34;&gt;Mobile&lt;/h2&gt;
+&lt;p&gt;I have a collection of various Laptops and Mobile Phones, but currently I use:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;MacBook Air M1 2020&lt;/code&gt; with &lt;code&gt;16 GB Memory&lt;/code&gt; and &lt;code&gt;500 GB&lt;/code&gt; of disk space&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;iPhone 12 mini&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;My older devices are being used to test my software on other operating systems and architectures. Currently e.g. &lt;code&gt;Android 10&lt;/code&gt; on a &lt;code&gt;Mi A2 Lite&lt;/code&gt; and &lt;code&gt;Arch Linux&lt;/code&gt; on an Acer Laptop from 2013.&lt;/p&gt;
+&lt;h2 id=&#34;desktop&#34;&gt;Desktop&lt;/h2&gt;
+&lt;p&gt;I self built my last two PCs. My current setup includes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CPU: &lt;code&gt;AMD Ryzen 5 3600 6x 3.60GHz&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Mainboard: &lt;code&gt;Gigabyte B450 Aorus M AMD B450&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Memory: &lt;code&gt;16 GB DDR4&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;GPU 1: &lt;code&gt;Sapphire Pulse Radeon RX 570&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;GPU 2: &lt;code&gt;NVIDIA GeForce GT 710&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Case: &lt;code&gt;Nanoxia Deep Silence 3&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Power-Supply: &lt;code&gt;700W, 240V Xilence Power Supply&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Display 2 x &lt;code&gt;BenQ GW2270&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Display 2 x &lt;code&gt;Dell P2011H&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Keyboard 1: &lt;a href=&#34;https://blog.wronnay.net/mechanische-tastatur-drevo-calibur-v2-pro/&#34;&gt;&lt;code&gt;Drevo Calibur V2 Pro&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Keyboard 2: &lt;a href=&#34;https://blog.wronnay.net/royal-kludge-rk61-gegen-ajazz-ak33/&#34;&gt;&lt;code&gt;Royal Kludge RK61&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Keyboard 3: &lt;a href=&#34;https://blog.wronnay.net/royal-kludge-rk61-gegen-ajazz-ak33/&#34;&gt;&lt;code&gt;Ajazz AK33&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Mouse: &lt;code&gt;&amp;quot;seenda&amp;quot; Vertical Mouse&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Desk: &lt;code&gt;IKEA SKARSTA 160 cm&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Because I mostly recycle as many components as I can from my older builds, I only have one functioning Desktop PC and multiple parts which can be used if something breaks.&lt;/p&gt;
+&lt;h2 id=&#34;cameras&#34;&gt;Cameras&lt;/h2&gt;
+&lt;p&gt;I am the proud owner of a &lt;code&gt;Canon EOS 1200D&lt;/code&gt; which is my main DSLR, but most of the time I just use my iPhone.&lt;/p&gt;
+&lt;p&gt;Sometimes I also use a &lt;code&gt;Nikon 1 J1&lt;/code&gt;. I have multiple Adapters and use both of these Cameras also with old &lt;code&gt;M42&lt;/code&gt; Lenses.&lt;/p&gt;
 </content>
     </item>
     
