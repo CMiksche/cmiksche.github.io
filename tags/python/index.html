@@ -14,16 +14,23 @@
 
 
 
-<link rel="stylesheet" href="https://blog.m5e.de/assets/style.css">
+
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/styles.css">
 
 
 
 <link rel="stylesheet" href="https://blog.m5e.de/style.css">
 
 
-<link rel="apple-touch-icon" href="https://blog.m5e.de/img/apple-touch-icon-192x192.png">
 
-  <link rel="shortcut icon" href="https://blog.m5e.de/img/favicon/orange.png">
+  <link rel="shortcut icon" href="https://blog.m5e.de/img/theme-colors/orange.png">
+  <link rel="apple-touch-icon" href="https://blog.m5e.de/img/theme-colors/orange.png">
 
 
 
@@ -47,8 +54,8 @@
     <meta property="og:image" content="https://blog.m5e.de/img/favicon/orange.png">
   
 
-<meta property="og:image:width" content="2048">
-<meta property="og:image:height" content="1024">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
 
 
 
@@ -65,6 +72,7 @@
 <link href="/css/fontawesome.css" rel="stylesheet">
 <link href="/css/brands.css" rel="stylesheet">
 <link href="/css/solid.css" rel="stylesheet">
+
 
 </head>
 <body class="orange">
@@ -83,69 +91,10 @@
 
     </div>
     
-      <div class="menu-trigger">menu</div>
-    
-  </div>
-  
-    <nav class="menu">
-    <ul class="menu__inner menu__inner--desktop">
-      
-        
-          
-            
-            <li><a href="https://github.com/cmiksche"><i class="fab fa-github"></i></a></li>
-            
-          
-        
-          
-            
-            <li><a href="https://twitter.com/cmiksche"><i class="fab fa-twitter"></i></a></li>
-            
-          
-        
-          
-            
-            <li><a href="https://mastodon.social/@cmiksche"><i class="fab fa-mastodon"></i></a></li>
-            
-          
-        
-          
-            
-            <li><a href="https://linkedin.com/in/cmiksche/"><i class="fab fa-linkedin"></i></a></li>
-            
-          
-        
-          
-            
-            <li><a href="https://www.instagram.com/cmiksche/"><i class="fab fa-instagram"></i></a></li>
-            
-          
-        
-          
-            
-            <li><a href="/">Home</a></li>
-            
-          
-        
-          
-            
-            <li><a href="/uses">Uses</a></li>
-            
-          
-        
-          
-            
-            <li><a href="/contact">Contact &amp; Imprint</a></li>
-            
-          
-        
-        
-      
-  
-      
-    </ul>
-  
-    <ul class="menu__inner menu__inner--mobile">
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
       
         
           <li><a href="https://github.com/cmiksche">GitHub</a></li>
@@ -181,8 +130,69 @@
       
       
     </ul>
-  </nav>
+  </li>
+</ul>
+
+    
+    
+  </div>
   
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          
+          <li><a href="https://github.com/cmiksche"><i class="fab fa-github"></i></a></li>
+          
+        
+      
+        
+          
+          <li><a href="https://twitter.com/cmiksche"><i class="fab fa-twitter"></i></a></li>
+          
+        
+      
+        
+          
+          <li><a href="https://mastodon.social/@cmiksche"><i class="fab fa-mastodon"></i></a></li>
+          
+        
+      
+        
+          
+          <li><a href="https://linkedin.com/in/cmiksche/"><i class="fab fa-linkedin"></i></a></li>
+          
+        
+      
+        
+          
+          <li><a href="https://www.instagram.com/cmiksche/"><i class="fab fa-instagram"></i></a></li>
+          
+        
+      
+        
+          
+            <li><a href="/" >Home</a></li>
+          
+        
+      
+        
+          
+            <li><a href="/uses" >Uses</a></li>
+          
+        
+      
+        
+          
+            <li><a href="/contact" >Contact &amp; Imprint</a></li>
+          
+        
+      
+      
+    
+  </ul>
+</nav>
   
 </header>
 
@@ -192,14 +202,16 @@
   
   <div class="posts">
     
-      <div class="post on-list">
+      <article class="post on-list">
         <h1 class="post-title">
           <a href="https://blog.m5e.de/bash/script/python/linux/2020/05/22/forget-bash-take-python.html">Forget Bash, take Python!</a>
         </h1>
         <div class="post-meta">
-          <span class="post-date">
-            2020-05-22
-          </span>
+          
+            <time class="post-date">
+              2020-05-22 ::
+            </time>
+          
           
         </div>
 
@@ -219,24 +231,23 @@
 
         
 
+
         <div class="post-content">
           
-          
-          I wrote bash scripts for several years now. You can find old bash scripts of mine on GitHub but most of them aren&rsquo;t maintained anymore - and I have a reason for that.
+            I wrote bash scripts for several years now. You can find old bash scripts of mine on GitHub but most of them aren’t maintained anymore - and I have a reason for that.
 But before I give you my reasons for not using many bash scripts anymore, lets look at the benefits of bash:
-It super easy and you basically already can it if you write Linux / BSD commands There are frameworks out now which give you advanced features like testing It works out of the box on nearly every Linux / BSD system Okay - sounds good - so what&rsquo;s my problem?
-          
+It super easy and you basically already can it if you write Linux / BSD commands There are frameworks out now which give you advanced features like testing It works out of the box on nearly every Linux / BSD system Okay - sounds good - so what’s my problem?
           
         </div>
 
         
-        <div>
-          <a class="read-more button"
-            href="/bash/script/python/linux/2020/05/22/forget-bash-take-python.html">Read more →</a>
-        </div>
+          <div>
+            <a class="read-more button" href="/bash/script/python/linux/2020/05/22/forget-bash-take-python.html">Read more →</a>
+          </div>
         
-      </div>
+      </article>
     
+
     <div class="pagination">
   <div class="pagination__buttons">
     
@@ -255,15 +266,17 @@ It super easy and you basically already can it if you write Linux / BSD commands
       <div class="copyright">
         <span>© 2023 Powered by <a href="http://gohugo.io">Hugo</a></span>
     
-        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
       </div>
   </div>
 </footer>
 
-<script src="https://blog.m5e.de/assets/main.js"></script>
-<script src="https://blog.m5e.de/assets/prism.js"></script>
 
 
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
 
 
 <script>

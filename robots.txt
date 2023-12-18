@@ -1,4 +1,4 @@
 User-agent: *
-Disallow:
+Disallow: /contact/
 
 Sitemap: https://blog.m5e.de/sitemap.xml
