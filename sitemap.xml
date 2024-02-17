@@ -2,6 +2,45 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.m5e.de/tags/Authentication/</loc>
+    <lastmod>2024-02-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/</loc>
+    <lastmod>2024-02-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/tags/Manually/</loc>
+    <lastmod>2024-02-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/post/manually-migrate-zitadel-with-postgresql/</loc>
+    <lastmod>2024-02-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/tags/Migrate/</loc>
+    <lastmod>2024-02-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/tags/OAuth/</loc>
+    <lastmod>2024-02-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/tags/Open/</loc>
+    <lastmod>2024-02-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/tags/OpenID/</loc>
+    <lastmod>2024-02-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/tags/PostgreSQL/</loc>
+    <lastmod>2024-02-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/post/</loc>
+    <lastmod>2024-02-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/tags/Source/</loc>
+    <lastmod>2024-02-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/tags/</loc>
+    <lastmod>2024-02-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.m5e.de/tags/ZITADEL/</loc>
+    <lastmod>2024-02-17T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://blog.m5e.de/tags/3rd/</loc>
     <lastmod>2023-02-08T00:00:00+00:00</lastmod>
   </url><url>
@@ -14,37 +53,19 @@
     <loc>https://blog.m5e.de/post/introducing-network.txt-a-standard-for-3rd-party-data-transparency/</loc>
     <lastmod>2023-02-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.m5e.de/</loc>
-    <lastmod>2023-02-08T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://blog.m5e.de/tags/network.txt/</loc>
     <lastmod>2023-02-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.m5e.de/tags/Party/</loc>
     <lastmod>2023-02-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.m5e.de/post/</loc>
-    <lastmod>2023-02-08T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://blog.m5e.de/tags/Standard/</loc>
-    <lastmod>2023-02-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.m5e.de/tags/</loc>
     <lastmod>2023-02-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.m5e.de/tags/Transparency/</loc>
     <lastmod>2023-02-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.m5e.de/tags/Authentication/</loc>
-    <lastmod>2022-12-22T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://blog.m5e.de/tags/Connect/</loc>
-    <lastmod>2022-12-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.m5e.de/tags/OAuth/</loc>
-    <lastmod>2022-12-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.m5e.de/tags/OpenID/</loc>
     <lastmod>2022-12-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.m5e.de/tags/Providers/</loc>
@@ -134,25 +155,13 @@
     <loc>https://blog.m5e.de/post/drone-ci-with-podman/</loc>
     <lastmod>2022-09-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.m5e.de/tags/Open/</loc>
-    <lastmod>2022-09-23T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://blog.m5e.de/tags/Podman/</loc>
     <lastmod>2022-09-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.m5e.de/tags/Setup/</loc>
     <lastmod>2022-09-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.m5e.de/tags/Source/</loc>
-    <lastmod>2022-09-23T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://blog.m5e.de/post/linux-setup-zitadel-with-postgresql/</loc>
-    <lastmod>2022-09-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.m5e.de/tags/PostgreSQL/</loc>
-    <lastmod>2022-09-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.m5e.de/tags/ZITADEL/</loc>
     <lastmod>2022-09-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.m5e.de/post/open-source-authentication-solutions/</loc>
