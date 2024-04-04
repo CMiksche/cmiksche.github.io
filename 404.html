@@ -201,6 +201,27 @@
     <h1 class="post-title">404 — Page not found...</h1>
 
     <div class="post-content">
+      <p id="joke"></p>
+
+<script>
+  const jokes = [
+    "Why was the JavaScript developer sad? Because he didn't know how to 'null' his emotions.",
+    "Why did the programmer go broke? Because he used up all his cache.",
+    "Why was the computer cold? It left its Windows open.",
+    "Why was the HTML developer always so optimistic? Because he never lost his 'head'.",
+    "Why do programmers prefer dark mode? Because light attracts bugs.",
+    "Why was the JavaScript function arrested? For 'loitering' around without a 'return' statement.",
+    "Why do programmers always mix up Christmas and Halloween? Because Oct 31 == Dec 25.",
+    "Why was the JavaScript developer sad? Because he didn't 'console' his feelings."
+];
+
+function getRandomJoke() {
+    return jokes[Math.floor(Math.random() * jokes.length)];
+}
+
+  document.getElementById("joke").innerHTML = getRandomJoke();
+</script>
+
       <a href="https://blog.m5e.de/">Back to home page&nbsp;→</a>
     </div>
 
