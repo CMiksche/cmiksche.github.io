@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Keeping your Dotfiles in Sync and your Secrets in Gopass :: M5E&#39;s Blog</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Inspired by solutions how Secrets are being handled in corporate DevOps environments, I wanted to keep my Dotfiles on multiple machines in Sync and store all sensitive information inside gopass (which I started using instead of KeePass some time ago since I like the CLI and Unix / KISS aspect of it)
+Luckily, I am not the first one to have such desires and I came across chezmoi which manages your Dotfiles for you inside a Git Repo and which also has support for gopass." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://blog.m5e.de/post/keeping-your-dotfiles-in-sync-and-your-secrets-in-gopass/" />
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/styles.css">
+
+
+
+<link rel="stylesheet" href="https://blog.m5e.de/style.css">
+
+
+
+  <link rel="shortcut icon" href="https://blog.m5e.de/img/theme-colors/orange.png">
+  <link rel="apple-touch-icon" href="https://blog.m5e.de/img/theme-colors/orange.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="CMiksche" />
+  
+    <meta name="twitter:creator" content="" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Keeping your Dotfiles in Sync and your Secrets in Gopass">
+<meta property="og:description" content="Inspired by solutions how Secrets are being handled in corporate DevOps environments, I wanted to keep my Dotfiles on multiple machines in Sync and store all sensitive information inside gopass (which I started using instead of KeePass some time ago since I like the CLI and Unix / KISS aspect of it)
+Luckily, I am not the first one to have such desires and I came across chezmoi which manages your Dotfiles for you inside a Git Repo and which also has support for gopass." />
+<meta property="og:url" content="https://blog.m5e.de/post/keeping-your-dotfiles-in-sync-and-your-secrets-in-gopass/" />
+<meta property="og:site_name" content="M5E&#39;s Blog" />
+
+  
+    <meta property="og:image" content="https://blog.m5e.de/img/favicon/orange.png">
+  
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2024-09-09 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+<script async src="https://a.chapati.systems/script.js" data-website-id="3e433b5d-32c7-4c9a-b9f5-fd81120a30fb"></script>
+<link href="/css/fontawesome.css" rel="stylesheet">
+<link href="/css/brands.css" rel="stylesheet">
+<link href="/css/solid.css" rel="stylesheet">
+
+
+</head>
+<body class="orange">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    M5E&#39;s Blog
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="https://github.com/cmiksche">GitHub</a></li>
+        
+      
+        
+          <li><a href="https://twitter.com/cmiksche">Twitter</a></li>
+        
+      
+        
+          <li><a href="https://mastodon.social/@cmiksche">Mastodon</a></li>
+        
+      
+        
+          <li><a href="https://linkedin.com/in/cmiksche/">LinkedIn</a></li>
+        
+      
+        
+          <li><a href="https://www.instagram.com/cmiksche/">Instagram</a></li>
+        
+      
+        
+          <li><a href="/">Home</a></li>
+        
+      
+        
+          <li><a href="/uses">Uses</a></li>
+        
+      
+        
+          <li><a href="/contact">Contact &amp; Imprint</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          
+          <li><a href="https://github.com/cmiksche"><i class="fab fa-github"></i></a></li>
+          
+        
+      
+        
+          
+          <li><a href="https://twitter.com/cmiksche"><i class="fab fa-x-twitter"></i></a></li>
+          
+        
+      
+        
+          
+          <li><a href="https://mastodon.social/@cmiksche"><i class="fab fa-mastodon"></i></a></li>
+          
+        
+      
+        
+          
+          <li><a href="https://linkedin.com/in/cmiksche/"><i class="fab fa-linkedin"></i></a></li>
+          
+        
+      
+        
+          
+          <li><a href="https://www.instagram.com/cmiksche/"><i class="fab fa-instagram"></i></a></li>
+          
+        
+      
+        
+          
+            <li><a href="/" >Home</a></li>
+          
+        
+      
+        
+          
+            <li><a href="/uses" >Uses</a></li>
+          
+        
+      
+        
+          
+            <li><a href="/contact" >Contact &amp; Imprint</a></li>
+          
+        
+      
+      
+    
+  </ul>
+</nav>
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="https://blog.m5e.de/post/keeping-your-dotfiles-in-sync-and-your-secrets-in-gopass/">Keeping your Dotfiles in Sync and your Secrets in Gopass</a>
+  </h1>
+  <div class="post-meta">
+    
+      <time class="post-date">
+        2024-09-09 ::
+        
+      </time>
+    
+    
+    
+  </div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="https://blog.m5e.de/tags/Dotfiles/">Dotfiles</a>&nbsp;
+      
+      #<a href="https://blog.m5e.de/tags/Sync/">Sync</a>&nbsp;
+      
+      #<a href="https://blog.m5e.de/tags/Secrets/">Secrets</a>&nbsp;
+      
+      #<a href="https://blog.m5e.de/tags/gopass/">gopass</a>&nbsp;
+      
+      #<a href="https://blog.m5e.de/tags/chezmoi/">chezmoi</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p>Inspired by solutions how Secrets are being handled in corporate DevOps environments, I wanted to keep my Dotfiles on multiple machines in Sync and store all sensitive information inside <a href="https://www.gopass.pw/">gopass</a> (which I started using instead of KeePass some time ago since I like the CLI and Unix / KISS aspect of it)</p>
+<p>Luckily, I am not the first one to have such desires and I came across <a href="https://www.chezmoi.io/">chezmoi</a> which manages your Dotfiles for you inside a Git Repo and which also has support for gopass.</p>
+<p>However, there are not so many articles out there how to do such a setup concretely and the ones which are out there are for e.g. <a href="https://dev.to/jmc265/using-bitwarden-and-chezmoi-to-manage-ssh-keys-5hfm">BitWarden</a> - so not really for the tools I described.</p>
+<h2 id="lets-do-this">Let&rsquo;s do this!<a href="#lets-do-this" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>To do the setup I described, one should first follow the official installation and getting started guides from gopass and chezmoi. I will not explain this here as there are many good guides out there (the best ones are the ones from the developers themselves) and because such tools also change with time and I will likely not update this blog post often.</p>
+<h3 id="saving-the-secrets-in-gopass">Saving the Secrets in Gopass<a href="#saving-the-secrets-in-gopass" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>When saving the secrets, we have to think about how chezmoi will get the secret out. Currently the <code>gopass</code> function of chezmoi will only return the first line of the secret.
+That means while we could save e.g. a SSH Private Key in Raw, chezmoi will only read the first line of the Key, so we should better convert the SSH Private Key first.</p>
+<p>We can simply convert SSH Private Key in one line by running:</p>
+<pre tabindex="0"><code>cat id_rsa | base64
+</code></pre><p>This will output one line of the SSH Private Key encoded in Base64. This is the secret we should store in gopass.</p>
+<h3 id="getting-the-secret-with-chezmoi">Getting the Secret with chezmoi<a href="#getting-the-secret-with-chezmoi" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>After setting up chezmoi we can add the files we want chezmoi to manage. For the public part of a SSH Key this is quite easy:</p>
+<pre tabindex="0"><code>chezmoi add .ssh/id_rsa.pub
+</code></pre><p>Will add the public part of the SSH Key to chezmoi. However, the private part is a bit more tricky.</p>
+<p>First we should switch into the chezmoi directory with</p>
+<pre tabindex="0"><code>chezmoi cd
+</code></pre><p>Then we should go into the <code>private_dot_ssh</code> folder where there is likely already a <code>id_rsa.pub</code> file but we need to create a <code>private_id_rsa.tmpl</code> file for managing the private key.</p>
+<p>Now we should create the file with the following contents:</p>
+<pre tabindex="0"><code>{{ gopass &#34;SSH/id_rsa&#34; | b64dec }}
+</code></pre><p>Where &ldquo;SSH/id_rsa&rdquo; is the name of the file inside of gopass and <code>gopass</code> and <code>b64dec</code> are chezmoi functions. <code>gopass</code> is the function to get the secret from gopass and then we pipe it into the <code>b64dec</code> function which decodes the Base64 string.</p>
+<h3 id="applying-it">Applying it<a href="#applying-it" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>This is a part I nearly forgot and which can lead to confusion. We should first <code>git commit</code> and <code>git push</code> our changes in the Git Repo, then we can test our template file by running</p>
+<pre tabindex="0"><code>chezmoi execute-template &lt; private_id_rsa.tmpl
+</code></pre><p>after this the most important step is to run</p>
+<pre tabindex="0"><code>chezmoi apply
+</code></pre><p>to actually apply our changes and if you already setup chezmoi update on other machines with gopass you will need to run</p>
+<pre tabindex="0"><code>chezmoi update
+</code></pre><p>on these other machines to pull the changes and directly apply them.</p>
+<p>That was it! Now we have a nice setup where we can save sensitive data in gopass and then keep our Dotfiles up-to-date on all machines with chezmoi.</p>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+    <div class="pagination__title">
+        <span class="pagination__title-h">Read other posts</span>
+        <hr />
+    </div>
+    <div class="pagination__buttons">
+        
+        
+        <span class="button next">
+            <a href="https://blog.m5e.de/post/manually-migrate-zitadel-with-postgresql/">
+                <span class="button__text">Manually Migrate ZITADEL with PostgreSQL</span>
+                <span class="button__icon">→</span>
+            </a>
+        </span>
+        
+    </div>
+</div>
+
+  
+
+  
+    <div>
+  <h2>Advertisement</h2>
+  <div id="ana-container"></div>
+</div>
+
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2024 Powered by <a href="http://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+<script>
+    const adContainer = document.getElementById('ana-container');
+    const url = 'https://api.anaads.de/s/BVP6CQ==';
+    
+     
+    fetch(url)
+      .then(response => response.json())
+      .then(adData => {
+        
+        const adElement = document.createElement('div');
+        adElement.classList.add('ana'); 
+    
+         
+        const titleElement = document.createElement('span');
+        const titleLink = document.createElement('a');
+        titleLink.href = adData.url;
+        titleLink.textContent = adData.title;
+        titleElement.className = "ana-title"
+        titleElement.appendChild(titleLink);
+        adElement.appendChild(titleElement);
+    
+         
+        const textElement = document.createElement('span');
+        const textLink = document.createElement('a');
+        textLink.href = adData.url;
+        textLink.textContent = adData.text;
+        textElement.className = "ana-text"
+        textElement.appendChild(textLink);
+        adElement.appendChild(textElement);
+    
+         
+        adContainer.appendChild(adElement);
+      })
+      .catch(error => console.error(error));
+</script>
+
+  
+</div>
+
+</body>
+</html>
