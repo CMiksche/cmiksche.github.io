@@ -11,30 +11,65 @@ So far, I only got Google to work, and even this is currently limited to 100 Use
 But before I show the examples, you should know that there are not so many big OpenID Connect Providers compared to the big OAuth2 Providers. E.g. GitHub offers OAuth2, but is not a OpenID Connect Provider yet.
 " />
 <meta name="keywords" content="" />
-<meta name="robots" content="noodp" />
+
+  <meta name="robots" content="noodp" />
+
 <link rel="canonical" href="https://blog.m5e.de/post/state-of-openid-connect-providers/" />
 
 
 
 
 
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/buttons.min.2bc533403a27dfe0e93105a92502b42ce4587e2e4a87d9f7d349e51e16e09478.css">
 
   
+  <link rel="stylesheet" href="https://blog.m5e.de/css/code.min.00125962708925857e7b66dbc58391d55be1191a3d0ce2034de8c9cd2c481c36.css">
+
   
+  <link rel="stylesheet" href="https://blog.m5e.de/css/fonts.min.90c955c31dd7c0e05aae3d4f583d4d8a2af799d69c961337eaf2a825063a55dd.css">
+
   
+  <link rel="stylesheet" href="https://blog.m5e.de/css/footer.min.2e3eb191baee58dd05a9f0104ac1fab0827bca7c64dafe0b2579f934c33a1d69.css">
+
   
+  <link rel="stylesheet" href="https://blog.m5e.de/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
   
-  <link rel="stylesheet" href="https://blog.m5e.de/styles.css">
+  <link rel="stylesheet" href="https://blog.m5e.de/css/header.min.b6fb4423cf82a9f9d7abc9cd010223fa3d70a6526a3f28f8e17d814c06e18f9e.css">
+
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/main.min.1d8be2dd1b5de9fdaed058c8c59fcf4485f36619574abfb47ed0cfda4812c16d.css">
+
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/menu.min.83637a90d903026bc280d3f82f96ceb06c5fc72b7c1a8d686afb5bbf818a29f7.css">
+
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/pagination.min.82f6400eae7c7c6dc3c866733c2ec0579e4089608fea69400ff85b3880aa0d3c.css">
+
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/post.min.fc74ca360273c1d828da3c02b8174eba435607b369d98418ccc6f2243cd4e75d.css">
+
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/prism.min.9023bbc24533d09e97a51a0a42a5a7bfe4c591ae167c5551fb1d2191d11977c0.css">
+
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/syntax.min.cc789ed9377260d7949ea4c18781fc58959a89287210fe4edbff44ebfc1511b6.css">
+
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/terminal.min.736caf886baa67df630c4cde30fbdc5115122eb74c6246f15a31401344bfa2f0.css">
+
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
 
 
 
 <link rel="stylesheet" href="https://blog.m5e.de/style.css">
 
 
-
-  <link rel="shortcut icon" href="https://blog.m5e.de/img/theme-colors/orange.png">
-  <link rel="apple-touch-icon" href="https://blog.m5e.de/img/theme-colors/orange.png">
-
+<link rel="shortcut icon" href="https://blog.m5e.de/favicon.png">
+<link rel="apple-touch-icon" href="https://blog.m5e.de/apple-touch-icon.png">
 
 
 <meta name="twitter:card" content="summary" />
@@ -56,9 +91,7 @@ But before I show the examples, you should know that there are not so many big O
 <meta property="og:url" content="https://blog.m5e.de/post/state-of-openid-connect-providers/" />
 <meta property="og:site_name" content="M5E&#39;s Blog" />
 
-  
-    <meta property="og:image" content="https://blog.m5e.de/img/favicon/orange.png">
-  
+  <meta property="og:image" content="https://blog.m5e.de/og-image.png">
 
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="627">
@@ -81,10 +114,10 @@ But before I show the examples, you should know that there are not so many big O
 
 
 </head>
-<body class="orange">
+<body>
 
 
-<div class="container center headings--one-size">
+<div class="container center">
 
   <header class="header">
   <div class="header__inner">
@@ -209,16 +242,7 @@ But before I show the examples, you should know that there are not so many big O
   <h1 class="post-title">
     <a href="https://blog.m5e.de/post/state-of-openid-connect-providers/">State of OpenID Connect Providers</a>
   </h1>
-  <div class="post-meta">
-    
-      <time class="post-date">
-        2022-12-22 ::
-        
-      </time>
-    
-    
-    
-  </div>
+  <div class="post-meta"><time class="post-date">2022-12-22</time></div>
 
   
     <span class="post-tags">
@@ -245,29 +269,29 @@ But before I show the examples, you should know that there are not so many big O
 <p>So far, I only got Google to work, and even this is currently limited to 100 Users. In this blog post, I want to explain why the integration of OpenID Connect Providers is such a struggle by showing multiple examples.</p>
 <p>But before I show the examples, you should know that there are not so many big OpenID Connect Providers compared to the big OAuth2 Providers. E.g. GitHub offers OAuth2, but is not a OpenID Connect Provider yet.</p>
 <p>For reference, I use <a href="https://blog.m5e.de/post/linux-setup-zitadel-with-postgresql/">Zitadel</a> as my own OpenID Connect Instance.</p>
-<h2 id="openid-connect">OpenID Connect<a href="#openid-connect" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<h2 id="openid-connect">OpenID Connect<a href="#openid-connect" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>OpenID Connect is a protocol that allows users to authenticate themselves using a third-party service, such as Google or Microsoft, instead of creating a new account specifically for the service they are trying to access.</p>
 <p>When a user wants to log in to a service that uses OpenID Connect, they are redirected to the third-party service to enter their login credentials. If the credentials are valid, the third-party service sends a unique token back to the service the user was trying to access, which confirms the user&rsquo;s identity. This process allows users to easily log in to multiple services without having to remember multiple usernames and passwords, and it also allows service providers to authenticate users without having to store sensitive login information.</p>
-<h2 id="the-difference-to-oauth2">The Difference to OAuth2<a href="#the-difference-to-oauth2" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<h2 id="the-difference-to-oauth2">The Difference to OAuth2<a href="#the-difference-to-oauth2" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>OAuth2 is a protocol that allows a user to grant limited access to their resources stored on one site, to another site, without having to disclose their login credentials. It is commonly used as a way for users to log in to third-party applications using their social media or other online accounts, without sharing their password.</p>
 <p>OpenID Connect is built on top of OAuth2 and provides an additional layer of authentication on top of the authorization provided by OAuth2. While OAuth2 is focused on authorization and allows a user to grant access to their resources to another site, OpenID Connect adds the ability for the user to be authenticated and for the client to know the user&rsquo;s identity. In other words, OAuth2 allows a user to authorize a client to access their resources, while OpenID Connect allows the client to authenticate the user and determine their identity.</p>
 <p>So OAuth2 is a protocol for authorization, while OpenID Connect is a protocol for authentication and identity management. OAuth2 is used to grant access to resources, while OpenID Connect is used to verify the user&rsquo;s identity and provide information about the user, such as their name and email address.</p>
-<h2 id="google">Google<a href="#google" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<h2 id="google">Google<a href="#google" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>Google offers the best OpenID Connect implementation I have seen so far. You can set multiple callback / redirect URLs, which many Providers don&rsquo;t offer yet.</p>
 <p>There are just a few problems: If you set a Logo, your Application needs to be checked by a Google Employee and if you don&rsquo;t get checked, your App is limited to 100 Users.</p>
-<h2 id="gitlab">GitLab<a href="#gitlab" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<h2 id="gitlab">GitLab<a href="#gitlab" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>I couldn&rsquo;t set up GitLab with Zitadel because GitLab doesn&rsquo;t fully implement the OpenID Connect Spec.</p>
 <p><code>prompt=consent</code> and <code>prompt=select_account</code> are not yet implemented by GitLab, but someone created a <a href="https://gitlab.com/gitlab-org/gitlab/-/issues/377368">Issue</a> for that.</p>
-<h2 id="yahoo">Yahoo<a href="#yahoo" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<h2 id="yahoo">Yahoo<a href="#yahoo" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>Yahoo gives me a different problem. After the discovery document, they support <code>RS256</code> and <code>ES256</code>.</p>
 <p>But currently, Yahoo always responds with <code>ES256</code>. Because Zitadel currently just supports <code>RS256</code>, this results in an error.</p>
 <p>Other providers like netID, to which I come next, offer a dropdown menu in the Application creation step which lets you choose the algorithm. I send Yahoo an Email about this.</p>
-<h2 id="netid">netID<a href="#netid" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<h2 id="netid">netID<a href="#netid" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>netID is a Foundation which was established in March 2018 by Mediengruppe RTL Deutschland, ProSiebenSat.1 and United Internet AG. The foundation pursues the goal of establishing netID as a European alternative to US single sign-on providers.</p>
 <p>In difference to Yahoo, netID gives you the option to select <code>RS256</code> or <code>ES256</code> which is pretty nice.</p>
 <p>However, netID only lets you define one Callback URL currently. Zitadel uses two different URLs for register and login, which makes this incompatible.</p>
 <p>I also send a Mail to netID asking them to implement multiple Callback URLs.</p>
-<h2 id="summary">Summary<a href="#summary" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<h2 id="summary">Summary<a href="#summary" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>OpenID Connect itself is pretty nice but despite being around since 2014, most providers just offer OAuth2 and the few providers which offer OpenID Connect have either not fully implemented the Spec or other weird Issues which makes it hard to use them.</p>
 <p>Currently, it seems like you would have to write custom code for every different Provider - but exactly that should be prevented by such a Spec.</p>
 <p>If you are interested in custom software development, you can <a href="https://chapati.systems/development/">take a look</a> at my company.</p>
@@ -277,29 +301,27 @@ But before I show the examples, you should know that there are not so many big O
   
     
 <div class="pagination">
-    <div class="pagination__title">
-        <span class="pagination__title-h">Read other posts</span>
-        <hr />
-    </div>
-    <div class="pagination__buttons">
-        
-        <span class="button previous">
-            <a href="https://blog.m5e.de/post/introducing-network.txt-a-standard-for-3rd-party-data-transparency/">
-                <span class="button__icon">←</span>
-                <span class="button__text">Introducing network.txt: A Standard for 3rd Party Data Transparency</span>
-            </a>
-        </span>
-        
-        
-        <span class="button next">
-            <a href="https://blog.m5e.de/post/the-dangers-of-pfoa/">
-                <span class="button__text">The Dangers of PFOA</span>
-                <span class="button__icon">→</span>
-            </a>
-        </span>
-        
-    </div>
+  <div class="pagination__title">
+    <span class="pagination__title-h">Read other posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+      <a href="https://blog.m5e.de/post/introducing-network.txt-a-standard-for-3rd-party-data-transparency/" class="button inline prev">
+        Introducing network.txt: A Standard for 3rd Party Data Transparency
+      </a>
+    
+    
+      ::
+    
+    
+      <a href="https://blog.m5e.de/post/the-dangers-of-pfoa/" class="button inline next">
+        The Dangers of PFOA
+      </a>
+    
+  </div>
 </div>
+
 
   
 
@@ -458,7 +480,7 @@ But before I show the examples, you should know that there are not so many big O
   <div class="footer__inner">
     
       <div class="copyright">
-        <span>© 2024 Powered by <a href="http://gohugo.io">Hugo</a></span>
+        <span>© 2024 Powered by <a href="https://gohugo.io">Hugo</a></span>
     
       <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
       </div>

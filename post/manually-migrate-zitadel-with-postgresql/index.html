@@ -11,30 +11,65 @@ Now, normally this step is being done by the zitadel setup command with the --in
 For manually updating the database, we should first understand the structure a bit. So far, the Zitadel Team seems to use versioning for their tables - meaning they create a new table for every change instead of just altering the current table. This leads to some beautifully structured schemas full of tables like users6, users7 and users8 up to users10.
 " />
 <meta name="keywords" content="" />
-<meta name="robots" content="noodp" />
+
+  <meta name="robots" content="noodp" />
+
 <link rel="canonical" href="https://blog.m5e.de/post/manually-migrate-zitadel-with-postgresql/" />
 
 
 
 
 
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/buttons.min.2bc533403a27dfe0e93105a92502b42ce4587e2e4a87d9f7d349e51e16e09478.css">
 
   
+  <link rel="stylesheet" href="https://blog.m5e.de/css/code.min.00125962708925857e7b66dbc58391d55be1191a3d0ce2034de8c9cd2c481c36.css">
+
   
+  <link rel="stylesheet" href="https://blog.m5e.de/css/fonts.min.90c955c31dd7c0e05aae3d4f583d4d8a2af799d69c961337eaf2a825063a55dd.css">
+
   
+  <link rel="stylesheet" href="https://blog.m5e.de/css/footer.min.2e3eb191baee58dd05a9f0104ac1fab0827bca7c64dafe0b2579f934c33a1d69.css">
+
   
+  <link rel="stylesheet" href="https://blog.m5e.de/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
   
-  <link rel="stylesheet" href="https://blog.m5e.de/styles.css">
+  <link rel="stylesheet" href="https://blog.m5e.de/css/header.min.b6fb4423cf82a9f9d7abc9cd010223fa3d70a6526a3f28f8e17d814c06e18f9e.css">
+
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/main.min.1d8be2dd1b5de9fdaed058c8c59fcf4485f36619574abfb47ed0cfda4812c16d.css">
+
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/menu.min.83637a90d903026bc280d3f82f96ceb06c5fc72b7c1a8d686afb5bbf818a29f7.css">
+
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/pagination.min.82f6400eae7c7c6dc3c866733c2ec0579e4089608fea69400ff85b3880aa0d3c.css">
+
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/post.min.fc74ca360273c1d828da3c02b8174eba435607b369d98418ccc6f2243cd4e75d.css">
+
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/prism.min.9023bbc24533d09e97a51a0a42a5a7bfe4c591ae167c5551fb1d2191d11977c0.css">
+
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/syntax.min.cc789ed9377260d7949ea4c18781fc58959a89287210fe4edbff44ebfc1511b6.css">
+
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/terminal.min.736caf886baa67df630c4cde30fbdc5115122eb74c6246f15a31401344bfa2f0.css">
+
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
 
 
 
 <link rel="stylesheet" href="https://blog.m5e.de/style.css">
 
 
-
-  <link rel="shortcut icon" href="https://blog.m5e.de/img/theme-colors/orange.png">
-  <link rel="apple-touch-icon" href="https://blog.m5e.de/img/theme-colors/orange.png">
-
+<link rel="shortcut icon" href="https://blog.m5e.de/favicon.png">
+<link rel="apple-touch-icon" href="https://blog.m5e.de/apple-touch-icon.png">
 
 
 <meta name="twitter:card" content="summary" />
@@ -56,9 +91,7 @@ For manually updating the database, we should first understand the structure a b
 <meta property="og:url" content="https://blog.m5e.de/post/manually-migrate-zitadel-with-postgresql/" />
 <meta property="og:site_name" content="M5E&#39;s Blog" />
 
-  
-    <meta property="og:image" content="https://blog.m5e.de/img/favicon/orange.png">
-  
+  <meta property="og:image" content="https://blog.m5e.de/og-image.png">
 
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="627">
@@ -81,10 +114,10 @@ For manually updating the database, we should first understand the structure a b
 
 
 </head>
-<body class="orange">
+<body>
 
 
-<div class="container center headings--one-size">
+<div class="container center">
 
   <header class="header">
   <div class="header__inner">
@@ -209,16 +242,7 @@ For manually updating the database, we should first understand the structure a b
   <h1 class="post-title">
     <a href="https://blog.m5e.de/post/manually-migrate-zitadel-with-postgresql/">Manually Migrate ZITADEL with PostgreSQL</a>
   </h1>
-  <div class="post-meta">
-    
-      <time class="post-date">
-        2024-02-17 ::
-        
-      </time>
-    
-    
-    
-  </div>
+  <div class="post-meta"><time class="post-date">2024-02-17</time></div>
 
   
     <span class="post-tags">
@@ -253,12 +277,12 @@ For manually updating the database, we should first understand the structure a b
 <p>Now, normally this step is being done by the <code>zitadel setup</code> command with the <code>--init-projections=true</code> flag but, as we all know since &ldquo;2001: A Space Odyssey&rdquo;, computers can&rsquo;t be trusted - so you are either paranoid or something went terribly wrong.</p>
 <p>For manually updating the database, we should first understand the structure a bit. So far, the Zitadel Team seems to use versioning for their tables - meaning they create a new table for every change instead of just altering the current table. This leads to some beautifully structured schemas full of tables like <code>users6</code>, <code>users7</code> and <code>users8</code> up to <code>users10</code>.</p>
 <p>I don&rsquo;t know if this structure is still there at the time of you reading this, but in this post I will just go with the assumption that Zitadel Developers are afraid of altering and love version numbers.</p>
-<h2 id="common-problems">Common Problems<a href="#common-problems" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<h2 id="common-problems">Common Problems<a href="#common-problems" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>The reason, I write this article, is my database wasn&rsquo;t migrated correctly. In my case the command said everything is migrated, but then I encountered errors like <code>unable to retrieve client by id</code>, <code>migration already started, will check again in 5 seconds</code> or <code>{&quot;error&quot;:&quot;invalid_request&quot;,&quot;error_description&quot;:&quot;Errors.App.NotFound&quot;}</code>.</p>
 <p>All of these errors point to the database. In my case all the new tables were created but some of the data was still only in the old tables and in other cases only some of the rows got copied into the new tables.</p>
-<h2 id="manually-migrating">Manually Migrating<a href="#manually-migrating" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<h2 id="manually-migrating">Manually Migrating<a href="#manually-migrating" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>Before continuing, I would recommend that all the following steps are being done on a cloned instance, not on the production setup. You should also write down every SQL query you create so that you can reproduce the migration in case it was successful on the test instance.</p>
-<h3 id="identifying-the-right-tables">Identifying the right tables<a href="#identifying-the-right-tables" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<h3 id="identifying-the-right-tables">Identifying the right tables<a href="#identifying-the-right-tables" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <p>To migrate the database, you should first be sure what the current tables are. At the time of me writing this, this is normally the table with the highest number - e.g. <code>projections.apps6</code> instead of <code>projections.apps4</code>.</p>
 <p>Now, you should make sure that this table is actually the right table - what if the table didn&rsquo;t even get created? You can take a look at the source code.</p>
 <p>Currently, the projections are in the <code>zitadel/internal/query/projection</code> folder. Example: the <code>app.go</code> file has the following lines:</p>
@@ -268,12 +292,12 @@ For manually updating the database, we should first understand the structure a b
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">AppSAMLTable</span>       = <span style="color:#a6e22e">AppProjectionTable</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;_&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">appSAMLTableSuffix</span>
 </span></span></code></pre></div><p>This gives us already 4 current table names. You should make sure that you check out the right version tag on GitHub so that you don&rsquo;t look at outdated or Code which is still in development.</p>
 <p>We should also first do the tables without foreign keys, only after that the tables with foreign keys.</p>
-<h3 id="checking-columns">Checking Columns<a href="#checking-columns" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<h3 id="checking-columns">Checking Columns<a href="#checking-columns" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <p>Next, we should make sure that the tables we want to migrate have the same columns. Some older tables have e.g. <code>owner_removed</code> columns which are <a href="https://github.com/zitadel/zitadel/issues/6885">not needed</a> anymore.</p>
 <p>This can be done by e.g.:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">INDEX</span> projections.apps5_owner_removed_idx;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> projections.apps5 <span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">COLUMN</span> owner_removed;
-</span></span></code></pre></div><h3 id="migrating-rows">Migrating Rows<a href="#migrating-rows" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+</span></span></code></pre></div><h3 id="migrating-rows">Migrating Rows<a href="#migrating-rows" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <p>If the old and the new table have the same columns, we can easily transfer the data:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> projections.apps6 <span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> projections.apps4;
 </span></span></code></pre></div><p>In some cases, like when only some data got copied, we might need to only transfer unique entries:</p>
@@ -293,10 +317,10 @@ For manually updating the database, we should first understand the structure a b
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">FROM</span> login_names3_users destination
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">WHERE</span> destination.user_name <span style="color:#f92672">=</span> <span style="color:#66d9ef">source</span>.user_name
 </span></span><span style="display:flex;"><span>);
-</span></span></code></pre></div><h3 id="deleting-the-old-table">Deleting the old table<a href="#deleting-the-old-table" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+</span></span></code></pre></div><h3 id="deleting-the-old-table">Deleting the old table<a href="#deleting-the-old-table" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <p>After being sure that we migrated all the content into the right table, we can delete the old one:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">TABLE</span> projections.idp_templates2_google;
-</span></span></code></pre></div><h2 id="finishing">Finishing<a href="#finishing" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+</span></span></code></pre></div><h2 id="finishing">Finishing<a href="#finishing" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>This whole process might take some time, but if you do everything correct, it will work. As I wrote before, it is best done in a test system, not in production, and normally you shouldn&rsquo;t need this article because the <code>setup</code> step from Zitadel should do this work for you.</p>
 <p>If you searched for this article, I guess you could have found some bug, and probably writing a <a href="https://github.com/zitadel/zitadel/issues/new/choose">GitHub Issue</a> is also a good idea.</p>
 
@@ -305,29 +329,27 @@ For manually updating the database, we should first understand the structure a b
   
     
 <div class="pagination">
-    <div class="pagination__title">
-        <span class="pagination__title-h">Read other posts</span>
-        <hr />
-    </div>
-    <div class="pagination__buttons">
-        
-        <span class="button previous">
-            <a href="https://blog.m5e.de/post/keeping-your-dotfiles-in-sync-and-your-secrets-in-gopass/">
-                <span class="button__icon">←</span>
-                <span class="button__text">Keeping your Dotfiles in Sync and your Secrets in Gopass</span>
-            </a>
-        </span>
-        
-        
-        <span class="button next">
-            <a href="https://blog.m5e.de/post/introducing-network.txt-a-standard-for-3rd-party-data-transparency/">
-                <span class="button__text">Introducing network.txt: A Standard for 3rd Party Data Transparency</span>
-                <span class="button__icon">→</span>
-            </a>
-        </span>
-        
-    </div>
+  <div class="pagination__title">
+    <span class="pagination__title-h">Read other posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+      <a href="https://blog.m5e.de/post/keeping-your-dotfiles-in-sync-and-your-secrets-in-gopass/" class="button inline prev">
+        Keeping your Dotfiles in Sync and your Secrets in Gopass
+      </a>
+    
+    
+      ::
+    
+    
+      <a href="https://blog.m5e.de/post/introducing-network.txt-a-standard-for-3rd-party-data-transparency/" class="button inline next">
+        Introducing network.txt: A Standard for 3rd Party Data Transparency
+      </a>
+    
+  </div>
 </div>
+
 
   
 
@@ -348,7 +370,7 @@ For manually updating the database, we should first understand the structure a b
   <div class="footer__inner">
     
       <div class="copyright">
-        <span>© 2024 Powered by <a href="http://gohugo.io">Hugo</a></span>
+        <span>© 2024 Powered by <a href="https://gohugo.io">Hugo</a></span>
     
       <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
       </div>

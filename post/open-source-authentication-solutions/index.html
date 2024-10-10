@@ -10,30 +10,65 @@
 That&rsquo;s the situation I am in right now. I run multiple web applications, which each have their own auth mechanisms and user tables. This means, a user from App1 can&rsquo;t use App2 unless he creates a new account.
 " />
 <meta name="keywords" content="" />
-<meta name="robots" content="noodp" />
+
+  <meta name="robots" content="noodp" />
+
 <link rel="canonical" href="https://blog.m5e.de/post/open-source-authentication-solutions/" />
 
 
 
 
 
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/buttons.min.2bc533403a27dfe0e93105a92502b42ce4587e2e4a87d9f7d349e51e16e09478.css">
 
   
+  <link rel="stylesheet" href="https://blog.m5e.de/css/code.min.00125962708925857e7b66dbc58391d55be1191a3d0ce2034de8c9cd2c481c36.css">
+
   
+  <link rel="stylesheet" href="https://blog.m5e.de/css/fonts.min.90c955c31dd7c0e05aae3d4f583d4d8a2af799d69c961337eaf2a825063a55dd.css">
+
   
+  <link rel="stylesheet" href="https://blog.m5e.de/css/footer.min.2e3eb191baee58dd05a9f0104ac1fab0827bca7c64dafe0b2579f934c33a1d69.css">
+
   
+  <link rel="stylesheet" href="https://blog.m5e.de/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
   
-  <link rel="stylesheet" href="https://blog.m5e.de/styles.css">
+  <link rel="stylesheet" href="https://blog.m5e.de/css/header.min.b6fb4423cf82a9f9d7abc9cd010223fa3d70a6526a3f28f8e17d814c06e18f9e.css">
+
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/main.min.1d8be2dd1b5de9fdaed058c8c59fcf4485f36619574abfb47ed0cfda4812c16d.css">
+
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/menu.min.83637a90d903026bc280d3f82f96ceb06c5fc72b7c1a8d686afb5bbf818a29f7.css">
+
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/pagination.min.82f6400eae7c7c6dc3c866733c2ec0579e4089608fea69400ff85b3880aa0d3c.css">
+
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/post.min.fc74ca360273c1d828da3c02b8174eba435607b369d98418ccc6f2243cd4e75d.css">
+
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/prism.min.9023bbc24533d09e97a51a0a42a5a7bfe4c591ae167c5551fb1d2191d11977c0.css">
+
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/syntax.min.cc789ed9377260d7949ea4c18781fc58959a89287210fe4edbff44ebfc1511b6.css">
+
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/terminal.min.736caf886baa67df630c4cde30fbdc5115122eb74c6246f15a31401344bfa2f0.css">
+
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
 
 
 
 <link rel="stylesheet" href="https://blog.m5e.de/style.css">
 
 
-
-  <link rel="shortcut icon" href="https://blog.m5e.de/img/theme-colors/orange.png">
-  <link rel="apple-touch-icon" href="https://blog.m5e.de/img/theme-colors/orange.png">
-
+<link rel="shortcut icon" href="https://blog.m5e.de/favicon.png">
+<link rel="apple-touch-icon" href="https://blog.m5e.de/apple-touch-icon.png">
 
 
 <meta name="twitter:card" content="summary" />
@@ -54,9 +89,7 @@ That&rsquo;s the situation I am in right now. I run multiple web applications, w
 <meta property="og:url" content="https://blog.m5e.de/post/open-source-authentication-solutions/" />
 <meta property="og:site_name" content="M5E&#39;s Blog" />
 
-  
-    <meta property="og:image" content="https://blog.m5e.de/img/favicon/orange.png">
-  
+  <meta property="og:image" content="https://blog.m5e.de/og-image.png">
 
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="627">
@@ -79,10 +112,10 @@ That&rsquo;s the situation I am in right now. I run multiple web applications, w
 
 
 </head>
-<body class="orange">
+<body>
 
 
-<div class="container center headings--one-size">
+<div class="container center">
 
   <header class="header">
   <div class="header__inner">
@@ -207,16 +240,7 @@ That&rsquo;s the situation I am in right now. I run multiple web applications, w
   <h1 class="post-title">
     <a href="https://blog.m5e.de/post/open-source-authentication-solutions/">Open Source Authentication Solutions</a>
   </h1>
-  <div class="post-meta">
-    
-      <time class="post-date">
-        2022-09-05 ::
-        
-      </time>
-    
-    
-    
-  </div>
+  <div class="post-meta"><time class="post-date">2022-09-05</time></div>
 
   
     <span class="post-tags">
@@ -243,7 +267,7 @@ That&rsquo;s the situation I am in right now. I run multiple web applications, w
   <div class="post-content"><div>
         <p>Imagine you run a company and provide multiple web applications for your customers. In the beginning, you probably created a user table and the authentication methods yourself, but from the second application onwards, you will think about using already made open source solutions.</p>
 <p>That&rsquo;s the situation I am in right now. I run multiple web applications, which each have their own auth mechanisms and user tables. This means, a user from App1 can&rsquo;t use App2 unless he creates a new account.</p>
-<h2 id="oauth">OAuth<a href="#oauth" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<h2 id="oauth">OAuth<a href="#oauth" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>Before I proceed, let&rsquo;s have a short look how OAuth works:</p>
 <ul>
 <li>OAuth Clients: That&rsquo;s your typical web application which offers a login via 3rd parties like Google and Facebook</li>
@@ -251,17 +275,17 @@ That&rsquo;s the situation I am in right now. I run multiple web applications, w
 </ul>
 <p>If you add OAuth to your app, most of the time you just add a OAuth client. That means, customers can log in with existing accounts from other services like Google or Facebook. But they can&rsquo;t use their account at your app for logging into other apps.</p>
 <p>When you provide a OAuth server, customers can log in into your applications and also login into 3rd party applications via the API of your identity server.</p>
-<h3 id="what-oauth-means-in-my-case">What OAuth means in my case<a href="#what-oauth-means-in-my-case" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<h3 id="what-oauth-means-in-my-case">What OAuth means in my case<a href="#what-oauth-means-in-my-case" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <p>If I would just add OAuth client functionality to my apps, then users could use e.g. their Google Account for all my apps, but my apps wouldn&rsquo;t be connected with each other. Every single app would be displayed as 3rd party on the Google website, and every single app would need to authenticate with Google.</p>
 <p>Because I want to provide one login for all Apps (single sign-on - SSO), just adding a OAuth client like most apps do, wouldn&rsquo;t solve this problem.</p>
 <p>I need a OAuth server which provides one single identity and one single login to all my apps. This means, all my apps become OAuth clients of my own OAuth server and my OAuth server itself is e.g. a OAuth client for other OAuth servers like Google.
 That way, a user could log in into my OAuth server with his existing Google Account and then continue to use all my apps.</p>
 <p>So far the theory, now let&rsquo;s look at the realization.</p>
-<h2 id="backend-as-a-service-baas">Backend-as-a-Service (BaaS)<a href="#backend-as-a-service-baas" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<h2 id="backend-as-a-service-baas">Backend-as-a-Service (BaaS)<a href="#backend-as-a-service-baas" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>In the modern world, solutions like Supabase, PocketBase, Firebase, Appwrite or Parse Server are getting used more and more. One of the reasons is because they handle authentication for you.</p>
 <p>There is just one big catch: Nearly all the BaaS solutions are just OAuth Clients! Every single application which you create on them will get their own user table and additionally, you often can&rsquo;t connect custom OAuth Servers but only the popular ones like Google, Facebook, Twitter, GitHub,&hellip;</p>
 <p>So my problem wouldn&rsquo;t be solved, because I would still have different user tables and separate login processes. So every single app would be displayed on the Google website as a different OAuth client.</p>
-<h2 id="openid-connect--oauth2-servers">OpenID Connect / OAuth2 Servers<a href="#openid-connect--oauth2-servers" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<h2 id="openid-connect--oauth2-servers">OpenID Connect / OAuth2 Servers<a href="#openid-connect--oauth2-servers" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>Maybe you have already heard of applications like Keycloak, Ory Hydra, ZITADEL and SuperTokens. These are all auth providers which basically allow you to become some Identity provider like Google yourself.</p>
 <p>It could be, that you already run a OAuth2 server without knowing it. E.g. Gitea has such a functionality built-in. I configured my Gitea instance to act as a OAuth server for e.g. my continuous integration and project management applications. I recently also found out, that my ERP Systems would also support auth via OAuth2, so I could set up all the apps inside my company to work just with the Gitea user auth.</p>
 <p>If you set up an identity server like ZITADEL, then you have to integrate it into all your apps which may be time-consuming in the beginning, but it is absolutely rewarding:</p>
@@ -272,18 +296,18 @@ That way, a user could log in into my OAuth server with his existing Google Acco
 <li>Modern auth servers support passwordless auth like FaceID, TouchID or Windows Hello</li>
 </ul>
 <p>A bit more information about such services:</p>
-<h3 id="keycloak">Keycloak<a href="#keycloak" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<h3 id="keycloak">Keycloak<a href="#keycloak" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <p>One of the oldest and most famous auth servers. Complicated and written in Java.</p>
-<h3 id="ory-hydra">Ory Hydra<a href="#ory-hydra" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<h3 id="ory-hydra">Ory Hydra<a href="#ory-hydra" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <p>Modern, written in Go but still complicated in my opinion (Ory provides multiple packages for their auth solutions and it is hard to figure out which of them you need and how to configure them)</p>
-<h3 id="zitadel">ZITADEL<a href="#zitadel" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<h3 id="zitadel">ZITADEL<a href="#zitadel" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <p>Modern, written in GoLang and in my opinion the one which is easiest to understand.</p>
-<h3 id="supertokens">SuperTokens<a href="#supertokens" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<h3 id="supertokens">SuperTokens<a href="#supertokens" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <p>Another open source auth server written in Java.</p>
-<h2 id="summary">Summary<a href="#summary" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<h2 id="summary">Summary<a href="#summary" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>When I began exploring open source authentication solutions, I was thinking maybe some BaaS platform would help me. After figuring out what I wanted, it was clear that Backend-as-a-Service providers aren&rsquo;t a solution for me and I had to look at a completely different kind of software category.</p>
 <p>I don&rsquo;t know which kind of OAuth2 Server I will stick with over the long time, but I am sure that I will use them.</p>
-<h2 id="want-to-keep-your-zitadel-instance-uptodate">Want to keep your Zitadel Instance uptodate?<a href="#want-to-keep-your-zitadel-instance-uptodate" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<h2 id="want-to-keep-your-zitadel-instance-uptodate">Want to keep your Zitadel Instance uptodate?<a href="#want-to-keep-your-zitadel-instance-uptodate" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>Checkout <a href="https://chapati.systems/autoupdate/">Autoupdate</a>. One tool to update various software which has no built-in auto update functionality.</p>
 
       </div></div>
@@ -291,29 +315,27 @@ That way, a user could log in into my OAuth server with his existing Google Acco
   
     
 <div class="pagination">
-    <div class="pagination__title">
-        <span class="pagination__title-h">Read other posts</span>
-        <hr />
-    </div>
-    <div class="pagination__buttons">
-        
-        <span class="button previous">
-            <a href="https://blog.m5e.de/post/linux-setup-zitadel-with-postgresql/">
-                <span class="button__icon">←</span>
-                <span class="button__text">Linux: Setup ZITADEL with PostgreSQL</span>
-            </a>
-        </span>
-        
-        
-        <span class="button next">
-            <a href="https://blog.m5e.de/post/open-source-social-media-management-tools/">
-                <span class="button__text">Open Source Social Media Management Tools</span>
-                <span class="button__icon">→</span>
-            </a>
-        </span>
-        
-    </div>
+  <div class="pagination__title">
+    <span class="pagination__title-h">Read other posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+      <a href="https://blog.m5e.de/post/linux-setup-zitadel-with-postgresql/" class="button inline prev">
+        Linux: Setup ZITADEL with PostgreSQL
+      </a>
+    
+    
+      ::
+    
+    
+      <a href="https://blog.m5e.de/post/open-source-social-media-management-tools/" class="button inline next">
+        Open Source Social Media Management Tools
+      </a>
+    
+  </div>
 </div>
+
 
   
 
@@ -472,7 +494,7 @@ That way, a user could log in into my OAuth server with his existing Google Acco
   <div class="footer__inner">
     
       <div class="copyright">
-        <span>© 2024 Powered by <a href="http://gohugo.io">Hugo</a></span>
+        <span>© 2024 Powered by <a href="https://gohugo.io">Hugo</a></span>
     
       <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
       </div>
