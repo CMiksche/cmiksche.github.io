@@ -13,10 +13,11 @@
       <pubDate>Sun, 27 Feb 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/alternatives-to-swift/</guid>
-      <description>In all the recent news to the War between Russia and Ukraine, I always ask myself about the economic consequences.
-Recently the EU and US declared a ban of SWIFT currently focused on the state owned banks (which are also the biggest banks in Russia).
-What&amp;rsquo;s SWIFT exactly? Before getting into possible alternatives to SWIFT, let&amp;rsquo;s dive into what the Society for Worldwide Interbank Financial Telecommunication is.
-It is an Organization with HQ in Belgium which defines Standards and Services for the transaction of financial information.</description>
+      <description>&lt;p&gt;In all the recent news to the War between Russia and Ukraine, I always ask myself about the economic consequences.&lt;/p&gt;
+&lt;p&gt;Recently the EU and US declared a &lt;a href=&#34;https://indianexpress.com/article/explained/explained-russia-ukraine-invasion-swift-ban-sanctions-7792865/&#34;&gt;ban of SWIFT&lt;/a&gt; currently focused on the state owned banks (which are also the biggest banks in Russia).&lt;/p&gt;
+&lt;h2 id=&#34;whats-swift-exactly&#34;&gt;What&amp;rsquo;s SWIFT exactly?&lt;/h2&gt;
+&lt;p&gt;Before getting into possible alternatives to SWIFT, let&amp;rsquo;s dive into what the Society for Worldwide Interbank Financial Telecommunication is.&lt;/p&gt;
+&lt;p&gt;It is an Organization with HQ in Belgium which defines Standards and Services for the transaction of financial information. For that it has its own Network, the SWIFTNet. Data is transferred as XML-Files (I personally would prefer JSON, but old ppl like XML) and the Software is based on Java (again, I would prefer something like Go or Rust, but however old people love Java).&lt;/p&gt;</description>
       <content>&lt;p&gt;In all the recent news to the War between Russia and Ukraine, I always ask myself about the economic consequences.&lt;/p&gt;
 &lt;p&gt;Recently the EU and US declared a &lt;a href=&#34;https://indianexpress.com/article/explained/explained-russia-ukraine-invasion-swift-ban-sanctions-7792865/&#34;&gt;ban of SWIFT&lt;/a&gt; currently focused on the state owned banks (which are also the biggest banks in Russia).&lt;/p&gt;
 &lt;h2 id=&#34;whats-swift-exactly&#34;&gt;What&amp;rsquo;s SWIFT exactly?&lt;/h2&gt;

@@ -13,9 +13,9 @@
       <pubDate>Sat, 17 Feb 2024 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/manually-migrate-zitadel-with-postgresql/</guid>
-      <description>As you, the reader, found this article, it is likely that you want to manually migrate the ZITADEL PostgreSQL database to a new version.
-Now, normally this step is being done by the zitadel setup command with the --init-projections=true flag but, as we all know since &amp;ldquo;2001: A Space Odyssey&amp;rdquo;, computers can&amp;rsquo;t be trusted - so you are either paranoid or something went terribly wrong.
-For manually updating the database, we should first understand the structure a bit.</description>
+      <description>&lt;p&gt;As you, the reader, found this article, it is likely that you want to manually migrate the ZITADEL PostgreSQL database to a new version.&lt;/p&gt;
+&lt;p&gt;Now, normally this step is being done by the &lt;code&gt;zitadel setup&lt;/code&gt; command with the &lt;code&gt;--init-projections=true&lt;/code&gt; flag but, as we all know since &amp;ldquo;2001: A Space Odyssey&amp;rdquo;, computers can&amp;rsquo;t be trusted - so you are either paranoid or something went terribly wrong.&lt;/p&gt;
+&lt;p&gt;For manually updating the database, we should first understand the structure a bit. So far, the Zitadel Team seems to use versioning for their tables - meaning they create a new table for every change instead of just altering the current table. This leads to some beautifully structured schemas full of tables like &lt;code&gt;users6&lt;/code&gt;, &lt;code&gt;users7&lt;/code&gt; and &lt;code&gt;users8&lt;/code&gt; up to &lt;code&gt;users10&lt;/code&gt;.&lt;/p&gt;</description>
       <content>&lt;p&gt;As you, the reader, found this article, it is likely that you want to manually migrate the ZITADEL PostgreSQL database to a new version.&lt;/p&gt;
 &lt;p&gt;Now, normally this step is being done by the &lt;code&gt;zitadel setup&lt;/code&gt; command with the &lt;code&gt;--init-projections=true&lt;/code&gt; flag but, as we all know since &amp;ldquo;2001: A Space Odyssey&amp;rdquo;, computers can&amp;rsquo;t be trusted - so you are either paranoid or something went terribly wrong.&lt;/p&gt;
 &lt;p&gt;For manually updating the database, we should first understand the structure a bit. So far, the Zitadel Team seems to use versioning for their tables - meaning they create a new table for every change instead of just altering the current table. This leads to some beautifully structured schemas full of tables like &lt;code&gt;users6&lt;/code&gt;, &lt;code&gt;users7&lt;/code&gt; and &lt;code&gt;users8&lt;/code&gt; up to &lt;code&gt;users10&lt;/code&gt;.&lt;/p&gt;
@@ -75,10 +75,13 @@ For manually updating the database, we should first understand the structure a b
       <pubDate>Fri, 23 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/drone-ci-with-podman/</guid>
-      <description>I run Drone CI for a longer period now with Docker. Because I decided to switch for multiple reasons from Docker to Podman, this setup had to be changed a bit.
-In this blog post, I want to cover how to install Podman and how to set up Drone so that it works with Podman.
-Installing Podman Install the podman and podman-docker packages. E.g. on a Debian based System:
-apt install podman podman-docker If you currently use docker-compose, then you should also install podman-compose:</description>
+      <description>&lt;p&gt;I run Drone CI for a longer period now with Docker. Because I decided to switch for multiple reasons from Docker to Podman, this setup had to be changed a bit.&lt;/p&gt;
+&lt;p&gt;In this blog post, I want to cover how to install Podman and how to set up Drone so that it works with Podman.&lt;/p&gt;
+&lt;h2 id=&#34;installing-podman&#34;&gt;Installing Podman&lt;/h2&gt;
+&lt;p&gt;Install the &lt;code&gt;podman&lt;/code&gt; and &lt;code&gt;podman-docker&lt;/code&gt; packages. E.g. on a Debian based System:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;apt install podman podman-docker
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If you currently use &lt;code&gt;docker-compose&lt;/code&gt;, then you should also install &lt;code&gt;podman-compose&lt;/code&gt;:&lt;/p&gt;</description>
       <content>&lt;p&gt;I run Drone CI for a longer period now with Docker. Because I decided to switch for multiple reasons from Docker to Podman, this setup had to be changed a bit.&lt;/p&gt;
 &lt;p&gt;In this blog post, I want to cover how to install Podman and how to set up Drone so that it works with Podman.&lt;/p&gt;
 &lt;h2 id=&#34;installing-podman&#34;&gt;Installing Podman&lt;/h2&gt;
@@ -126,8 +129,9 @@ registries = [&#39;quay.io&#39;, &#39;docker.io&#39;]
       <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/linux-setup-zitadel-with-postgresql/</guid>
-      <description>In this Guide, I want to cover installing ZITADEL with PostgreSQL on a Linux system. Please be aware that PostgreSQL support is still in Beta at the time of this writing, and you will need a PostgreSQL installation with Version 14 or higher.
-NGINX Proxy Create a new subdomain and point it to your server. Use certbot -d domain.name for creating a new SSL Cert. Create a new file in /etc/nginx/sites-available/domainname</description>
+      <description>&lt;p&gt;In this Guide, I want to cover installing ZITADEL with PostgreSQL on a Linux system. Please be aware that PostgreSQL support is still in Beta at the time of this writing, and you will need a PostgreSQL installation with Version 14 or higher.&lt;/p&gt;
+&lt;h2 id=&#34;nginx-proxy&#34;&gt;NGINX Proxy&lt;/h2&gt;
+&lt;p&gt;Create a new subdomain and point it to your server. Use &lt;code&gt;certbot -d domain.name&lt;/code&gt; for creating a new SSL Cert. Create a new file in &lt;code&gt;/etc/nginx/sites-available/domainname&lt;/code&gt;&lt;/p&gt;</description>
       <content>&lt;p&gt;In this Guide, I want to cover installing ZITADEL with PostgreSQL on a Linux system. Please be aware that PostgreSQL support is still in Beta at the time of this writing, and you will need a PostgreSQL installation with Version 14 or higher.&lt;/p&gt;
 &lt;h2 id=&#34;nginx-proxy&#34;&gt;NGINX Proxy&lt;/h2&gt;
 &lt;p&gt;Create a new subdomain and point it to your server. Use &lt;code&gt;certbot -d domain.name&lt;/code&gt; for creating a new SSL Cert. Create a new file in &lt;code&gt;/etc/nginx/sites-available/domainname&lt;/code&gt;&lt;/p&gt;
@@ -266,8 +270,8 @@ WantedBy=multi-user.target
       <pubDate>Mon, 05 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/open-source-authentication-solutions/</guid>
-      <description>Imagine you run a company and provide multiple web applications for your customers. In the beginning, you probably created a user table and the authentication methods yourself, but from the second application onwards, you will think about using already made open source solutions.
-That&amp;rsquo;s the situation I am in right now. I run multiple web applications, which each have their own auth mechanisms and user tables. This means, a user from App1 can&amp;rsquo;t use App2 unless he creates a new account.</description>
+      <description>&lt;p&gt;Imagine you run a company and provide multiple web applications for your customers. In the beginning, you probably created a user table and the authentication methods yourself, but from the second application onwards, you will think about using already made open source solutions.&lt;/p&gt;
+&lt;p&gt;That&amp;rsquo;s the situation I am in right now. I run multiple web applications, which each have their own auth mechanisms and user tables. This means, a user from App1 can&amp;rsquo;t use App2 unless he creates a new account.&lt;/p&gt;</description>
       <content>&lt;p&gt;Imagine you run a company and provide multiple web applications for your customers. In the beginning, you probably created a user table and the authentication methods yourself, but from the second application onwards, you will think about using already made open source solutions.&lt;/p&gt;
 &lt;p&gt;That&amp;rsquo;s the situation I am in right now. I run multiple web applications, which each have their own auth mechanisms and user tables. This means, a user from App1 can&amp;rsquo;t use App2 unless he creates a new account.&lt;/p&gt;
 &lt;h2 id=&#34;oauth&#34;&gt;OAuth&lt;/h2&gt;
@@ -321,8 +325,10 @@ That way, a user could log in into my OAuth server with his existing Google Acco
       <pubDate>Sat, 03 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/open-source-social-media-management-tools/</guid>
-      <description>As a Startup founder, marketing is one of the biggest topics you have to take care of. There are tons of marketing automation tools, and most of them aren&amp;rsquo;t cheap. I found several open source social media management tools, of which some of them are getting used by me for multiple years now.
-Socioboard Socioboard is your full-blown social media management tool. It is open source and offers all the features you know from paid tools like Buffer, Hootsuite and others.</description>
+      <description>&lt;p&gt;As a Startup founder, marketing is one of the biggest topics you have to take care of. There are tons of marketing automation tools, and most of them aren&amp;rsquo;t cheap.
+I found several open source social media management tools, of which some of them are getting used by me for multiple years now.&lt;/p&gt;
+&lt;h3 id=&#34;socioboard&#34;&gt;Socioboard&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/socioboard/Socioboard-5.0&#34;&gt;Socioboard&lt;/a&gt; is your full-blown social media management tool. It is open source and offers all the features you know from paid tools like Buffer, Hootsuite and others.&lt;/p&gt;</description>
       <content>&lt;p&gt;As a Startup founder, marketing is one of the biggest topics you have to take care of. There are tons of marketing automation tools, and most of them aren&amp;rsquo;t cheap.
 I found several open source social media management tools, of which some of them are getting used by me for multiple years now.&lt;/p&gt;
 &lt;h3 id=&#34;socioboard&#34;&gt;Socioboard&lt;/h3&gt;

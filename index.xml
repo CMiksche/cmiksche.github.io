@@ -13,27 +13,42 @@
       <pubDate>Mon, 09 Sep 2024 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/keeping-your-dotfiles-in-sync-and-your-secrets-in-gopass/</guid>
-      <description>Inspired by solutions how Secrets are being handled in corporate DevOps environments, I wanted to keep my Dotfiles on multiple machines in Sync and store all sensitive information inside gopass (which I started using instead of KeePass some time ago since I like the CLI and Unix / KISS aspect of it)
-Luckily, I am not the first one to have such desires and I came across chezmoi which manages your Dotfiles for you inside a Git Repo and which also has support for gopass.</description>
+      <description>&lt;p&gt;Inspired by solutions how Secrets are being handled in corporate DevOps environments, I wanted to keep my Dotfiles on multiple machines in Sync and store all sensitive information inside &lt;a href=&#34;https://www.gopass.pw/&#34;&gt;gopass&lt;/a&gt; (which I started using instead of KeePass some time ago since I like the CLI and Unix / KISS aspect of it)&lt;/p&gt;
+&lt;p&gt;Luckily, I am not the first one to have such desires and I came across &lt;a href=&#34;https://www.chezmoi.io/&#34;&gt;chezmoi&lt;/a&gt; which manages your Dotfiles for you inside a Git Repo and which also has support for gopass.&lt;/p&gt;</description>
       <content>&lt;p&gt;Inspired by solutions how Secrets are being handled in corporate DevOps environments, I wanted to keep my Dotfiles on multiple machines in Sync and store all sensitive information inside &lt;a href=&#34;https://www.gopass.pw/&#34;&gt;gopass&lt;/a&gt; (which I started using instead of KeePass some time ago since I like the CLI and Unix / KISS aspect of it)&lt;/p&gt;
 &lt;p&gt;Luckily, I am not the first one to have such desires and I came across &lt;a href=&#34;https://www.chezmoi.io/&#34;&gt;chezmoi&lt;/a&gt; which manages your Dotfiles for you inside a Git Repo and which also has support for gopass.&lt;/p&gt;
 &lt;p&gt;However, there are not so many articles out there how to do such a setup concretely and the ones which are out there are for e.g. &lt;a href=&#34;https://dev.to/jmc265/using-bitwarden-and-chezmoi-to-manage-ssh-keys-5hfm&#34;&gt;BitWarden&lt;/a&gt; - so not really for the tools I described.&lt;/p&gt;
 &lt;h2 id=&#34;lets-do-this&#34;&gt;Let&amp;rsquo;s do this!&lt;/h2&gt;
 &lt;p&gt;To do the setup I described, one should first follow the official installation and getting started guides from gopass and chezmoi. I will not explain this here as there are many good guides out there (the best ones are the ones from the developers themselves) and because such tools also change with time and I will likely not update this blog post often.&lt;/p&gt;
 &lt;h3 id=&#34;saving-the-secrets-in-gopass&#34;&gt;Saving the Secrets in Gopass&lt;/h3&gt;
-&lt;p&gt;When saving the secrets, we have to think about how chezmoi will get the secret out. Currently the &lt;code&gt;gopass&lt;/code&gt; function of chezmoi will only return the first line of the secret.
+&lt;p&gt;When saving the secrets, we have to think about how chezmoi will get the secret out.&lt;/p&gt;
+&lt;h4 id=&#34;with-the-gopassraw-function&#34;&gt;With the &lt;code&gt;gopassRaw&lt;/code&gt; function&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/twpayne&#34;&gt;Tom Payne&lt;/a&gt;, the creator of chezmoi, informed me after publishing this post that the &lt;code&gt;gopassRaw&lt;/code&gt; function should work without any needed base64 encoding/decoding.&lt;/p&gt;
+&lt;p&gt;This means we can just save the raw SSH key as secret in gopass.&lt;/p&gt;
+&lt;h4 id=&#34;with-the-gopass-function&#34;&gt;With the &lt;code&gt;gopass&lt;/code&gt; function&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is not needed, see the gopassRaw section above&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Currently the &lt;code&gt;gopass&lt;/code&gt; function of chezmoi will only return the first line of the secret.
 That means while we could save e.g. a SSH Private Key in Raw, chezmoi will only read the first line of the Key, so we should better convert the SSH Private Key first.&lt;/p&gt;
 &lt;p&gt;We can simply convert SSH Private Key in one line by running:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cat id_rsa | base64
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This will output one line of the SSH Private Key encoded in Base64. This is the secret we should store in gopass.&lt;/p&gt;
 &lt;h3 id=&#34;getting-the-secret-with-chezmoi&#34;&gt;Getting the Secret with chezmoi&lt;/h3&gt;
-&lt;p&gt;After setting up chezmoi we can add the files we want chezmoi to manage. For the public part of a SSH Key this is quite easy:&lt;/p&gt;
+&lt;p&gt;After setting up chezmoi we can add the files we want chezmoi to manage. For the public part of an SSH Key this is quite easy:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;chezmoi add .ssh/id_rsa.pub
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Will add the public part of the SSH Key to chezmoi. However, the private part is a bit more tricky.&lt;/p&gt;
 &lt;p&gt;First we should switch into the chezmoi directory with&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;chezmoi cd
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Then we should go into the &lt;code&gt;private_dot_ssh&lt;/code&gt; folder where there is likely already a &lt;code&gt;id_rsa.pub&lt;/code&gt; file but we need to create a &lt;code&gt;private_id_rsa.tmpl&lt;/code&gt; file for managing the private key.&lt;/p&gt;
 &lt;p&gt;Now we should create the file with the following contents:&lt;/p&gt;
+&lt;h4 id=&#34;with-the-gopassraw-function-1&#34;&gt;With the &lt;code&gt;gopassRaw&lt;/code&gt; function&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;{{ gopassRaw &amp;#34;SSH/id_rsa&amp;#34; }}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Where &amp;ldquo;SSH/id_rsa&amp;rdquo; is the name of the file inside of gopass and &lt;code&gt;gopassRaw&lt;/code&gt; is the function to get the secret from gopass.&lt;/p&gt;
+&lt;h4 id=&#34;with-the-gopass-function-1&#34;&gt;With the &lt;code&gt;gopass&lt;/code&gt; function&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is not needed if you follow the gopassRaw section above. I still want to mention it as an alternative.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;{{ gopass &amp;#34;SSH/id_rsa&amp;#34; | b64dec }}
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Where &amp;ldquo;SSH/id_rsa&amp;rdquo; is the name of the file inside of gopass and &lt;code&gt;gopass&lt;/code&gt; and &lt;code&gt;b64dec&lt;/code&gt; are chezmoi functions. &lt;code&gt;gopass&lt;/code&gt; is the function to get the secret from gopass and then we pipe it into the &lt;code&gt;b64dec&lt;/code&gt; function which decodes the Base64 string.&lt;/p&gt;
 &lt;h3 id=&#34;applying-it&#34;&gt;Applying it&lt;/h3&gt;
@@ -54,9 +69,9 @@ That means while we could save e.g. a SSH Private Key in Raw, chezmoi will only 
       <pubDate>Sat, 17 Feb 2024 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/manually-migrate-zitadel-with-postgresql/</guid>
-      <description>As you, the reader, found this article, it is likely that you want to manually migrate the ZITADEL PostgreSQL database to a new version.
-Now, normally this step is being done by the zitadel setup command with the --init-projections=true flag but, as we all know since &amp;ldquo;2001: A Space Odyssey&amp;rdquo;, computers can&amp;rsquo;t be trusted - so you are either paranoid or something went terribly wrong.
-For manually updating the database, we should first understand the structure a bit.</description>
+      <description>&lt;p&gt;As you, the reader, found this article, it is likely that you want to manually migrate the ZITADEL PostgreSQL database to a new version.&lt;/p&gt;
+&lt;p&gt;Now, normally this step is being done by the &lt;code&gt;zitadel setup&lt;/code&gt; command with the &lt;code&gt;--init-projections=true&lt;/code&gt; flag but, as we all know since &amp;ldquo;2001: A Space Odyssey&amp;rdquo;, computers can&amp;rsquo;t be trusted - so you are either paranoid or something went terribly wrong.&lt;/p&gt;
+&lt;p&gt;For manually updating the database, we should first understand the structure a bit. So far, the Zitadel Team seems to use versioning for their tables - meaning they create a new table for every change instead of just altering the current table. This leads to some beautifully structured schemas full of tables like &lt;code&gt;users6&lt;/code&gt;, &lt;code&gt;users7&lt;/code&gt; and &lt;code&gt;users8&lt;/code&gt; up to &lt;code&gt;users10&lt;/code&gt;.&lt;/p&gt;</description>
       <content>&lt;p&gt;As you, the reader, found this article, it is likely that you want to manually migrate the ZITADEL PostgreSQL database to a new version.&lt;/p&gt;
 &lt;p&gt;Now, normally this step is being done by the &lt;code&gt;zitadel setup&lt;/code&gt; command with the &lt;code&gt;--init-projections=true&lt;/code&gt; flag but, as we all know since &amp;ldquo;2001: A Space Odyssey&amp;rdquo;, computers can&amp;rsquo;t be trusted - so you are either paranoid or something went terribly wrong.&lt;/p&gt;
 &lt;p&gt;For manually updating the database, we should first understand the structure a bit. So far, the Zitadel Team seems to use versioning for their tables - meaning they create a new table for every change instead of just altering the current table. This leads to some beautifully structured schemas full of tables like &lt;code&gt;users6&lt;/code&gt;, &lt;code&gt;users7&lt;/code&gt; and &lt;code&gt;users8&lt;/code&gt; up to &lt;code&gt;users10&lt;/code&gt;.&lt;/p&gt;
@@ -116,8 +131,9 @@ For manually updating the database, we should first understand the structure a b
       <pubDate>Wed, 08 Feb 2023 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/introducing-network.txt-a-standard-for-3rd-party-data-transparency/</guid>
-      <description>In today&amp;rsquo;s digital age, privacy and data protection have become major concerns for both website visitors and developers. With the introduction of GDPR laws, it&amp;rsquo;s important for websites to provide clear information about the sharing of personal data with 3rd party providers. This is where the proposed standard, network.txt, comes into play.
-What is network.txt? network.txt is a new standard that provides information about the use of 3rd party providers on a website.</description>
+      <description>&lt;p&gt;In today&amp;rsquo;s digital age, privacy and data protection have become major concerns for both website visitors and developers. With the introduction of GDPR laws, it&amp;rsquo;s important for websites to provide clear information about the sharing of personal data with 3rd party providers. This is where the proposed standard, network.txt, comes into play.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-networktxt&#34;&gt;What is network.txt?&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/CMiksche/network.txt&#34;&gt;network.txt&lt;/a&gt; is a new standard that provides information about the use of 3rd party providers on a website. It&amp;rsquo;s a simple text file that is both readable by humans and programs alike. The purpose of network.txt is to offer an easy and standard way for visitors to understand which 3rd party providers are being used on a website and where they can find the privacy policy and terms of the website.&lt;/p&gt;</description>
       <content>&lt;p&gt;In today&amp;rsquo;s digital age, privacy and data protection have become major concerns for both website visitors and developers. With the introduction of GDPR laws, it&amp;rsquo;s important for websites to provide clear information about the sharing of personal data with 3rd party providers. This is where the proposed standard, network.txt, comes into play.&lt;/p&gt;
 &lt;h2 id=&#34;what-is-networktxt&#34;&gt;What is network.txt?&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/CMiksche/network.txt&#34;&gt;network.txt&lt;/a&gt; is a new standard that provides information about the use of 3rd party providers on a website. It&amp;rsquo;s a simple text file that is both readable by humans and programs alike. The purpose of network.txt is to offer an easy and standard way for visitors to understand which 3rd party providers are being used on a website and where they can find the privacy policy and terms of the website.&lt;/p&gt;
@@ -154,9 +170,9 @@ For: Analytics
       <pubDate>Thu, 22 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/state-of-openid-connect-providers/</guid>
-      <description>In the last days I tried to integrate multiple OpenID Connect Providers into my Applications (currently mostly Alphalerts and some dev projects)
-So far, I only got Google to work, and even this is currently limited to 100 Users. In this blog post, I want to explain why the integration of OpenID Connect Providers is such a struggle by showing multiple examples.
-But before I show the examples, you should know that there are not so many big OpenID Connect Providers compared to the big OAuth2 Providers.</description>
+      <description>&lt;p&gt;In the last days I tried to integrate multiple OpenID Connect Providers into my Applications (currently mostly &lt;a href=&#34;https://alphalerts.com&#34;&gt;Alphalerts&lt;/a&gt; and some dev projects)&lt;/p&gt;
+&lt;p&gt;So far, I only got Google to work, and even this is currently limited to 100 Users. In this blog post, I want to explain why the integration of OpenID Connect Providers is such a struggle by showing multiple examples.&lt;/p&gt;
+&lt;p&gt;But before I show the examples, you should know that there are not so many big OpenID Connect Providers compared to the big OAuth2 Providers. E.g. GitHub offers OAuth2, but is not a OpenID Connect Provider yet.&lt;/p&gt;</description>
       <content>&lt;p&gt;In the last days I tried to integrate multiple OpenID Connect Providers into my Applications (currently mostly &lt;a href=&#34;https://alphalerts.com&#34;&gt;Alphalerts&lt;/a&gt; and some dev projects)&lt;/p&gt;
 &lt;p&gt;So far, I only got Google to work, and even this is currently limited to 100 Users. In this blog post, I want to explain why the integration of OpenID Connect Providers is such a struggle by showing multiple examples.&lt;/p&gt;
 &lt;p&gt;But before I show the examples, you should know that there are not so many big OpenID Connect Providers compared to the big OAuth2 Providers. E.g. GitHub offers OAuth2, but is not a OpenID Connect Provider yet.&lt;/p&gt;
@@ -196,8 +212,8 @@ But before I show the examples, you should know that there are not so many big O
       <pubDate>Thu, 08 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/the-dangers-of-pfoa/</guid>
-      <description>PFOA, also known as perfluorooctanoic acid, is a synthetic chemical that has been used in a variety of industrial and commercial applications. It is a key ingredient in the manufacture of Teflon, a non-stick coating used in cookware and other products. PFOA has also been used in the production of firefighting foams, stain-resistant coatings for carpets and clothing, and other products.
-Despite its widespread use, PFOA has been linked to a range of serious health problems in both humans and animals.</description>
+      <description>&lt;p&gt;PFOA, also known as perfluorooctanoic acid, is a synthetic chemical that has been used in a variety of industrial and commercial applications. It is a key ingredient in the manufacture of Teflon, a non-stick coating used in cookware and other products. PFOA has also been used in the production of firefighting foams, stain-resistant coatings for carpets and clothing, and other products.&lt;/p&gt;
+&lt;p&gt;Despite its widespread use, PFOA has been linked to a range of serious health problems in both humans and animals. Studies have shown that PFOA can cause developmental and reproductive harm, liver damage, and cancer. In particular, PFOA has been linked to an increased risk of testicular and kidney cancer.&lt;/p&gt;</description>
       <content>&lt;p&gt;PFOA, also known as perfluorooctanoic acid, is a synthetic chemical that has been used in a variety of industrial and commercial applications. It is a key ingredient in the manufacture of Teflon, a non-stick coating used in cookware and other products. PFOA has also been used in the production of firefighting foams, stain-resistant coatings for carpets and clothing, and other products.&lt;/p&gt;
 &lt;p&gt;Despite its widespread use, PFOA has been linked to a range of serious health problems in both humans and animals. Studies have shown that PFOA can cause developmental and reproductive harm, liver damage, and cancer. In particular, PFOA has been linked to an increased risk of testicular and kidney cancer.&lt;/p&gt;
 &lt;p&gt;One of the most high-profile cases involving PFOA was the DuPont PFOA scandal, which was brought to light in the Hollywood movie &amp;ldquo;Dark Waters.&amp;rdquo; In this case, DuPont, a major chemical company, was accused of knowingly exposing thousands of people to PFOA through its manufacturing facilities, resulting in serious health problems for many of the residents living near the plants.&lt;/p&gt;
@@ -216,10 +232,14 @@ Despite its widespread use, PFOA has been linked to a range of serious health pr
       <pubDate>Mon, 05 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/simplify-your-code-with-typescript-barrels/</guid>
-      <description>A TypeScript Barrel is a way to simplify the importing of multiple exports from a single module.
-Imagine you have a module called myModule that has several exports, such as:
-export const foo = 1; export const bar = 2; export const baz = 3; To import these exports into another module, you would normally have to write something like this:
-import { foo, bar, baz } from &amp;#39;./myModule&amp;#39;; This can get tedious if you have a large number of exports, and it can also make your code less readable.</description>
+      <description>&lt;p&gt;A TypeScript Barrel is a way to simplify the importing of multiple exports from a single module.&lt;/p&gt;
+&lt;p&gt;Imagine you have a module called &lt;code&gt;myModule&lt;/code&gt; that has several exports, such as:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-typescript&#34; data-lang=&#34;typescript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;foo&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;bar&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;baz&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To import these exports into another module, you would normally have to write something like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-typescript&#34; data-lang=&#34;typescript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; { &lt;span style=&#34;color:#a6e22e&#34;&gt;foo&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;bar&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;baz&lt;/span&gt; } &lt;span style=&#34;color:#66d9ef&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;./myModule&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This can get tedious if you have a large number of exports, and it can also make your code less readable. This is where TypeScript Barrels come in.&lt;/p&gt;</description>
       <content>&lt;p&gt;A TypeScript Barrel is a way to simplify the importing of multiple exports from a single module.&lt;/p&gt;
 &lt;p&gt;Imagine you have a module called &lt;code&gt;myModule&lt;/code&gt; that has several exports, such as:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-typescript&#34; data-lang=&#34;typescript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;foo&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
@@ -257,9 +277,10 @@ import { foo, bar, baz } from &amp;#39;./myModule&amp;#39;; This can get tedious
       <pubDate>Wed, 16 Nov 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/why-everyone-should-know-kpis/</guid>
-      <description>Every Investor has to know KPIs (Key Performance Indicators) to value Investments. But why did I write that everyone should know them in my title?
-Knowing KPIs helps you even if you don&amp;rsquo;t invest any of your money. It helps you e.g. decide which job you should take or which customer you should prefer.
-Deciding between Job Offers - an Example Recently, I decided to start freelancing besides working on my own projects.</description>
+      <description>&lt;p&gt;Every Investor has to know KPIs (Key Performance Indicators) to value Investments. But why did I write that everyone should know them in my title?&lt;/p&gt;
+&lt;p&gt;Knowing KPIs helps you even if you don&amp;rsquo;t invest any of your money. It helps you e.g. decide which job you should take or which customer you should prefer.&lt;/p&gt;
+&lt;h2 id=&#34;deciding-between-job-offers---an-example&#34;&gt;Deciding between Job Offers - an Example&lt;/h2&gt;
+&lt;p&gt;Recently, I decided to start freelancing besides working on my own projects. I contacted some possible customers and some companies contacted me.&lt;/p&gt;</description>
       <content>&lt;p&gt;Every Investor has to know KPIs (Key Performance Indicators) to value Investments. But why did I write that everyone should know them in my title?&lt;/p&gt;
 &lt;p&gt;Knowing KPIs helps you even if you don&amp;rsquo;t invest any of your money. It helps you e.g. decide which job you should take or which customer you should prefer.&lt;/p&gt;
 &lt;h2 id=&#34;deciding-between-job-offers---an-example&#34;&gt;Deciding between Job Offers - an Example&lt;/h2&gt;
@@ -294,9 +315,9 @@ Deciding between Job Offers - an Example Recently, I decided to start freelancin
       <pubDate>Tue, 11 Oct 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/how-legit-is-a-newswatch-tv-feature/</guid>
-      <description>Many founders get Emails from NewsWatch TV saying that they will promote your company on an American Television &amp;ldquo;Morning Show&amp;rdquo;.
-I also got a similar Mail for Alphalerts.com and want to explain what you, as a Founder, should think about that.
-Firstly, if you get such a Mail, it is likely that you promoted your product on ProductHunt lately. NewsWatch seems to scrape the ProductHunt listings and even the founder of ProductHunt wrote a tweet about it:</description>
+      <description>&lt;p&gt;Many founders get Emails from NewsWatch TV saying that they will promote your company on an American Television &amp;ldquo;Morning Show&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;I also got a similar Mail for &lt;a href=&#34;https://alphalerts.com/&#34;&gt;Alphalerts.com&lt;/a&gt; and want to explain what you, as a Founder, should think about that.&lt;/p&gt;
+&lt;p&gt;Firstly, if you get such a Mail, it is likely that you promoted your product on ProductHunt lately. NewsWatch seems to scrape the ProductHunt listings and even the founder of ProductHunt wrote a tweet about it:&lt;/p&gt;</description>
       <content>&lt;p&gt;Many founders get Emails from NewsWatch TV saying that they will promote your company on an American Television &amp;ldquo;Morning Show&amp;rdquo;.&lt;/p&gt;
 &lt;p&gt;I also got a similar Mail for &lt;a href=&#34;https://alphalerts.com/&#34;&gt;Alphalerts.com&lt;/a&gt; and want to explain what you, as a Founder, should think about that.&lt;/p&gt;
 &lt;p&gt;Firstly, if you get such a Mail, it is likely that you promoted your product on ProductHunt lately. NewsWatch seems to scrape the ProductHunt listings and even the founder of ProductHunt wrote a tweet about it:&lt;/p&gt;
@@ -315,10 +336,13 @@ Firstly, if you get such a Mail, it is likely that you promoted your product on 
       <pubDate>Fri, 23 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/drone-ci-with-podman/</guid>
-      <description>I run Drone CI for a longer period now with Docker. Because I decided to switch for multiple reasons from Docker to Podman, this setup had to be changed a bit.
-In this blog post, I want to cover how to install Podman and how to set up Drone so that it works with Podman.
-Installing Podman Install the podman and podman-docker packages. E.g. on a Debian based System:
-apt install podman podman-docker If you currently use docker-compose, then you should also install podman-compose:</description>
+      <description>&lt;p&gt;I run Drone CI for a longer period now with Docker. Because I decided to switch for multiple reasons from Docker to Podman, this setup had to be changed a bit.&lt;/p&gt;
+&lt;p&gt;In this blog post, I want to cover how to install Podman and how to set up Drone so that it works with Podman.&lt;/p&gt;
+&lt;h2 id=&#34;installing-podman&#34;&gt;Installing Podman&lt;/h2&gt;
+&lt;p&gt;Install the &lt;code&gt;podman&lt;/code&gt; and &lt;code&gt;podman-docker&lt;/code&gt; packages. E.g. on a Debian based System:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;apt install podman podman-docker
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If you currently use &lt;code&gt;docker-compose&lt;/code&gt;, then you should also install &lt;code&gt;podman-compose&lt;/code&gt;:&lt;/p&gt;</description>
       <content>&lt;p&gt;I run Drone CI for a longer period now with Docker. Because I decided to switch for multiple reasons from Docker to Podman, this setup had to be changed a bit.&lt;/p&gt;
 &lt;p&gt;In this blog post, I want to cover how to install Podman and how to set up Drone so that it works with Podman.&lt;/p&gt;
 &lt;h2 id=&#34;installing-podman&#34;&gt;Installing Podman&lt;/h2&gt;
@@ -366,8 +390,9 @@ registries = [&#39;quay.io&#39;, &#39;docker.io&#39;]
       <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/linux-setup-zitadel-with-postgresql/</guid>
-      <description>In this Guide, I want to cover installing ZITADEL with PostgreSQL on a Linux system. Please be aware that PostgreSQL support is still in Beta at the time of this writing, and you will need a PostgreSQL installation with Version 14 or higher.
-NGINX Proxy Create a new subdomain and point it to your server. Use certbot -d domain.name for creating a new SSL Cert. Create a new file in /etc/nginx/sites-available/domainname</description>
+      <description>&lt;p&gt;In this Guide, I want to cover installing ZITADEL with PostgreSQL on a Linux system. Please be aware that PostgreSQL support is still in Beta at the time of this writing, and you will need a PostgreSQL installation with Version 14 or higher.&lt;/p&gt;
+&lt;h2 id=&#34;nginx-proxy&#34;&gt;NGINX Proxy&lt;/h2&gt;
+&lt;p&gt;Create a new subdomain and point it to your server. Use &lt;code&gt;certbot -d domain.name&lt;/code&gt; for creating a new SSL Cert. Create a new file in &lt;code&gt;/etc/nginx/sites-available/domainname&lt;/code&gt;&lt;/p&gt;</description>
       <content>&lt;p&gt;In this Guide, I want to cover installing ZITADEL with PostgreSQL on a Linux system. Please be aware that PostgreSQL support is still in Beta at the time of this writing, and you will need a PostgreSQL installation with Version 14 or higher.&lt;/p&gt;
 &lt;h2 id=&#34;nginx-proxy&#34;&gt;NGINX Proxy&lt;/h2&gt;
 &lt;p&gt;Create a new subdomain and point it to your server. Use &lt;code&gt;certbot -d domain.name&lt;/code&gt; for creating a new SSL Cert. Create a new file in &lt;code&gt;/etc/nginx/sites-available/domainname&lt;/code&gt;&lt;/p&gt;
@@ -506,8 +531,8 @@ WantedBy=multi-user.target
       <pubDate>Mon, 05 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/open-source-authentication-solutions/</guid>
-      <description>Imagine you run a company and provide multiple web applications for your customers. In the beginning, you probably created a user table and the authentication methods yourself, but from the second application onwards, you will think about using already made open source solutions.
-That&amp;rsquo;s the situation I am in right now. I run multiple web applications, which each have their own auth mechanisms and user tables. This means, a user from App1 can&amp;rsquo;t use App2 unless he creates a new account.</description>
+      <description>&lt;p&gt;Imagine you run a company and provide multiple web applications for your customers. In the beginning, you probably created a user table and the authentication methods yourself, but from the second application onwards, you will think about using already made open source solutions.&lt;/p&gt;
+&lt;p&gt;That&amp;rsquo;s the situation I am in right now. I run multiple web applications, which each have their own auth mechanisms and user tables. This means, a user from App1 can&amp;rsquo;t use App2 unless he creates a new account.&lt;/p&gt;</description>
       <content>&lt;p&gt;Imagine you run a company and provide multiple web applications for your customers. In the beginning, you probably created a user table and the authentication methods yourself, but from the second application onwards, you will think about using already made open source solutions.&lt;/p&gt;
 &lt;p&gt;That&amp;rsquo;s the situation I am in right now. I run multiple web applications, which each have their own auth mechanisms and user tables. This means, a user from App1 can&amp;rsquo;t use App2 unless he creates a new account.&lt;/p&gt;
 &lt;h2 id=&#34;oauth&#34;&gt;OAuth&lt;/h2&gt;
@@ -561,8 +586,10 @@ That way, a user could log in into my OAuth server with his existing Google Acco
       <pubDate>Sat, 03 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/open-source-social-media-management-tools/</guid>
-      <description>As a Startup founder, marketing is one of the biggest topics you have to take care of. There are tons of marketing automation tools, and most of them aren&amp;rsquo;t cheap. I found several open source social media management tools, of which some of them are getting used by me for multiple years now.
-Socioboard Socioboard is your full-blown social media management tool. It is open source and offers all the features you know from paid tools like Buffer, Hootsuite and others.</description>
+      <description>&lt;p&gt;As a Startup founder, marketing is one of the biggest topics you have to take care of. There are tons of marketing automation tools, and most of them aren&amp;rsquo;t cheap.
+I found several open source social media management tools, of which some of them are getting used by me for multiple years now.&lt;/p&gt;
+&lt;h3 id=&#34;socioboard&#34;&gt;Socioboard&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/socioboard/Socioboard-5.0&#34;&gt;Socioboard&lt;/a&gt; is your full-blown social media management tool. It is open source and offers all the features you know from paid tools like Buffer, Hootsuite and others.&lt;/p&gt;</description>
       <content>&lt;p&gt;As a Startup founder, marketing is one of the biggest topics you have to take care of. There are tons of marketing automation tools, and most of them aren&amp;rsquo;t cheap.
 I found several open source social media management tools, of which some of them are getting used by me for multiple years now.&lt;/p&gt;
 &lt;h3 id=&#34;socioboard&#34;&gt;Socioboard&lt;/h3&gt;
@@ -593,79 +620,148 @@ I found several open source social media management tools, of which some of them
       <pubDate>Sat, 27 Aug 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/recap-are-startup-investments-profitable/</guid>
-      <description>Since 2017, I invested in multiple Startups via Crowdinvesting platforms. Before that, I only invested in public traded companies.
-I am currently thinking about investing in some new Startups (and I also operate my own Startup), so that is a good time to check if my previous investments are profitable.
-Industry Type Year Performance Comment Drinks Loan 2017 No profit yet Waiting for repayment, company currently unable to pay. Software Loan 2019 No profit yet Growing fast but no profit yet.</description>
+      <description>&lt;p&gt;Since 2017, I invested in multiple Startups via Crowdinvesting platforms. Before that, I only invested in public traded companies.&lt;/p&gt;
+&lt;p&gt;I am currently thinking about investing in some new Startups (and I also operate my own Startup), so that is a good time to check if my previous investments are profitable.&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Industry&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Type&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Year&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Performance&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Comment&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Drinks&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Loan&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2017&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;No profit yet&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Waiting for repayment, company currently unable to pay.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Software&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Loan&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2019&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;No profit yet&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Growing fast but no profit yet.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Software&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Loan&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2018&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;No profit yet&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Growing fast but no profit yet.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Restaurant&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Equity&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2018&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Bankrupt&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Won&amp;rsquo;t see any money.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Food&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Equity&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2019&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Worth lesser&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Valuation has gone down.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Finance&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Equity&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2017&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Doubled&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Valuation has gone up.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Cars&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Equity&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2019&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Up a bit&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Valuation has gone up.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Phones&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Equity&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2018&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Doubled&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Company should be worth more now.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;I also invested, via loan, in three - not public - companies which already exist for a longer period and which I don&amp;rsquo;t classify as a Startup because of that. Of these 3 companies, only one could pay me back in time.&lt;/p&gt;</description>
       <content>&lt;p&gt;Since 2017, I invested in multiple Startups via Crowdinvesting platforms. Before that, I only invested in public traded companies.&lt;/p&gt;
 &lt;p&gt;I am currently thinking about investing in some new Startups (and I also operate my own Startup), so that is a good time to check if my previous investments are profitable.&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Industry&lt;/th&gt;
-&lt;th&gt;Type&lt;/th&gt;
-&lt;th&gt;Year&lt;/th&gt;
-&lt;th&gt;Performance&lt;/th&gt;
-&lt;th&gt;Comment&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Drinks&lt;/td&gt;
-&lt;td&gt;Loan&lt;/td&gt;
-&lt;td&gt;2017&lt;/td&gt;
-&lt;td&gt;No profit yet&lt;/td&gt;
-&lt;td&gt;Waiting for repayment, company currently unable to pay.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Software&lt;/td&gt;
-&lt;td&gt;Loan&lt;/td&gt;
-&lt;td&gt;2019&lt;/td&gt;
-&lt;td&gt;No profit yet&lt;/td&gt;
-&lt;td&gt;Growing fast but no profit yet.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Software&lt;/td&gt;
-&lt;td&gt;Loan&lt;/td&gt;
-&lt;td&gt;2018&lt;/td&gt;
-&lt;td&gt;No profit yet&lt;/td&gt;
-&lt;td&gt;Growing fast but no profit yet.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Restaurant&lt;/td&gt;
-&lt;td&gt;Equity&lt;/td&gt;
-&lt;td&gt;2018&lt;/td&gt;
-&lt;td&gt;Bankrupt&lt;/td&gt;
-&lt;td&gt;Won&amp;rsquo;t see any money.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Food&lt;/td&gt;
-&lt;td&gt;Equity&lt;/td&gt;
-&lt;td&gt;2019&lt;/td&gt;
-&lt;td&gt;Worth lesser&lt;/td&gt;
-&lt;td&gt;Valuation has gone down.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Finance&lt;/td&gt;
-&lt;td&gt;Equity&lt;/td&gt;
-&lt;td&gt;2017&lt;/td&gt;
-&lt;td&gt;Doubled&lt;/td&gt;
-&lt;td&gt;Valuation has gone up.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Cars&lt;/td&gt;
-&lt;td&gt;Equity&lt;/td&gt;
-&lt;td&gt;2019&lt;/td&gt;
-&lt;td&gt;Up a bit&lt;/td&gt;
-&lt;td&gt;Valuation has gone up.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Phones&lt;/td&gt;
-&lt;td&gt;Equity&lt;/td&gt;
-&lt;td&gt;2018&lt;/td&gt;
-&lt;td&gt;Doubled&lt;/td&gt;
-&lt;td&gt;Company should be worth more now.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Industry&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Type&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Year&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Performance&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Comment&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Drinks&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Loan&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2017&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;No profit yet&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Waiting for repayment, company currently unable to pay.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Software&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Loan&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2019&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;No profit yet&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Growing fast but no profit yet.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Software&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Loan&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2018&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;No profit yet&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Growing fast but no profit yet.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Restaurant&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Equity&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2018&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Bankrupt&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Won&amp;rsquo;t see any money.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Food&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Equity&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2019&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Worth lesser&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Valuation has gone down.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Finance&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Equity&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2017&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Doubled&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Valuation has gone up.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Cars&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Equity&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2019&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Up a bit&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Valuation has gone up.&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Phones&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Equity&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;2018&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Doubled&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Company should be worth more now.&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;I also invested, via loan, in three - not public - companies which already exist for a longer period and which I don&amp;rsquo;t classify as a Startup because of that. Of these 3 companies, only one could pay me back in time.&lt;/p&gt;
 &lt;h2 id=&#34;recap&#34;&gt;Recap&lt;/h2&gt;
@@ -685,8 +781,8 @@ Industry Type Year Performance Comment Drinks Loan 2017 No profit yet Waiting fo
       <pubDate>Tue, 23 Aug 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/vr-and-digital-assistants/</guid>
-      <description>I want to make a prediction. I think in around 10 - 15 years, most of the people in the western World will own or think about owning a Virtual Reality Headset. I also think that digital Assistants like Google Assistant or Alexa will be more important in that context than currently.
-For context: I own a VR Headset and use digital Assistants since multiple years. I also worked in a team developing a digital Assistant and seeing practical use-cases for AR in the past.</description>
+      <description>&lt;p&gt;I want to make a prediction. I think in around 10 - 15 years, most of the people in the western World will own or think about owning a Virtual Reality Headset. I also think that digital Assistants like Google Assistant or Alexa will be more important in that context than currently.&lt;/p&gt;
+&lt;p&gt;For context: I own a VR Headset and use digital Assistants since multiple years. I also worked in a team developing a digital Assistant and seeing practical use-cases for AR in the past.&lt;/p&gt;</description>
       <content>&lt;p&gt;I want to make a prediction. I think in around 10 - 15 years, most of the people in the western World will own or think about owning a Virtual Reality Headset. I also think that digital Assistants like Google Assistant or Alexa will be more important in that context than currently.&lt;/p&gt;
 &lt;p&gt;For context: I own a VR Headset and use digital Assistants since multiple years. I also worked in a team developing a digital Assistant and seeing practical use-cases for AR in the past.&lt;/p&gt;
 &lt;h2 id=&#34;practical-use-cases&#34;&gt;Practical Use-Cases&lt;/h2&gt;
@@ -731,8 +827,8 @@ When everything is moving around you without your legs moving, that&amp;rsquo;s 
       <pubDate>Wed, 10 Aug 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/why-communism-doesnt-work/</guid>
-      <description>Modern Communists are hard to argue with. Mostly because they say things like &amp;ldquo;There never was a real communist country&amp;rdquo;. So it&amp;rsquo;s hard to take real world examples, because they say countries like the Soviet Union, German Democratic Republic, Cuba or China &amp;ldquo;never were truly communist&amp;rdquo;.
-But I argue there can never be a &amp;ldquo;truly communist&amp;rdquo; country. Why? Because it is impossible to create that after my opinion. So if you are open for different opinions, then continue reading.</description>
+      <description>&lt;p&gt;Modern Communists are hard to argue with. Mostly because they say things like &amp;ldquo;There never was a real communist country&amp;rdquo;. So it&amp;rsquo;s hard to take real world examples, because they say countries like the Soviet Union, German Democratic Republic, Cuba or China &amp;ldquo;never were truly communist&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;But I argue there can never be a &amp;ldquo;truly communist&amp;rdquo; country. Why? Because it is impossible to create that after my opinion. So if you are open for different opinions, then continue reading. I will explain why.&lt;/p&gt;</description>
       <content>&lt;p&gt;Modern Communists are hard to argue with. Mostly because they say things like &amp;ldquo;There never was a real communist country&amp;rdquo;. So it&amp;rsquo;s hard to take real world examples, because they say countries like the Soviet Union, German Democratic Republic, Cuba or China &amp;ldquo;never were truly communist&amp;rdquo;.&lt;/p&gt;
 &lt;p&gt;But I argue there can never be a &amp;ldquo;truly communist&amp;rdquo; country. Why? Because it is impossible to create that after my opinion. So if you are open for different opinions, then continue reading. I will explain why.&lt;/p&gt;
 &lt;h2 id=&#34;desires-of-humans&#34;&gt;Desires of Humans&lt;/h2&gt;
@@ -764,8 +860,9 @@ All these things need Resources and other people have to work for you (e.g. crea
       <pubDate>Mon, 08 Aug 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/the-reason-why-linux-gaming-is-so-limited/</guid>
-      <description>Ever tried Gaming on a Linux system? Even though Linux exists since more than 30 years now, it is still hard to play a Game on it. Most Games don&amp;rsquo;t even publish a release for Linux. That&amp;rsquo;s why projects like Wine exist (Wine provides a compatibility layer so that Linux Users can play Windows Games)
-Why is it like that? For that, we need to understand how a Game works and how a Game Developer thinks.</description>
+      <description>&lt;p&gt;Ever tried Gaming on a Linux system? Even though Linux exists since more than 30 years now, it is still hard to play a Game on it. Most Games don&amp;rsquo;t even publish a release for Linux. That&amp;rsquo;s why projects like Wine exist (Wine provides a compatibility layer so that Linux Users can play Windows Games)&lt;/p&gt;
+&lt;h2 id=&#34;why-is-it-like-that&#34;&gt;Why is it like that?&lt;/h2&gt;
+&lt;p&gt;For that, we need to understand how a Game works and how a Game Developer thinks. Game Developer need to earn money so that they can buy e.g. food. For that, targeting a big Group of Customers is important.&lt;/p&gt;</description>
       <content>&lt;p&gt;Ever tried Gaming on a Linux system? Even though Linux exists since more than 30 years now, it is still hard to play a Game on it. Most Games don&amp;rsquo;t even publish a release for Linux. That&amp;rsquo;s why projects like Wine exist (Wine provides a compatibility layer so that Linux Users can play Windows Games)&lt;/p&gt;
 &lt;h2 id=&#34;why-is-it-like-that&#34;&gt;Why is it like that?&lt;/h2&gt;
 &lt;p&gt;For that, we need to understand how a Game works and how a Game Developer thinks. Game Developer need to earn money so that they can buy e.g. food. For that, targeting a big Group of Customers is important.&lt;/p&gt;
@@ -791,9 +888,9 @@ OpenGL is also Open Source which means every developer can take a look at the co
       <pubDate>Sun, 17 Jul 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/the-scapegoat-called-meta/</guid>
-      <description>Many people hate Facebook and Instagram. They say it makes us feel bad, is bad for our health, increases the suicide rate of teens and does many more bad things.
-But is Meta really all the bad in this world, or is it maybe that Meta just offers a Tool, and it depends how people use it?
-I want to shine a light on the later part in this article.</description>
+      <description>&lt;p&gt;Many people hate Facebook and Instagram. They say it makes us feel bad, is bad for our health, increases the suicide rate of teens and does many more bad things.&lt;/p&gt;
+&lt;p&gt;But is Meta really all the bad in this world, or is it maybe that Meta just offers a Tool, and it depends how people use it?&lt;/p&gt;
+&lt;p&gt;I want to shine a light on the later part in this article.&lt;/p&gt;</description>
       <content>&lt;p&gt;Many people hate Facebook and Instagram. They say it makes us feel bad, is bad for our health, increases the suicide rate of teens and does many more bad things.&lt;/p&gt;
 &lt;p&gt;But is Meta really all the bad in this world, or is it maybe that Meta just offers a Tool, and it depends how people use it?&lt;/p&gt;
 &lt;p&gt;I want to shine a light on the later part in this article.&lt;/p&gt;
@@ -823,9 +920,9 @@ I want to shine a light on the later part in this article.</description>
       <pubDate>Tue, 05 Jul 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/investing-in-domains/</guid>
-      <description>Since I started creating websites at a young age, I always tried to have good domain names for my projects. I also sold a few - that&amp;rsquo;s why I want to cover this topic today.
-A good domain name can be worth quite a bit. Some Domains were sold for multiple millions.
-But unfortunately, Investing in Domains isn&amp;rsquo;t quite so easy as you think. I bought at least 45 different domain names and selling them is really hard.</description>
+      <description>&lt;p&gt;Since I started creating websites at a young age, I always tried to have good domain names for my projects. I also sold a few - that&amp;rsquo;s why I want to cover this topic today.&lt;/p&gt;
+&lt;p&gt;A good domain name can be worth quite a bit. Some Domains were sold for multiple millions.&lt;/p&gt;
+&lt;p&gt;But unfortunately, Investing in Domains isn&amp;rsquo;t quite so easy as you think. I bought at least 45 different domain names and selling them is really hard.&lt;/p&gt;</description>
       <content>&lt;p&gt;Since I started creating websites at a young age, I always tried to have good domain names for my projects. I also sold a few - that&amp;rsquo;s why I want to cover this topic today.&lt;/p&gt;
 &lt;p&gt;A good domain name can be worth quite a bit. Some Domains were sold for multiple millions.&lt;/p&gt;
 &lt;p&gt;But unfortunately, Investing in Domains isn&amp;rsquo;t quite so easy as you think. I bought at least 45 different domain names and selling them is really hard.&lt;/p&gt;
@@ -857,91 +954,91 @@ This registry also has costs and wants to make a profit, so they obviously ask f
       <pubDate>Tue, 03 May 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/cost-of-political-party-membership-in-the-eu/</guid>
-      <description>When I was a kid, I completely ignored politicians and thought they were unnecessary. Now, I understand they are here to represent the people and try to prevent that different groups inside our society kill each other by defining the rules of how our communities work.
-I am interested to bring my thoughts into this by joining a political party. There are big differences in how much such a membership costs in a country, but even bigger ones when you compare political parties from different countries.</description>
+      <description>&lt;p&gt;When I was a kid, I completely ignored politicians and thought they were unnecessary. Now, I understand they are here to represent the people and try to prevent that different groups inside our society kill each other by defining the rules of how our communities work.&lt;/p&gt;
+&lt;p&gt;I am interested to bring my thoughts into this by joining a political party. There are big differences in how much such a membership costs in a country, but even bigger ones when you compare political parties from different countries.&lt;/p&gt;</description>
       <content>&lt;p&gt;When I was a kid, I completely ignored politicians and thought they were unnecessary. Now, I understand they are here to represent the people and try to prevent that different groups inside our society kill each other by defining the rules of how our communities work.&lt;/p&gt;
 &lt;p&gt;I am interested to bring my thoughts into this by joining a political party. There are big differences in how much such a membership costs in a country, but even bigger ones when you compare political parties from different countries.&lt;/p&gt;
 &lt;p&gt;Now I want to show these differences by comparing different parties inside the Alliance of Liberals and Democrats for Europe Party. We will assume that our possible member earns around 4k per Month and is 27 years old.&lt;/p&gt;
 &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Country&lt;/th&gt;
-&lt;th&gt;Name&lt;/th&gt;
-&lt;th&gt;Cost per Year&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Germany&lt;/td&gt;
-&lt;td&gt;FDP&lt;/td&gt;
-&lt;td&gt;216 EUR&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Ireland&lt;/td&gt;
-&lt;td&gt;Fianna Fáil&lt;/td&gt;
-&lt;td&gt;20 EUR&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Sweden&lt;/td&gt;
-&lt;td&gt;Centre Party&lt;/td&gt;
-&lt;td&gt;14,42 EUR (SEK 150)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Spain&lt;/td&gt;
-&lt;td&gt;Ciudadanos&lt;/td&gt;
-&lt;td&gt;240 EUR&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Austria&lt;/td&gt;
-&lt;td&gt;NEOS&lt;/td&gt;
-&lt;td&gt;90 EUR&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Estonia&lt;/td&gt;
-&lt;td&gt;Estonian Reform Party&lt;/td&gt;
-&lt;td&gt;15 EUR&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;France&lt;/td&gt;
-&lt;td&gt;Radical Party&lt;/td&gt;
-&lt;td&gt;25 EUR&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Denmark&lt;/td&gt;
-&lt;td&gt;Venstre&lt;/td&gt;
-&lt;td&gt;43.68 EUR (DKK 325)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Netherlands&lt;/td&gt;
-&lt;td&gt;VVD&lt;/td&gt;
-&lt;td&gt;118 EUR*&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Luxembourg&lt;/td&gt;
-&lt;td&gt;Demokratesch Partei&lt;/td&gt;
-&lt;td&gt;25 EUR&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Lithuania&lt;/td&gt;
-&lt;td&gt;Liberalų sąjūdis&lt;/td&gt;
-&lt;td&gt;10 EUR&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Italy&lt;/td&gt;
-&lt;td&gt;More Europe&lt;/td&gt;
-&lt;td&gt;50 EUR&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Hungary&lt;/td&gt;
-&lt;td&gt;Momentum Mozgalom&lt;/td&gt;
-&lt;td&gt;31.56 EUR (1000 HUF per Month)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Belgium&lt;/td&gt;
-&lt;td&gt;Open Vld&lt;/td&gt;
-&lt;td&gt;12.5 EUR&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Country&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Name&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;Cost per Year&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Germany&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;FDP&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;216 EUR&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Ireland&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Fianna Fáil&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;20 EUR&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Sweden&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Centre Party&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;14,42 EUR (SEK 150)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Spain&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Ciudadanos&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;240 EUR&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Austria&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;NEOS&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;90 EUR&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Estonia&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Estonian Reform Party&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;15 EUR&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;France&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Radical Party&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;25 EUR&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Denmark&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Venstre&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;43.68 EUR (DKK 325)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Netherlands&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;VVD&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;118 EUR*&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Luxembourg&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Demokratesch Partei&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;25 EUR&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Lithuania&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Liberalų sąjūdis&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;10 EUR&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Italy&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;More Europe&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;50 EUR&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Hungary&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Momentum Mozgalom&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;31.56 EUR (1000 HUF per Month)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Belgium&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;Open Vld&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;12.5 EUR&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;{*} There is a big difference in the Netherlands for people below or above the age of 27. Below the age of 27, the membership costs are only 35 EUR per year. Also, the first two years only cost 25 EUR per year.&lt;/p&gt;
 &lt;p&gt;Interesting: Not many countries make the membership cost dependent on the salary. Here in Germany that is common for all popular parties, but in most of Europe you pay a fixed price.&lt;/p&gt;
@@ -958,9 +1055,10 @@ Most of the parties seem to be in the range between 10 and 90 EUR which is still
       <pubDate>Sat, 12 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/solarwinds-stock-analysis/</guid>
-      <description>When the SolarWinds supply chain attack happened in 2020, I didn&amp;rsquo;t really get deep into what SolarWinds does because I had to focus on day-to-day business. But now, in 2022, I found out what SolarWinds does because I was searching for monitoring solutions myself.
-In this article I want to cover the current valuation, a description of what SolarWinds does and my thoughts about the future.
-Valuation As of March 12, the company trades at 11.</description>
+      <description>&lt;p&gt;When the SolarWinds supply chain attack happened in 2020, I didn&amp;rsquo;t really get deep into what SolarWinds does because I had to focus on day-to-day business. But now, in 2022, I found out what SolarWinds does because I was searching for monitoring solutions myself.&lt;/p&gt;
+&lt;p&gt;In this article I want to cover the current valuation, a description of what SolarWinds does and my thoughts about the future.&lt;/p&gt;
+&lt;h2 id=&#34;valuation&#34;&gt;Valuation&lt;/h2&gt;
+&lt;p&gt;As of March 12, the company trades at 11.21 USD per share. That&amp;rsquo;s below book value. The company has an equity ratio of nearly 48% and the revenue for 2021 fell nearly 30% from 2020 and is now at 2017 levels.&lt;/p&gt;</description>
       <content>&lt;p&gt;When the SolarWinds supply chain attack happened in 2020, I didn&amp;rsquo;t really get deep into what SolarWinds does because I had to focus on day-to-day business. But now, in 2022, I found out what SolarWinds does because I was searching for monitoring solutions myself.&lt;/p&gt;
 &lt;p&gt;In this article I want to cover the current valuation, a description of what SolarWinds does and my thoughts about the future.&lt;/p&gt;
 &lt;h2 id=&#34;valuation&#34;&gt;Valuation&lt;/h2&gt;
@@ -1001,7 +1099,8 @@ But to be honest, I don&amp;rsquo;t think that most companies are better than th
       <pubDate>Fri, 04 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/influence-of-sanctions-on-economies/</guid>
-      <description>The current events in Ukraine led to many economic sanctions against Russia. Despite this war is the result of leaders, not their citizens, the West decided to define many very hard sanctions which resulted into making it impossible to trade with Russian Stocks right now. (After the close of the Moscow Exchange, ADRs listed in the US and GDRs listed on the London Stock Exchange also can&amp;rsquo;t be bought anymore)</description>
+      <description>&lt;p&gt;The current &lt;a href=&#34;https://blog.m5e.de/post/the-russian-ukrainian-conflict-and-the-stock-market/&#34;&gt;events in Ukraine&lt;/a&gt; led to many economic sanctions against Russia. Despite this war is the result of leaders, not their citizens, the West decided to define many very hard sanctions which resulted into making it impossible to trade with Russian Stocks right now. (After the close of the Moscow Exchange, ADRs listed in the US and GDRs listed on the London Stock Exchange also can&amp;rsquo;t be bought anymore)&lt;/p&gt;
+&lt;p&gt;Because many Russian stocks can only be sold right now, the prices for these fell more and more. Speculators who bought some stocks in the beginning of this Week could get these shares very cheap on the few Exchanges and Brokers which still traded them, but now these Speculators also can&amp;rsquo;t trade Russian stocks anymore.&lt;/p&gt;</description>
       <content>&lt;p&gt;The current &lt;a href=&#34;https://blog.m5e.de/post/the-russian-ukrainian-conflict-and-the-stock-market/&#34;&gt;events in Ukraine&lt;/a&gt; led to many economic sanctions against Russia. Despite this war is the result of leaders, not their citizens, the West decided to define many very hard sanctions which resulted into making it impossible to trade with Russian Stocks right now. (After the close of the Moscow Exchange, ADRs listed in the US and GDRs listed on the London Stock Exchange also can&amp;rsquo;t be bought anymore)&lt;/p&gt;
 &lt;p&gt;Because many Russian stocks can only be sold right now, the prices for these fell more and more. Speculators who bought some stocks in the beginning of this Week could get these shares very cheap on the few Exchanges and Brokers which still traded them, but now these Speculators also can&amp;rsquo;t trade Russian stocks anymore.&lt;/p&gt;
 &lt;p&gt;So in this blog post I want to answer the question if these dramatic price deductions are in any relation to the various results of sanctions in recent human history.&lt;/p&gt;
@@ -1034,10 +1133,11 @@ But to be honest, I don&amp;rsquo;t think that most companies are better than th
       <pubDate>Sun, 27 Feb 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/alternatives-to-swift/</guid>
-      <description>In all the recent news to the War between Russia and Ukraine, I always ask myself about the economic consequences.
-Recently the EU and US declared a ban of SWIFT currently focused on the state owned banks (which are also the biggest banks in Russia).
-What&amp;rsquo;s SWIFT exactly? Before getting into possible alternatives to SWIFT, let&amp;rsquo;s dive into what the Society for Worldwide Interbank Financial Telecommunication is.
-It is an Organization with HQ in Belgium which defines Standards and Services for the transaction of financial information.</description>
+      <description>&lt;p&gt;In all the recent news to the War between Russia and Ukraine, I always ask myself about the economic consequences.&lt;/p&gt;
+&lt;p&gt;Recently the EU and US declared a &lt;a href=&#34;https://indianexpress.com/article/explained/explained-russia-ukraine-invasion-swift-ban-sanctions-7792865/&#34;&gt;ban of SWIFT&lt;/a&gt; currently focused on the state owned banks (which are also the biggest banks in Russia).&lt;/p&gt;
+&lt;h2 id=&#34;whats-swift-exactly&#34;&gt;What&amp;rsquo;s SWIFT exactly?&lt;/h2&gt;
+&lt;p&gt;Before getting into possible alternatives to SWIFT, let&amp;rsquo;s dive into what the Society for Worldwide Interbank Financial Telecommunication is.&lt;/p&gt;
+&lt;p&gt;It is an Organization with HQ in Belgium which defines Standards and Services for the transaction of financial information. For that it has its own Network, the SWIFTNet. Data is transferred as XML-Files (I personally would prefer JSON, but old ppl like XML) and the Software is based on Java (again, I would prefer something like Go or Rust, but however old people love Java).&lt;/p&gt;</description>
       <content>&lt;p&gt;In all the recent news to the War between Russia and Ukraine, I always ask myself about the economic consequences.&lt;/p&gt;
 &lt;p&gt;Recently the EU and US declared a &lt;a href=&#34;https://indianexpress.com/article/explained/explained-russia-ukraine-invasion-swift-ban-sanctions-7792865/&#34;&gt;ban of SWIFT&lt;/a&gt; currently focused on the state owned banks (which are also the biggest banks in Russia).&lt;/p&gt;
 &lt;h2 id=&#34;whats-swift-exactly&#34;&gt;What&amp;rsquo;s SWIFT exactly?&lt;/h2&gt;
@@ -1069,8 +1169,8 @@ It is an Organization with HQ in Belgium which defines Standards and Services fo
       <pubDate>Tue, 22 Feb 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/the-russian-ukrainian-conflict-and-the-stock-market/</guid>
-      <description>In 2008 Russia fought against Georgia in the Russo-Georgian War. This resulted into a catastrophic situation for the people which live in the areas occupied by Russia. Still today, Russia claims that parts of Georgia are &amp;ldquo;independent&amp;rdquo; Countries which do not belong to Georgia.
-So why do I start with this story? It&amp;rsquo;s simply because yesterday Putin officially announced to marsh into Ukraine and basically has the same strategy: he says parts of Ukraine are &amp;ldquo;independent&amp;rdquo; Countries which need to be free from Ukraine.</description>
+      <description>&lt;p&gt;In 2008 Russia fought against Georgia in the &lt;a href=&#34;https://en.wikipedia.org/wiki/Russo-Georgian_War&#34;&gt;Russo-Georgian War&lt;/a&gt;. This resulted into a catastrophic situation for the people which live in the areas occupied by Russia. Still today, Russia claims that parts of Georgia are &amp;ldquo;independent&amp;rdquo; Countries which do not belong to Georgia.&lt;/p&gt;
+&lt;p&gt;So why do I start with this story? It&amp;rsquo;s simply because yesterday Putin officially announced to marsh into Ukraine and basically has the same strategy: he says parts of Ukraine are &amp;ldquo;independent&amp;rdquo; Countries which need to be free from Ukraine. That is basically the same Strategy Putin uses for years.&lt;/p&gt;</description>
       <content>&lt;p&gt;In 2008 Russia fought against Georgia in the &lt;a href=&#34;https://en.wikipedia.org/wiki/Russo-Georgian_War&#34;&gt;Russo-Georgian War&lt;/a&gt;. This resulted into a catastrophic situation for the people which live in the areas occupied by Russia. Still today, Russia claims that parts of Georgia are &amp;ldquo;independent&amp;rdquo; Countries which do not belong to Georgia.&lt;/p&gt;
 &lt;p&gt;So why do I start with this story? It&amp;rsquo;s simply because yesterday Putin officially announced to marsh into Ukraine and basically has the same strategy: he says parts of Ukraine are &amp;ldquo;independent&amp;rdquo; Countries which need to be free from Ukraine. That is basically the same Strategy Putin uses for years.&lt;/p&gt;
 &lt;p&gt;My primarily interest here is to find out how it will affect the stock market. The best way to make predictions about the future is to look in the past.&lt;/p&gt;
@@ -1096,10 +1196,17 @@ I am not a U.S. politics expert but if a Republican Politician doesn&amp;rsquo;t
       <pubDate>Sat, 22 Jan 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/the-social-bot-lie/</guid>
-      <description>Recently this talk was given on the rC3 2021 Chaos Communication Congress:
-In summary, Florian Gallwitz explained that there are no &amp;ldquo;Social Bots&amp;rdquo; which are often covered in newspapers and magazines.
-Newspapers and Journalists create stories about AIs which post about political discussions but in reality these &amp;ldquo;Social Bots&amp;rdquo; are just accounts from human beings which write a lot of social media posts, classified as bots.
-The real existing &amp;ldquo;bots&amp;rdquo; are dumb systems which e.</description>
+      <description>&lt;p&gt;Recently this talk was given on the rC3 2021 Chaos Communication Congress:&lt;/p&gt;
+
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/Qwiss4qWuTs?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;In summary, Florian Gallwitz explained that there are no &amp;ldquo;Social Bots&amp;rdquo; which are often covered in newspapers and magazines.&lt;/p&gt;
+&lt;p&gt;Newspapers and Journalists create stories about AIs which post about political discussions but in reality these &amp;ldquo;Social Bots&amp;rdquo; are just accounts from human beings which write a lot of social media posts, classified as bots.&lt;/p&gt;</description>
       <content>&lt;p&gt;Recently this talk was given on the rC3 2021 Chaos Communication Congress:&lt;/p&gt;
 
 
@@ -1128,8 +1235,8 @@ The real existing &amp;ldquo;bots&amp;rdquo; are dumb systems which e.</descript
       <pubDate>Fri, 10 Dec 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/create-fast-new-posts-for-your-hugo-blog/</guid>
-      <description>Static site generators like Hugo, Jekyll or Nuxt are awesome. They provide way faster delivery of your contents to your customers than any PHP solution like WordPress.
-Unfortunately you have to create the Markdown files for your content yourself, but because every single post has a filename, title, date and often tags as well as a status for draft, I created a simple tool which takes care of doing exactly that.</description>
+      <description>&lt;p&gt;Static site generators like Hugo, Jekyll or Nuxt are awesome. They provide way faster delivery of your contents to your customers than any PHP solution like WordPress.&lt;/p&gt;
+&lt;p&gt;Unfortunately you have to create the Markdown files for your content yourself, but because every single post has a filename, title, date and often tags as well as a status for draft, I created a simple tool which takes care of doing exactly that.&lt;/p&gt;</description>
       <content>&lt;p&gt;Static site generators like Hugo, Jekyll or Nuxt are awesome. They provide way faster delivery of your contents to your customers than any PHP solution like WordPress.&lt;/p&gt;
 &lt;p&gt;Unfortunately you have to create the Markdown files for your content yourself, but because every single post has a filename, title, date and often tags as well as a status for draft, I created a simple tool which takes care of doing exactly that.&lt;/p&gt;
 &lt;p&gt;Just enter &lt;code&gt;np The Title of your blog post&lt;/code&gt; and &lt;code&gt;np&lt;/code&gt; will create a file inside the content/post directory with your Title, date, draft status (default: true) and tags which are simply the words in your title.&lt;/p&gt;
@@ -1144,8 +1251,8 @@ Unfortunately you have to create the Markdown files for your content yourself, b
       <pubDate>Tue, 21 Sep 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/the-evergrande-situation/</guid>
-      <description>Over the last days Evergrande China, the 2nd largest property developer in China after revenue, was in all financial news. More than 1.5 million homes are planned by Evergrande and it has $300 billion in liabilities.
-There are fears that Evergrande China will cause another financial crisis like in 2008, comparable to the Lehman Brothers insolvency. I am watching this very carefully. Most of my personal Assets are stocks and a big decline in the stock market could mean damage comparable of loosing multiple yearly incomes to me.</description>
+      <description>&lt;p&gt;Over the last days Evergrande China, the 2nd largest property developer in China after revenue, was in all financial news. More than 1.5 million homes are planned by Evergrande and it has $300 billion in liabilities.&lt;/p&gt;
+&lt;p&gt;There are fears that Evergrande China will cause another financial crisis like in 2008, comparable to the Lehman Brothers insolvency. I am watching this very carefully. Most of my personal Assets are stocks and a big decline in the stock market could mean damage comparable of loosing multiple yearly incomes to me.&lt;/p&gt;</description>
       <content>&lt;p&gt;Over the last days Evergrande China, the 2nd largest property developer in China after revenue, was in all financial news. More than 1.5 million homes are planned by Evergrande and it has $300 billion in liabilities.&lt;/p&gt;
 &lt;p&gt;There are fears that Evergrande China will cause another financial crisis like in 2008, comparable to the Lehman Brothers insolvency. I am watching this very carefully. Most of my personal Assets are stocks and a big decline in the stock market could mean damage comparable of loosing multiple yearly incomes to me.&lt;/p&gt;
 &lt;h2 id=&#34;the-problem&#34;&gt;The Problem&lt;/h2&gt;
@@ -1186,9 +1293,9 @@ There are fears that Evergrande China will cause another financial crisis like i
       <pubDate>Wed, 15 Sep 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/how-i-write-my-journal/</guid>
-      <description>Recently I came across a blog post which described some Tips how to write a Journal on Hacker News.
-This interested me because I also write a Journal since multiple years (since the 20th March of 2018 to be precise and if we don&amp;rsquo;t count my Journals I had as a child) and it already helped me in multiple occasions.
-The author of the article asked himself multiple questions every day and because I think that is too much pressure I want to describe how I do it.</description>
+      <description>&lt;p&gt;Recently I came &lt;a href=&#34;https://news.ycombinator.com/item?id=28530120&#34;&gt;across&lt;/a&gt; a blog post which described some Tips how to write a Journal on Hacker News.&lt;/p&gt;
+&lt;p&gt;This interested me because I also write a Journal since multiple years (since the 20th March of 2018 to be precise and if we don&amp;rsquo;t count my Journals I had as a child) and it already helped me in multiple occasions.&lt;/p&gt;
+&lt;p&gt;The author of the article asked himself multiple questions every day and because I think that is too much pressure I want to describe how I do it.&lt;/p&gt;</description>
       <content>&lt;p&gt;Recently I came &lt;a href=&#34;https://news.ycombinator.com/item?id=28530120&#34;&gt;across&lt;/a&gt; a blog post which described some Tips how to write a Journal on Hacker News.&lt;/p&gt;
 &lt;p&gt;This interested me because I also write a Journal since multiple years (since the 20th March of 2018 to be precise and if we don&amp;rsquo;t count my Journals I had as a child) and it already helped me in multiple occasions.&lt;/p&gt;
 &lt;p&gt;The author of the article asked himself multiple questions every day and because I think that is too much pressure I want to describe how I do it.&lt;/p&gt;
@@ -1221,8 +1328,8 @@ The author of the article asked himself multiple questions every day and because
       <pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/the-difference-between-wirecard-and-steinhoff/</guid>
-      <description>Wirecard and Steinhoff are both companies of German origin which had accounting scandals. In this post I want to describe why these two accounting scandals are completely different and why I choose to take a long position in Steinhoff after the scandal, although I did make a profit with a short position in Wirecard.
-I am writing this article because I want to describe that shorting a stock with an accounting scandal / fraud isn&amp;rsquo;t always the best option.</description>
+      <description>&lt;p&gt;Wirecard and Steinhoff are both companies of German origin which had accounting scandals. In this post I want to describe why these two accounting scandals are completely different and why I choose to take a long position in Steinhoff after the scandal, although I did make a profit with a short position in Wirecard.&lt;/p&gt;
+&lt;p&gt;I am writing this article because I want to describe that shorting a stock with an accounting scandal / fraud isn&amp;rsquo;t always the best option. Sometimes this can be a chance for a long position.&lt;/p&gt;</description>
       <content>&lt;p&gt;Wirecard and Steinhoff are both companies of German origin which had accounting scandals. In this post I want to describe why these two accounting scandals are completely different and why I choose to take a long position in Steinhoff after the scandal, although I did make a profit with a short position in Wirecard.&lt;/p&gt;
 &lt;p&gt;I am writing this article because I want to describe that shorting a stock with an accounting scandal / fraud isn&amp;rsquo;t always the best option. Sometimes this can be a chance for a long position.&lt;/p&gt;
 &lt;h1 id=&#34;the-wirecard-scandal&#34;&gt;The Wirecard Scandal&lt;/h1&gt;
@@ -1265,10 +1372,18 @@ That process is still ongoing and Steinhoff still exists. Why? Because they simp
       <pubDate>Fri, 23 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/delete-and-resync-a-crypto-wallet-on-your-server/</guid>
-      <description>I stake a Cryptocurrency based of Peercoin on a Server since years. Multiple months ago this stopped because of the following error:
-Coind: kernel.cpp:372: unsigned int GetStakeModifierChecksum(const CBlockIndex*): Assertion `pindex-&amp;gt;pprev || pindex-&amp;gt;GetBlockHash() == (!fTestNet ? hashGenesisBlock : hashGenesisBlockTestNet)&#39; failed. This Error often comes when your Blockchain is corrupted. The cause of my problem was an unexpected downtime.
-To fix this:
-Stop the Daemon Backup the Folder of the Coin Delete everything except wallet.</description>
+      <description>&lt;p&gt;I stake a Cryptocurrency based of Peercoin on a Server since years. Multiple months ago this stopped because of the following error:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Coind: kernel.cpp:372: unsigned int GetStakeModifierChecksum(const CBlockIndex*): Assertion `pindex-&amp;gt;pprev || pindex-&amp;gt;GetBlockHash() == (!fTestNet ? hashGenesisBlock : hashGenesisBlockTestNet)&#39; failed.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This Error often comes when your Blockchain is corrupted. The cause of my problem was an unexpected downtime.&lt;/p&gt;
+&lt;p&gt;To fix this:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Stop the Daemon&lt;/li&gt;
+&lt;li&gt;Backup the Folder of the Coin&lt;/li&gt;
+&lt;li&gt;Delete everything except wallet.dat, peers.dat and *.conf&lt;/li&gt;
+&lt;li&gt;Start the Daemon again (&lt;code&gt;/path/to/coin/src/Coind -daemon -datadir=/path/to/coin/folder/&lt;/code&gt;)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I also published a German blog post about &lt;a href=&#34;https://blog.wronnay.net/altcoins-vom-source-code-kompilieren/&#34;&gt;compiling AltCoins&lt;/a&gt;.&lt;/p&gt;</description>
       <content>&lt;p&gt;I stake a Cryptocurrency based of Peercoin on a Server since years. Multiple months ago this stopped because of the following error:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;Coind: kernel.cpp:372: unsigned int GetStakeModifierChecksum(const CBlockIndex*): Assertion `pindex-&amp;gt;pprev || pindex-&amp;gt;GetBlockHash() == (!fTestNet ? hashGenesisBlock : hashGenesisBlockTestNet)&#39; failed.
 &lt;/code&gt;&lt;/pre&gt;
@@ -1290,9 +1405,9 @@ Stop the Daemon Backup the Folder of the Coin Delete everything except wallet.</
       <pubDate>Tue, 23 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/the-problem-with-odoo/</guid>
-      <description>The history with Odoo started with TinyERP / OpenERP which was a free ERP System. This was a great idea and pioneered the open source ERP environment.
-But in the last years the name and the vision changed. Now Odoo provides besides the ERP part also a CRM, CMS, Blogs, Forums, E-commerce (Online-Shops), Timesheet, Project Management, Inventory Management, Recruitment, Spreadsheet, Documents, Email Marketing&amp;hellip;
-So in short: Odoo changed from a focus on ERP to an all-in-one solution which seems to cover nearly every application a business needs.</description>
+      <description>&lt;p&gt;The history with Odoo started with TinyERP / OpenERP which was a free ERP System. This was a great idea and pioneered the open source ERP environment.&lt;/p&gt;
+&lt;p&gt;But in the last years the name and the vision changed. Now Odoo provides besides the ERP part also a CRM, CMS, Blogs, Forums, E-commerce (Online-Shops), Timesheet, Project Management, Inventory Management, Recruitment, Spreadsheet, Documents, Email Marketing&amp;hellip;&lt;/p&gt;
+&lt;p&gt;So in short: Odoo changed from a focus on ERP to an all-in-one solution which seems to cover nearly every application a business needs. And the bad part is Odoo got money from investors for this stupid idea.&lt;/p&gt;</description>
       <content>&lt;p&gt;The history with Odoo started with TinyERP / OpenERP which was a free ERP System. This was a great idea and pioneered the open source ERP environment.&lt;/p&gt;
 &lt;p&gt;But in the last years the name and the vision changed. Now Odoo provides besides the ERP part also a CRM, CMS, Blogs, Forums, E-commerce (Online-Shops), Timesheet, Project Management, Inventory Management, Recruitment, Spreadsheet, Documents, Email Marketing&amp;hellip;&lt;/p&gt;
 &lt;p&gt;So in short: Odoo changed from a focus on ERP to an all-in-one solution which seems to cover nearly every application a business needs. And the bad part is Odoo got money from investors for this stupid idea.&lt;/p&gt;
@@ -1341,8 +1456,9 @@ So this would be perfect for connecting other applications to it. (As a sidenote
       <pubDate>Sun, 14 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/analyzing-the-profitability-of-gtld-registry-operators/</guid>
-      <description>I am a very big DNS nerd and have always registered new domains for my projects before I even made the concept of my new ideas. We had tests about the Domain Name System at my professional school and I can&amp;rsquo;t remember I ever not scored the highest&amp;hellip;
-So as someone who currently pays for 33 domains a year of which all are for private projects and none generates money I had an idea for a new gTLD which I wanted to operate.</description>
+      <description>&lt;p&gt;I am a very big DNS nerd and have always registered new domains for my projects before I even made the concept of my new ideas.
+We had tests about the Domain Name System at my professional school and I can&amp;rsquo;t remember I ever not scored the highest&amp;hellip;&lt;/p&gt;
+&lt;p&gt;So as someone who currently pays for 33 domains a year of which all are for private projects and none generates money I had an idea for a new gTLD which I wanted to operate.&lt;/p&gt;</description>
       <content>&lt;p&gt;I am a very big DNS nerd and have always registered new domains for my projects before I even made the concept of my new ideas.
 We had tests about the Domain Name System at my professional school and I can&amp;rsquo;t remember I ever not scored the highest&amp;hellip;&lt;/p&gt;
 &lt;p&gt;So as someone who currently pays for 33 domains a year of which all are for private projects and none generates money I had an idea for a new gTLD which I wanted to operate.&lt;/p&gt;
@@ -1393,9 +1509,9 @@ As a modern investor there are tons of other opportunities which pay dividends, 
       <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/the-workhorse-group-story/</guid>
-      <description>The Workhorse Group Incorporated is a EV company which primarily produces delivery vans and got lately popular with a rising share price because it was viewed as one of the possible winners of an 8 billion USPS contract to replace old delivery vans.
-This contract busted, however I started writing this article before the deal busted - so don&amp;rsquo;t be surprised by the high numbers.
-I owned this stock for several years and wanna display my view of the company in this blog post.</description>
+      <description>&lt;p&gt;The Workhorse Group Incorporated is a EV company which primarily produces delivery vans and got lately popular with a rising share price because it was viewed as one of the possible winners of an 8 billion USPS contract to replace old delivery vans.&lt;/p&gt;
+&lt;p&gt;This contract busted, however I started writing this article before the deal busted - so don&amp;rsquo;t be surprised by the high numbers.&lt;/p&gt;
+&lt;p&gt;I owned this stock for several years and wanna display my view of the company in this blog post.&lt;/p&gt;</description>
       <content>&lt;p&gt;The Workhorse Group Incorporated is a EV company which primarily produces delivery vans and got lately popular with a rising share price because it was viewed as one of the possible winners of an 8 billion USPS contract to replace old delivery vans.&lt;/p&gt;
 &lt;p&gt;This contract busted, however I started writing this article before the deal busted - so don&amp;rsquo;t be surprised by the high numbers.&lt;/p&gt;
 &lt;p&gt;I owned this stock for several years and wanna display my view of the company in this blog post.&lt;/p&gt;
@@ -1429,9 +1545,10 @@ I owned this stock for several years and wanna display my view of the company in
       <pubDate>Fri, 12 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/why-bumble-is-overvalued/</guid>
-      <description>Yesterday Bumble had it&amp;rsquo;s initial public offering (IPO). The starting price was 43 USD, a valuation of more than 8 billion and it shot up to 76 USD, a valuation of over 13 billion.
-Despite this high valuation, the company lastly made a net loss and only a few hundred million ($376.6 million) in revenue.
-The Risk The current market for Tech, EV and Cannabis stocks is in a hype bubble.</description>
+      <description>&lt;p&gt;Yesterday Bumble had it&amp;rsquo;s initial public offering (IPO). The starting price was 43 USD, a valuation of more than 8 billion and it shot up to 76 USD, a valuation of over 13 billion.&lt;/p&gt;
+&lt;p&gt;Despite this high valuation, the company lastly made a net loss and only a few hundred million ($376.6 million) in revenue.&lt;/p&gt;
+&lt;h2 id=&#34;the-risk&#34;&gt;The Risk&lt;/h2&gt;
+&lt;p&gt;The current market for Tech, EV and Cannabis stocks is in a hype bubble. I made profit with some overvalued stocks and currently sell these and rebalance my portfolio with more value stocks.&lt;/p&gt;</description>
       <content>&lt;p&gt;Yesterday Bumble had it&amp;rsquo;s initial public offering (IPO). The starting price was 43 USD, a valuation of more than 8 billion and it shot up to 76 USD, a valuation of over 13 billion.&lt;/p&gt;
 &lt;p&gt;Despite this high valuation, the company lastly made a net loss and only a few hundred million ($376.6 million) in revenue.&lt;/p&gt;
 &lt;h2 id=&#34;the-risk&#34;&gt;The Risk&lt;/h2&gt;
@@ -1480,9 +1597,10 @@ The Risk The current market for Tech, EV and Cannabis stocks is in a hype bubble
       <pubDate>Fri, 05 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/on-the-23andme-and-vgac-merger/</guid>
-      <description>On the 4th February 2021 23andMe and VG Acquisition Corp announced that they will merge, bringing 23andMe into the public.
-As VGAC is already tradable in the public market, the shares have skyrocketed to 19 USD. But this is crazy&amp;hellip;
-Why this is crazy? First you should know that the initiators of a SPAC commonly have additional rights to e.g. buy additional shares. They also mostly pay 10 USD per share.</description>
+      <description>&lt;p&gt;On the 4th February 2021 23andMe and VG Acquisition Corp announced that they will merge, bringing 23andMe into the public.&lt;/p&gt;
+&lt;p&gt;As VGAC is already tradable in the public market, the shares have skyrocketed to 19 USD. But this is crazy&amp;hellip;&lt;/p&gt;
+&lt;h2 id=&#34;why-this-is-crazy&#34;&gt;Why this is crazy?&lt;/h2&gt;
+&lt;p&gt;First you should know that the initiators of a SPAC commonly have additional rights to e.g. buy additional shares. They also mostly pay 10 USD per share. I don&amp;rsquo;t go more into detail here, but I want to talk about the shareholders which buy VGAC at the current 19 USD price WITHOUT additional rights like the initiators.&lt;/p&gt;</description>
       <content>&lt;p&gt;On the 4th February 2021 23andMe and VG Acquisition Corp announced that they will merge, bringing 23andMe into the public.&lt;/p&gt;
 &lt;p&gt;As VGAC is already tradable in the public market, the shares have skyrocketed to 19 USD. But this is crazy&amp;hellip;&lt;/p&gt;
 &lt;h2 id=&#34;why-this-is-crazy&#34;&gt;Why this is crazy?&lt;/h2&gt;
@@ -1507,9 +1625,10 @@ Why this is crazy? First you should know that the initiators of a SPAC commonly 
       <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/apple-environmental-friendly/</guid>
-      <description>Why Apple Products aren&amp;rsquo;t as environmentally problematic as many believe. Apple bashing is popular these days. Louis Rossmann, Hugh Jeffreys and others are talking about repair issues on YouTube, Mark Zuckerberg sees Apple as an unfair competitor and Xiaomi mocks Apple for Not Including Charger and then does the same.
-So in this world where Apple bashing is popular I wanna tell you my opinion.
-I bought my first new Apple Products this year (primarily caused by the impressive performance of the M1), but I already have used used Apple Devices for a longer period.</description>
+      <description>&lt;h2 id=&#34;why-apple-products-arent-as-environmentally-problematic-as-many-believe&#34;&gt;Why Apple Products aren&amp;rsquo;t as environmentally problematic as many believe.&lt;/h2&gt;
+&lt;p&gt;Apple bashing is popular these days. &lt;a href=&#34;https://www.youtube.com/user/rossmanngroup&#34;&gt;Louis Rossmann&lt;/a&gt;, &lt;a href=&#34;https://www.youtube.com/user/hughydo&#34;&gt;Hugh Jeffreys&lt;/a&gt; and others are talking about repair issues on YouTube, Mark Zuckerberg sees Apple as an &lt;a href=&#34;https://www.bloomberg.com/news/articles/2021-01-28/facebook-ceo-ramps-up-apple-attack-weighs-antitrust-suit&#34;&gt;unfair competitor&lt;/a&gt; and &lt;a href=&#34;https://gizmodo.com/xiaomi-made-fun-of-apple-for-not-including-charger-in-b-1845954366&#34;&gt;Xiaomi mocks Apple&lt;/a&gt; for Not Including Charger and then does the same.&lt;/p&gt;
+&lt;p&gt;So in this world where Apple bashing is popular I wanna tell you my opinion.&lt;/p&gt;
+&lt;p&gt;I bought my first new Apple Products this year (primarily caused by the impressive performance of the M1), but I already have used used Apple Devices for a longer period.&lt;/p&gt;</description>
       <content>&lt;h2 id=&#34;why-apple-products-arent-as-environmentally-problematic-as-many-believe&#34;&gt;Why Apple Products aren&amp;rsquo;t as environmentally problematic as many believe.&lt;/h2&gt;
 &lt;p&gt;Apple bashing is popular these days. &lt;a href=&#34;https://www.youtube.com/user/rossmanngroup&#34;&gt;Louis Rossmann&lt;/a&gt;, &lt;a href=&#34;https://www.youtube.com/user/hughydo&#34;&gt;Hugh Jeffreys&lt;/a&gt; and others are talking about repair issues on YouTube, Mark Zuckerberg sees Apple as an &lt;a href=&#34;https://www.bloomberg.com/news/articles/2021-01-28/facebook-ceo-ramps-up-apple-attack-weighs-antitrust-suit&#34;&gt;unfair competitor&lt;/a&gt; and &lt;a href=&#34;https://gizmodo.com/xiaomi-made-fun-of-apple-for-not-including-charger-in-b-1845954366&#34;&gt;Xiaomi mocks Apple&lt;/a&gt; for Not Including Charger and then does the same.&lt;/p&gt;
 &lt;p&gt;So in this world where Apple bashing is popular I wanna tell you my opinion.&lt;/p&gt;
@@ -1570,10 +1689,11 @@ I bought my first new Apple Products this year (primarily caused by the impressi
       <pubDate>Tue, 24 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/comparison-of-email-hosting-possibilities/</guid>
-      <description>I&amp;rsquo;ve hosted my own Mailserver in various configurations since more than 6 years now. Since then I&amp;rsquo;ve taken multiple breaks from hosting it myself and explored other solutions for hosting emails with your own domain names.
-Because my own Mailserver has lately problems (downtimes) I wanna explore other possibilities of hosting my email addresses.
-So let&amp;rsquo;s take a look&amp;hellip;
-Self-hosting (VPS, Tools like Mailcow, Mailu, etc) You simply setup a Mailserver with software like Mailcow, Mailu or Mail-in-a-Box on a virtual Server and manage it yourself.</description>
+      <description>&lt;p&gt;I&amp;rsquo;ve hosted my own Mailserver in various configurations since more than 6 years now. Since then I&amp;rsquo;ve taken multiple breaks from hosting it myself and explored other solutions for hosting emails with your own domain names.&lt;/p&gt;
+&lt;p&gt;Because my own Mailserver has lately problems (downtimes) I wanna explore other possibilities of hosting my email addresses.&lt;/p&gt;
+&lt;p&gt;So let&amp;rsquo;s take a look&amp;hellip;&lt;/p&gt;
+&lt;h2 id=&#34;self-hosting-vps-tools-like-mailcow-mailu-etc&#34;&gt;Self-hosting (VPS, Tools like Mailcow, Mailu, etc)&lt;/h2&gt;
+&lt;p&gt;You simply setup a Mailserver with software like Mailcow, Mailu or Mail-in-a-Box on a virtual Server and manage it yourself.&lt;/p&gt;</description>
       <content>&lt;p&gt;I&amp;rsquo;ve hosted my own Mailserver in various configurations since more than 6 years now. Since then I&amp;rsquo;ve taken multiple breaks from hosting it myself and explored other solutions for hosting emails with your own domain names.&lt;/p&gt;
 &lt;p&gt;Because my own Mailserver has lately problems (downtimes) I wanna explore other possibilities of hosting my email addresses.&lt;/p&gt;
 &lt;p&gt;So let&amp;rsquo;s take a look&amp;hellip;&lt;/p&gt;
@@ -1632,9 +1752,9 @@ Self-hosting (VPS, Tools like Mailcow, Mailu, etc) You simply setup a Mailserver
       <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/fighting-tinderplusplus-malware/</guid>
-      <description>People who search for love are more vulnerable than happy couples. Especially people who lost their Tinder Account because Tinder has banned them.
-There is a malware out there which targets exactly this kind of people. If you search for &amp;ldquo;unban tinder&amp;rdquo; on Google and or YouTube you find many videos and sites which recommend the &amp;ldquo;Tinder++&amp;rdquo; App.
-Tinder++ aims to bring you free Tinder Gold and unban your Account. People on sites and videos which recommend the App talk that the Tinder ban is only per Device and they found a way to get around this ban.</description>
+      <description>&lt;p&gt;People who search for love are more vulnerable than happy couples. Especially people who lost their Tinder Account because Tinder has banned them.&lt;/p&gt;
+&lt;p&gt;There is a malware out there which targets exactly this kind of people. If you search for &amp;ldquo;unban tinder&amp;rdquo; on Google and or YouTube you find many videos and sites which recommend the &amp;ldquo;Tinder++&amp;rdquo; App.&lt;/p&gt;
+&lt;p&gt;Tinder++ aims to bring you free Tinder Gold and unban your Account. People on sites and videos which recommend the App talk that the Tinder ban is only per Device and they found a way to get around this ban.&lt;/p&gt;</description>
       <content>&lt;p&gt;People who search for love are more vulnerable than happy couples. Especially people who lost their Tinder Account because Tinder has banned them.&lt;/p&gt;
 &lt;p&gt;There is a malware out there which targets exactly this kind of people. If you search for &amp;ldquo;unban tinder&amp;rdquo; on Google and or YouTube you find many videos and sites which recommend the &amp;ldquo;Tinder++&amp;rdquo; App.&lt;/p&gt;
 &lt;p&gt;Tinder++ aims to bring you free Tinder Gold and unban your Account. People on sites and videos which recommend the App talk that the Tinder ban is only per Device and they found a way to get around this ban.&lt;/p&gt;
@@ -1682,9 +1802,10 @@ Tinder++ aims to bring you free Tinder Gold and unban your Account. People on si
       <pubDate>Tue, 25 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/switching-to-hugo/</guid>
-      <description>Moving to Hugo I started this blog as my first blog using a static website generator. Back then I used what everyone else was using: Jekyll.
-But Jekyll has it problems. I don&amp;rsquo;t use Ruby for anything else and the management of the dependencies / ruby versions / etc of my static blog was too much for me.
-I blog way more often in german on my other WordPress sites and one of the main reasons is that it is easier and Jekyll wasn&amp;rsquo;t as easy as I expected.</description>
+      <description>&lt;h2 id=&#34;moving-to-hugo&#34;&gt;Moving to Hugo&lt;/h2&gt;
+&lt;p&gt;I started this blog as my first blog using a static website generator. Back then I used what everyone else was using: Jekyll.&lt;/p&gt;
+&lt;p&gt;But Jekyll has it problems. I don&amp;rsquo;t use Ruby for anything else and the management of the dependencies / ruby versions / etc of my &lt;strong&gt;static&lt;/strong&gt; blog was too much for me.&lt;/p&gt;
+&lt;p&gt;I blog way more often in german on my other WordPress sites and one of the main reasons is that it is easier and Jekyll wasn&amp;rsquo;t as easy as I expected.&lt;/p&gt;</description>
       <content>&lt;h2 id=&#34;moving-to-hugo&#34;&gt;Moving to Hugo&lt;/h2&gt;
 &lt;p&gt;I started this blog as my first blog using a static website generator. Back then I used what everyone else was using: Jekyll.&lt;/p&gt;
 &lt;p&gt;But Jekyll has it problems. I don&amp;rsquo;t use Ruby for anything else and the management of the dependencies / ruby versions / etc of my &lt;strong&gt;static&lt;/strong&gt; blog was too much for me.&lt;/p&gt;
@@ -1711,9 +1832,14 @@ I blog way more often in german on my other WordPress sites and one of the main 
       <pubDate>Fri, 22 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/bash/script/python/linux/2020/05/22/forget-bash-take-python.html</guid>
-      <description>I wrote bash scripts for several years now. You can find old bash scripts of mine on GitHub but most of them aren&amp;rsquo;t maintained anymore - and I have a reason for that.
-But before I give you my reasons for not using many bash scripts anymore, lets look at the benefits of bash:
-It super easy and you basically already can it if you write Linux / BSD commands There are frameworks out now which give you advanced features like testing It works out of the box on nearly every Linux / BSD system Okay - sounds good - so what&amp;rsquo;s my problem?</description>
+      <description>&lt;p&gt;I wrote bash scripts for several years now. You can find old bash scripts of mine on GitHub but most of them aren&amp;rsquo;t maintained anymore - and I have a reason for that.&lt;/p&gt;
+&lt;p&gt;But before I give you my reasons for not using many bash scripts anymore, lets look at the benefits of bash:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It super easy and you basically already can it if you write Linux / BSD commands&lt;/li&gt;
+&lt;li&gt;There are frameworks out now which give you advanced features like testing&lt;/li&gt;
+&lt;li&gt;It works out of the box on nearly every Linux / BSD system&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Okay - sounds good - so what&amp;rsquo;s my problem?&lt;/p&gt;</description>
       <content>&lt;p&gt;I wrote bash scripts for several years now. You can find old bash scripts of mine on GitHub but most of them aren&amp;rsquo;t maintained anymore - and I have a reason for that.&lt;/p&gt;
 &lt;p&gt;But before I give you my reasons for not using many bash scripts anymore, lets look at the benefits of bash:&lt;/p&gt;
 &lt;ul&gt;
@@ -1751,9 +1877,9 @@ It super easy and you basically already can it if you write Linux / BSD commands
       <pubDate>Mon, 26 Nov 2018 21:24:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/gitea/update/upgrade/bash/script/2018/11/26/gitea-auto-update-script.html</guid>
-      <description>I&amp;rsquo;m a Gitea user for a long time now. Gitea is a nice application to build your own light and fast version of git hosting services like GitHub or GitLab.
-Gitea has one problem thought. It doesn&amp;rsquo;t update automatically. A issue for that is open nearly 2 years: https://github.com/go-gitea/gitea/issues/518#issuecomment-441742904
-If there is one thing that I really hate, it is that a security sensible web application doesn&amp;rsquo;t update automatically. Because of that I have begun to write a update script for Gitea before 4 months.</description>
+      <description>&lt;p&gt;I&amp;rsquo;m a Gitea user for a long time now. Gitea is a nice application to build your own light and fast version of git hosting services like GitHub or GitLab.&lt;/p&gt;
+&lt;p&gt;Gitea has one problem thought. It doesn&amp;rsquo;t update automatically. A issue for that is open nearly 2 years: &lt;a href=&#34;https://github.com/go-gitea/gitea/issues/518#issuecomment-441742904&#34;&gt;https://github.com/go-gitea/gitea/issues/518#issuecomment-441742904&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If there is one thing that I really hate, it is that a security sensible web application doesn&amp;rsquo;t update automatically. Because of that I have begun to write a update script for Gitea before 4 months.&lt;/p&gt;</description>
       <content>&lt;p&gt;I&amp;rsquo;m a Gitea user for a long time now. Gitea is a nice application to build your own light and fast version of git hosting services like GitHub or GitLab.&lt;/p&gt;
 &lt;p&gt;Gitea has one problem thought. It doesn&amp;rsquo;t update automatically. A issue for that is open nearly 2 years: &lt;a href=&#34;https://github.com/go-gitea/gitea/issues/518#issuecomment-441742904&#34;&gt;https://github.com/go-gitea/gitea/issues/518#issuecomment-441742904&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;If there is one thing that I really hate, it is that a security sensible web application doesn&amp;rsquo;t update automatically. Because of that I have begun to write a update script for Gitea before 4 months.&lt;/p&gt;
@@ -1807,11 +1933,13 @@ logFile=update.log
       <pubDate>Sun, 19 Nov 2017 15:59:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/freebsd/nvidia-driver/installation/2017/11/19/freebsd-nvidia-driver-installation.html</guid>
-      <description>After installing FreeBSD to my workstation, I wanted a desktop environment. I&amp;rsquo;ve installed gnome3 after reading the official documentation https://www.freebsd.org/doc/handbook/x11-wm.html.
-But nothing has worked. So, I installed the nvidia-driver for my two GPUs. The first documentation I&amp;rsquo;ve found is from &amp;ldquo;7.3-RELEASE&amp;rdquo;: https://docs.freebsd.org/doc/7.3-RELEASE/usr/share/doc/en/articles/compiz-fusion/nvidia-setup.html. (I use 11.1-RELEASE)
-Don&amp;rsquo;t use that documentation to make your settings in /boot/loader.conf! There stands:
-nvidia_load=&amp;quot;YES&amp;quot; And that&amp;rsquo;s simply not right for the newest driver!
-You should enter the following line:</description>
+      <description>&lt;p&gt;After installing FreeBSD to my workstation, I wanted a desktop environment. I&amp;rsquo;ve installed gnome3 after reading the official documentation &lt;a href=&#34;https://www.freebsd.org/doc/handbook/x11-wm.html&#34;&gt;https://www.freebsd.org/doc/handbook/x11-wm.html&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;But nothing has worked. So, I installed the nvidia-driver for my two GPUs. The first documentation I&amp;rsquo;ve found is from &amp;ldquo;7.3-RELEASE&amp;rdquo;: &lt;a href=&#34;https://docs.freebsd.org/doc/7.3-RELEASE/usr/share/doc/en/articles/compiz-fusion/nvidia-setup.html&#34;&gt;https://docs.freebsd.org/doc/7.3-RELEASE/usr/share/doc/en/articles/compiz-fusion/nvidia-setup.html&lt;/a&gt;. (I use 11.1-RELEASE)&lt;/p&gt;
+&lt;p&gt;Don&amp;rsquo;t use that documentation to make your settings in &lt;code&gt;/boot/loader.conf&lt;/code&gt;! There stands:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;nvidia_load=&amp;quot;YES&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And that&amp;rsquo;s simply not right for the newest driver!&lt;/p&gt;
+&lt;p&gt;You should enter the following line:&lt;/p&gt;</description>
       <content>&lt;p&gt;After installing FreeBSD to my workstation, I wanted a desktop environment. I&amp;rsquo;ve installed gnome3 after reading the official documentation &lt;a href=&#34;https://www.freebsd.org/doc/handbook/x11-wm.html&#34;&gt;https://www.freebsd.org/doc/handbook/x11-wm.html&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;But nothing has worked. So, I installed the nvidia-driver for my two GPUs. The first documentation I&amp;rsquo;ve found is from &amp;ldquo;7.3-RELEASE&amp;rdquo;: &lt;a href=&#34;https://docs.freebsd.org/doc/7.3-RELEASE/usr/share/doc/en/articles/compiz-fusion/nvidia-setup.html&#34;&gt;https://docs.freebsd.org/doc/7.3-RELEASE/usr/share/doc/en/articles/compiz-fusion/nvidia-setup.html&lt;/a&gt;. (I use 11.1-RELEASE)&lt;/p&gt;
 &lt;p&gt;Don&amp;rsquo;t use that documentation to make your settings in &lt;code&gt;/boot/loader.conf&lt;/code&gt;! There stands:&lt;/p&gt;
@@ -1831,10 +1959,12 @@ You should enter the following line:</description>
       <pubDate>Sun, 19 Nov 2017 15:45:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/freebsd/windows10/dual-boot/2017/11/19/freebsd-windows10-dual-boot.html</guid>
-      <description>Yesterday I have installed FreeBSD alongside to a existing Windows 10 instance on my Workstation. Today, I want to show you how to do it.
-Prerequisites My setup is a SSD with Windows 10 already installed and more than 100 GB free space.
-Procedure Install FreeBSD normally (but pay attention to use the free space for FreeBSD during the partitioning).
-After the install, you can switch to the shell to take final settings.</description>
+      <description>&lt;p&gt;Yesterday I have installed FreeBSD alongside to a existing Windows 10 instance on my Workstation. Today, I want to show you how to do it.&lt;/p&gt;
+&lt;h3 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h3&gt;
+&lt;p&gt;My setup is a SSD with Windows 10 already installed and more than 100 GB free space.&lt;/p&gt;
+&lt;h3 id=&#34;procedure&#34;&gt;Procedure&lt;/h3&gt;
+&lt;p&gt;Install FreeBSD normally (but pay attention to use the free space for FreeBSD during the partitioning).&lt;/p&gt;
+&lt;p&gt;After the install, you can switch to the shell to take final settings. There you can enter the following command:&lt;/p&gt;</description>
       <content>&lt;p&gt;Yesterday I have installed FreeBSD alongside to a existing Windows 10 instance on my Workstation. Today, I want to show you how to do it.&lt;/p&gt;
 &lt;h3 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h3&gt;
 &lt;p&gt;My setup is a SSD with Windows 10 already installed and more than 100 GB free space.&lt;/p&gt;
@@ -1853,9 +1983,21 @@ After the install, you can switch to the shell to take final settings.</descript
       <pubDate>Thu, 16 Nov 2017 16:03:23 +0000</pubDate>
       
       <guid>https://blog.m5e.de/apu2c4/blink/led/2017/11/16/apu2c4-blinks-5-times.html</guid>
-      <description>I bought a APU2C4 Board (from the swiss company &amp;ldquo;PC Engines GmbH&amp;rdquo;) and multiple components because I want to build a custom pfSense router.
-I&amp;rsquo;ve ordered the device several weeks ago and haven&amp;rsquo;t used it until now. That&amp;rsquo;s because I made a few mistakes (which I want to write now):
-First Mistake: I used a power supply with 12V and 2A from china. Visible by: The LED on the back of the device blinks 5 times - then no more again.</description>
+      <description>&lt;p&gt;I bought a APU2C4 Board (from the swiss company &amp;ldquo;PC Engines GmbH&amp;rdquo;) and multiple components because I want to build a custom pfSense router.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve ordered the device several weeks ago and haven&amp;rsquo;t used it until now. That&amp;rsquo;s because I made a few mistakes (which I want to write now):&lt;/p&gt;
+&lt;h2 id=&#34;first&#34;&gt;First&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Mistake: I used a power supply with 12V and 2A from china.&lt;/li&gt;
+&lt;li&gt;Visible by: The LED on the back of the device blinks 5 times - then no more again.&lt;/li&gt;
+&lt;li&gt;Solution: Use a 12V and 3A power supply.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;second&#34;&gt;Second:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Mistake: I used a serial cable with Prolific PL2303 Chip and another serial cable with a Gender Changer.&lt;/li&gt;
+&lt;li&gt;Visible by: I couldn&amp;rsquo;t connect to the device.&lt;/li&gt;
+&lt;li&gt;Solution: Don&amp;rsquo;t use PL2303 Chips and Gender Changer! The following Chips are supported: FTDI / FT232RL and Silicon Labs CP2104&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;By the way: The support of pc-engines is really fast - great customer experience &amp;hellip;&lt;/p&gt;</description>
       <content>&lt;p&gt;I bought a APU2C4 Board (from the swiss company &amp;ldquo;PC Engines GmbH&amp;rdquo;) and multiple components because I want to build a custom pfSense router.&lt;/p&gt;
 &lt;p&gt;I&amp;rsquo;ve ordered the device several weeks ago and haven&amp;rsquo;t used it until now. That&amp;rsquo;s because I made a few mistakes (which I want to write now):&lt;/p&gt;
 &lt;h2 id=&#34;first&#34;&gt;First&lt;/h2&gt;
@@ -1881,9 +2023,9 @@ First Mistake: I used a power supply with 12V and 2A from china. Visible by: The
       <pubDate>Tue, 14 Feb 2017 20:03:23 +0000</pubDate>
       
       <guid>https://blog.m5e.de/jekyll/first/post/2017/02/14/first-try-of-jekyll.html</guid>
-      <description>I&amp;rsquo;ve already using different blog systems like WordPress and Ghost, but this is my try to start a blog in english about personal and development topics with Jekyll.
-Maybe is the domain not my best choice (.de is the domain for germany), but as I haven&amp;rsquo;t any project on it, I will use it.
-I will be using GitHub as hosting service. That will have a few great side effects: you can download my whole blog via git clone, in the same way you could mirror my blog and if you want to notified when a new change happens, you could subscribe my Blog via the &amp;ldquo;Watch&amp;rdquo; Function of GitHub.</description>
+      <description>&lt;p&gt;I&amp;rsquo;ve already using different blog systems like WordPress and Ghost, but this is my try to start a blog in english about personal and development topics with Jekyll.&lt;/p&gt;
+&lt;p&gt;Maybe is the domain not my best choice (.de is the domain for germany), but as I haven&amp;rsquo;t any project on it, I will use it.&lt;/p&gt;
+&lt;p&gt;I will be using GitHub as hosting service. That will have a few great side effects: you can download my whole blog via git clone, in the same way you could mirror my blog and if you want to notified when a new change happens, you could subscribe my Blog via the &amp;ldquo;Watch&amp;rdquo; Function of GitHub.&lt;/p&gt;</description>
       <content>&lt;p&gt;I&amp;rsquo;ve already using different blog systems like WordPress and Ghost, but this is my try to start a blog in english about personal and development topics with Jekyll.&lt;/p&gt;
 &lt;p&gt;Maybe is the domain not my best choice (.de is the domain for germany), but as I haven&amp;rsquo;t any project on it, I will use it.&lt;/p&gt;
 &lt;p&gt;I will be using GitHub as hosting service. That will have a few great side effects: you can download my whole blog via git clone, in the same way you could mirror my blog and if you want to notified when a new change happens, you could subscribe my Blog via the &amp;ldquo;Watch&amp;rdquo; Function of GitHub.&lt;/p&gt;
@@ -1897,14 +2039,18 @@ I will be using GitHub as hosting service. That will have a few great side effec
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/contact/</guid>
-      <description>This is Christoph Daniel Miksche&amp;rsquo;s blog in english. He also offers a german blog at http://christoph.miksche.org.
-Legal Disclosure Information in accordance with section 5 TMG
-Christoph Miksche
-Afrawald 5
-86150 Augsburg
-Contact Telephone: 0156 78156007
-E-Mail: imprint[at]miksche[dot]org
-Disclaimer Accountability for content The contents of our pages have been created with the utmost care. However, we cannot guarantee the contents&amp;rsquo; accuracy, completeness or topicality. According to statutory provisions, we are furthermore responsible for our own content on these web pages.</description>
+      <description>&lt;p&gt;This is Christoph Daniel Miksche&amp;rsquo;s blog in english. He also offers a german blog at &lt;a href=&#34;http://christoph.miksche.org&#34;&gt;http://christoph.miksche.org&lt;/a&gt;.&lt;/p&gt;
+&lt;h1 id=&#34;legal-disclosure&#34;&gt;Legal Disclosure&lt;/h1&gt;
+&lt;p&gt;Information in accordance with section 5 TMG&lt;/p&gt;
+&lt;p&gt;Christoph Miksche&lt;/p&gt;
+&lt;p&gt;Afrawald 5&lt;/p&gt;
+&lt;p&gt;86150 Augsburg&lt;/p&gt;
+&lt;h1 id=&#34;contact&#34;&gt;Contact&lt;/h1&gt;
+&lt;p&gt;Telephone: 0156 78156007&lt;/p&gt;
+&lt;p&gt;E-Mail: imprint[at]miksche[dot]org&lt;/p&gt;
+&lt;h1 id=&#34;disclaimer&#34;&gt;Disclaimer&lt;/h1&gt;
+&lt;h2 id=&#34;accountability-for-content&#34;&gt;Accountability for content&lt;/h2&gt;
+&lt;p&gt;The contents of our pages have been created with the utmost care. However, we cannot guarantee the contents&amp;rsquo; accuracy, completeness or topicality. According to statutory provisions, we are furthermore responsible for our own content on these web pages. In this context, please note that we are accordingly not obliged to monitor merely the transmitted or saved information of third parties, or investigate circumstances pointing to illegal activity. Our obligations to remove or block the use of information under generally applicable laws remain unaffected by this as per §§ 8 to 10 of the Telemedia Act (TMG).&lt;/p&gt;</description>
       <content>&lt;p&gt;This is Christoph Daniel Miksche&amp;rsquo;s blog in english. He also offers a german blog at &lt;a href=&#34;http://christoph.miksche.org&#34;&gt;http://christoph.miksche.org&lt;/a&gt;.&lt;/p&gt;
 &lt;h1 id=&#34;legal-disclosure&#34;&gt;Legal Disclosure&lt;/h1&gt;
 &lt;p&gt;Information in accordance with section 5 TMG&lt;/p&gt;
@@ -1931,8 +2077,9 @@ Disclaimer Accountability for content The contents of our pages have been create
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/uses/</guid>
-      <description>Software I have iSH on my iPhone which makes it possible to do some small changes on the go. Aside from that, my MacBook has macOS and I mostly code in VS Code but also in some JetBrains IDEs like PyCharm.
-My most used computer languages and frameworks include: Angular, React, Vue.js, TypeScript, HTML, CSS, GoLang, Python, Kotlin, Java and Rust but this should not be an CV. (I also have experience with a lot more technologies and systems)</description>
+      <description>&lt;h1 id=&#34;software&#34;&gt;Software&lt;/h1&gt;
+&lt;p&gt;I have &lt;code&gt;iSH&lt;/code&gt; on my iPhone which makes it possible to do some small changes on the go. Aside from that, my MacBook has &lt;code&gt;macOS&lt;/code&gt; and I mostly code in &lt;code&gt;VS Code&lt;/code&gt; but also in some JetBrains IDEs like &lt;code&gt;PyCharm&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;My most used computer languages and frameworks include: &lt;code&gt;Angular&lt;/code&gt;, &lt;code&gt;React&lt;/code&gt;, &lt;code&gt;Vue.js&lt;/code&gt;, &lt;code&gt;TypeScript&lt;/code&gt;, &lt;code&gt;HTML&lt;/code&gt;, &lt;code&gt;CSS&lt;/code&gt;, &lt;code&gt;GoLang&lt;/code&gt;, &lt;code&gt;Python&lt;/code&gt;, &lt;code&gt;Kotlin&lt;/code&gt;, &lt;code&gt;Java&lt;/code&gt; and &lt;code&gt;Rust&lt;/code&gt; but this should not be an CV. (I also have experience with a lot more technologies and systems)&lt;/p&gt;</description>
       <content>&lt;h1 id=&#34;software&#34;&gt;Software&lt;/h1&gt;
 &lt;p&gt;I have &lt;code&gt;iSH&lt;/code&gt; on my iPhone which makes it possible to do some small changes on the go. Aside from that, my MacBook has &lt;code&gt;macOS&lt;/code&gt; and I mostly code in &lt;code&gt;VS Code&lt;/code&gt; but also in some JetBrains IDEs like &lt;code&gt;PyCharm&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;My most used computer languages and frameworks include: &lt;code&gt;Angular&lt;/code&gt;, &lt;code&gt;React&lt;/code&gt;, &lt;code&gt;Vue.js&lt;/code&gt;, &lt;code&gt;TypeScript&lt;/code&gt;, &lt;code&gt;HTML&lt;/code&gt;, &lt;code&gt;CSS&lt;/code&gt;, &lt;code&gt;GoLang&lt;/code&gt;, &lt;code&gt;Python&lt;/code&gt;, &lt;code&gt;Kotlin&lt;/code&gt;, &lt;code&gt;Java&lt;/code&gt; and &lt;code&gt;Rust&lt;/code&gt; but this should not be an CV. (I also have experience with a lot more technologies and systems)&lt;/p&gt;

@@ -13,10 +13,13 @@
       <pubDate>Fri, 23 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/drone-ci-with-podman/</guid>
-      <description>I run Drone CI for a longer period now with Docker. Because I decided to switch for multiple reasons from Docker to Podman, this setup had to be changed a bit.
-In this blog post, I want to cover how to install Podman and how to set up Drone so that it works with Podman.
-Installing Podman Install the podman and podman-docker packages. E.g. on a Debian based System:
-apt install podman podman-docker If you currently use docker-compose, then you should also install podman-compose:</description>
+      <description>&lt;p&gt;I run Drone CI for a longer period now with Docker. Because I decided to switch for multiple reasons from Docker to Podman, this setup had to be changed a bit.&lt;/p&gt;
+&lt;p&gt;In this blog post, I want to cover how to install Podman and how to set up Drone so that it works with Podman.&lt;/p&gt;
+&lt;h2 id=&#34;installing-podman&#34;&gt;Installing Podman&lt;/h2&gt;
+&lt;p&gt;Install the &lt;code&gt;podman&lt;/code&gt; and &lt;code&gt;podman-docker&lt;/code&gt; packages. E.g. on a Debian based System:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;apt install podman podman-docker
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If you currently use &lt;code&gt;docker-compose&lt;/code&gt;, then you should also install &lt;code&gt;podman-compose&lt;/code&gt;:&lt;/p&gt;</description>
       <content>&lt;p&gt;I run Drone CI for a longer period now with Docker. Because I decided to switch for multiple reasons from Docker to Podman, this setup had to be changed a bit.&lt;/p&gt;
 &lt;p&gt;In this blog post, I want to cover how to install Podman and how to set up Drone so that it works with Podman.&lt;/p&gt;
 &lt;h2 id=&#34;installing-podman&#34;&gt;Installing Podman&lt;/h2&gt;
@@ -64,8 +67,9 @@ registries = [&#39;quay.io&#39;, &#39;docker.io&#39;]
       <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/linux-setup-zitadel-with-postgresql/</guid>
-      <description>In this Guide, I want to cover installing ZITADEL with PostgreSQL on a Linux system. Please be aware that PostgreSQL support is still in Beta at the time of this writing, and you will need a PostgreSQL installation with Version 14 or higher.
-NGINX Proxy Create a new subdomain and point it to your server. Use certbot -d domain.name for creating a new SSL Cert. Create a new file in /etc/nginx/sites-available/domainname</description>
+      <description>&lt;p&gt;In this Guide, I want to cover installing ZITADEL with PostgreSQL on a Linux system. Please be aware that PostgreSQL support is still in Beta at the time of this writing, and you will need a PostgreSQL installation with Version 14 or higher.&lt;/p&gt;
+&lt;h2 id=&#34;nginx-proxy&#34;&gt;NGINX Proxy&lt;/h2&gt;
+&lt;p&gt;Create a new subdomain and point it to your server. Use &lt;code&gt;certbot -d domain.name&lt;/code&gt; for creating a new SSL Cert. Create a new file in &lt;code&gt;/etc/nginx/sites-available/domainname&lt;/code&gt;&lt;/p&gt;</description>
       <content>&lt;p&gt;In this Guide, I want to cover installing ZITADEL with PostgreSQL on a Linux system. Please be aware that PostgreSQL support is still in Beta at the time of this writing, and you will need a PostgreSQL installation with Version 14 or higher.&lt;/p&gt;
 &lt;h2 id=&#34;nginx-proxy&#34;&gt;NGINX Proxy&lt;/h2&gt;
 &lt;p&gt;Create a new subdomain and point it to your server. Use &lt;code&gt;certbot -d domain.name&lt;/code&gt; for creating a new SSL Cert. Create a new file in &lt;code&gt;/etc/nginx/sites-available/domainname&lt;/code&gt;&lt;/p&gt;

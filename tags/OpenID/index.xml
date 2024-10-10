@@ -13,9 +13,9 @@
       <pubDate>Sat, 17 Feb 2024 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/manually-migrate-zitadel-with-postgresql/</guid>
-      <description>As you, the reader, found this article, it is likely that you want to manually migrate the ZITADEL PostgreSQL database to a new version.
-Now, normally this step is being done by the zitadel setup command with the --init-projections=true flag but, as we all know since &amp;ldquo;2001: A Space Odyssey&amp;rdquo;, computers can&amp;rsquo;t be trusted - so you are either paranoid or something went terribly wrong.
-For manually updating the database, we should first understand the structure a bit.</description>
+      <description>&lt;p&gt;As you, the reader, found this article, it is likely that you want to manually migrate the ZITADEL PostgreSQL database to a new version.&lt;/p&gt;
+&lt;p&gt;Now, normally this step is being done by the &lt;code&gt;zitadel setup&lt;/code&gt; command with the &lt;code&gt;--init-projections=true&lt;/code&gt; flag but, as we all know since &amp;ldquo;2001: A Space Odyssey&amp;rdquo;, computers can&amp;rsquo;t be trusted - so you are either paranoid or something went terribly wrong.&lt;/p&gt;
+&lt;p&gt;For manually updating the database, we should first understand the structure a bit. So far, the Zitadel Team seems to use versioning for their tables - meaning they create a new table for every change instead of just altering the current table. This leads to some beautifully structured schemas full of tables like &lt;code&gt;users6&lt;/code&gt;, &lt;code&gt;users7&lt;/code&gt; and &lt;code&gt;users8&lt;/code&gt; up to &lt;code&gt;users10&lt;/code&gt;.&lt;/p&gt;</description>
       <content>&lt;p&gt;As you, the reader, found this article, it is likely that you want to manually migrate the ZITADEL PostgreSQL database to a new version.&lt;/p&gt;
 &lt;p&gt;Now, normally this step is being done by the &lt;code&gt;zitadel setup&lt;/code&gt; command with the &lt;code&gt;--init-projections=true&lt;/code&gt; flag but, as we all know since &amp;ldquo;2001: A Space Odyssey&amp;rdquo;, computers can&amp;rsquo;t be trusted - so you are either paranoid or something went terribly wrong.&lt;/p&gt;
 &lt;p&gt;For manually updating the database, we should first understand the structure a bit. So far, the Zitadel Team seems to use versioning for their tables - meaning they create a new table for every change instead of just altering the current table. This leads to some beautifully structured schemas full of tables like &lt;code&gt;users6&lt;/code&gt;, &lt;code&gt;users7&lt;/code&gt; and &lt;code&gt;users8&lt;/code&gt; up to &lt;code&gt;users10&lt;/code&gt;.&lt;/p&gt;
@@ -75,9 +75,9 @@ For manually updating the database, we should first understand the structure a b
       <pubDate>Thu, 22 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/state-of-openid-connect-providers/</guid>
-      <description>In the last days I tried to integrate multiple OpenID Connect Providers into my Applications (currently mostly Alphalerts and some dev projects)
-So far, I only got Google to work, and even this is currently limited to 100 Users. In this blog post, I want to explain why the integration of OpenID Connect Providers is such a struggle by showing multiple examples.
-But before I show the examples, you should know that there are not so many big OpenID Connect Providers compared to the big OAuth2 Providers.</description>
+      <description>&lt;p&gt;In the last days I tried to integrate multiple OpenID Connect Providers into my Applications (currently mostly &lt;a href=&#34;https://alphalerts.com&#34;&gt;Alphalerts&lt;/a&gt; and some dev projects)&lt;/p&gt;
+&lt;p&gt;So far, I only got Google to work, and even this is currently limited to 100 Users. In this blog post, I want to explain why the integration of OpenID Connect Providers is such a struggle by showing multiple examples.&lt;/p&gt;
+&lt;p&gt;But before I show the examples, you should know that there are not so many big OpenID Connect Providers compared to the big OAuth2 Providers. E.g. GitHub offers OAuth2, but is not a OpenID Connect Provider yet.&lt;/p&gt;</description>
       <content>&lt;p&gt;In the last days I tried to integrate multiple OpenID Connect Providers into my Applications (currently mostly &lt;a href=&#34;https://alphalerts.com&#34;&gt;Alphalerts&lt;/a&gt; and some dev projects)&lt;/p&gt;
 &lt;p&gt;So far, I only got Google to work, and even this is currently limited to 100 Users. In this blog post, I want to explain why the integration of OpenID Connect Providers is such a struggle by showing multiple examples.&lt;/p&gt;
 &lt;p&gt;But before I show the examples, you should know that there are not so many big OpenID Connect Providers compared to the big OAuth2 Providers. E.g. GitHub offers OAuth2, but is not a OpenID Connect Provider yet.&lt;/p&gt;
@@ -117,8 +117,9 @@ But before I show the examples, you should know that there are not so many big O
       <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/linux-setup-zitadel-with-postgresql/</guid>
-      <description>In this Guide, I want to cover installing ZITADEL with PostgreSQL on a Linux system. Please be aware that PostgreSQL support is still in Beta at the time of this writing, and you will need a PostgreSQL installation with Version 14 or higher.
-NGINX Proxy Create a new subdomain and point it to your server. Use certbot -d domain.name for creating a new SSL Cert. Create a new file in /etc/nginx/sites-available/domainname</description>
+      <description>&lt;p&gt;In this Guide, I want to cover installing ZITADEL with PostgreSQL on a Linux system. Please be aware that PostgreSQL support is still in Beta at the time of this writing, and you will need a PostgreSQL installation with Version 14 or higher.&lt;/p&gt;
+&lt;h2 id=&#34;nginx-proxy&#34;&gt;NGINX Proxy&lt;/h2&gt;
+&lt;p&gt;Create a new subdomain and point it to your server. Use &lt;code&gt;certbot -d domain.name&lt;/code&gt; for creating a new SSL Cert. Create a new file in &lt;code&gt;/etc/nginx/sites-available/domainname&lt;/code&gt;&lt;/p&gt;</description>
       <content>&lt;p&gt;In this Guide, I want to cover installing ZITADEL with PostgreSQL on a Linux system. Please be aware that PostgreSQL support is still in Beta at the time of this writing, and you will need a PostgreSQL installation with Version 14 or higher.&lt;/p&gt;
 &lt;h2 id=&#34;nginx-proxy&#34;&gt;NGINX Proxy&lt;/h2&gt;
 &lt;p&gt;Create a new subdomain and point it to your server. Use &lt;code&gt;certbot -d domain.name&lt;/code&gt; for creating a new SSL Cert. Create a new file in &lt;code&gt;/etc/nginx/sites-available/domainname&lt;/code&gt;&lt;/p&gt;
@@ -257,8 +258,8 @@ WantedBy=multi-user.target
       <pubDate>Mon, 05 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/open-source-authentication-solutions/</guid>
-      <description>Imagine you run a company and provide multiple web applications for your customers. In the beginning, you probably created a user table and the authentication methods yourself, but from the second application onwards, you will think about using already made open source solutions.
-That&amp;rsquo;s the situation I am in right now. I run multiple web applications, which each have their own auth mechanisms and user tables. This means, a user from App1 can&amp;rsquo;t use App2 unless he creates a new account.</description>
+      <description>&lt;p&gt;Imagine you run a company and provide multiple web applications for your customers. In the beginning, you probably created a user table and the authentication methods yourself, but from the second application onwards, you will think about using already made open source solutions.&lt;/p&gt;
+&lt;p&gt;That&amp;rsquo;s the situation I am in right now. I run multiple web applications, which each have their own auth mechanisms and user tables. This means, a user from App1 can&amp;rsquo;t use App2 unless he creates a new account.&lt;/p&gt;</description>
       <content>&lt;p&gt;Imagine you run a company and provide multiple web applications for your customers. In the beginning, you probably created a user table and the authentication methods yourself, but from the second application onwards, you will think about using already made open source solutions.&lt;/p&gt;
 &lt;p&gt;That&amp;rsquo;s the situation I am in right now. I run multiple web applications, which each have their own auth mechanisms and user tables. This means, a user from App1 can&amp;rsquo;t use App2 unless he creates a new account.&lt;/p&gt;
 &lt;h2 id=&#34;oauth&#34;&gt;OAuth&lt;/h2&gt;

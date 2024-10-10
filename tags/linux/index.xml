@@ -13,8 +13,9 @@
       <pubDate>Mon, 08 Aug 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/the-reason-why-linux-gaming-is-so-limited/</guid>
-      <description>Ever tried Gaming on a Linux system? Even though Linux exists since more than 30 years now, it is still hard to play a Game on it. Most Games don&amp;rsquo;t even publish a release for Linux. That&amp;rsquo;s why projects like Wine exist (Wine provides a compatibility layer so that Linux Users can play Windows Games)
-Why is it like that? For that, we need to understand how a Game works and how a Game Developer thinks.</description>
+      <description>&lt;p&gt;Ever tried Gaming on a Linux system? Even though Linux exists since more than 30 years now, it is still hard to play a Game on it. Most Games don&amp;rsquo;t even publish a release for Linux. That&amp;rsquo;s why projects like Wine exist (Wine provides a compatibility layer so that Linux Users can play Windows Games)&lt;/p&gt;
+&lt;h2 id=&#34;why-is-it-like-that&#34;&gt;Why is it like that?&lt;/h2&gt;
+&lt;p&gt;For that, we need to understand how a Game works and how a Game Developer thinks. Game Developer need to earn money so that they can buy e.g. food. For that, targeting a big Group of Customers is important.&lt;/p&gt;</description>
       <content>&lt;p&gt;Ever tried Gaming on a Linux system? Even though Linux exists since more than 30 years now, it is still hard to play a Game on it. Most Games don&amp;rsquo;t even publish a release for Linux. That&amp;rsquo;s why projects like Wine exist (Wine provides a compatibility layer so that Linux Users can play Windows Games)&lt;/p&gt;
 &lt;h2 id=&#34;why-is-it-like-that&#34;&gt;Why is it like that?&lt;/h2&gt;
 &lt;p&gt;For that, we need to understand how a Game works and how a Game Developer thinks. Game Developer need to earn money so that they can buy e.g. food. For that, targeting a big Group of Customers is important.&lt;/p&gt;
@@ -40,9 +41,14 @@ OpenGL is also Open Source which means every developer can take a look at the co
       <pubDate>Fri, 22 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/bash/script/python/linux/2020/05/22/forget-bash-take-python.html</guid>
-      <description>I wrote bash scripts for several years now. You can find old bash scripts of mine on GitHub but most of them aren&amp;rsquo;t maintained anymore - and I have a reason for that.
-But before I give you my reasons for not using many bash scripts anymore, lets look at the benefits of bash:
-It super easy and you basically already can it if you write Linux / BSD commands There are frameworks out now which give you advanced features like testing It works out of the box on nearly every Linux / BSD system Okay - sounds good - so what&amp;rsquo;s my problem?</description>
+      <description>&lt;p&gt;I wrote bash scripts for several years now. You can find old bash scripts of mine on GitHub but most of them aren&amp;rsquo;t maintained anymore - and I have a reason for that.&lt;/p&gt;
+&lt;p&gt;But before I give you my reasons for not using many bash scripts anymore, lets look at the benefits of bash:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It super easy and you basically already can it if you write Linux / BSD commands&lt;/li&gt;
+&lt;li&gt;There are frameworks out now which give you advanced features like testing&lt;/li&gt;
+&lt;li&gt;It works out of the box on nearly every Linux / BSD system&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Okay - sounds good - so what&amp;rsquo;s my problem?&lt;/p&gt;</description>
       <content>&lt;p&gt;I wrote bash scripts for several years now. You can find old bash scripts of mine on GitHub but most of them aren&amp;rsquo;t maintained anymore - and I have a reason for that.&lt;/p&gt;
 &lt;p&gt;But before I give you my reasons for not using many bash scripts anymore, lets look at the benefits of bash:&lt;/p&gt;
 &lt;ul&gt;

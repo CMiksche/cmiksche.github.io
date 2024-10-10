@@ -13,8 +13,8 @@
       <pubDate>Fri, 10 Dec 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.m5e.de/post/create-fast-new-posts-for-your-hugo-blog/</guid>
-      <description>Static site generators like Hugo, Jekyll or Nuxt are awesome. They provide way faster delivery of your contents to your customers than any PHP solution like WordPress.
-Unfortunately you have to create the Markdown files for your content yourself, but because every single post has a filename, title, date and often tags as well as a status for draft, I created a simple tool which takes care of doing exactly that.</description>
+      <description>&lt;p&gt;Static site generators like Hugo, Jekyll or Nuxt are awesome. They provide way faster delivery of your contents to your customers than any PHP solution like WordPress.&lt;/p&gt;
+&lt;p&gt;Unfortunately you have to create the Markdown files for your content yourself, but because every single post has a filename, title, date and often tags as well as a status for draft, I created a simple tool which takes care of doing exactly that.&lt;/p&gt;</description>
       <content>&lt;p&gt;Static site generators like Hugo, Jekyll or Nuxt are awesome. They provide way faster delivery of your contents to your customers than any PHP solution like WordPress.&lt;/p&gt;
 &lt;p&gt;Unfortunately you have to create the Markdown files for your content yourself, but because every single post has a filename, title, date and often tags as well as a status for draft, I created a simple tool which takes care of doing exactly that.&lt;/p&gt;
 &lt;p&gt;Just enter &lt;code&gt;np The Title of your blog post&lt;/code&gt; and &lt;code&gt;np&lt;/code&gt; will create a file inside the content/post directory with your Title, date, draft status (default: true) and tags which are simply the words in your title.&lt;/p&gt;
