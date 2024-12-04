@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>I hate `apt` :: M5E&#39;s Blog</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Let me start this post by writing how much I thank the Ubuntu, Debian and therefore also the apt ecosystem to be there in my life. It was there when I operated VPS back in 2010, it excited me in 2013 when I used Ubuntu as my main Desktop Operating System, and therefore it prepared my path to become a Software Developer and Founder before I even earned my first dime.
+" />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="https://blog.m5e.de/post/i-hate-apt/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/buttons.min.2bc533403a27dfe0e93105a92502b42ce4587e2e4a87d9f7d349e51e16e09478.css">
+
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/code.min.00125962708925857e7b66dbc58391d55be1191a3d0ce2034de8c9cd2c481c36.css">
+
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/fonts.min.90c955c31dd7c0e05aae3d4f583d4d8a2af799d69c961337eaf2a825063a55dd.css">
+
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/footer.min.2e3eb191baee58dd05a9f0104ac1fab0827bca7c64dafe0b2579f934c33a1d69.css">
+
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/header.min.b6fb4423cf82a9f9d7abc9cd010223fa3d70a6526a3f28f8e17d814c06e18f9e.css">
+
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/main.min.1d8be2dd1b5de9fdaed058c8c59fcf4485f36619574abfb47ed0cfda4812c16d.css">
+
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/menu.min.83637a90d903026bc280d3f82f96ceb06c5fc72b7c1a8d686afb5bbf818a29f7.css">
+
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/pagination.min.82f6400eae7c7c6dc3c866733c2ec0579e4089608fea69400ff85b3880aa0d3c.css">
+
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/post.min.fc74ca360273c1d828da3c02b8174eba435607b369d98418ccc6f2243cd4e75d.css">
+
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/prism.min.9023bbc24533d09e97a51a0a42a5a7bfe4c591ae167c5551fb1d2191d11977c0.css">
+
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/syntax.min.cc789ed9377260d7949ea4c18781fc58959a89287210fe4edbff44ebfc1511b6.css">
+
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/terminal.min.736caf886baa67df630c4cde30fbdc5115122eb74c6246f15a31401344bfa2f0.css">
+
+  
+  <link rel="stylesheet" href="https://blog.m5e.de/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+
+
+<link rel="stylesheet" href="https://blog.m5e.de/style.css">
+
+
+<link rel="shortcut icon" href="https://blog.m5e.de/favicon.png">
+<link rel="apple-touch-icon" href="https://blog.m5e.de/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="CMiksche" />
+  
+    <meta name="twitter:creator" content="" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="I hate `apt`">
+<meta property="og:description" content="Let me start this post by writing how much I thank the Ubuntu, Debian and therefore also the apt ecosystem to be there in my life. It was there when I operated VPS back in 2010, it excited me in 2013 when I used Ubuntu as my main Desktop Operating System, and therefore it prepared my path to become a Software Developer and Founder before I even earned my first dime.
+" />
+<meta property="og:url" content="https://blog.m5e.de/post/i-hate-apt/" />
+<meta property="og:site_name" content="M5E&#39;s Blog" />
+
+  <meta property="og:image" content="https://blog.m5e.de/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2024-12-03 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+<script async src="https://a.chapati.systems/script.js" data-website-id="3e433b5d-32c7-4c9a-b9f5-fd81120a30fb"></script>
+<link href="/css/fontawesome.css" rel="stylesheet">
+<link href="/css/brands.css" rel="stylesheet">
+<link href="/css/solid.css" rel="stylesheet">
+
+
+</head>
+<body>
+
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    M5E&#39;s Blog
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="https://github.com/cmiksche">GitHub</a></li>
+        
+      
+        
+          <li><a href="https://twitter.com/cmiksche">Twitter</a></li>
+        
+      
+        
+          <li><a href="https://mastodon.social/@cmiksche">Mastodon</a></li>
+        
+      
+        
+          <li><a href="https://linkedin.com/in/cmiksche/">LinkedIn</a></li>
+        
+      
+        
+          <li><a href="https://www.instagram.com/cmiksche/">Instagram</a></li>
+        
+      
+        
+          <li><a href="/">Home</a></li>
+        
+      
+        
+          <li><a href="/uses">Uses</a></li>
+        
+      
+        
+          <li><a href="/contact">Contact &amp; Imprint</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          
+          <li><a href="https://github.com/cmiksche"><i class="fab fa-github"></i></a></li>
+          
+        
+      
+        
+          
+          <li><a href="https://twitter.com/cmiksche"><i class="fab fa-x-twitter"></i></a></li>
+          
+        
+      
+        
+          
+          <li><a href="https://mastodon.social/@cmiksche"><i class="fab fa-mastodon"></i></a></li>
+          
+        
+      
+        
+          
+          <li><a href="https://linkedin.com/in/cmiksche/"><i class="fab fa-linkedin"></i></a></li>
+          
+        
+      
+        
+          
+          <li><a href="https://www.instagram.com/cmiksche/"><i class="fab fa-instagram"></i></a></li>
+          
+        
+      
+        
+          
+            <li><a href="/" >Home</a></li>
+          
+        
+      
+        
+          
+            <li><a href="/uses" >Uses</a></li>
+          
+        
+      
+        
+          
+            <li><a href="/contact" >Contact &amp; Imprint</a></li>
+          
+        
+      
+      
+    
+  </ul>
+</nav>
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="https://blog.m5e.de/post/i-hate-apt/">I hate <code>apt</code></a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2024-12-03</time></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="https://blog.m5e.de/tags/hate/">hate</a>&nbsp;
+      
+      #<a href="https://blog.m5e.de/tags/apt/">apt</a>&nbsp;
+      
+      #<a href="https://blog.m5e.de/tags/Ubuntu/">Ubuntu</a>&nbsp;
+      
+      #<a href="https://blog.m5e.de/tags/Debian/">Debian</a>&nbsp;
+      
+      #<a href="https://blog.m5e.de/tags/NixOS/">NixOS</a>&nbsp;
+      
+      #<a href="https://blog.m5e.de/tags/Nix/">Nix</a>&nbsp;
+      
+      #<a href="https://blog.m5e.de/tags/Arch-Linux/">Arch Linux</a>&nbsp;
+      
+      #<a href="https://blog.m5e.de/tags/pacman/">pacman</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p>Let me start this post by writing how much I thank the <code>Ubuntu</code>, <code>Debian</code> and therefore also the <code>apt</code> ecosystem to be there in my life.
+It was there when I operated VPS back in 2010, it excited me in <a href="https://blog.wronnay.net/umstellung-auf-ubuntu/">2013</a> when I used Ubuntu as my main Desktop Operating System, and therefore it prepared my path to become a Software Developer and Founder before I even earned my first dime.</p>
+<p>But with time you learn more. In my case I learned how other operating systems deal with package management and compared to that and recent events in my life, <code>apt</code> seems to have the worst UX I encountered.</p>
+<blockquote>
+<p><code>apt</code> is the <code>npm</code> of the OS world</p>
+</blockquote>
+<p>I would say, because <code>apt</code> is popular and everywhere, but one of the worst package managers you could choose. This is even unfair to <code>npm</code> because in my eyes <code>npm</code> is not as bad as people say, and the bigger problem is the culture around creating and using packages in the Node ecosystem. (But I still like <code>bun</code> more)</p>
+<h2 id="why-i-hate-it">Why I hate it?<a href="#why-i-hate-it" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>Well, let me tell you about my most recent problems with <code>apt</code> and <code>Ubuntu</code>:</p>
+<h3 id="ubuntu-server-upgrade">Ubuntu Server Upgrade<a href="#ubuntu-server-upgrade" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>I upgraded an Ubuntu Server from the last to the most recent LTS version. After rebooting I had to use the recovery console from my Cloud Provider because Ubuntu removed <code>ufw</code> for some reason and that caused the SSH port to be blocked.</p>
+<p>Thankfully my <code>ufw</code> configuration was still there, but many other configurations were broken, and I had to fix various software systems to get everything up and running again. (E.g. Python (had to reinstall all dependencies for my projects), PHP (some extensions like <code>php-dom</code> were missing and configurations broken), &hellip;)</p>
+<h3 id="ubuntu-desktop-lts-upgrade">Ubuntu Desktop LTS Upgrade<a href="#ubuntu-desktop-lts-upgrade" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>My girlfriend upgraded her Ubuntu Laptop from the last to the most recent LTS version. It not only removed her whole desktop environment (<code>Unity</code>) and blocked us to reinstall it (so we installed <code>XFCE</code>) but it also created tons of package conflicts which we were only able to resolve by manually downloading and installing the packages (because e.g. packages did depend on other packages which were not there in both LTS sources).</p>
+<p>Pointing the sources to the last or the newest version didn&rsquo;t solve it, tons of other ways also didn&rsquo;t solve it. We are left with a half-broken system because the Upgrade stopped in the middle due to some random error.</p>
+<h3 id="armbian-package-conflict">Armbian Package Conflict<a href="#armbian-package-conflict" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>This is by far the most annoying problem I faced recently. Because the firmware for my WiFi-Adapter wasn&rsquo;t there in the sources for my version, I manually installed it.</p>
+<p>This created a package conflict between my manually installed firmware package and the <code>armbian-firmware</code> package. The conflict is there because <code>armbian-firmware</code> says it replaces my manually installed firmware.
+<code>armbian-firmware</code>, in fact, does not replace my manual firmware (otherwise I wouldn&rsquo;t have installed it) but that is not the annoying part.</p>
+<p>Because of this conflict, I can&rsquo;t upgrade anything. I can&rsquo;t even run <code>apt purge nodejs</code> to uninstall NodeJS!</p>
+<p>I tried holding the packages back (<code>apt hold ...</code>), using <code>dpkg</code> or <code>aptitude</code> and other ways to get around it but <code>apt</code> doesn&rsquo;t let me do anything until I solve the conflict which doesn&rsquo;t even create any fucking problem.</p>
+<p>Why the hell am I not allowed to uninstall NodeJS when some random package maintainer accidentally made one single wrong package definition?!</p>
+<p><code>apt</code> behaves like a serial string of lights where when one light doesn&rsquo;t work the rest also fails. It doesn&rsquo;t make any sense.</p>
+<h3 id="freshness-of-packages">Freshness of Packages<a href="#freshness-of-packages" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>I replaced Docker with Podman some years ago. Since then, I maintain Podman on a VPS with an older Ubuntu LTS Version.</p>
+<p>The age of the Podman version available via the sources makes it unable to use it - because of this I wrote scripts to manually build a fresh version of Podman from source.</p>
+<p>Podman isn&rsquo;t the only package where I basically build my own package management system because Ubuntu only provides stone-age versions of Software, but Podman is a very extreme example because since the version provided in the sources, Podman has changed its network stack to what feels like 5 times.</p>
+<h2 id="but-who-does-it-better">But who does it better?<a href="#but-who-does-it-better" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>Good question. Let me give you some examples.</p>
+<h3 id="package-conflicts">Package Conflicts<a href="#package-conflicts" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>My package conflict Issue wouldn&rsquo;t even cost me seconds with Arch Linux. There <a href="https://blog.wronnay.net/arch-linux-paket-ignorieren/">I know</a> I could just ignore it like:</p>
+<pre tabindex="0"><code>sudo pacman -Syu --ignore=armbian-firmware
+</code></pre><p>Why isn&rsquo;t this a thing in <code>apt</code>? Why does one conflict mean I can&rsquo;t even remove totally unrelated packages?!</p>
+<h3 id="upgrade-problems">Upgrade Problems<a href="#upgrade-problems" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Both LTS upgrade problems my girlfriend and I faced wouldn&rsquo;t have been a topic with <code>NixOS</code>. Every package would have been specified in a <code>configuration.nix</code> and every configuration change would have created a new entry in the boot menu.</p>
+<p>So we could have just rolled back to a previous version, and we would also easily see which config change would have cause which problem.</p>
+<p>I would also argue that the rolling-release way of e.g. Arch Linux also softens these issues because you don&rsquo;t have so many bigger upgrades but small, easier manageable updates instead.</p>
+<h3 id="fresh-packages">Fresh Packages<a href="#fresh-packages" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p><code>NixOS</code> and Arch Linux have way fresher packages and I could easily add packages thanks to things like the <code>AUR</code>. Ubuntu and Debian have a stability mentality in which only old packages seem to qualify.</p>
+<h2 id="summary">Summary<a href="#summary" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p><code>apt</code> was an important part of my life and in becoming more interested in the Linux ecosystem but compared to alternatives it has one of the worst user experiences you could have.</p>
+<p>For somebody which is too deep in the Debian / Ubuntu world this could be hard to understand, and I hope I can encourage people to try out the alternatives like <code>nix</code> in <code>NixOS</code> and <code>pacman</code> in <code>Arch Linux</code>.</p>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+  <div class="pagination__title">
+    <span class="pagination__title-h">Read other posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+    
+    
+      <a href="https://blog.m5e.de/post/keeping-your-dotfiles-in-sync-and-your-secrets-in-gopass/" class="button inline next">
+        Keeping your Dotfiles in Sync and your Secrets in Gopass
+      </a>
+    
+  </div>
+</div>
+
+
+  
+
+  
+    <div>
+  <h2>Advertisement</h2>
+  <div id="ana-container"></div>
+</div>
+
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2024 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+<script>
+    const adContainer = document.getElementById('ana-container');
+    const url = 'https://api.anaads.de/s/BVP6CQ==';
+    
+     
+    fetch(url)
+      .then(response => response.json())
+      .then(adData => {
+        
+        const adElement = document.createElement('div');
+        adElement.classList.add('ana'); 
+    
+         
+        const titleElement = document.createElement('span');
+        const titleLink = document.createElement('a');
+        titleLink.href = adData.url;
+        titleLink.textContent = adData.title;
+        titleElement.className = "ana-title"
+        titleElement.appendChild(titleLink);
+        adElement.appendChild(titleElement);
+    
+         
+        const textElement = document.createElement('span');
+        const textLink = document.createElement('a');
+        textLink.href = adData.url;
+        textLink.textContent = adData.text;
+        textElement.className = "ana-text"
+        textElement.appendChild(textLink);
+        adElement.appendChild(textElement);
+    
+         
+        adContainer.appendChild(adElement);
+      })
+      .catch(error => console.error(error));
+</script>
+
+  
+</div>
+
+</body>
+</html>
