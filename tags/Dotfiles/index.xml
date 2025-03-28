@@ -27,8 +27,7 @@
 &lt;p&gt;This means we can just save the raw SSH key as secret in gopass.&lt;/p&gt;
 &lt;h4 id=&#34;with-the-gopass-function&#34;&gt;With the &lt;code&gt;gopass&lt;/code&gt; function&lt;/h4&gt;
 &lt;blockquote&gt;
-&lt;p&gt;This is not needed, see the gopassRaw section above&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;This is not needed, see the gopassRaw section above&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;Currently the &lt;code&gt;gopass&lt;/code&gt; function of chezmoi will only return the first line of the secret.
 That means while we could save e.g. a SSH Private Key in Raw, chezmoi will only read the first line of the Key, so we should better convert the SSH Private Key first.&lt;/p&gt;
 &lt;p&gt;We can simply convert SSH Private Key in one line by running:&lt;/p&gt;
@@ -47,8 +46,7 @@ That means while we could save e.g. a SSH Private Key in Raw, chezmoi will only 
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Where &amp;ldquo;SSH/id_rsa&amp;rdquo; is the name of the file inside of gopass and &lt;code&gt;gopassRaw&lt;/code&gt; is the function to get the secret from gopass.&lt;/p&gt;
 &lt;h4 id=&#34;with-the-gopass-function-1&#34;&gt;With the &lt;code&gt;gopass&lt;/code&gt; function&lt;/h4&gt;
 &lt;blockquote&gt;
-&lt;p&gt;This is not needed if you follow the gopassRaw section above. I still want to mention it as an alternative.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;This is not needed if you follow the gopassRaw section above. I still want to mention it as an alternative.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;{{ gopass &amp;#34;SSH/id_rsa&amp;#34; | b64dec }}
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Where &amp;ldquo;SSH/id_rsa&amp;rdquo; is the name of the file inside of gopass and &lt;code&gt;gopass&lt;/code&gt; and &lt;code&gt;b64dec&lt;/code&gt; are chezmoi functions. &lt;code&gt;gopass&lt;/code&gt; is the function to get the secret from gopass and then we pipe it into the &lt;code&gt;b64dec&lt;/code&gt; function which decodes the Base64 string.&lt;/p&gt;
 &lt;h3 id=&#34;applying-it&#34;&gt;Applying it&lt;/h3&gt;

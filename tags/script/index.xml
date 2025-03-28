@@ -68,8 +68,7 @@
 &lt;h3 id=&#34;update&#34;&gt;Update&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;If you want to update Gitea and other software (like Drone, Caddy, Podman, Python, Zitadel and Kanboard), you should check out &lt;a href=&#34;https://chapati.systems/autoupdate/&#34;&gt;Autoupdate&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;This new tool of mine was built as a single binary with a config file and tested on multiple Linux systems.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;This new tool of mine was built as a single binary with a config file and tested on multiple Linux systems.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h3 id=&#34;warning&#34;&gt;Warning&lt;/h3&gt;
 &lt;p&gt;As I mentioned - I am no fan of manual upgrades - because of that I write many auto update scripts for my own systems. This scripts often haven&amp;rsquo;t been tested on other systems and may contain ugly code.
 I am open for the creation of issues or pull requests which optimise my code. You should definitely check the code out and make sure to review it before using it.&lt;/p&gt;

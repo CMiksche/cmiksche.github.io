@@ -18,7 +18,7 @@
       <content>&lt;p&gt;Static site generators like Hugo, Jekyll or Nuxt are awesome. They provide way faster delivery of your contents to your customers than any PHP solution like WordPress.&lt;/p&gt;
 &lt;p&gt;Unfortunately you have to create the Markdown files for your content yourself, but because every single post has a filename, title, date and often tags as well as a status for draft, I created a simple tool which takes care of doing exactly that.&lt;/p&gt;
 &lt;p&gt;Just enter &lt;code&gt;np The Title of your blog post&lt;/code&gt; and &lt;code&gt;np&lt;/code&gt; will create a file inside the content/post directory with your Title, date, draft status (default: true) and tags which are simply the words in your title.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/455172&#34;&gt;&lt;img alt=&#34;asciicast&#34; src=&#34;https://asciinema.org/a/455172.svg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://asciinema.org/a/455172&#34;&gt;&lt;img src=&#34;https://asciinema.org/a/455172.svg&#34; alt=&#34;asciicast&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;You can find the project on GitLab: &lt;a href=&#34;https://gitlab.com/cmiksche/np&#34;&gt;https://gitlab.com/cmiksche/np&lt;/a&gt;&lt;/p&gt;
 </content>
     </item>

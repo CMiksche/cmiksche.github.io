@@ -275,8 +275,7 @@ Luckily, I am not the first one to have such desires and I came across chezmoi w
 <p>This means we can just save the raw SSH key as secret in gopass.</p>
 <h4 id="with-the-gopass-function">With the <code>gopass</code> function<a href="#with-the-gopass-function" class="hanchor" ariaLabel="Anchor">#</a> </h4>
 <blockquote>
-<p>This is not needed, see the gopassRaw section above</p>
-</blockquote>
+<p>This is not needed, see the gopassRaw section above</p></blockquote>
 <p>Currently the <code>gopass</code> function of chezmoi will only return the first line of the secret.
 That means while we could save e.g. a SSH Private Key in Raw, chezmoi will only read the first line of the Key, so we should better convert the SSH Private Key first.</p>
 <p>We can simply convert SSH Private Key in one line by running:</p>
@@ -295,8 +294,7 @@ That means while we could save e.g. a SSH Private Key in Raw, chezmoi will only 
 </code></pre><p>Where &ldquo;SSH/id_rsa&rdquo; is the name of the file inside of gopass and <code>gopassRaw</code> is the function to get the secret from gopass.</p>
 <h4 id="with-the-gopass-function-1">With the <code>gopass</code> function<a href="#with-the-gopass-function-1" class="hanchor" ariaLabel="Anchor">#</a> </h4>
 <blockquote>
-<p>This is not needed if you follow the gopassRaw section above. I still want to mention it as an alternative.</p>
-</blockquote>
+<p>This is not needed if you follow the gopassRaw section above. I still want to mention it as an alternative.</p></blockquote>
 <pre tabindex="0"><code>{{ gopass &#34;SSH/id_rsa&#34; | b64dec }}
 </code></pre><p>Where &ldquo;SSH/id_rsa&rdquo; is the name of the file inside of gopass and <code>gopass</code> and <code>b64dec</code> are chezmoi functions. <code>gopass</code> is the function to get the secret from gopass and then we pipe it into the <code>b64dec</code> function which decodes the Base64 string.</p>
 <h3 id="applying-it">Applying it<a href="#applying-it" class="hanchor" ariaLabel="Anchor">#</a> </h3>
@@ -355,7 +353,7 @@ That means while we could save e.g. a SSH Private Key in Raw, chezmoi will only 
   <div class="footer__inner">
     
       <div class="copyright">
-        <span>© 2024 Powered by <a href="https://gohugo.io">Hugo</a></span>
+        <span>© 2025 Powered by <a href="https://gohugo.io">Hugo</a></span>
     
       <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
       </div>
