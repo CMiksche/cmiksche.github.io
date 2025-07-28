@@ -237,6 +237,59 @@
     
       <article class="post on-list">
         <h2 class="post-title">
+          <a href="https://blog.m5e.de/post/delete-and-resync-a-crypto-wallet-on-your-server/">Delete and Resync a Crypto-Wallet on your server</a>
+        </h2>
+        <div class="post-meta"><time class="post-date">2021-04-23</time></div>
+
+        
+          <span class="post-tags">
+            
+            #<a href="https://blog.m5e.de/tags/Crypto/">Crypto</a>&nbsp;
+            
+            #<a href="https://blog.m5e.de/tags/Cryptocurrency/">Cryptocurrency</a>&nbsp;
+            
+            #<a href="https://blog.m5e.de/tags/Delete/">Delete</a>&nbsp;
+            
+            #<a href="https://blog.m5e.de/tags/Resync/">Resync</a>&nbsp;
+            
+            #<a href="https://blog.m5e.de/tags/Crypto-Wallet/">Crypto-Wallet</a>&nbsp;
+            
+            #<a href="https://blog.m5e.de/tags/server/">server</a>&nbsp;
+            
+            #<a href="https://blog.m5e.de/tags/Peercoin/">Peercoin</a>&nbsp;
+            
+          </span>
+        
+
+        
+
+
+        <div class="post-content">
+          
+            <p>I stake a Cryptocurrency based of Peercoin on a Server since years. Multiple months ago this stopped because of the following error:</p>
+<pre><code>Coind: kernel.cpp:372: unsigned int GetStakeModifierChecksum(const CBlockIndex*): Assertion `pindex-&gt;pprev || pindex-&gt;GetBlockHash() == (!fTestNet ? hashGenesisBlock : hashGenesisBlockTestNet)' failed.
+</code></pre>
+<p>This Error often comes when your Blockchain is corrupted. The cause of my problem was an unexpected downtime.</p>
+<p>To fix this:</p>
+<ol>
+<li>Stop the Daemon</li>
+<li>Backup the Folder of the Coin</li>
+<li>Delete everything except wallet.dat, peers.dat and *.conf</li>
+<li>Start the Daemon again (<code>/path/to/coin/src/Coind -daemon -datadir=/path/to/coin/folder/</code>)</li>
+</ol>
+<p>I also published a German blog post about <a href="https://blog.wronnay.net/altcoins-vom-source-code-kompilieren/">compiling AltCoins</a>.</p>
+          
+        </div>
+
+        
+           <div>
+            <a class="read-more button inline" href="/post/delete-and-resync-a-crypto-wallet-on-your-server/">Read more</a>
+          </div>
+        
+      </article>
+    
+      <article class="post on-list">
+        <h2 class="post-title">
           <a href="https://blog.m5e.de/post/the-problem-with-odoo/">The Problem with Odoo</a>
         </h2>
         <div class="post-meta"><time class="post-date">2021-03-23</time></div>
@@ -601,49 +654,6 @@ We had tests about the Domain Name System at my professional school and I can&rs
         
            <div>
             <a class="read-more button inline" href="/post/switching-to-hugo/">Read more</a>
-          </div>
-        
-      </article>
-    
-      <article class="post on-list">
-        <h2 class="post-title">
-          <a href="https://blog.m5e.de/bash/script/python/linux/2020/05/22/forget-bash-take-python.html">Forget Bash, take Python!</a>
-        </h2>
-        <div class="post-meta"><time class="post-date">2020-05-22</time></div>
-
-        
-          <span class="post-tags">
-            
-            #<a href="https://blog.m5e.de/tags/bash/">bash</a>&nbsp;
-            
-            #<a href="https://blog.m5e.de/tags/script/">script</a>&nbsp;
-            
-            #<a href="https://blog.m5e.de/tags/python/">python</a>&nbsp;
-            
-            #<a href="https://blog.m5e.de/tags/linux/">linux</a>&nbsp;
-            
-          </span>
-        
-
-        
-
-
-        <div class="post-content">
-          
-            <p>I wrote bash scripts for several years now. You can find old bash scripts of mine on GitHub but most of them aren&rsquo;t maintained anymore - and I have a reason for that.</p>
-<p>But before I give you my reasons for not using many bash scripts anymore, lets look at the benefits of bash:</p>
-<ul>
-<li>It super easy and you basically already can it if you write Linux / BSD commands</li>
-<li>There are frameworks out now which give you advanced features like testing</li>
-<li>It works out of the box on nearly every Linux / BSD system</li>
-</ul>
-<p>Okay - sounds good - so what&rsquo;s my problem?</p>
-          
-        </div>
-
-        
-           <div>
-            <a class="read-more button inline" href="/bash/script/python/linux/2020/05/22/forget-bash-take-python.html">Read more</a>
           </div>
         
       </article>
